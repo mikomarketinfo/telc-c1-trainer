@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELC C1 Deutsch Trainer</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f7f4;--bg2:#ffffff;--bg3:#f0efe9;
+  --border:#e2e1d8;--border2:#c8c7be;
+  --text:#1a1a18;--text2:#6b6b65;--text3:#9b9b94;
+  --green:#1d9e75;--green-l:#e1f5ee;--green-d:#0f6e56;
+  --purple:#7f77dd;--purple-l:#eeedfe;--purple-d:#534ab7;
+  --blue:#378add;--blue-l:#e6f1fb;--blue-d:#185fa5;
+  --amber:#ba7517;--amber-l:#faeeda;--amber-d:#633806;
+  --red:#e24b4a;--red-l:#fcebeb;--red-d:#a32d2d;
+  --radius:10px;--radius-sm:6px;
+  --shadow:0 1px 4px rgba(0,0,0,.06);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1a1a18;--bg2:#242420;--bg3:#2c2c28;
+    --border:#3a3a34;--border2:#4a4a44;
+    --text:#f0efe9;--text2:#a0a09a;--text3:#6b6b65;
+    --green-l:#0a3020;--green-d:#9fe1cb;
+    --purple-l:#1e1c40;--purple-d:#afa9ec;
+    --blue-l:#0a1e35;--blue-d:#85b7eb;
+    --amber-l:#2a1a05;--amber-d:#fac775;
+    --red-l:#2a0f0f;--red-d:#f09595;
+  }
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.6}
+
+/* ── NAV ── */
+.nav{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:0;overflow-x:auto}
+.nav-logo{padding:.9rem 1.25rem;font-weight:700;font-size:16px;white-space:nowrap;border-right:1px solid var(--border);color:var(--text)}
+.nav-logo span{color:var(--green)}
+.nav-tabs{display:flex;overflow-x:auto}
+.nav-tab{padding:.9rem 1.1rem;font-size:13px;color:var(--text2);cursor:pointer;white-space:nowrap;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:inherit;display:flex;align-items:center;gap:6px}
+.nav-tab:hover{color:var(--text);background:var(--bg3)}
+.nav-tab.active{color:var(--green);border-bottom-color:var(--green);font-weight:500}
+
+/* ── LAYOUT ── */
+.main{max-width:940px;margin:0 auto;padding:1.5rem}
+.screen{display:none}.screen.active{display:block}
+
+/* ── CARDS & BASICS ── */
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow)}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:.5rem}
+.section-head h2{font-size:18px;font-weight:500}
+.btn{padding:7px 16px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-size:13px;cursor:pointer;transition:all .2s;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{background:var(--bg3)}
+.btn.primary{background:var(--green);color:#fff;border-color:var(--green)}
+.btn.primary:hover{background:var(--green-d)}
+.btn.sm{padding:5px 12px;font-size:12px}
+.badge{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:500}
+.badge.green{background:var(--green-l);color:var(--green-d)}
+.badge.purple{background:var(--purple-l);color:var(--purple-d)}
+.badge.amber{background:var(--amber-l);color:var(--amber-d)}
+.badge.red{background:var(--red-l);color:var(--red-d)}
+
+/* ── DASHBOARD ── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.5rem}
+.stat{background:var(--bg3);border-radius:var(--radius);padding:1rem;text-align:center}
+.stat .n{font-size:28px;font-weight:600;color:var(--text)}
+.stat .l{font-size:12px;color:var(--text2);margin-top:2px}
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.module-btn{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;cursor:pointer;transition:all .2s;text-align:left}
+.module-btn:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.module-btn .ico{width:38px;height:38px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px}
+.module-btn h3{font-size:14px;font-weight:600;margin-bottom:4px}
+.module-btn p{font-size:12px;color:var(--text2);line-height:1.5}
+.prog-bar{height:3px;background:var(--border);border-radius:99px;margin-top:10px;overflow:hidden}
+.prog-fill{height:100%;border-radius:99px;background:var(--green);transition:width .5s}
+
+/* ── SPRACHBAUSTEINE ── */
+.sb-text{font-size:15px;line-height:2.2;color:var(--text);margin-bottom:1rem}
+.slot{display:inline-flex;align-items:center;min-width:120px;height:28px;border-bottom:2px solid var(--green);padding:0 6px;margin:0 3px;cursor:pointer;vertical-align:middle;font-size:14px;color:var(--green);border-radius:4px 4px 0 0;transition:all .2s;position:relative}
+.slot.drag-over{background:var(--green-l)}
+.slot.filled{color:var(--text);border-color:var(--border2);font-weight:500}
+.slot.ok{border-color:var(--green)!important;color:var(--green)!important;background:var(--green-l)}
+.slot.err{border-color:var(--red)!important;color:var(--red)!important;background:var(--red-l)}
+.slot-num{font-size:10px;color:var(--text3);position:absolute;top:-14px;left:0}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding-top:1rem;border-top:1px solid var(--border);margin-top:.5rem}
+.chip{padding:5px 14px;border-radius:99px;border:1px solid var(--border2);background:var(--bg3);font-size:13px;cursor:grab;transition:all .2s;user-select:none;color:var(--text)}
+.chip:hover{border-color:var(--green);color:var(--green);background:var(--green-l)}
+.chip.sel{border-color:var(--green);background:var(--green-l);color:var(--green-d);font-weight:500}
+.chip.used{opacity:.3;pointer-events:none}
+.chip.drag{opacity:.4}
+.sb-result{margin-top:1rem;padding:1rem;border-radius:var(--radius);background:var(--bg3);font-size:14px}
+.level-row{display:flex;gap:6px;flex-wrap:wrap}
+.level-pill{padding:5px 14px;border-radius:99px;border:1px solid var(--border2);background:var(--bg3);font-size:12px;cursor:pointer;color:var(--text2);font-family:inherit;transition:all .2s}
+.level-pill.active{background:var(--purple);color:#fff;border-color:var(--purple)}
+
+/* ── GRAMMAR SIDEBAR ── */
+.exercise-layout{display:grid;grid-template-columns:1fr 280px;gap:1rem;align-items:start}
+@media(max-width:680px){.exercise-layout{grid-template-columns:1fr}}
+.grammar-sidebar{background:var(--amber-l);border:1px solid var(--amber);border-radius:var(--radius);padding:1rem;font-size:13px;color:var(--text);line-height:1.7}
+.grammar-sidebar h4{font-size:13px;font-weight:600;color:var(--amber-d);margin-bottom:.5rem;display:flex;align-items:center;gap:6px}
+.grammar-sidebar .rule{margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:1px solid rgba(0,0,0,.07)}
+.grammar-sidebar .rule:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.grammar-sidebar .example{font-style:italic;color:var(--text2);font-size:12px;margin-top:3px}
+
+/* ── LESEN ── */
+.lesen-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.lesen-grid{grid-template-columns:1fr}}
+.text-scroll{max-height:460px;overflow-y:auto;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem}
+.text-scroll h4{font-size:12px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem}
+.text-scroll p{font-size:14px;line-height:1.8;margin-bottom:.75rem;color:var(--text)}
+.q-list{display:flex;flex-direction:column;gap:8px}
+.q-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem}
+.q-item .q-text{font-size:13px;font-weight:600;margin-bottom:.5rem;color:var(--text)}
+.q-opts{display:flex;flex-direction:column;gap:5px}
+.q-opt{padding:6px 11px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg3);font-size:13px;text-align:left;cursor:pointer;transition:all .15s;color:var(--text);font-family:inherit}
+.q-opt:hover{border-color:var(--blue);background:var(--blue-l)}
+.q-opt.sel{border-color:var(--purple);background:var(--purple-l);color:var(--purple-d)}
+.q-opt.ok{border-color:var(--green)!important;background:var(--green-l)!important;color:var(--green-d)!important}
+.q-opt.err{border-color:var(--red)!important;background:var(--red-l)!important;color:var(--red-d)!important}
+
+/* ── VOKABELN / FLASHCARD ── */
+.vocab-top{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
+.cat-sel{padding:6px 12px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-size:13px;font-family:inherit;cursor:pointer}
+.flashcard-wrap{perspective:1000px;height:200px;margin-bottom:1rem;cursor:pointer;user-select:none}
+.flashcard{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .45s}
+.flashcard.flip{transform:rotateY(180deg)}
+.cf{position:absolute;inset:0;backface-visibility:hidden;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;text-align:center;box-shadow:var(--shadow)}
+.cf.back{transform:rotateY(180deg);background:var(--green-l);border-color:var(--green)}
+.cf .word{font-size:24px;font-weight:600;color:var(--text);margin-bottom:6px}
+.cf .hint{font-size:12px;color:var(--text3)}
+.cf .trans{font-size:17px;font-weight:500;color:var(--green-d);margin-bottom:6px}
+.cf .ex{font-size:13px;color:var(--text2);font-style:italic;line-height:1.5}
+.flip-hint{font-size:12px;color:var(--text3);margin-top:10px}
+.card-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:.75rem}
+.card-ctr{font-size:13px;color:var(--text2)}
+.rate-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.rate-btn{padding:7px 18px;border-radius:var(--radius-sm);border:1px solid;font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s}
+.rb-h{border-color:var(--red);color:var(--red);background:var(--red-l)}
+.rb-h:hover{background:var(--red);color:#fff}
+.rb-m{border-color:var(--amber);color:var(--amber);background:var(--amber-l)}
+.rb-m:hover{background:var(--amber);color:#fff}
+.rb-e{border-color:var(--green);color:var(--green-d);background:var(--green-l)}
+.rb-e:hover{background:var(--green);color:#fff}
+
+/* ── WÖRTERBUCH ── */
+.dict-toolbar{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
+.dict-search{flex:1;min-width:180px;padding:8px 12px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-size:13px;font-family:inherit}
+.dict-search:focus{outline:none;border-color:var(--green)}
+.dict-table{width:100%;border-collapse:collapse;font-size:13px}
+.dict-table th{padding:8px 12px;text-align:left;background:var(--bg3);border-bottom:1px solid var(--border);font-weight:600;font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:.04em}
+.dict-table td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)}
+.dict-table tr:hover td{background:var(--bg3)}
+.dict-table .tag{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:500;margin-right:4px}
+.dict-add-form{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem}
+.dict-add-form h4{font-size:14px;font-weight:600;margin-bottom:1rem;color:var(--text)}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-bottom:10px}
+.form-input{padding:8px 12px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--bg2);color:var(--text);font-size:13px;font-family:inherit;width:100%}
+.form-input:focus{outline:none;border-color:var(--green)}
+.form-input::placeholder{color:var(--text3)}
+select.form-input{cursor:pointer}
+.dict-actions{display:flex;gap:6px;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.del-btn{padding:3px 8px;border-radius:var(--radius-sm);border:1px solid var(--border);background:none;color:var(--text3);font-size:12px;cursor:pointer;transition:all .2s}
+.del-btn:hover{border-color:var(--red);color:var(--red);background:var(--red-l)}
+.import-area{margin-top:.75rem;padding:.75rem;background:var(--bg2);border-radius:var(--radius-sm);border:1px solid var(--border);font-size:12px;color:var(--text2)}
+.tag-filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
+.tf{padding:4px 12px;border-radius:99px;border:1px solid var(--border2);background:var(--bg3);font-size:12px;cursor:pointer;color:var(--text2);font-family:inherit;transition:all .2s}
+.tf.active{background:var(--green);color:#fff;border-color:var(--green)}
+.empty-state{text-align:center;padding:3rem;color:var(--text2);font-size:14px}
+
+/* ── SCHREIBEN ── */
+.task-box{background:var(--blue-l);border:1px solid var(--blue);border-radius:var(--radius);padding:1.25rem;margin-bottom:1rem}
+.task-box .task-label{font-size:11px;font-weight:600;color:var(--blue-d);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+.task-box p{font-size:14px;color:var(--text);line-height:1.7}
+.schreiben-ta{width:100%;min-height:220px;border:1px solid var(--border2);border-radius:var(--radius);padding:1rem;font-size:14px;line-height:1.8;resize:vertical;font-family:inherit;color:var(--text);background:var(--bg2)}
+.schreiben-ta:focus{outline:none;border-color:var(--green)}
+.wc{font-size:12px;text-align:right;margin-top:4px;color:var(--text3)}
+.criteria-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:1rem}
+.crit-item{background:var(--bg3);border-radius:var(--radius-sm);padding:.75rem}
+.crit-name{font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px}
+.crit-grades{display:flex;gap:5px}
+.cg{width:36px;height:28px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--bg2);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--text2);font-family:inherit}
+.cg:hover{border-color:var(--green);color:var(--green)}
+.cg.A.lit{background:var(--green-l);border-color:var(--green);color:var(--green-d)}
+.cg.B.lit{background:var(--blue-l);border-color:var(--blue);color:var(--blue-d)}
+.cg.C.lit{background:var(--amber-l);border-color:var(--amber);color:var(--amber-d)}
+.cg.D.lit{background:var(--red-l);border-color:var(--red);color:var(--red-d)}
+.saved-writings{margin-top:1.5rem}
+.saved-item{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.75rem;margin-bottom:.5rem;font-size:13px}
+.saved-item .si-date{font-size:11px;color:var(--text3);float:right}
+.saved-item .si-task{font-weight:600;margin-bottom:4px;color:var(--text);font-size:12px}
+.saved-item .si-text{color:var(--text2);line-height:1.5}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:11px 18px;font-size:13px;color:var(--text);box-shadow:0 4px 20px rgba(0,0,0,.12);z-index:9999;transform:translateY(80px);opacity:0;transition:all .3s;max-width:280px}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.ok{border-color:var(--green);color:var(--green-d);background:var(--green-l)}
+.toast.bad{border-color:var(--red);color:var(--red-d);background:var(--red-l)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">telc <span>C1</span></div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="go('dash')" data-s="dash">🏠 Start</button>
+    <button class="nav-tab" onclick="go('sb')" data-s="sb">🧩 Sprachbausteine</button>
+    <button class="nav-tab" onclick="go('lesen')" data-s="lesen">📖 Lesen</button>
+    <button class="nav-tab" onclick="go('vocab')" data-s="vocab">🃏 Karten</button>
+    <button class="nav-tab" onclick="go('dict')" data-s="dict">📚 Wörterbuch</button>
+    <button class="nav-tab" onclick="go('schreiben')" data-s="schreiben">✍️ Schreiben</button>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- DASHBOARD -->
+<div class="screen active" id="s-dash">
+  <div style="margin-bottom:1.5rem">
+    <h1 style="font-size:22px;font-weight:600;margin-bottom:4px">Guten Tag! Bereit für C1?</h1>
+    <p style="color:var(--text2);font-size:14px">Wähle ein Modul und beginne deine Übung.</p>
+  </div>
+  <div class="stats-grid">
+    <div class="stat"><div class="n" id="ds-total">0</div><div class="l">Antworten gesamt</div></div>
+    <div class="stat"><div class="n" id="ds-pct">0%</div><div class="l">Korrekt</div></div>
+    <div class="stat"><div class="n" id="ds-vocab">0</div><div class="l">Vokabeln gelernt</div></div>
+    <div class="stat"><div class="n" id="ds-words">0</div><div class="l">Wörter im Wörterbuch</div></div>
+    <div class="stat"><div class="n" id="ds-streak">0</div><div class="l">Tage in Folge</div></div>
+  </div>
+  <div class="section-head"><h2>Module</h2></div>
+  <div class="modules-grid">
+    <button class="module-btn" onclick="go('sb')">
+      <div class="ico" style="background:var(--purple-l);color:var(--purple)">🧩</div>
+      <h3>Sprachbausteine</h3>
+      <p>Drag & Drop — Lücken füllen wie im echten Test</p>
+      <div class="prog-bar"><div class="prog-fill" id="pb-sb" style="width:0%"></div></div>
+    </button>
+    <button class="module-btn" onclick="go('lesen')">
+      <div class="ico" style="background:var(--blue-l);color:var(--blue)">📖</div>
+      <h3>Leseverstehen</h3>
+      <p>Texte & Fragen im TELC-Format, Teil 1–3</p>
+      <div class="prog-bar"><div class="prog-fill" id="pb-ls" style="width:0%"></div></div>
+    </button>
+    <button class="module-btn" onclick="go('vocab')">
+      <div class="ico" style="background:var(--green-l);color:var(--green)">🃏</div>
+      <h3>Vokabelkarten</h3>
+      <p>C1-Wortschatz mit Spaced Repetition</p>
+      <div class="prog-bar"><div class="prog-fill" id="pb-vk" style="width:0%"></div></div>
+    </button>
+    <button class="module-btn" onclick="go('dict')">
+      <div class="ico" style="background:var(--amber-l);color:var(--amber)">📚</div>
+      <h3>Wörterbuch</h3>
+      <p>Eigene Wörter, Phrasen & Redewendungen hinzufügen</p>
+      <div class="prog-bar"><div class="prog-fill" id="pb-dc" style="width:0%"></div></div>
+    </button>
+    <button class="module-btn" onclick="go('schreiben')">
+      <div class="ico" style="background:var(--blue-l);color:var(--blue)">✍️</div>
+      <h3>Schriftlicher Ausdruck</h3>
+      <p>TELC-Aufgaben schreiben & selbst bewerten</p>
+      <div class="prog-bar"><div class="prog-fill" id="pb-sc" style="width:0%"></div></div>
+    </button>
+  </div>
+</div>
+
+<!-- SPRACHBAUSTEINE -->
+<div class="screen" id="s-sb">
+  <div class="section-head">
+    <h2>Sprachbausteine</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <div class="level-row">
+        <button class="level-pill active" onclick="setSBLvl('B2',this)">B2</button>
+        <button class="level-pill" onclick="setSBLvl('C1',this)">C1</button>
+      </div>
+      <button class="btn sm" onclick="newSB()">🔀 Neue Aufgabe</button>
+    </div>
+  </div>
+  <div class="exercise-layout">
+    <div>
+      <div class="card" style="margin-bottom:1rem">
+        <div class="sb-text" id="sb-text"></div>
+        <div class="chips" id="sb-chips"></div>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-bottom:.5rem">
+        <button class="btn" onclick="checkSB()">✓ Überprüfen</button>
+        <button class="btn primary" onclick="newSB()">Weiter →</button>
+      </div>
+      <div id="sb-res" style="display:none" class="sb-result"></div>
+    </div>
+    <div class="grammar-sidebar" id="grammar-box">
+      <h4>📐 Grammatik-Tipp</h4>
+      <div id="grammar-content"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LESEN -->
+<div class="screen" id="s-lesen">
+  <div class="section-head">
+    <h2>Leseverstehen</h2>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <select class="btn sm" id="lesen-sel" onchange="loadLesen()" style="padding:5px 10px">
+        <option value="0">Teil 1 — Satz-Zuordnung</option>
+        <option value="1">Teil 3 — Richtig / Falsch / Nicht im Text</option>
+      </select>
+      <button class="btn sm primary" onclick="checkLesen()">Prüfen</button>
+    </div>
+  </div>
+  <div class="lesen-grid">
+    <div class="text-scroll" id="lesen-text"></div>
+    <div class="q-list" id="lesen-qs"></div>
+  </div>
+</div>
+
+<!-- VOKABELKARTEN -->
+<div class="screen" id="s-vocab">
+  <div class="section-head">
+    <h2>Vokabelkarten</h2>
+    <span class="badge green" id="vc-badge">0/0</span>
+  </div>
+  <div class="vocab-top">
+    <select class="cat-sel" id="vc-cat" onchange="loadVocab()">
+      <option value="all">Alle Kategorien</option>
+      <option value="gesellschaft">Gesellschaft</option>
+      <option value="bildung">Bildung</option>
+      <option value="wirtschaft">Wirtschaft</option>
+      <option value="umwelt">Umwelt</option>
+      <option value="digital">Digitalisierung</option>
+      <option value="konnektoren">Konnektoren C1</option>
+      <option value="custom">Mein Wörterbuch ★</option>
+    </select>
+    <button class="btn sm" onclick="setVF('all',this)" id="vf-all">Alle</button>
+    <button class="btn sm" onclick="setVF('hard',this)" id="vf-hard">Schwer</button>
+    <button class="btn sm" onclick="setVF('new',this)" id="vf-new">Neu</button>
+  </div>
+  <div class="flashcard-wrap" onclick="flipCard()">
+    <div class="flashcard" id="flashcard">
+      <div class="cf front">
+        <div class="word" id="fc-word"></div>
+        <div class="hint" id="fc-hint"></div>
+        <div class="flip-hint">↺ Klicken zum Umdrehen</div>
+      </div>
+      <div class="cf back">
+        <div class="trans" id="fc-trans"></div>
+        <div class="ex" id="fc-ex"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-nav">
+    <button class="btn sm" onclick="prevC()">◀</button>
+    <span class="card-ctr" id="fc-ctr">1 / 1</span>
+    <button class="btn sm" onclick="nextC()">▶</button>
+  </div>
+  <div class="rate-row">
+    <button class="rate-btn rb-h" onclick="rate('hard')">😓 Schwer</button>
+    <button class="rate-btn rb-m" onclick="rate('ok')">🤔 Geht so</button>
+    <button class="rate-btn rb-e" onclick="rate('easy')">✅ Leicht!</button>
+  </div>
+</div>
+
+<!-- WÖRTERBUCH -->
+<div class="screen" id="s-dict">
+  <div class="section-head">
+    <h2>📚 Wörterbuch</h2>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn sm" onclick="toggleAddForm()">＋ Eintrag hinzufügen</button>
+      <button class="btn sm" onclick="exportDict()">↓ Exportieren</button>
+      <button class="btn sm" onclick="document.getElementById('imp-file').click()">↑ Importieren</button>
+      <input type="file" id="imp-file" accept=".json" style="display:none" onchange="importDict(this)">
+    </div>
+  </div>
+
+  <div class="dict-add-form" id="add-form">
+    <h4>Neuen Eintrag hinzufügen</h4>
+    <div class="form-grid">
+      <input class="form-input" id="f-word" placeholder="Wort / Ausdruck (Deutsch)" />
+      <input class="form-input" id="f-trans" placeholder="Übersetzung (Russisch)" />
+      <input class="form-input" id="f-example" placeholder="Beispielsatz (optional)" />
+      <input class="form-input" id="f-hint" placeholder="Wortart / Hinweis (z.B. Verb)" />
+    </div>
+    <div class="form-grid" style="grid-template-columns:1fr 1fr auto">
+      <select class="form-input" id="f-cat">
+        <option value="allgemein">Allgemein</option>
+        <option value="gesellschaft">Gesellschaft</option>
+        <option value="bildung">Bildung</option>
+        <option value="wirtschaft">Wirtschaft</option>
+        <option value="umwelt">Umwelt</option>
+        <option value="digital">Digitalisierung</option>
+        <option value="konnektoren">Konnektoren</option>
+        <option value="redewendungen">Redewendungen</option>
+        <option value="schreiben">Schreiben-Phrasen</option>
+      </select>
+      <select class="form-input" id="f-level">
+        <option value="B2">B2</option>
+        <option value="C1" selected>C1</option>
+      </select>
+      <button class="btn primary" onclick="addWord()">Hinzufügen</button>
+    </div>
+    <div class="import-area">
+      💡 <strong>Schnell mehrere Wörter hinzufügen:</strong> Klicke auf "Importieren" und lade eine JSON-Datei hoch. Format: <code>[{"word":"...", "trans":"...", "example":"...", "hint":"...", "cat":"...", "level":"C1"}]</code>
+    </div>
+  </div>
+
+  <div class="dict-toolbar">
+    <input class="dict-search" id="dict-search" placeholder="Suchen..." oninput="renderDict()">
+    <select class="cat-sel" id="dict-cat-filter" onchange="renderDict()" style="min-width:140px">
+      <option value="all">Alle Kategorien</option>
+      <option value="allgemein">Allgemein</option>
+      <option value="gesellschaft">Gesellschaft</option>
+      <option value="bildung">Bildung</option>
+      <option value="wirtschaft">Wirtschaft</option>
+      <option value="umwelt">Umwelt</option>
+      <option value="digital">Digitalisierung</option>
+      <option value="konnektoren">Konnektoren</option>
+      <option value="redewendungen">Redewendungen</option>
+      <option value="schreiben">Schreiben-Phrasen</option>
+    </select>
+    <select class="cat-sel" id="dict-lvl-filter" onchange="renderDict()">
+      <option value="all">Alle Niveaus</option>
+      <option value="B2">B2</option>
+      <option value="C1">C1</option>
+    </select>
+  </div>
+
+  <div id="dict-tag-row" class="tag-filter"></div>
+
+  <div style="overflow-x:auto">
+    <table class="dict-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Wort / Ausdruck</th>
+          <th style="width:22%">Übersetzung</th>
+          <th style="width:28%">Beispiel</th>
+          <th style="width:12%">Kategorie</th>
+          <th style="width:8%">Niveau</th>
+          <th style="width:8%"></th>
+        </tr>
+      </thead>
+      <tbody id="dict-tbody"></tbody>
+    </table>
+    <div id="dict-empty" class="empty-state" style="display:none">
+      <p style="font-size:32px;margin-bottom:.5rem">📖</p>
+      <p>Noch keine Einträge. Füge dein erstes Wort hinzu!</p>
+    </div>
+  </div>
+  <div style="margin-top:.75rem;font-size:12px;color:var(--text3)" id="dict-count"></div>
+</div>
+
+<!-- SCHREIBEN -->
+<div class="screen" id="s-schreiben">
+  <div class="section-head">
+    <h2>Schriftlicher Ausdruck</h2>
+    <button class="btn sm" onclick="newTask()">🔀 Neue Aufgabe</button>
+  </div>
+  <div class="task-box">
+    <div class="task-label">Pflichtaufgabe — ca. 200 Wörter</div>
+    <p id="task-text"></p>
+  </div>
+  <textarea class="schreiben-ta" id="sch-ta" placeholder="Schreiben Sie hier Ihren Text..." oninput="updateWC()"></textarea>
+  <div class="wc" id="wc-display">0 Wörter</div>
+  <div style="font-size:13px;font-weight:600;color:var(--text2);margin:1rem 0 .5rem">Selbstbewertung — TELC-Kriterien (A = sehr gut, D = ungenügend):</div>
+  <div class="criteria-row" id="criteria-row"></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:1rem">
+    <button class="btn" onclick="document.getElementById('sch-ta').value='';updateWC()">Löschen</button>
+    <button class="btn primary" onclick="saveWriting()">Speichern ✓</button>
+  </div>
+  <div class="saved-writings" id="saved-writings"></div>
+</div>
+
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+// ─────────────────────────────────────────────
+//  STATE + PERSISTENCE
+// ─────────────────────────────────────────────
+var DEF_STATE={
+  total:0,correct:0,streak:0,lastDate:'',
+  learned:[],hard:[],
+  sbProg:0,lsProg:0,scProg:0,
+  writings:[],
+  customWords:[]
+};
+var S=JSON.parse(JSON.stringify(DEF_STATE));
+
+function loadS(){
+  try{var d=localStorage.getItem('telc_c1_v2');if(d)S=Object.assign(S,JSON.parse(d));}catch(e){}
+  checkStreak();
+  updateDash();
+}
+function saveS(){try{localStorage.setItem('telc_c1_v2',JSON.stringify(S));}catch(e){}}
+function checkStreak(){
+  var t=new Date().toDateString();
+  if(S.lastDate===t)return;
+  var y=new Date(Date.now()-86400000).toDateString();
+  S.streak=(S.lastDate===y)?S.streak+1:1;
+  S.lastDate=t;saveS();
+}
+function updateDash(){
+  var pct=S.total>0?Math.round(S.correct/S.total*100):0;
+  setText('ds-total',S.total);
+  setText('ds-pct',pct+'%');
+  setText('ds-vocab',S.learned.length);
+  setText('ds-words',(VOCAB_BASE.length+S.customWords.length));
+  setText('ds-streak',S.streak);
+  var vp=Math.min(Math.round(S.learned.length/Math.max(VOCAB_BASE.length+S.customWords.length,1)*100),100);
+  setW('pb-sb',Math.min(S.sbProg,100));
+  setW('pb-ls',Math.min(S.lsProg,100));
+  setW('pb-vk',vp);
+  setW('pb-dc',S.customWords.length>0?Math.min(S.customWords.length*5,100):0);
+  setW('pb-sc',Math.min(S.writings.length*20,100));
+}
+function setText(id,v){var el=document.getElementById(id);if(el)el.textContent=v;}
+function setW(id,v){var el=document.getElementById(id);if(el)el.style.width=v+'%';}
+
+function toast(msg,type){
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast '+(type||'');
+  t.classList.add('show');
+  clearTimeout(t._t);
+  t._t=setTimeout(function(){t.classList.remove('show');},2600);
+}
+
+function go(s){
+  document.querySelectorAll('.screen').forEach(function(el){el.classList.remove('active');});
+  document.querySelectorAll('.nav-tab').forEach(function(el){el.classList.remove('active');});
+  document.getElementById('s-'+s).classList.add('active');
+  var tab=document.querySelector('[data-s="'+s+'"]');
+  if(tab)tab.classList.add('active');
+  if(s==='dash')updateDash();
+  if(s==='sb')newSB();
+  if(s==='lesen')loadLesen();
+  if(s==='vocab')loadVocab();
+  if(s==='dict'){renderDict();renderTagRow();}
+  if(s==='schreiben'){newTask();buildCriteria();renderSaved();}
+}
+
+// ─────────────────────────────────────────────
+//  GRAMMAR TIPS DATA
+// ─────────────────────────────────────────────
+var GRAMMAR_TIPS={
+  B2:[
+    {title:'Konjunktiv II — Gegenwart',rules:[
+      {rule:'würde + Infinitiv (Ersatzform)','example':'Ich würde das gerne machen.'},
+      {rule:'sein → wäre, haben → hätte','example':'Wenn ich Zeit hätte, käme ich.'},
+      {rule:'Modalverben: könnte, sollte, dürfte','example':'Das könnte schwierig werden.'}
+    ]},
+    {title:'Passiv — alle Formen',rules:[
+      {rule:'Präsens: wird + Partizip II','example':'Das Buch wird gelesen.'},
+      {rule:'Präteritum: wurde + Partizip II','example':'Das Gesetz wurde geändert.'},
+      {rule:'Perfekt: ist + Partizip II + worden','example':'Die Stadt ist zerstört worden.'}
+    ]},
+    {title:'Relativsätze — Präpositionen',rules:[
+      {rule:'Präp. + dem/der/dem/denen','example':'Das Haus, in dem ich wohne...'},
+      {rule:'Wo-Wörter: womit, worüber, wofür','example':'Das Thema, worüber wir sprechen...'},
+      {rule:'Genitiv: dessen / deren','example':'Der Mann, dessen Auto gestohlen wurde...'}
+    ]}
+  ],
+  C1:[
+    {title:'Partizipialkonstruktionen',rules:[
+      {rule:'Partizip II als Attribut (vor dem Nomen)','example':'Die getroffene Entscheidung war falsch.'},
+      {rule:'Partizip I als Attribut','example':'Der schlafende Hund lag auf dem Sofa.'},
+      {rule:'Erweitertes Partizip','example':'Die von der Regierung getroffene Entscheidung...'}
+    ]},
+    {title:'Nominalisierung',rules:[
+      {rule:'Verb → Nomen (das + Infinitiv)','example':'Das Lesen fördert die Konzentration.'},
+      {rule:'Adj. → Nomen','example':'das Schöne, das Wichtige, das Wesentliche'},
+      {rule:'Nomen statt Nebensatz (C1-Stil)','example':'trotz der steigenden Kosten = obwohl die Kosten steigen'}
+    ]},
+    {title:'Komplexe Konnektoren',rules:[
+      {rule:'infolgedessen — вследствие этого','example':'Es regnete; infolgedessen blieben wir zu Hause.'},
+      {rule:'wenngleich — хотя','example':'Wenngleich es schwer war, schaffte er es.'},
+      {rule:'zumal — тем более что','example':'Wir gehen nicht, zumal es spät ist.'},
+      {rule:'nichtsdestotrotz — тем не менее','example':'Es war schwer; nichtsdestotrotz gelang es.'}
+    ]},
+    {title:'Erweiterte Attribute',rules:[
+      {rule:'Adjektiv + Genitivattribut','example':'ein von Experten empfohlenes Buch'},
+      {rule:'Partizipgruppe vor dem Nomen','example':'die seit Jahren diskutierte Frage'},
+      {rule:'Entspricht oft einem Relativsatz','example':'= die Frage, die seit Jahren diskutiert wird'}
+    ]}
+  ]
+};
+
+// ─────────────────────────────────────────────
+//  SPRACHBAUSTEINE DATA
+// ─────────────────────────────────────────────
+var SB_DATA={
+  B2:[
+    {
+      text:'Viele Experten sind der Meinung, dass die Digitalisierung die Arbeitswelt grundlegend {0} wird. Dabei {1} es sich um einen Prozess, der bereits seit Jahren im Gange ist. Unternehmen {2} zunehmend auf künstliche Intelligenz, um Effizienz zu steigern. Gleichzeitig {3} viele Arbeitnehmer, dass ihre Qualifikationen nicht mehr ausreichen.',
+      slots:['verändern','handelt','setzen','befürchten'],
+      opts:['verändern','handelt','setzen','befürchten','benutzen','glauben','gehen','wissen'],
+      tip:'B2'
+    },
+    {
+      text:'Das Thema Klimawandel {0} in der öffentlichen Diskussion eine immer größere Rolle. Wissenschaftler {1} darauf hin, dass die CO₂-Emissionen drastisch reduziert werden müssen. Viele Länder haben sich {2} verpflichtet, bis 2050 klimaneutral zu {3}.',
+      slots:['spielt','weisen','dazu','werden'],
+      opts:['spielt','weisen','dazu','werden','nimmt','zeigen','damit','sein'],
+      tip:'B2'
+    },
+    {
+      text:'Die meisten Studierenden sind der Ansicht, dass ein Auslandssemester {0} für ihre persönliche Entwicklung ist. Es {1} ihnen, neue Kulturen kennenzulernen und Sprachkenntnisse zu {2}. Außerdem {3} ein solcher Aufenthalt die Berufsaussichten erheblich.',
+      slots:['wichtig','ermöglicht','verbessern','verbessert'],
+      opts:['wichtig','ermöglicht','verbessern','verbessert','gut','erlaubt','lernen','steigert'],
+      tip:'B2'
+    }
+  ],
+  C1:[
+    {
+      text:'Die zunehmende Urbanisierung {0} weitreichende Folgen für die Gesellschaft. Während Städte {1} wachsen und wirtschaftlich aufblühen, kämpfen ländliche Regionen mit dem demographischen Wandel. Hinzu {2}, dass qualifizierte Fachkräfte {3} in Ballungszentren abwandern, was die regionale Ungleichheit {4}.',
+      slots:['hat','stetig','kommt','vermehrt','verschärft'],
+      opts:['hat','stetig','kommt','vermehrt','verschärft','zeigt','stark','tritt','oft','verbessert'],
+      tip:'C1'
+    },
+    {
+      text:'Die Frage, inwieweit künstliche Intelligenz menschliche Kreativität {0} kann, wird kontrovers diskutiert. Befürworter {1} darauf, dass KI-Systeme lediglich als Werkzeug dienen und menschliche Schöpferkraft {2} beeinflussen. Kritiker {3} hingegen, dass eine zunehmende Abhängigkeit langfristig zu einem {4} der originären Denkfähigkeit führen könnte.',
+      slots:['ersetzen','verweisen','nicht negativ','warnen','Rückgang'],
+      opts:['ersetzen','verweisen','nicht negativ','warnen','Rückgang','ablösen','zeigen','kaum','betonen','Verlust'],
+      tip:'C1'
+    },
+    {
+      text:'Infolge des globalen Klimawandels {0} sich die Lebensbedingungen vieler Tierarten {1} verschlechtert. Nichtsdestotrotz {2} es Regionen, in denen Schutzmaßnahmen greifen und Populationen sich erholen. Wenngleich diese Entwicklung {3}, bleibt der Handlungsbedarf {4}.',
+      slots:['haben','erheblich','gibt','ermutigend ist','enorm'],
+      opts:['haben','erheblich','gibt','ermutigend ist','enorm','sind','stark','existieren','positiv war','groß'],
+      tip:'C1'
+    }
+  ]
+};
+
+var sbLvl='B2',sbIdx=0,sbEx=null,selChip=null,selChipEl=null;
+
+function setSBLvl(l,btn){
+  sbLvl=l;
+  document.querySelectorAll('.level-pill').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  newSB();
+}
+
+function newSB(){
+  var arr=SB_DATA[sbLvl];
+  sbIdx=(sbIdx+1)%arr.length;
+  sbEx=arr[sbIdx];
+  selChip=null;selChipEl=null;
+  renderSB();
+  showGrammar(sbEx.tip);
+  document.getElementById('sb-res').style.display='none';
+}
+
+function showGrammar(lvl){
+  var tips=GRAMMAR_TIPS[lvl]||GRAMMAR_TIPS.C1;
+  var tip=tips[Math.floor(Math.random()*tips.length)];
+  var html='<div class="rule"><strong>'+tip.title+'</strong></div>';
+  tip.rules.forEach(function(r){
+    html+='<div class="rule"><div>'+r.rule+'</div><div class="example">'+r.example+'</div></div>';
+  });
+  document.getElementById('grammar-content').innerHTML=html;
+}
+
+function renderSB(){
+  var ex=sbEx;
+  var txt=ex.text.replace(/\{(\d+)\}/g,function(m,i){
+    return '<span class="slot" id="sl-'+i+'" onclick="clickSlot('+i+')" ondragover="event.preventDefault();this.classList.add(\'drag-over\')" ondragleave="this.classList.remove(\'drag-over\')" ondrop="dropSlot(event,'+i+')"><span class="slot-num">'+(parseInt(i)+1)+'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+  });
+  document.getElementById('sb-text').innerHTML=txt;
+  var shuffled=ex.opts.slice().sort(function(){return Math.random()-.5;});
+  var html='';
+  shuffled.forEach(function(w,i){
+    html+='<span class="chip" id="ch-'+i+'" draggable="true" data-w="'+w+'" onclick="clickChip(\''+w+'\',\'ch-'+i+'\')" ondragstart="dragChip(event,\''+w+'\',\'ch-'+i+'\')" ondragend="this.classList.remove(\'drag\')">'+w+'</span>';
+  });
+  document.getElementById('sb-chips').innerHTML=html;
+}
+
+function clickChip(w,id){
+  if(selChipEl)selChipEl.classList.remove('sel');
+  selChip={w:w,id:id};
+  selChipEl=document.getElementById(id);
+  selChipEl.classList.add('sel');
+}
+
+function clickSlot(i){
+  if(!selChip)return;
+  fillSlot(i,selChip.w,selChip.id);
+  selChip=null;selChipEl=null;
+}
+
+function fillSlot(i,w,chipId){
+  var sl=document.getElementById('sl-'+i);
+  if(sl.dataset.chipId){
+    var old=document.getElementById(sl.dataset.chipId);
+    if(old){old.classList.remove('used');old.style.display='';}
+  }
+  sl.innerHTML='<span class="slot-num">'+(i+1)+'</span>'+w;
+  sl.dataset.w=w;sl.dataset.chipId=chipId;sl.classList.add('filled');
+  var chip=document.getElementById(chipId);
+  if(chip){chip.classList.add('used');chip.classList.remove('sel','drag');}
+  selChip=null;selChipEl=null;
+}
+
+function dragChip(e,w,id){
+  e.dataTransfer.setData('w',w);e.dataTransfer.setData('id',id);
+  document.getElementById(id).classList.add('drag');
+}
+
+function dropSlot(e,i){
+  e.preventDefault();
+  var sl=document.getElementById('sl-'+i);sl.classList.remove('drag-over');
+  fillSlot(i,e.dataTransfer.getData('w'),e.dataTransfer.getData('id'));
+}
+
+function checkSB(){
+  var ex=sbEx,ok=0;
+  ex.slots.forEach(function(ans,i){
+    var sl=document.getElementById('sl-'+i);if(!sl)return;
+    var given=(sl.dataset.w||'').toLowerCase().trim();
+    sl.classList.remove('ok','err');
+    if(given===ans.toLowerCase()){sl.classList.add('ok');ok++;}
+    else sl.classList.add('err');
+  });
+  S.total+=ex.slots.length;S.correct+=ok;S.sbProg+=10;
+  saveS();updateDash();
+  var res=document.getElementById('sb-res');
+  var pct=Math.round(ok/ex.slots.length*100);
+  var col=pct===100?'var(--green)':pct>=50?'var(--amber)':'var(--red)';
+  res.style.display='block';
+  res.innerHTML='<strong style="color:'+col+'">'+ok+'/'+ex.slots.length+' richtig ('+pct+'%)</strong>'+(ok<ex.slots.length?' — Rote Lücken zeigen die richtigen Antworten nach dem nächsten Klick.':'  🎉 Perfekt!');
+}
+
+// ─────────────────────────────────────────────
+//  LESEN DATA
+// ─────────────────────────────────────────────
+var LESEN=[
+  {
+    type:0,
+    title:'Werbung in der sozialen Marktwirtschaft',
+    text:[
+      'Werbung, so behauptet die Werbeindustrie, sei der Motor unserer sozialen Marktwirtschaft. Die Werbung reguliere die Preise, führe zu ständiger Verbesserung der Produkte und informiere den Verbraucher. __(0)__ z',
+      'Wie jeder andere Wirtschaftszweig funktioniert die Werbung nach dem Prinzip von Angebot und Nachfrage. Die Werbeschaffenden müssen die Werbung attraktiv gestalten, so dass sie unterhält, neugierig macht. __(1)__ Ein paar Sekunden Aufmerksamkeit — das ist der maximale Preis, den ein Zuschauer bereit ist, für gute Werbung zu zahlen.',
+      'Genau hier liegt das Problem für die gesamte Werbeindustrie. __(2)__',
+      'Damit beschäftigen sich seit den 1930er Jahren Generationen von Wissenschaftlern. __(3)__ Besonders die Wirtschaft will wissen, ob das Vermögen gut investiert ist.',
+      'Werbungen überschreiten häufig auch die Grenzen des guten Geschmacks. Jeder Bürger hat das Recht, Beschwerde dagegen einzulegen. __(4)__ Dieser könnte die Werbegesetze verschärfen.',
+      'Der Deutsche Werberat kann zwar einzelnen Firmen ihre Werbeaktionen nicht verbieten, er kann jedoch Empfehlungen aussprechen. __(5)__'
+    ],
+    sätze:[
+      {id:'a',text:'a) Allerdings macht nicht jeder Gebrauch davon.'},
+      {id:'b',text:'b) Das oberste Ziel der Werbung ist es nämlich, Interesse zu wecken.'},
+      {id:'c',text:'c) Denn diesen Moment Aufmerksamkeit beansprucht jedes Produkt für sich.'},
+      {id:'d',text:'d) Dies geschieht natürlich nicht allein aus Forschungsdrang.'},
+      {id:'h',text:'h) Davor aber fürchten sich die Werbetreibenden, weil so der Gesetzgeber auf den Plan gerufen wird.'},
+      {id:'f',text:'f) Häufig hören die Zeitungsverleger auf diese Empfehlung.'},
+      {id:'z',text:'z) Kurz: Werbung schaffe Transparenz und eine größere Entscheidungsvielfalt. (Beispiel 0)'}
+    ],
+    qs:[
+      {id:1,text:'Lücke 1:',opts:['a','b','c','d','f','h'],ans:'b'},
+      {id:2,text:'Lücke 2:',opts:['a','b','c','d','f','h'],ans:'c'},
+      {id:3,text:'Lücke 3:',opts:['a','b','c','d','f','h'],ans:'d'},
+      {id:4,text:'Lücke 4:',opts:['a','b','c','d','f','h'],ans:'h'},
+      {id:5,text:'Lücke 5:',opts:['a','b','c','d','f','h'],ans:'f'}
+    ]
+  },
+  {
+    type:1,
+    title:'Hinter den Kulissen: Die Universitätsmensa',
+    text:[
+      'Mittags um zwölf in der Hamburger Mensa: Hunderte Studenten stehen in langen Warteschlangen. Einige mäkeln über das Essen, finden nicht das passende Gericht. Und ahnen dabei gar nicht, wie viel Aufwand hinter jeder Mahlzeit steckt.',
+      '„Schon morgens um sieben treffen wir uns zur ersten Besprechung", sagt Mensaleiter Udo Klein. An einem gewöhnlichen Tag brutzeln die Köche rund 1.200 Currywürste und 500 Wok-Gerichte. Den Speiseplan tüfteln die Mensaleiter schon Wochen vorher aus.',
+      'Ein EDV-System ermittelt die genauen Mengen und verschickt die Bestellungen automatisch an die Lieferanten. Frauen achten eher auf gesunde Ernährung. Studierende der Ingenieurwissenschaften essen lieber Currywurst und Schnitzel.',
+      '„Seit 1998 haben wir die Preise nicht erhöht", sagt Michael Gradtke, „allerdings: Wenn wir nicht subventioniert würden, könnten wir diese Preise nicht halten." Die finanzielle Grundausstattung stammt aus den Sozialbeiträgen der Studierenden.',
+      'Die Deutsche Gesellschaft für Ernährung (DGE) hat Empfehlungen herausgebracht: Ein Mittagessen sollte optimalerweise 733 Kalorien enthalten — zu 20 % aus Proteinen, zu 30 % aus Fetten und zu 50 % aus Kohlehydraten.'
+    ],
+    qs:[
+      {id:13,text:'Einige Studierende bemängeln das Essensangebot.',opts:['richtig (+)','falsch (–)','nicht im Text (x)'],ans:'richtig (+)'},
+      {id:14,text:'Es wird stets kurzfristig entschieden, welche Gerichte angeboten werden.',opts:['richtig (+)','falsch (–)','nicht im Text (x)'],ans:'falsch (–)'},
+      {id:15,text:'Auch das Studienfach gibt Aufschluss über die bevorzugten Gerichte.',opts:['richtig (+)','falsch (–)','nicht im Text (x)'],ans:'richtig (+)'},
+      {id:16,text:'Die Mitarbeiter berechnen selbst, wie viel sie von jedem Lebensmittel bestellen.',opts:['richtig (+)','falsch (–)','nicht im Text (x)'],ans:'falsch (–)'},
+      {id:20,text:'Die Mensa der Universität Hamburg wird mit Zuschüssen unterstützt.',opts:['richtig (+)','falsch (–)','nicht im Text (x)'],ans:'richtig (+)'},
+      {id:22,text:'Die DGE schreibt verbindlich vor, aus welchen Lebensmitteln ein Mensa-Essen bestehen muss.',opts:['richtig (+)','falsch (–)','nicht im Text (x)'],ans:'falsch (–)'}
+    ]
+  }
+];
+
+var lesenAns={};
+
+function loadLesen(){
+  lesenAns={};
+  var idx=parseInt(document.getElementById('lesen-sel').value);
+  var ex=LESEN[idx]||LESEN[0];
+  var tHtml='<h4>'+ex.title+'</h4>';
+  ex.text.forEach(function(p){tHtml+='<p>'+p+'</p>';});
+  if(ex.sätze){
+    tHtml+='<div style="margin-top:1rem;border-top:1px solid var(--border);padding-top:1rem"><h4>Sätze a–h:</h4>';
+    ex.sätze.forEach(function(s){tHtml+='<p style="font-size:13px;margin-bottom:5px">'+s.text+'</p>';});
+    tHtml+='</div>';
+  }
+  document.getElementById('lesen-text').innerHTML=tHtml;
+  var qHtml='';
+  ex.qs.forEach(function(q){
+    qHtml+='<div class="q-item"><div class="q-text">'+q.id+'. '+q.text+'</div><div class="q-opts">';
+    q.opts.forEach(function(o){
+      var label=ex.type===0?'Satz '+o.toUpperCase():o;
+      qHtml+='<button class="q-opt" onclick="selLesenOpt(this,'+q.id+',\''+o+'\')">'+label+'</button>';
+    });
+    qHtml+='</div></div>';
+  });
+  document.getElementById('lesen-qs').innerHTML=qHtml;
+}
+
+function selLesenOpt(btn,qid,opt){
+  btn.closest('.q-item').querySelectorAll('.q-opt').forEach(function(b){b.classList.remove('sel','ok','err');});
+  btn.classList.add('sel');
+  lesenAns[qid]=opt;
+}
+
+function checkLesen(){
+  var idx=parseInt(document.getElementById('lesen-sel').value);
+  var ex=LESEN[idx]||LESEN[0];
+  var ok=0;
+  ex.qs.forEach(function(q,qi){
+    var given=lesenAns[q.id];
+    var items=document.getElementById('lesen-qs').querySelectorAll('.q-item');
+    var btns=items[qi].querySelectorAll('.q-opt');
+    btns.forEach(function(b){
+      var bv=ex.type===0?b.textContent.replace('Satz ','').toLowerCase().trim():b.textContent.trim();
+      b.classList.remove('sel','ok','err');
+      if(bv===q.ans||b.textContent.trim()===q.ans){b.classList.add('ok');}
+      if(given&&(bv===given||b.textContent.trim()===given)&&given!==q.ans){b.classList.add('err');}
+    });
+    if(given===q.ans)ok++;
+  });
+  S.total+=ex.qs.length;S.correct+=ok;S.lsProg+=15;
+  saveS();updateDash();
+  toast(ok+'/'+ex.qs.length+' richtig!',ok===ex.qs.length?'ok':'');
+}
+
+// ─────────────────────────────────────────────
+//  VOCAB BASE DATA (expandable)
+// ─────────────────────────────────────────────
+var VOCAB_BASE=[
+  {word:'die Ausprägung',hint:'Nomen, die ~, -en',trans:'проявление, форма',ex:'Die Ausprägung dieser Krankheit ist sehr unterschiedlich.',cat:'gesellschaft',lvl:'C1'},
+  {word:'beeinträchtigen',hint:'Verb, jmdn./etw. ~',trans:'ухудшать, нарушать',ex:'Der Lärm beeinträchtigt die Konzentration erheblich.',cat:'gesellschaft',lvl:'C1'},
+  {word:'berücksichtigen',hint:'Verb, etw. ~',trans:'принимать во внимание',ex:'Man muss alle Faktoren berücksichtigen.',cat:'gesellschaft',lvl:'B2'},
+  {word:'die Einschränkung',hint:'Nomen, die ~, -en',trans:'ограничение',ex:'Diese Maßnahme führt zu starken Einschränkungen.',cat:'gesellschaft',lvl:'B2'},
+  {word:'überwiegen',hint:'Verb, untrennbar',trans:'преобладать, перевешивать',ex:'Die Vorteile überwiegen die Nachteile bei weitem.',cat:'gesellschaft',lvl:'C1'},
+  {word:'infolgedessen',hint:'Konnektor — Position 1',trans:'вследствие этого',ex:'Es regnete; infolgedessen blieben wir zu Hause.',cat:'konnektoren',lvl:'C1'},
+  {word:'wenngleich',hint:'Konnektor — Nebensatz',trans:'хотя, несмотря на то что',ex:'Wenngleich das Ergebnis enttäuschend war, gab man nicht auf.',cat:'konnektoren',lvl:'C1'},
+  {word:'geschweige denn',hint:'Konnektor',trans:'не говоря уже о',ex:'Er kann kaum lesen, geschweige denn schreiben.',cat:'konnektoren',lvl:'C1'},
+  {word:'zumal',hint:'Konnektor — Nebensatz',trans:'тем более что',ex:'Wir bleiben zu Hause, zumal das Wetter schlecht ist.',cat:'konnektoren',lvl:'C1'},
+  {word:'nichtsdestotrotz',hint:'Konnektor — Position 1',trans:'тем не менее',ex:'Es war schwer; nichtsdestotrotz gelang es.',cat:'konnektoren',lvl:'C1'},
+  {word:'gleichwohl',hint:'Konnektor — Position 1 (gehoben)',trans:'тем не менее (книжн.)',ex:'Die Aufgabe war schwer; gleichwohl haben wir sie gelöst.',cat:'konnektoren',lvl:'C1'},
+  {word:'in Anbetracht',hint:'Präposition + Genitiv',trans:'принимая во внимание',ex:'In Anbetracht der Umstände war die Entscheidung richtig.',cat:'konnektoren',lvl:'C1'},
+  {word:'die Förderung',hint:'Nomen, die ~, -en',trans:'поддержка, субсидия',ex:'Die staatliche Förderung erneuerbarer Energien nimmt zu.',cat:'wirtschaft',lvl:'B2'},
+  {word:'auslagern',hint:'Verb, trennbar',trans:'передавать на аутсорсинг',ex:'Viele Firmen lagern ihre IT-Dienste aus.',cat:'wirtschaft',lvl:'C1'},
+  {word:'die Rahmenbedingung',hint:'Nomen, meist Plural',trans:'условия, рамочные условия',ex:'Die wirtschaftlichen Rahmenbedingungen haben sich verändert.',cat:'wirtschaft',lvl:'C1'},
+  {word:'nachhaltig',hint:'Adjektiv / Adverb',trans:'устойчивый, долгосрочный',ex:'Nachhaltige Wirtschaft schont die Ressourcen.',cat:'umwelt',lvl:'B2'},
+  {word:'der Rückgang',hint:'Nomen, der ~, Rückgänge',trans:'спад, снижение',ex:'Der Rückgang der Artenvielfalt beunruhigt Wissenschaftler.',cat:'umwelt',lvl:'B2'},
+  {word:'die Vernetzung',hint:'Nomen, nur Singular',trans:'сетевое взаимодействие',ex:'Die digitale Vernetzung verändert die Kommunikation.',cat:'digital',lvl:'C1'},
+  {word:'die Datenschutzrichtlinie',hint:'Nomen, die ~, -n',trans:'политика конфиденциальности',ex:'Die neue Datenschutzrichtlinie muss beachtet werden.',cat:'digital',lvl:'C1'},
+  {word:'veranschaulichen',hint:'Verb, etw. ~',trans:'наглядно показывать',ex:'Das Diagramm veranschaulicht den Trend sehr gut.',cat:'bildung',lvl:'C1'},
+  {word:'die Schlussfolgerung',hint:'Nomen, die ~, -en',trans:'вывод, заключение',ex:'Die Schlussfolgerung des Berichts ist eindeutig.',cat:'bildung',lvl:'B2'},
+  {word:'das Anliegen',hint:'Nomen, das ~, - (Plural gleich)',trans:'просьба, пожелание, дело',ex:'Sein Anliegen wurde von den Behörden ignoriert.',cat:'gesellschaft',lvl:'C1'},
+  {word:'auseinandersetzen (sich)',hint:'Verb, trennbar, mit etw.',trans:'разбираться, заниматься чем-л.',ex:'Man muss sich intensiv mit diesem Thema auseinandersetzen.',cat:'bildung',lvl:'C1'},
+  {word:'die Inanspruchnahme',hint:'Nomen, nur Singular (C1-Nominalisierung)',trans:'использование, обращение (за помощью)',ex:'Die Inanspruchnahme sozialer Leistungen ist gestiegen.',cat:'gesellschaft',lvl:'C1'},
+  {word:'im Hinblick auf',hint:'Präposition + Akkusativ',trans:'с точки зрения, в отношении',ex:'Im Hinblick auf die Kosten ist das Projekt riskant.',cat:'konnektoren',lvl:'C1'},
+  {word:'zum Vorschein kommen',hint:'Redewendung',trans:'обнаружиться, выявиться',ex:'Beim Auftauen des Gletschers kamen alte Funde zum Vorschein.',cat:'redewendungen',lvl:'C1'},
+  {word:'auf dem Prüfstand stehen',hint:'Redewendung',trans:'быть под вопросом, проверяться',ex:'Die Sicherheitssysteme stehen auf dem Prüfstand.',cat:'redewendungen',lvl:'C1'},
+  {word:'Stellung nehmen zu',hint:'Verb-Phrase',trans:'высказать позицию по чему-л.',ex:'Der Minister nahm zu den Vorwürfen Stellung.',cat:'schreiben',lvl:'C1'},
+  {word:'es bleibt festzuhalten',hint:'Schreiben-Phrase (Fazit)',trans:'следует отметить, подвести итог',ex:'Es bleibt festzuhalten, dass beide Seiten gute Argumente haben.',cat:'schreiben',lvl:'C1'},
+  {word:'einerseits … andererseits',hint:'Konnektor-Paar',trans:'с одной стороны … с другой стороны',ex:'Einerseits spart man Zeit, andererseits verliert man an Qualität.',cat:'schreiben',lvl:'B2'}
+];
+
+// ─────────────────────────────────────────────
+//  VOCAB CARDS
+// ─────────────────────────────────────────────
+var vcFilter='all',vcIdx=0,vcCards=[],vcFlipped=false;
+
+function getAllVocab(){
+  var base=VOCAB_BASE.slice();
+  S.customWords.forEach(function(w){
+    base.push({word:w.word,hint:w.hint||'',trans:w.trans||'',ex:w.example||'',cat:w.cat||'allgemein',lvl:w.level||'C1'});
+  });
+  return base;
+}
+
+function setVF(f,btn){
+  vcFilter=f;
+  document.querySelectorAll('.vocab-top .btn').forEach(function(b){b.classList.remove('primary');});
+  btn.classList.add('primary');
+  loadVocab();
+}
+
+function loadVocab(){
+  var cat=document.getElementById('vc-cat').value;
+  var all=getAllVocab();
+  vcCards=all.filter(function(v){
+    var catOk=cat==='all'||(cat==='custom'?S.customWords.some(function(c){return c.word===v.word;}):v.cat===cat);
+    if(vcFilter==='hard')return catOk&&S.hard.indexOf(v.word)>=0;
+    if(vcFilter==='new')return catOk&&S.learned.indexOf(v.word)<0;
+    return catOk;
+  });
+  if(!vcCards.length)vcCards=all;
+  vcIdx=0;vcFlipped=false;
+  showCard();
+}
+
+function showCard(){
+  if(!vcCards.length)return;
+  var v=vcCards[vcIdx];
+  document.getElementById('fc-word').textContent=v.word;
+  document.getElementById('fc-hint').textContent=v.hint;
+  document.getElementById('fc-trans').textContent=v.trans;
+  document.getElementById('fc-ex').textContent=v.ex||'';
+  document.getElementById('fc-ctr').textContent=(vcIdx+1)+' / '+vcCards.length;
+  document.getElementById('vc-badge').textContent=(vcIdx+1)+'/'+vcCards.length;
+  var fc=document.getElementById('flashcard');fc.classList.remove('flip');vcFlipped=false;
+}
+
+function flipCard(){vcFlipped=!vcFlipped;document.getElementById('flashcard').classList.toggle('flip',vcFlipped);}
+function nextC(){vcIdx=(vcIdx+1)%vcCards.length;showCard();}
+function prevC(){vcIdx=(vcIdx-1+vcCards.length)%vcCards.length;showCard();}
+
+function rate(r){
+  if(!vcCards.length)return;
+  var v=vcCards[vcIdx];
+  if(r==='easy'){
+    if(S.learned.indexOf(v.word)<0)S.learned.push(v.word);
+    S.hard=S.hard.filter(function(w){return w!==v.word;});
+    toast('✅ Gelernt!','ok');
+  } else if(r==='hard'){
+    if(S.hard.indexOf(v.word)<0)S.hard.push(v.word);
+    toast('🔁 Wird wiederholt');
+  } else {
+    toast('👍 Weiter so!');
+  }
+  saveS();updateDash();
+  setTimeout(nextC,500);
+}
+
+// ─────────────────────────────────────────────
+//  WÖRTERBUCH
+// ─────────────────────────────────────────────
+var addFormOpen=true;
+function toggleAddForm(){
+  addFormOpen=!addFormOpen;
+  document.getElementById('add-form').style.display=addFormOpen?'block':'none';
+}
+
+var CAT_COLORS={allgemein:'green',gesellschaft:'green',bildung:'purple',wirtschaft:'amber',umwelt:'green',digital:'purple',konnektoren:'amber',redewendungen:'red',schreiben:'purple'};
+
+function addWord(){
+  var w=document.getElementById('f-word').value.trim();
+  var t=document.getElementById('f-trans').value.trim();
+  if(!w||!t){toast('Wort und Übersetzung sind erforderlich!','bad');return;}
+  var entry={
+    word:w,trans:t,
+    example:document.getElementById('f-example').value.trim(),
+    hint:document.getElementById('f-hint').value.trim(),
+    cat:document.getElementById('f-cat').value,
+    level:document.getElementById('f-level').value,
+    added:new Date().toLocaleDateString('de-DE')
+  };
+  S.customWords.push(entry);
+  saveS();
+  ['f-word','f-trans','f-example','f-hint'].forEach(function(id){document.getElementById(id).value='';});
+  renderDict();renderTagRow();updateDash();
+  toast('✅ "'+w+'" hinzugefügt!','ok');
+}
+
+function delWord(idx){
+  if(!confirm('Eintrag löschen?'))return;
+  S.customWords.splice(idx,1);
+  saveS();renderDict();updateDash();
+  toast('Gelöscht');
+}
+
+function renderDict(){
+  var q=(document.getElementById('dict-search').value||'').toLowerCase();
+  var cat=document.getElementById('dict-cat-filter').value;
+  var lvl=document.getElementById('dict-lvl-filter').value;
+  var all=S.customWords;
+  var filtered=all.filter(function(w,i){
+    var matchQ=!q||w.word.toLowerCase().includes(q)||w.trans.toLowerCase().includes(q)||(w.example||'').toLowerCase().includes(q);
+    var matchC=cat==='all'||w.cat===cat;
+    var matchL=lvl==='all'||w.level===lvl;
+    return matchQ&&matchC&&matchL;
+  });
+  var tb=document.getElementById('dict-tbody');
+  var empty=document.getElementById('dict-empty');
+  if(!filtered.length){tb.innerHTML='';empty.style.display='block';document.getElementById('dict-count').textContent='';return;}
+  empty.style.display='none';
+  document.getElementById('dict-count').textContent=filtered.length+' Einträge'+( filtered.length<all.length?' (gefiltert von '+all.length+')':'');
+  var html='';
+  filtered.forEach(function(w){
+    var realIdx=S.customWords.indexOf(w);
+    var cc=CAT_COLORS[w.cat]||'green';
+    html+='<tr>';
+    html+='<td><strong>'+esc(w.word)+'</strong>'+(w.hint?'<br><span style="font-size:11px;color:var(--text3)">'+esc(w.hint)+'</span>':'')+'</td>';
+    html+='<td>'+esc(w.trans)+'</td>';
+    html+='<td style="color:var(--text2);font-style:italic;font-size:12px">'+esc(w.example||'—')+'</td>';
+    html+='<td><span class="tag badge '+cc+'">'+esc(w.cat)+'</span></td>';
+    html+='<td><span class="badge '+(w.level==='C1'?'purple':'amber')+'">'+esc(w.level||'C1')+'</span></td>';
+    html+='<td><button class="del-btn" onclick="delWord('+realIdx+')">✕</button></td>';
+    html+='</tr>';
+  });
+  tb.innerHTML=html;
+}
+
+function renderTagRow(){
+  var cats={};
+  S.customWords.forEach(function(w){cats[w.cat]=(cats[w.cat]||0)+1;});
+  var html='<button class="tf active" onclick="setDictCat(\'all\',this)">Alle ('+S.customWords.length+')</button>';
+  Object.keys(cats).forEach(function(c){
+    html+='<button class="tf" onclick="setDictCat(\''+c+'\',this)">'+c+' ('+cats[c]+')</button>';
+  });
+  document.getElementById('dict-tag-row').innerHTML=html;
+}
+
+function setDictCat(c,btn){
+  document.querySelectorAll('.tf').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  document.getElementById('dict-cat-filter').value=c;
+  renderDict();
+}
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function exportDict(){
+  if(!S.customWords.length){toast('Noch keine eigenen Einträge','bad');return;}
+  var blob=new Blob([JSON.stringify(S.customWords,null,2)],{type:'application/json'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='mein-woerterbuch-c1.json';a.click();
+  toast('📥 Exportiert!','ok');
+}
+
+function importDict(input){
+  var f=input.files[0];if(!f)return;
+  var r=new FileReader();
+  r.onload=function(e){
+    try{
+      var data=JSON.parse(e.target.result);
+      if(!Array.isArray(data))throw new Error('Kein Array');
+      var added=0;
+      data.forEach(function(w){
+        if(w.word&&w.trans){S.customWords.push(w);added++;}
+      });
+      saveS();renderDict();renderTagRow();updateDash();
+      toast('✅ '+added+' Einträge importiert!','ok');
+    }catch(err){toast('Fehler beim Import: '+err.message,'bad');}
+  };
+  r.readAsText(f);
+  input.value='';
+}
+
+// ─────────────────────────────────────────────
+//  SCHREIBEN
+// ─────────────────────────────────────────────
+var TASKS=[
+  'Sie erhalten eine E-Mail von einer Bekannten, die eine Lesegruppe für deutschsprachige Literatur gründen möchte. Sie schlägt vor, zunächst einen längeren Roman zu lesen. Teilen Sie Ihrer Bekannten mit, ob Sie Interesse haben, für wie wichtig Sie die Lektüre halten und ob Sie den Vorschlag gut finden. (ca. 200 Wörter)',
+  'Eine Tageszeitung möchte von ihren Lesern wissen, ob sie sich ein Leben ohne Auto vorstellen können. Schreiben Sie einen Leserbrief, in dem Sie beschreiben, welche Rolle Autos in Ihrem Leben spielen und wie Sie das Thema Mobilität in der Zukunft sehen. (ca. 200 Wörter)',
+  'Ihre neue Kursleiterin lehnt Fertiggerichte und Fast Food grundsätzlich ab. Sie möchte von Ihnen wissen, was Sie von dieser Einstellung halten und wie Ihre eigenen Essgewohnheiten aussehen. Schreiben Sie einen kurzen Aufsatz zu diesem Thema. (ca. 150 Wörter)',
+  'Sie haben an einem internationalen Austauschprojekt teilgenommen. Schreiben Sie einen Bericht für den Projektleiter, in dem Sie beschreiben, was Sie gelernt haben und welche interkulturellen Erfahrungen Sie gemacht haben. (ca. 200 Wörter)',
+  'Herr Lorenz, ein Unternehmer, sucht Privatunterricht in Ihrer Muttersprache. Er möchte Geschäftsbriefe schreiben und am Telefon geschäftliche Dinge besprechen können. Schreiben Sie Herrn Lorenz einen Brief, in dem Sie beschreiben, wie Sie den Privatunterricht organisieren wollen. (ca. 150 Wörter)'
+];
+var taskIdx=0;
+var CRITERIA=['Aufgabengerechtheit','Korrektheit','Repertoire','Kommunikative Gestaltung'];
+var critRatings={};
+
+function newTask(){
+  taskIdx=(taskIdx+1)%TASKS.length;
+  document.getElementById('task-text').textContent=TASKS[taskIdx];
+}
+
+function updateWC(){
+  var t=document.getElementById('sch-ta').value.trim();
+  var n=t?t.split(/\s+/).length:0;
+  var col=n<80?'var(--red)':n<150?'var(--amber)':'var(--green)';
+  document.getElementById('wc-display').innerHTML='<span style="color:'+col+'">'+n+' Wörter</span> (Ziel: ~200)';
+}
+
+function buildCriteria(){
+  var html='';
+  CRITERIA.forEach(function(c){
+    var key=c.replace(/\s/g,'_');
+    html+='<div class="crit-item"><div class="crit-name">'+c+'</div><div class="crit-grades" id="cg-'+key+'">';
+    ['A','B','C','D'].forEach(function(g){
+      html+='<button class="cg '+g+'" onclick="rateCrit(\''+key+'\',\''+g+'\')">'+g+'</button>';
+    });
+    html+='</div></div>';
+  });
+  document.getElementById('criteria-row').innerHTML=html;
+}
+
+function rateCrit(key,grade){
+  critRatings[key]=grade;
+  var btns=document.getElementById('cg-'+key).querySelectorAll('.cg');
+  var grades=['A','B','C','D'];
+  btns.forEach(function(b,i){b.classList.toggle('lit',grades[i]===grade);});
+}
+
+function saveWriting(){
+  var txt=document.getElementById('sch-ta').value.trim();
+  if(txt.length<20){toast('Bitte zuerst schreiben!','bad');return;}
+  S.writings.push({task:TASKS[taskIdx],text:txt,ratings:Object.assign({},critRatings),date:new Date().toLocaleDateString('de-DE')});
+  S.scProg=(S.writings.length*20);
+  saveS();updateDash();renderSaved();
+  toast('✅ Text gespeichert!','ok');
+}
+
+function renderSaved(){
+  var sw=document.getElementById('saved-writings');
+  if(!S.writings.length){sw.innerHTML='';return;}
+  var html='<h3 style="font-size:14px;font-weight:600;margin-bottom:.75rem;color:var(--text2)">Gespeicherte Texte ('+S.writings.length+')</h3>';
+  S.writings.slice().reverse().forEach(function(w,i){
+    var grades=Object.values(w.ratings||{}).join(' ');
+    html+='<div class="saved-item"><span class="si-date">'+w.date+'</span><div class="si-task">'+w.task.substring(0,80)+'...</div><div class="si-text">'+w.text.substring(0,120)+'...</div>'+(grades?'<div style="margin-top:4px;font-size:11px;color:var(--text3)">Bewertung: '+grades+'</div>':'')+'</div>';
+  });
+  sw.innerHTML=html;
+}
+
+// ─────────────────────────────────────────────
+//  INIT
+// ─────────────────────────────────────────────
+loadS();
+loadVocab();
+newTask();
+buildCriteria();
+renderSaved();
+loadLesen();
+newSB();
+renderDict();
+renderTagRow();
+// show add form by default
+document.getElementById('add-form').style.display='block';
+</script>
+</body>
+</html>
