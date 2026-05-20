@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELC C1 — Grammatik & Sprachbausteine</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f7f4;--bg2:#fff;--bg3:#f0efe9;
+  --bd:#e2e1d8;--bd2:#c8c7be;
+  --tx:#1a1a18;--tx2:#6b6b65;--tx3:#9b9b94;
+  --g:#1d9e75;--gl:#e1f5ee;--gd:#0f6e56;
+  --p:#7f77dd;--pl:#eeedfe;--pd:#534ab7;
+  --b:#378add;--bl:#e6f1fb;
+  --a:#ba7517;--al:#faeeda;--ad:#633806;
+  --r:#e24b4a;--rl:#fcebeb;--rd:#a32d2d;
+  --rr:10px;--rs:6px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1a1a18;--bg2:#242420;--bg3:#2c2c28;
+  --bd:#3a3a34;--bd2:#4a4a44;
+  --tx:#f0efe9;--tx2:#a0a09a;--tx3:#6b6b65;
+  --gl:#0a3020;--gd:#9fe1cb;
+  --pl:#1e1c40;--pd:#afa9ec;
+  --bl:#0a1e35;--al:#2a1a05;--ad:#fac775;
+  --rl:#2a0f0f;--rd:#f09595;
+}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:15px}
+
+.nav{background:var(--bg2);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;display:flex;align-items:center;overflow-x:auto}
+.nav-logo{padding:.8rem 1.1rem;font-weight:700;font-size:15px;white-space:nowrap;border-right:1px solid var(--bd);flex-shrink:0}
+.nav-logo span{color:var(--g)}
+.nt{padding:.8rem 1rem;font-size:13px;color:var(--tx2);cursor:pointer;white-space:nowrap;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:inherit}
+.nt:hover{color:var(--tx);background:var(--bg3)}
+.nt.on{color:var(--g);border-bottom-color:var(--g);font-weight:600}
+
+.main{max-width:940px;margin:0 auto;padding:1.25rem}
+.sc{display:none}.sc.on{display:block}
+
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.25rem}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:.5rem}
+.sh h2{font-size:17px;font-weight:600}
+
+.btn{padding:6px 14px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;cursor:pointer;transition:all .2s;font-family:inherit}
+.btn:hover{background:var(--bg3)}
+.btn.pr{background:var(--g);color:#fff;border-color:var(--g)}.btn.pr:hover{background:var(--gd)}
+.btn.sm{padding:4px 11px;font-size:12px}
+
+/* TABS inside module */
+.itabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1rem}
+.it{padding:5px 14px;border-radius:99px;border:1px solid var(--bd2);background:var(--bg3);font-size:12.5px;cursor:pointer;color:var(--tx2);font-family:inherit;transition:all .2s}
+.it.on{background:var(--g);color:#fff;border-color:var(--g)}
+.sub-sc{display:none}.sub-sc.on{display:block}
+
+/* LEVEL PILLS */
+.lrow{display:flex;gap:6px}
+.lp{padding:4px 13px;border-radius:99px;border:1px solid var(--bd2);background:var(--bg3);font-size:12px;cursor:pointer;color:var(--tx2);font-family:inherit;transition:all .2s}
+.lp.on{background:var(--p);color:#fff;border-color:var(--p)}
+
+/* SPRACHBAUSTEINE */
+.sbt{font-size:14.5px;line-height:2.3;color:var(--tx);margin-bottom:1rem}
+.slot{display:inline-flex;align-items:center;min-width:110px;height:27px;border-bottom:2px solid var(--g);padding:0 5px;margin:0 3px;cursor:pointer;vertical-align:middle;font-size:13.5px;color:var(--g);border-radius:4px 4px 0 0;transition:all .2s;position:relative}
+.slot.dov{background:var(--gl)}
+.slot.filled{color:var(--tx);border-color:var(--bd2);font-weight:500}
+.slot.ok{border-color:var(--g)!important;color:var(--g)!important;background:var(--gl)!important}
+.slot.err{border-color:var(--r)!important;color:var(--r)!important;background:var(--rl)!important}
+.sn{font-size:9px;color:var(--tx3);position:absolute;top:-13px;left:0}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding-top:.9rem;border-top:1px solid var(--bd);margin-top:.5rem}
+.chip{padding:5px 13px;border-radius:99px;border:1px solid var(--bd2);background:var(--bg3);font-size:13px;cursor:grab;transition:all .2s;user-select:none;color:var(--tx)}
+.chip:hover{border-color:var(--g);color:var(--g);background:var(--gl)}
+.chip.sel{border-color:var(--g);background:var(--gl);color:var(--gd);font-weight:500}
+.chip.used{opacity:.25;pointer-events:none}
+.chip.drag{opacity:.4}
+
+/* LAYOUT: exercise + sidebar */
+.exlay{display:grid;grid-template-columns:1fr 270px;gap:1rem;align-items:start}
+@media(max-width:680px){.exlay{grid-template-columns:1fr}}
+
+/* GRAMMAR SIDEBAR */
+.gsb{background:var(--al);border:1px solid var(--a);border-radius:var(--rr);padding:1rem;font-size:13px;color:var(--tx);line-height:1.7}
+.gsb h4{font-size:12.5px;font-weight:700;color:var(--ad);margin-bottom:.5rem}
+.gr{margin-bottom:.65rem;padding-bottom:.65rem;border-bottom:1px solid rgba(0,0,0,.07);font-size:13px}
+.gr:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.gex{font-style:italic;color:var(--tx2);font-size:12px;margin-top:2px}
+
+/* EXERCISE CARD */
+.ex-prompt{font-size:14px;color:var(--tx);margin-bottom:1rem;line-height:1.8}
+.ex-prompt strong{color:var(--p)}
+.inp{width:100%;padding:9px 12px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:14px;font-family:inherit}
+.inp:focus{outline:none;border-color:var(--g)}
+.ta{min-height:90px;resize:vertical}
+.hint-box{background:var(--bg3);border-radius:var(--rs);padding:.75rem;font-size:13px;color:var(--tx2);margin-top:.75rem;display:none;border-left:3px solid var(--a)}
+.hint-box.show{display:block}
+.sol-box{background:var(--gl);border:1px solid var(--g);border-radius:var(--rs);padding:.75rem;font-size:13px;color:var(--gd);margin-top:.75rem;display:none}
+.sol-box.show{display:block}
+
+/* PASSIV TABLE */
+.ptable{width:100%;border-collapse:collapse;font-size:13px;margin:.75rem 0}
+.ptable th{background:var(--bg3);padding:6px 10px;border:1px solid var(--bd);text-align:left;font-size:12px;color:var(--tx2)}
+.ptable td{padding:6px 10px;border:1px solid var(--bd);color:var(--tx)}
+.ptable .hl{background:var(--gl);font-weight:600;color:var(--gd)}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--rr);padding:10px 16px;font-size:13px;color:var(--tx);box-shadow:0 4px 18px rgba(0,0,0,.11);z-index:9999;transform:translateY(70px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.ok{border-color:var(--g);color:var(--gd);background:var(--gl)}
+.toast.bad{border-color:var(--r);color:var(--rd);background:var(--rl)}
+
+/* DASHBOARD STATS */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:1.5rem}
+.st{background:var(--bg3);border-radius:var(--rr);padding:.9rem;text-align:center}
+.st .n{font-size:26px;font-weight:700}.st .l{font-size:11px;color:var(--tx2);margin-top:2px}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px}
+.mb{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.1rem;cursor:pointer;transition:all .2s;text-align:left;width:100%}
+.mb:hover{border-color:var(--g);transform:translateY(-2px)}
+.mb .ico{width:36px;height:36px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:9px}
+.mb h3{font-size:13.5px;font-weight:600;margin-bottom:3px}
+.mb p{font-size:12px;color:var(--tx2);line-height:1.4}
+.pb{height:3px;background:var(--bd);border-radius:99px;margin-top:9px;overflow:hidden}
+.pf{height:100%;border-radius:99px;background:var(--g);transition:width .5s}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">telc <span>C1</span> <small style="font-weight:400;color:var(--tx3)">Modul 1</small></div>
+  <button class="nt on" onclick="go('dash')" data-s="dash">🏠 Start</button>
+  <button class="nt" onclick="go('sb')" data-s="sb">🧩 Sprachbausteine</button>
+  <button class="nt" onclick="go('gram')" data-s="gram">📐 Grammatik</button>
+</nav>
+
+<main class="main">
+
+<!-- DASHBOARD -->
+<div class="sc on" id="s-dash">
+  <div style="margin-bottom:1.25rem">
+    <h1 style="font-size:21px;font-weight:700;margin-bottom:4px">TELC C1 Trainer — Modul 1</h1>
+    <p style="color:var(--tx2);font-size:13.5px">Sprachbausteine + Adjektivdeklination + Passiv + Konnektoren + Redewendungen</p>
+  </div>
+  <div class="sg">
+    <div class="st"><div class="n" id="ds-t">0</div><div class="l">Aufgaben</div></div>
+    <div class="st"><div class="n" id="ds-p">0%</div><div class="l">Korrekt</div></div>
+    <div class="st"><div class="n" id="ds-s">0</div><div class="l">Streak (Tage)</div></div>
+  </div>
+  <div class="mg">
+    <button class="mb" onclick="go('sb')">
+      <div class="ico" style="background:var(--pl);color:var(--p)">🧩</div>
+      <h3>Sprachbausteine</h3>
+      <p>Drag & Drop — Lücken füllen wie im echten TELC-Test</p>
+      <div class="pb"><div class="pf" id="pb-sb" style="width:0%"></div></div>
+    </button>
+    <button class="mb" onclick="go('gram');gTab('adjdekl',document.querySelector('.it'))">
+      <div class="ico" style="background:var(--al);color:var(--a)">📐</div>
+      <h3>Adjektivdeklination</h3>
+      <p>Alle 3 Deklinationstypen mit Erklärung</p>
+      <div class="pb"><div class="pf" id="pb-adj" style="width:0%"></div></div>
+    </button>
+    <button class="mb" onclick="go('gram');gTab('passiv',document.querySelectorAll('.it')[1])">
+      <div class="ico" style="background:var(--gl);color:var(--g)">🔄</div>
+      <h3>Passiv</h3>
+      <p>Alle Zeiten: Präsens bis Futur, Konjunktiv, Modal</p>
+      <div class="pb"><div class="pf" id="pb-pass" style="width:0%"></div></div>
+    </button>
+    <button class="mb" onclick="go('gram');gTab('konn',document.querySelectorAll('.it')[2])">
+      <div class="ico" style="background:var(--bl);color:var(--b)">🔗</div>
+      <h3>Konnektoren C1</h3>
+      <p>Zweiteilige + es sei denn + je … desto</p>
+      <div class="pb"><div class="pf" id="pb-konn" style="width:0%"></div></div>
+    </button>
+    <button class="mb" onclick="go('gram');gTab('rede',document.querySelectorAll('.it')[3])">
+      <div class="ico" style="background:var(--rl);color:var(--r)">💬</div>
+      <h3>Redewendungen</h3>
+      <p>C1-Redemittel — Sätze bilden & vergleichen</p>
+      <div class="pb"><div class="pf" id="pb-rede" style="width:0%"></div></div>
+    </button>
+  </div>
+</div>
+
+<!-- SPRACHBAUSTEINE -->
+<div class="sc" id="s-sb">
+  <div class="sh">
+    <h2>🧩 Sprachbausteine</h2>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+      <div class="lrow">
+        <button class="lp on" onclick="setSBL('B2',this)">B2</button>
+        <button class="lp" onclick="setSBL('C1',this)">C1</button>
+      </div>
+      <button class="btn sm" onclick="newSB()">🔀 Neue Aufgabe</button>
+    </div>
+  </div>
+  <div class="exlay">
+    <div>
+      <div class="card" style="margin-bottom:.9rem">
+        <div class="sbt" id="sb-text"></div>
+        <div class="chips" id="sb-chips"></div>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-bottom:.5rem">
+        <button class="btn" onclick="checkSB()">✓ Prüfen</button>
+        <button class="btn pr" onclick="newSB()">Weiter →</button>
+      </div>
+      <div id="sb-res" style="display:none;margin-top:.75rem;padding:.75rem;border-radius:var(--rs);background:var(--bg3);font-size:13.5px"></div>
+    </div>
+    <div class="gsb" id="gram-box">
+      <h4>📐 Grammatik-Tipp zur Aufgabe</h4>
+      <div id="gram-cont"></div>
+    </div>
+  </div>
+</div>
+
+<!-- GRAMMATIK MODULE -->
+<div class="sc" id="s-gram">
+  <div class="sh"><h2>📐 Grammatik-Module</h2></div>
+  <div class="itabs">
+    <button class="it on" onclick="gTab('adjdekl',this)">Adjektivdeklination</button>
+    <button class="it" onclick="gTab('passiv',this)">Passiv-Zeiten</button>
+    <button class="it" onclick="gTab('konn',this)">Konnektoren C1</button>
+    <button class="it" onclick="gTab('rede',this)">Redewendungen</button>
+  </div>
+
+  <!-- ADJEKTIVDEKLINATION -->
+  <div class="sub-sc on" id="gt-adjdekl">
+    <div class="exlay">
+      <div>
+        <div class="card" style="margin-bottom:.9rem">
+          <div class="ex-prompt" id="adj-prompt"></div>
+          <input class="inp" id="adj-inp" placeholder="Deine Antwort..." onkeydown="if(event.key==='Enter')checkAdj()">
+          <div class="hint-box" id="adj-hint"></div>
+          <div class="sol-box" id="adj-sol"></div>
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn" onclick="showHint('adj')">💡 Tipp</button>
+          <button class="btn" onclick="checkAdj()">✓ Prüfen</button>
+          <button class="btn pr" onclick="newAdj()">Weiter →</button>
+        </div>
+        <div id="adj-res" style="margin-top:.75rem;font-size:13px;color:var(--tx2)"></div>
+      </div>
+      <div class="gsb">
+        <h4>📐 Adjektivdeklination — Übersicht</h4>
+        <div class="gr"><strong>1. Nach bestimmtem Artikel</strong> (der/die/das/die)<div class="gex">Nom: -e &nbsp; Akk: -en(m)/-e &nbsp; Dat: -en &nbsp; Gen: -en<br><em>der alte Mann · die alte Frau · das alte Haus</em></div></div>
+        <div class="gr"><strong>2. Nach unbestimmtem Artikel</strong> (ein/eine/ein)<div class="gex">Nom mask.: -er &nbsp; Nom neutr.: -es &nbsp; Nom fem.: -e<br><em>ein alter Mann · ein altes Haus · eine alte Frau</em></div></div>
+        <div class="gr"><strong>3. Ohne Artikel</strong> (stark — trägt Kasuszeichen selbst)<div class="gex">Nom mask.: -er &nbsp; Nom neutr.: -es &nbsp; Gen mask./neutr.: -en<br><em>frischer Kaffee · kaltes Wasser · warmer Tee</em></div></div>
+        <div class="gr"><strong>Kasus-Merkhilfe</strong><div class="gex">Nom: wer/was? | Akk: wen/was?<br>Dat: wem? | Gen: wessen?</div></div>
+        <div class="gr"><strong>Achtung: Plural</strong><div class="gex">Nach best. Art.: immer -en<br>Ohne Art.: -e (Nom/Akk) · -er (Gen)<br><em>alte Häuser · trotz steigender Preise</em></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASSIV -->
+  <div class="sub-sc" id="gt-passiv">
+    <div class="exlay">
+      <div>
+        <div class="card" style="margin-bottom:.9rem">
+          <div class="ex-prompt" id="pass-prompt"></div>
+          <input class="inp" id="pass-inp" placeholder="Passiv-Form eingeben..." onkeydown="if(event.key==='Enter')checkPass()">
+          <div class="hint-box" id="pass-hint"></div>
+          <div class="sol-box" id="pass-sol"></div>
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn" onclick="showHint('pass')">💡 Tipp</button>
+          <button class="btn" onclick="checkPass()">✓ Prüfen</button>
+          <button class="btn pr" onclick="newPass()">Weiter →</button>
+        </div>
+        <div id="pass-res" style="margin-top:.75rem;font-size:13px;color:var(--tx2)"></div>
+      </div>
+      <div class="gsb">
+        <h4>📐 Passiv — alle Zeiten</h4>
+        <table class="ptable">
+          <tr><th>Zeit</th><th>Formel (werden-Passiv)</th></tr>
+          <tr><td><strong>Präsens</strong></td><td class="hl">wird + Part.II</td></tr>
+          <tr><td><strong>Präteritum</strong></td><td class="hl">wurde + Part.II</td></tr>
+          <tr><td><strong>Perfekt</strong></td><td class="hl">ist + Part.II + worden</td></tr>
+          <tr><td><strong>Plusquamperfekt</strong></td><td class="hl">war + Part.II + worden</td></tr>
+          <tr><td><strong>Futur I</strong></td><td class="hl">wird + Part.II + werden</td></tr>
+          <tr><td><strong>Konjunktiv II</strong></td><td class="hl">würde + Part.II + werden</td></tr>
+          <tr><td><strong>Modal + Passiv</strong></td><td class="hl">muss + Part.II + werden</td></tr>
+        </table>
+        <div class="gr"><strong>Zustandspassiv</strong> (sein + Part.II)<div class="gex">Das Fenster ist geöffnet. ← Ergebnis<br>≠ Das Fenster wird geöffnet. ← Vorgang</div></div>
+        <div class="gr"><strong>Passiv mit Modalverb — Präteritum</strong><div class="gex">musste + Part.II + werden<br><em>Das Gesetz musste geändert werden.</em></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KONNEKTOREN -->
+  <div class="sub-sc" id="gt-konn">
+    <div class="exlay">
+      <div>
+        <div class="card" style="margin-bottom:.9rem">
+          <div class="ex-prompt" id="konn-prompt"></div>
+          <input class="inp" id="konn-inp" placeholder="Satz eingeben..." onkeydown="if(event.key==='Enter')checkKonn()">
+          <div class="hint-box" id="konn-hint"></div>
+          <div class="sol-box" id="konn-sol"></div>
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn" onclick="showHint('konn')">💡 Tipp</button>
+          <button class="btn" onclick="checkKonn()">✓ Prüfen</button>
+          <button class="btn pr" onclick="newKonn()">Weiter →</button>
+        </div>
+        <div id="konn-res" style="margin-top:.75rem;font-size:13px;color:var(--tx2)"></div>
+      </div>
+      <div class="gsb">
+        <h4>🔗 Zweiteilige Konnektoren C1</h4>
+        <div class="gr"><strong>nicht nur … sondern auch</strong><div class="gex">Er ist nicht nur klug, sondern auch fleißig.</div></div>
+        <div class="gr"><strong>weder … noch</strong><div class="gex">Er hat weder Zeit noch Lust.</div></div>
+        <div class="gr"><strong>sowohl … als auch</strong><div class="gex">Sowohl Schüler als auch Lehrer profitieren.</div></div>
+        <div class="gr"><strong>zwar … aber/jedoch</strong><div class="gex">Zwar ist es teuer, aber die Qualität ist gut.</div></div>
+        <div class="gr"><strong>es sei denn(, dass)</strong><div class="gex">Wir gehen, es sei denn, es regnet.</div></div>
+        <div class="gr"><strong>je … desto/umso</strong><div class="gex">Je mehr man übt, desto besser wird man.<br>⚠ je + Nebensatz · desto + Komp. + Verb</div></div>
+        <div class="gr"><strong>einerseits … andererseits</strong><div class="gex">Einerseits spart man Zeit, andererseits leidet die Qualität.</div></div>
+        <div class="gr"><strong>infolgedessen / nichtsdestotrotz</strong><div class="gex">→ Position 1 im Hauptsatz, dann Verb<br><em>infolgedessen sind die Preise gestiegen.</em></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REDEWENDUNGEN -->
+  <div class="sub-sc" id="gt-rede">
+    <div class="exlay">
+      <div>
+        <div class="card" style="margin-bottom:.9rem">
+          <div class="ex-prompt" id="rede-prompt"></div>
+          <textarea class="inp ta" id="rede-inp" placeholder="Schreibe einen Satz mit dieser Redewendung..."></textarea>
+          <div class="hint-box" id="rede-hint"></div>
+          <div class="sol-box" id="rede-sol"></div>
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn" onclick="showRedeSol()">👁 Musterlösung</button>
+          <button class="btn pr" onclick="newRede()">Weiter →</button>
+        </div>
+        <p style="margin-top:.75rem;font-size:12px;color:var(--tx3)">💡 Vergleiche deinen Satz mit der Musterlösung. Grammatik & Bedeutung zählen — Formulierung kann variieren.</p>
+      </div>
+      <div class="gsb">
+        <h4>💬 Redemittel C1 — Schreiben & Sprechen</h4>
+        <div class="gr"><strong>Meinung äußern</strong><div class="gex">Meiner Ansicht/Auffassung nach…<br>Ich bin der Überzeugung, dass…<br>Es lässt sich nicht leugnen, dass…</div></div>
+        <div class="gr"><strong>Einschränken</strong><div class="gex">Wenngleich / Obschon…<br>Zwar … aber / jedoch…<br>Abgesehen davon, dass…</div></div>
+        <div class="gr"><strong>Schlussfolgerung / Fazit</strong><div class="gex">Es bleibt festzuhalten, dass…<br>Daraus ergibt sich, dass…<br>Infolgedessen / Demzufolge…</div></div>
+        <div class="gr"><strong>Schreiben-Eröffnung (Brief)</strong><div class="gex">Ich beziehe mich auf Ihr Schreiben vom…<br>Ich erlauben mir, darauf hinzuweisen…<br>Ich freue mich, Ihnen mitteilen zu können…</div></div>
+        <div class="gr"><strong>Formale Konnektoren</strong><div class="gex">in Anbetracht (+Gen.) · im Hinblick auf (+Akk.)<br>unter Berücksichtigung von…<br>auf dem Prüfstand stehen · zum Vorschein kommen</div></div>
+      </div>
+    </div>
+  </div>
+</div><!-- end s-gram -->
+
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+// ── STATE ──────────────────────────────────────────
+var S={total:0,correct:0,streak:0,lastDate:'',sbP:0,adjP:0,passP:0,konnP:0,redeP:0};
+function loadS(){try{var d=localStorage.getItem('telc_m1');if(d)S=Object.assign(S,JSON.parse(d));}catch(e){}checkStreak();updDash();}
+function saveS(){try{localStorage.setItem('telc_m1',JSON.stringify(S));}catch(e){}}
+function checkStreak(){var t=new Date().toDateString();if(S.lastDate===t)return;var y=new Date(Date.now()-86400000).toDateString();S.streak=(S.lastDate===y)?S.streak+1:1;S.lastDate=t;saveS();}
+function updDash(){
+  var pct=S.total>0?Math.round(S.correct/S.total*100):0;
+  tx('ds-t',S.total);tx('ds-p',pct+'%');tx('ds-s',S.streak);
+  pw('pb-sb',Math.min(S.sbP,100));pw('pb-adj',Math.min(S.adjP,100));
+  pw('pb-pass',Math.min(S.passP,100));pw('pb-konn',Math.min(S.konnP,100));pw('pb-rede',Math.min(S.redeP,100));
+}
+function tx(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+function pw(id,v){var e=document.getElementById(id);if(e)e.style.width=v+'%';}
+
+function toast(msg,type){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+(type||'');t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show');},2500);}
+
+function go(s){
+  document.querySelectorAll('.sc').forEach(function(e){e.classList.remove('on');});
+  document.querySelectorAll('.nt').forEach(function(e){e.classList.remove('on');});
+  document.getElementById('s-'+s).classList.add('on');
+  var t=document.querySelector('[data-s="'+s+'"]');if(t)t.classList.add('on');
+  if(s==='dash')updDash();
+  if(s==='sb')newSB();
+  if(s==='gram'){newAdj();newPass();newKonn();newRede();}
+}
+function gTab(id,btn){
+  document.querySelectorAll('.sub-sc').forEach(function(e){e.classList.remove('on');});
+  document.querySelectorAll('.it').forEach(function(e){e.classList.remove('on');});
+  document.getElementById('gt-'+id).classList.add('on');
+  if(btn)btn.classList.add('on');
+}
+
+// ── GRAMMAR TIPS ───────────────────────────────────
+var GTIPS={
+  B2:[
+    {t:'Konjunktiv II',r:[{r:'würde + Infinitiv',e:'Ich würde das gerne machen.'},{r:'sein→wäre · haben→hätte',e:'Wenn ich Zeit hätte, käme ich.'},{r:'könn-, soll-, dürf-',e:'Das könnte schwierig werden.'}]},
+    {t:'Passiv',r:[{r:'Präsens: wird + Part.II',e:'Das Buch wird gelesen.'},{r:'Präteritum: wurde + Part.II',e:'Das Gesetz wurde geändert.'},{r:'Perfekt: ist + Part.II + worden',e:'Die Stadt ist zerstört worden.'}]}
+  ],
+  C1:[
+    {t:'Partizipialkonstruktionen',r:[{r:'Partizip II als Attribut',e:'Die getroffene Entscheidung war falsch.'},{r:'Partizip I als Attribut',e:'Der wachsende Druck…'},{r:'Erweitert',e:'Die von der Regierung beschlossene Reform…'}]},
+    {t:'Zweiteilige Konnektoren',r:[{r:'nicht nur … sondern auch',e:'Er ist nicht nur klug, sondern auch fleißig.'},{r:'je … desto + Inversion',e:'Je mehr man übt, desto besser wird man.'},{r:'es sei denn(, dass)',e:'Wir gehen, es sei denn, es regnet.'}]},
+    {t:'Nominalisierung',r:[{r:'Verb → das + Infinitiv',e:'Das Lesen fördert die Konzentration.'},{r:'Adj. → Nomen',e:'das Wesentliche · das Positive'},{r:'statt Nebensatz (C1)',e:'trotz steigender Kosten = obwohl die Kosten steigen'}]}
+  ]
+};
+function showGram(lvl){var tips=GTIPS[lvl]||GTIPS.C1,tip=tips[Math.floor(Math.random()*tips.length)];var h='<div class="gr"><strong>'+tip.t+'</strong></div>';tip.r.forEach(function(r){h+='<div class="gr">'+r.r+'<div class="gex">'+r.e+'</div></div>';});document.getElementById('gram-cont').innerHTML=h;}
+
+// ── SPRACHBAUSTEINE ────────────────────────────────
+var SBD={
+  B2:[
+    {text:'Viele Experten sind der Meinung, dass die Digitalisierung die Arbeitswelt grundlegend {0} wird. Dabei {1} es sich um einen Prozess, der seit Jahren im Gange ist. Unternehmen {2} zunehmend auf KI, um Effizienz zu steigern. Gleichzeitig {3} viele Arbeitnehmer, dass ihre Qualifikationen nicht mehr ausreichen.',slots:['verändern','handelt','setzen','befürchten'],opts:['verändern','handelt','setzen','befürchten','benutzen','glauben','gehen','wissen'],tip:'B2'},
+    {text:'Das Thema Klimawandel {0} in der öffentlichen Diskussion eine immer größere Rolle. Wissenschaftler {1} darauf hin, dass CO₂-Emissionen drastisch reduziert werden müssen. Viele Länder haben sich {2} verpflichtet, bis 2050 klimaneutral zu {3}.',slots:['spielt','weisen','dazu','werden'],opts:['spielt','weisen','dazu','werden','nimmt','zeigen','damit','sein'],tip:'B2'},
+    {text:'Die meisten Studierenden sind der Ansicht, dass ein Auslandssemester {0} für ihre Entwicklung ist. Es {1} ihnen, neue Kulturen kennenzulernen und Sprachkenntnisse zu {2}. Außerdem {3} ein solcher Aufenthalt die Berufsaussichten erheblich.',slots:['wichtig','ermöglicht','verbessern','verbessert'],opts:['wichtig','ermöglicht','verbessern','verbessert','gut','erlaubt','lernen','steigert'],tip:'B2'}
+  ],
+  C1:[
+    {text:'Die zunehmende Urbanisierung {0} weitreichende Folgen für die Gesellschaft. Während Städte {1} wachsen, kämpfen ländliche Regionen mit dem demographischen Wandel. Hinzu {2}, dass qualifizierte Fachkräfte {3} abwandern, was die Ungleichheit {4}.',slots:['hat','stetig','kommt','vermehrt','verschärft'],opts:['hat','stetig','kommt','vermehrt','verschärft','zeigt','stark','tritt','oft','verbessert'],tip:'C1'},
+    {text:'Die Frage, inwieweit KI menschliche Kreativität {0} kann, wird kontrovers diskutiert. Befürworter {1} darauf, dass KI-Systeme lediglich als Werkzeug dienen und Schöpferkraft {2} beeinflussen. Kritiker {3} hingegen, dass Abhängigkeit zu einem {4} der Denkfähigkeit führen könnte.',slots:['ersetzen','verweisen','nicht negativ','warnen','Rückgang'],opts:['ersetzen','verweisen','nicht negativ','warnen','Rückgang','ablösen','zeigen','kaum','betonen','Verlust'],tip:'C1'},
+    {text:'Infolge des Klimawandels {0} sich die Lebensbedingungen vieler Tierarten erheblich verschlechtert. Nichtsdestotrotz {1} es Regionen, in denen Schutzmaßnahmen greifen. Wenngleich diese Entwicklung {2}, bleibt der Handlungsbedarf {3}.',slots:['haben','gibt','ermutigend ist','enorm'],opts:['haben','gibt','ermutigend ist','enorm','sind','existieren','positiv war','groß'],tip:'C1'}
+  ]
+};
+var sbLvl='B2',sbIdx=-1,sbEx=null,selCh=null,selEl=null;
+function setSBL(l,btn){sbLvl=l;document.querySelectorAll('.lp').forEach(function(b){b.classList.remove('on');});btn.classList.add('on');newSB();}
+function newSB(){var a=SBD[sbLvl];sbIdx=(sbIdx+1)%a.length;sbEx=a[sbIdx];selCh=null;selEl=null;renderSB();showGram(sbEx.tip);document.getElementById('sb-res').style.display='none';}
+function renderSB(){
+  var txt=sbEx.text.replace(/\{(\d+)\}/g,function(m,i){
+    return '<span class="slot" id="sl-'+i+'" onclick="clickSlot('+i+')" ondragover="event.preventDefault();this.classList.add(\'dov\')" ondragleave="this.classList.remove(\'dov\')" ondrop="dropSlot(event,'+i+')"><span class="sn">'+(parseInt(i)+1)+'</span>&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+  });
+  document.getElementById('sb-text').innerHTML=txt;
+  var sh=sbEx.opts.slice().sort(function(){return Math.random()-.5;});
+  document.getElementById('sb-chips').innerHTML=sh.map(function(w,i){
+    return '<span class="chip" id="ch-'+i+'" draggable="true" data-w="'+w+'" onclick="clickChip(\''+w+'\',\'ch-'+i+'\')" ondragstart="dragChip(event,\''+w+'\',\'ch-'+i+'\')" ondragend="this.classList.remove(\'drag\')">'+w+'</span>';
+  }).join('');
+}
+function clickChip(w,id){if(selEl)selEl.classList.remove('sel');selCh={w:w,id:id};selEl=document.getElementById(id);selEl.classList.add('sel');}
+function clickSlot(i){if(!selCh)return;fillSlot(i,selCh.w,selCh.id);}
+function fillSlot(i,w,cid){
+  var sl=document.getElementById('sl-'+i);
+  if(sl.dataset.cid){var o=document.getElementById(sl.dataset.cid);if(o)o.classList.remove('used','sel');}
+  sl.innerHTML='<span class="sn">'+(i+1)+'</span>'+w;sl.dataset.w=w;sl.dataset.cid=cid;sl.classList.add('filled');
+  var ch=document.getElementById(cid);if(ch){ch.classList.add('used');ch.classList.remove('sel','drag');}
+  selCh=null;selEl=null;
+}
+function dragChip(e,w,id){e.dataTransfer.setData('w',w);e.dataTransfer.setData('id',id);document.getElementById(id).classList.add('drag');}
+function dropSlot(e,i){e.preventDefault();document.getElementById('sl-'+i).classList.remove('dov');fillSlot(i,e.dataTransfer.getData('w'),e.dataTransfer.getData('id'));}
+function checkSB(){
+  var ok=0;
+  sbEx.slots.forEach(function(ans,i){
+    var sl=document.getElementById('sl-'+i);if(!sl)return;
+    var g=(sl.dataset.w||'').toLowerCase().trim();
+    sl.classList.remove('ok','err');
+    if(g===ans.toLowerCase()){sl.classList.add('ok');ok++;}else sl.classList.add('err');
+  });
+  S.total+=sbEx.slots.length;S.correct+=ok;S.sbP+=10;saveS();updDash();
+  var pct=Math.round(ok/sbEx.slots.length*100),col=pct===100?'var(--g)':pct>=50?'var(--a)':'var(--r)';
+  var r=document.getElementById('sb-res');r.style.display='block';
+  r.innerHTML='<strong style="color:'+col+'">'+ok+'/'+sbEx.slots.length+' richtig ('+pct+'%)</strong>'+(ok===sbEx.slots.length?' 🎉 Perfekt!':'');
+}
+
+// ── ADJEKTIVDEKLINATION ────────────────────────────
+var ADJ=[
+  {p:'Ergänze die Endung:<br><br>Der <strong>alt__</strong> Mann liest ein <strong>interessant__</strong> Buch.',sol:'Der alte Mann liest ein interessantes Buch.',hint:'Best. Artikel Nom.mask → -e | Unbest. Artikel Nom/Akk.neutr → -es'},
+  {p:'Ergänze:<br><br>Trotz des <strong>schlecht__</strong> Wetters machten wir einen <strong>lang__</strong> Spaziergang.',sol:'Trotz des schlechten Wetters machten wir einen langen Spaziergang.',hint:'Nach Genitiv (des/der) → immer -en | Unbest. Art. Akk.mask. → -en'},
+  {p:'Ergänze (ohne Artikel):<br><br><strong>Frisch__</strong> Kaffee und <strong>warm__</strong> Brötchen machen den Morgen angenehm.',sol:'Frischer Kaffee und warme Brötchen machen den Morgen angenehm.',hint:'Ohne Artikel stark: Nom.mask. → -er | Nom.Pl. → -e'},
+  {p:'Ergänze:<br><br>Mit <strong>frisch__</strong> Mut und <strong>groß__</strong> Energie startete er das Projekt.',sol:'Mit frischem Mut und großer Energie startete er das Projekt.',hint:'Ohne Art. Dat.mask. → -em | Nom/Akk.fem. → -er'},
+  {p:'Ergänze:<br><br>Die <strong>jung__</strong> Wissenschaftlerin präsentierte ihre <strong>neu__</strong> Forschungsergebnisse.',sol:'Die junge Wissenschaftlerin präsentierte ihre neuen Forschungsergebnisse.',hint:'Best. Art. Nom.fem. → -e | Akk.Plural → -en'},
+  {p:'Ergänze:<br><br>Wegen <strong>steigend__</strong> Kosten musste die Firma schließen.',sol:'Wegen steigender Kosten musste die Firma schließen.',hint:'Ohne Art. Genitiv Pl. → -er (stark)'},
+  {p:'Ergänze:<br><br>Die Regierung verabschiedete ein <strong>umfangreich__</strong> Reformpaket.',sol:'Die Regierung verabschiedete ein umfangreiches Reformpaket.',hint:'Unbest. Art. Akk./Nom. Neutr. → -es'},
+  {p:'Ergänze:<br><br>Ein <strong>erfolgreich__</strong> Studium erfordert <strong>kontinuierlich__</strong> Einsatz.',sol:'Ein erfolgreiches Studium erfordert kontinuierlichen Einsatz.',hint:'Unbest. Art. Nom.neutr. → -es | Akk.mask. → -en'},
+  {p:'Ergänze:<br><br>In <strong>groß__</strong> Städten gibt es viele <strong>gut__</strong> Möglichkeiten.',sol:'In großen Städten gibt es viele gute Möglichkeiten.',hint:'Dat.Plural (best./unbest.): immer -en | Nom.Plural (ohne Art.) → -e'},
+  {p:'Ergänze:<br><br>Das ist ein <strong>wichtig__</strong> Thema mit <strong>weit__</strong> gesellschaftlichen Folgen.',sol:'Das ist ein wichtiges Thema mit weitreichenden gesellschaftlichen Folgen.',hint:'Unbest. Art. Nom.neutr. → -es | Dat.Pl. → -en'}
+];
+var adjIdx=-1,adjEx=null;
+function newAdj(){adjIdx=(adjIdx+1)%ADJ.length;adjEx=ADJ[adjIdx];document.getElementById('adj-prompt').innerHTML=adjEx.p;document.getElementById('adj-inp').value='';document.getElementById('adj-hint').className='hint-box';document.getElementById('adj-sol').className='sol-box';document.getElementById('adj-res').textContent='';}
+function showHint(mod){var h=document.getElementById(mod+'-hint');h.textContent=mod==='adj'?adjEx.hint:mod==='pass'?passEx.hint:konnEx.hint;h.className='hint-box show';}
+function checkAdj(){
+  var inp=document.getElementById('adj-inp').value.trim();
+  var s=document.getElementById('adj-sol');s.innerHTML='✅ Musterlösung: <strong>'+adjEx.sol+'</strong>';s.className='sol-box show';
+  S.total++;S.adjP+=10;if(inp.length>5)S.correct++;saveS();updDash();
+  document.getElementById('adj-res').textContent=inp?'Vergleiche mit der Musterlösung ↑':'Gib zuerst eine Antwort ein!';
+}
+
+// ── PASSIV ─────────────────────────────────────────
+var PASS=[
+  {p:'Bilde <strong>Passiv Präsens</strong>:<br><br>Die Forscher analysieren die Daten.',sol:'Die Daten werden (von den Forschern) analysiert.',hint:'Präsens: werden + Partizip II'},
+  {p:'Bilde <strong>Passiv Präteritum</strong>:<br><br>Die Regierung verabschiedete das Gesetz.',sol:'Das Gesetz wurde (von der Regierung) verabschiedet.',hint:'Präteritum: wurde + Partizip II'},
+  {p:'Bilde <strong>Passiv Perfekt</strong>:<br><br>Man hat die alten Gebäude abgerissen.',sol:'Die alten Gebäude sind abgerissen worden.',hint:'Perfekt: sein + Partizip II + worden (kein "geworden"!)'},
+  {p:'Bilde <strong>Passiv mit Modalverb Präsens</strong>:<br><br>Man muss das Problem sofort lösen.',sol:'Das Problem muss sofort gelöst werden.',hint:'Modal + Passiv: Modalverb + Partizip II + werden'},
+  {p:'Bilde <strong>Passiv Plusquamperfekt</strong>:<br><br>Man hatte die Brücke bereits repariert.',sol:'Die Brücke war bereits repariert worden.',hint:'Plusquamperfekt: war + Partizip II + worden'},
+  {p:'Bilde <strong>Zustandspassiv</strong> (Ergebnis beschreiben):<br><br>Jemand hat das Fenster geöffnet.',sol:'Das Fenster ist geöffnet.',hint:'Zustandspassiv: sein + Partizip II — kein "worden"!'},
+  {p:'Bilde <strong>Passiv Futur I</strong>:<br><br>Man wird die Ergebnisse nächste Woche veröffentlichen.',sol:'Die Ergebnisse werden nächste Woche veröffentlicht werden.',hint:'Futur I: werden + Partizip II + werden'},
+  {p:'Bilde <strong>Passiv Konjunktiv II</strong>:<br><br>Man könnte das Problem anders lösen.',sol:'Das Problem könnte anders gelöst werden.',hint:'Konj.II: könnte/würde + Partizip II + werden'},
+  {p:'Bilde <strong>Modal + Passiv im Präteritum</strong>:<br><br>Man musste alle Dokumente prüfen.',sol:'Alle Dokumente mussten geprüft werden.',hint:'Modalverb Prät. + Partizip II + werden'},
+  {p:'Umformung in <strong>Passiv Präsens</strong> (mit Zeitangabe):<br><br>Jährlich publizieren Wissenschaftler tausende Artikel.',sol:'Jährlich werden tausende Artikel (von Wissenschaftlern) publiziert.',hint:'Zeitangabe bleibt auf Position 1 — Verb bleibt auf Pos. 2'}
+];
+var passIdx=-1,passEx=null;
+function newPass(){passIdx=(passIdx+1)%PASS.length;passEx=PASS[passIdx];document.getElementById('pass-prompt').innerHTML=passEx.p;document.getElementById('pass-inp').value='';document.getElementById('pass-hint').className='hint-box';document.getElementById('pass-sol').className='sol-box';document.getElementById('pass-res').textContent='';}
+function checkPass(){
+  var inp=document.getElementById('pass-inp').value.trim();
+  var s=document.getElementById('pass-sol');s.innerHTML='✅ Lösung: <strong>'+passEx.sol+'</strong>';s.className='sol-box show';
+  S.total++;S.passP+=10;if(inp.length>6)S.correct++;saveS();updDash();
+  document.getElementById('pass-res').textContent='Vergleiche mit der Lösung ↑';
+}
+
+// ── KONNEKTOREN ────────────────────────────────────
+var KONN=[
+  {p:'Verbinde mit <strong>„nicht nur … sondern auch"</strong>:<br><br>Die Reform verbessert die Schulen. Sie verbessert auch die Universitäten.',sol:'Die Reform verbessert nicht nur die Schulen, sondern auch die Universitäten.',hint:'Position: nicht nur [direkt vor Objekt/Adj.], sondern auch [dasselbe]'},
+  {p:'Bilde einen Satz mit <strong>„je … desto"</strong>:<br><br>Viel üben → gut werden.',sol:'Je mehr man übt, desto besser wird man.',hint:'je + Komp. (Nebensatz mit Verb am Ende) · desto + Komp. + Verb (Inversion!)'},
+  {p:'Bilde mit <strong>„es sei denn(, dass)"</strong>:<br><br>Wir fahren morgen. Ausnahme: Es regnet.',sol:'Wir fahren morgen, es sei denn, es regnet.',hint:'es sei denn steht nach dem Hauptsatz — leitet Ausnahme ein'},
+  {p:'Verbinde mit <strong>„zwar … aber"</strong>:<br><br>Das Buch ist teuer. Aber es ist sehr informativ.',sol:'Das Buch ist zwar teuer, aber es ist sehr informativ.',hint:'zwar steht im ersten Satz (oft Pos.2 oder 4), aber = normale HS-Wortstellung'},
+  {p:'Benutze <strong>„weder … noch"</strong>:<br><br>Er hat keine Zeit. Er hat auch keine Lust.',sol:'Er hat weder Zeit noch Lust.',hint:'weder … noch = additiv negativ. Kein Artikel vor dem Nomen nötig.'},
+  {p:'Benutze <strong>„sowohl … als auch"</strong>:<br><br>Die Maßnahme hilft den Schülern. Sie hilft auch den Lehrern.',sol:'Die Maßnahme hilft sowohl den Schülern als auch den Lehrern.',hint:'sowohl…als auch verbindet gleichrangige Satzglieder (additiv)'},
+  {p:'Bilde mit <strong>„infolgedessen"</strong>:<br><br>Der Sturm zerstörte die Ernte. Deshalb stiegen die Preise.',sol:'Der Sturm zerstörte die Ernte; infolgedessen stiegen die Preise.',hint:'infolgedessen = Position 1 → Verb direkt dahinter (kein Subjekt dazwischen)'},
+  {p:'Bilde mit <strong>„wenngleich"</strong>:<br><br>Das Ergebnis war enttäuschend. Trotzdem gaben sie nicht auf.',sol:'Wenngleich das Ergebnis enttäuschend war, gaben sie nicht auf.',hint:'wenngleich = obwohl (gehoben) — leitet Nebensatz ein, Hauptsatz folgt'},
+  {p:'Benutze <strong>„einerseits … andererseits"</strong>:<br><br>Homeoffice spart Zeit. Aber man fühlt sich isoliert.',sol:'Einerseits spart das Homeoffice Zeit, andererseits fühlt man sich isoliert.',hint:'Beide Teile sind vollständige Hauptsätze — normale Wortstellung'},
+  {p:'Bilde mit <strong>„zumal"</strong>:<br><br>Wir bleiben zu Hause. Zusätzlicher Grund: Es ist spät.',sol:'Wir bleiben zu Hause, zumal es schon spät ist.',hint:'zumal = besonders weil/da — verstärkt den Grund, leitet Nebensatz ein'}
+];
+var konnIdx=-1,konnEx=null;
+function newKonn(){konnIdx=(konnIdx+1)%KONN.length;konnEx=KONN[konnIdx];document.getElementById('konn-prompt').innerHTML=konnEx.p;document.getElementById('konn-inp').value='';document.getElementById('konn-hint').className='hint-box';document.getElementById('konn-sol').className='sol-box';document.getElementById('konn-res').textContent='';}
+function checkKonn(){
+  var inp=document.getElementById('konn-inp').value.trim();
+  var s=document.getElementById('konn-sol');s.innerHTML='✅ Musterlösung: <strong>'+konnEx.sol+'</strong>';s.className='sol-box show';
+  S.total++;S.konnP+=10;if(inp.length>8)S.correct++;saveS();updDash();
+  document.getElementById('konn-res').textContent='Vergleiche mit der Musterlösung ↑';
+}
+
+// ── REDEWENDUNGEN ──────────────────────────────────
+var REDE=[
+  {phrase:'auf dem Prüfstand stehen',topic:'Bildungssystem',ru:'быть под вопросом / испытываться',sol:'Das aktuelle Bildungssystem steht angesichts der Digitalisierung auf dem Prüfstand.',ctx:'Verwende im Kontext einer Kritik oder Bewertung'},
+  {phrase:'Stellung nehmen zu etw.',topic:'Umweltpolitik',ru:'высказать позицию по чему-л.',sol:'Die Ministerin nahm ausführlich zu den neuen Umweltrichtlinien Stellung.',ctx:'Formal — gut für Schreiben-Aufgaben. Achtung: Stellung steht am Ende!'},
+  {phrase:'im Hinblick auf etw. (+ Akk.)',topic:'Wirtschaft',ru:'с точки зрения / в отношении чего-л.',sol:'Im Hinblick auf die steigende Inflation müssen neue Maßnahmen ergriffen werden.',ctx:'Präposition + Akkusativ — kein Verb nötig'},
+  {phrase:'es bleibt festzuhalten, dass',topic:'Wissenschaft',ru:'следует отметить / итого',sol:'Es bleibt festzuhalten, dass weitere Forschung in diesem Bereich dringend notwendig ist.',ctx:'Ideal für Fazit / letzter Satz eines Aufsatzes'},
+  {phrase:'in Anbetracht der Tatsache, dass',topic:'Migration',ru:'принимая во внимание тот факт, что',sol:'In Anbetracht der Tatsache, dass viele Flüchtlinge gut qualifiziert sind, sollte die Integration verbessert werden.',ctx:'Gehoben — für formelle Texte'},
+  {phrase:'zum Vorschein kommen',topic:'Forschung',ru:'обнаружиться, выявиться',sol:'Bei der Analyse der Daten kamen überraschende Zusammenhänge zum Vorschein.',ctx:'Trennbares Verb-Konstrukt — "kommen" ist das Verb'},
+  {phrase:'Meiner Auffassung nach',topic:'Digitalisierung',ru:'по моему мнению',sol:'Meiner Auffassung nach birgt die KI sowohl große Chancen als auch erhebliche Risiken.',ctx:'Steht am Satzanfang oder nach Komma — Genitiv-Konstrukt'},
+  {phrase:'es lässt sich nicht leugnen, dass',topic:'Klimawandel',ru:'нельзя отрицать, что',sol:'Es lässt sich nicht leugnen, dass der Mensch erheblich zum Klimawandel beigetragen hat.',ctx:'Gut für argumentative Texte — unpersönliche Konstruktion'},
+  {phrase:'daraus ergibt sich, dass',topic:'Gesellschaft',ru:'из этого следует, что',sol:'Daraus ergibt sich, dass neue Konzepte für das Zusammenleben entwickelt werden müssen.',ctx:'Logische Schlussfolgerung — gut nach einer Analyse'},
+  {phrase:'abgesehen davon, dass',topic:'Homeoffice',ru:'помимо того, что',sol:'Abgesehen davon, dass man zu Hause Zeit spart, profitiert man auch von mehr Ruhe.',ctx:'Leitet Einschränkung oder Ergänzung ein'},
+  {phrase:'unter Berücksichtigung von',topic:'Wirtschaftspolitik',ru:'с учётом / принимая во внимание',sol:'Unter Berücksichtigung der aktuellen Marktlage scheint eine Zinssenkung sinnvoll.',ctx:'Nominalkonstruktion — sehr formal, gut für Schreiben C1'},
+  {phrase:'es sei denn, (dass)',topic:'Reise & Planung',ru:'если только не / разве что',sol:'Ich fahre nächste Woche nach Berlin, es sei denn, der Zug fällt aus.',ctx:'Ausnahme-Konnektor — steht nach dem Hauptsatz'}
+];
+var redeIdx=-1,redeEx=null;
+function newRede(){
+  redeIdx=(redeIdx+1)%REDE.length;redeEx=REDE[redeIdx];
+  document.getElementById('rede-prompt').innerHTML=
+    '<strong>Redewendung:</strong> <span style="color:var(--p);font-size:16px;font-weight:600">'+redeEx.phrase+'</span><br>'+
+    '<span style="font-size:12px;color:var(--tx2)">Значение: '+redeEx.ru+'</span><br><br>'+
+    '<strong>Thema:</strong> '+redeEx.topic+'<br><br>'+
+    'Schreibe einen Satz mit dieser Redewendung zu diesem Thema:<br>'+
+    '<small style="color:var(--tx3)">Tipp: '+redeEx.ctx+'</small>';
+  document.getElementById('rede-inp').value='';
+  document.getElementById('rede-hint').className='hint-box';
+  document.getElementById('rede-sol').className='sol-box';
+}
+function showRedeSol(){
+  var s=document.getElementById('rede-sol');
+  s.innerHTML='✅ Musterlösung: <strong>'+redeEx.sol+'</strong>';
+  s.className='sol-box show';
+  S.total++;S.redeP+=10;saveS();updDash();
+}
+
+// ── INIT ───────────────────────────────────────────
+loadS();newSB();newAdj();newPass();newKonn();newRede();
+</script>
+</body>
+</html>
