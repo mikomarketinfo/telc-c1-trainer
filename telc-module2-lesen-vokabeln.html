@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELC C1 — Leseverstehen & Vokabeln</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f7f4;--bg2:#fff;--bg3:#f0efe9;
+  --bd:#e2e1d8;--bd2:#c8c7be;
+  --tx:#1a1a18;--tx2:#6b6b65;--tx3:#9b9b94;
+  --g:#1d9e75;--gl:#e1f5ee;--gd:#0f6e56;
+  --p:#7f77dd;--pl:#eeedfe;--pd:#534ab7;
+  --b:#378add;--bl:#e6f1fb;--bd3:#185fa5;
+  --a:#ba7517;--al:#faeeda;--ad:#633806;
+  --r:#e24b4a;--rl:#fcebeb;--rd:#a32d2d;
+  --rr:10px;--rs:6px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1a1a18;--bg2:#242420;--bg3:#2c2c28;
+  --bd:#3a3a34;--bd2:#4a4a44;
+  --tx:#f0efe9;--tx2:#a0a09a;--tx3:#6b6b65;
+  --gl:#0a3020;--gd:#9fe1cb;--pl:#1e1c40;--pd:#afa9ec;
+  --bl:#0a1e35;--bd3:#85b7eb;--al:#2a1a05;--ad:#fac775;
+  --rl:#2a0f0f;--rd:#f09595;
+}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:15px}
+.nav{background:var(--bg2);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;display:flex;align-items:center;overflow-x:auto}
+.nav-logo{padding:.8rem 1.1rem;font-weight:700;font-size:15px;white-space:nowrap;border-right:1px solid var(--bd);flex-shrink:0}
+.nav-logo span{color:var(--g)}
+.nt{padding:.8rem 1rem;font-size:13px;color:var(--tx2);cursor:pointer;white-space:nowrap;border:none;background:none;border-bottom:2px solid transparent;transition:all .2s;font-family:inherit}
+.nt:hover{color:var(--tx);background:var(--bg3)}
+.nt.on{color:var(--g);border-bottom-color:var(--g);font-weight:600}
+.main{max-width:940px;margin:0 auto;padding:1.25rem}
+.sc{display:none}.sc.on{display:block}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.25rem}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:.5rem}
+.sh h2{font-size:17px;font-weight:600}
+.btn{padding:6px 14px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;cursor:pointer;transition:all .2s;font-family:inherit}
+.btn:hover{background:var(--bg3)}
+.btn.pr{background:var(--g);color:#fff;border-color:var(--g)}.btn.pr:hover{background:var(--gd)}
+.btn.sm{padding:4px 11px;font-size:12px}
+.badge{display:inline-block;padding:2px 8px;border-radius:99px;font-size:11px;font-weight:600}
+.bg{background:var(--gl);color:var(--gd)}.bp{background:var(--pl);color:var(--pd)}
+.ba{background:var(--al);color:var(--ad)}.br{background:var(--rl);color:var(--rd)}
+/* TABS */
+.itabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:1rem}
+.it{padding:5px 14px;border-radius:99px;border:1px solid var(--bd2);background:var(--bg3);font-size:12.5px;cursor:pointer;color:var(--tx2);font-family:inherit;transition:all .2s}
+.it.on{background:var(--b);color:#fff;border-color:var(--b)}
+.sub-sc{display:none}.sub-sc.on{display:block}
+/* LESEN */
+.lg{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:640px){.lg{grid-template-columns:1fr}}
+.ts{max-height:500px;overflow-y:auto;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.15rem}
+.ts h4{font-size:11.5px;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.7rem}
+.ts p{font-size:13.5px;line-height:1.85;margin-bottom:.75rem;color:var(--tx)}
+.ts .gap{background:var(--pl);color:var(--pd);font-weight:600;padding:0 4px;border-radius:3px}
+.ts .satze-box{margin-top:.9rem;border-top:1px solid var(--bd);padding-top:.9rem}
+.ts .satze-box h4{margin-bottom:.5rem}
+.ts .satz{font-size:13px;margin-bottom:5px;color:var(--tx)}
+.ql{display:flex;flex-direction:column;gap:8px}
+.qi{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:.9rem}
+.qt{font-size:13px;font-weight:600;margin-bottom:.5rem;color:var(--tx);line-height:1.5}
+.qo-list{display:flex;flex-direction:column;gap:4px}
+.qo{padding:6px 10px;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg3);font-size:13px;text-align:left;cursor:pointer;transition:all .15s;color:var(--tx);font-family:inherit}
+.qo:hover{border-color:var(--b);background:var(--bl)}
+.qo.sel{border-color:var(--p);background:var(--pl);color:var(--pd)}
+.qo.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
+.qo.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
+/* RESULTS */
+.res-bar{background:var(--bg3);border-radius:var(--rs);padding:.75rem 1rem;margin-top:.75rem;font-size:13.5px;display:none}
+.res-bar.show{display:block}
+/* VOCAB */
+.vt{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;align-items:center}
+.cs{padding:6px 11px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;font-family:inherit;cursor:pointer}
+.fcw{perspective:1000px;height:200px;margin-bottom:1rem;cursor:pointer;user-select:none}
+.fc{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .45s}
+.fc.flip{transform:rotateY(180deg)}
+.cff{position:absolute;inset:0;backface-visibility:hidden;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.25rem;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.cff.bk{transform:rotateY(180deg);background:var(--gl);border-color:var(--g)}
+.cff .fw{font-size:22px;font-weight:700;color:var(--tx);margin-bottom:5px}
+.cff .fh{font-size:11px;color:var(--tx3);margin-bottom:3px}
+.cff .ft{font-size:16px;font-weight:600;color:var(--gd);margin-bottom:6px}
+.cff .fe{font-size:12px;color:var(--tx2);font-style:italic;line-height:1.5}
+.flip-h{font-size:11px;color:var(--tx3);margin-top:10px}
+.cnav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:.75rem}
+.rrow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.25rem}
+.rb{padding:7px 17px;border-radius:var(--rs);border:1px solid;font-size:13px;cursor:pointer;font-family:inherit;transition:all .2s}
+.rbh{border-color:var(--r);color:var(--r);background:var(--rl)}.rbh:hover{background:var(--r);color:#fff}
+.rbm{border-color:var(--a);color:var(--a);background:var(--al)}.rbm:hover{background:var(--a);color:#fff}
+.rbe{border-color:var(--g);color:var(--gd);background:var(--gl)}.rbe:hover{background:var(--g);color:#fff}
+/* PROGRESS */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:1.5rem}
+.st{background:var(--bg3);border-radius:var(--rr);padding:.9rem;text-align:center}
+.st .n{font-size:26px;font-weight:700}.st .l{font-size:11px;color:var(--tx2);margin-top:2px}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px}
+.mb{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.1rem;cursor:pointer;transition:all .2s;text-align:left;width:100%}
+.mb:hover{border-color:var(--g);transform:translateY(-2px)}
+.mb .ico{width:36px;height:36px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:9px}
+.mb h3{font-size:13.5px;font-weight:600;margin-bottom:3px}
+.mb p{font-size:12px;color:var(--tx2);line-height:1.4}
+.pb{height:3px;background:var(--bd);border-radius:99px;margin-top:9px;overflow:hidden}
+.pf{height:100%;border-radius:99px;background:var(--g);transition:width .5s}
+/* TOAST */
+.toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--rr);padding:10px 16px;font-size:13px;color:var(--tx);box-shadow:0 4px 18px rgba(0,0,0,.11);z-index:9999;transform:translateY(70px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.ok{border-color:var(--g);color:var(--gd);background:var(--gl)}
+.toast.bad{border-color:var(--r);color:var(--rd);background:var(--rl)}
+/* VOCAB FILTER BUTTONS */
+.vf-btn{padding:4px 12px;border-radius:99px;border:1px solid var(--bd2);background:var(--bg3);font-size:12px;cursor:pointer;color:var(--tx2);font-family:inherit;transition:all .2s}
+.vf-btn.on{background:var(--g);color:#fff;border-color:var(--g)}
+/* EXPLAIN BOX */
+.explain{background:var(--bl);border:1px solid var(--b);border-radius:var(--rs);padding:.75rem;font-size:13px;color:var(--tx);margin-bottom:.9rem;line-height:1.6}
+.explain strong{color:var(--bd3)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">telc <span>C1</span> <small style="font-weight:400;color:var(--tx3)">Modul 2</small></div>
+  <button class="nt on" onclick="go('dash')" data-s="dash">🏠 Start</button>
+  <button class="nt" onclick="go('lesen')" data-s="lesen">📖 Lesen</button>
+  <button class="nt" onclick="go('vocab')" data-s="vocab">🃏 Vokabeln</button>
+</nav>
+
+<main class="main">
+
+<!-- DASHBOARD -->
+<div class="sc on" id="s-dash">
+  <div style="margin-bottom:1.25rem">
+    <h1 style="font-size:21px;font-weight:700;margin-bottom:4px">TELC C1 Trainer — Modul 2</h1>
+    <p style="color:var(--tx2);font-size:13.5px">Leseverstehen (Teil 1–3) + Vokabelkarten mit Spaced Repetition</p>
+  </div>
+  <div class="sg">
+    <div class="st"><div class="n" id="ds-t">0</div><div class="l">Antworten</div></div>
+    <div class="st"><div class="n" id="ds-p">0%</div><div class="l">Korrekt</div></div>
+    <div class="st"><div class="n" id="ds-v">0</div><div class="l">Vokabeln ✓</div></div>
+  </div>
+  <div class="mg">
+    <button class="mb" onclick="go('lesen');lTab('t1',document.querySelector('.it'))">
+      <div class="ico" style="background:var(--bl);color:var(--b)">📖</div>
+      <h3>Lesen Teil 1</h3>
+      <p>Textrekonstruktion — Sätze in Lücken einordnen</p>
+      <div class="pb"><div class="pf" id="pb-l1" style="width:0%"></div></div>
+    </button>
+    <button class="mb" onclick="go('lesen');lTab('t2',document.querySelectorAll('.it')[1])">
+      <div class="ico" style="background:var(--bl);color:var(--b)">🔍</div>
+      <h3>Lesen Teil 2</h3>
+      <p>Textabschnitte zuordnen — welcher Abschnitt enthält die Antwort?</p>
+      <div class="pb"><div class="pf" id="pb-l2" style="width:0%"></div></div>
+    </button>
+    <button class="mb" onclick="go('lesen');lTab('t3',document.querySelectorAll('.it')[2])">
+      <div class="ico" style="background:var(--bl);color:var(--b)">✅</div>
+      <h3>Lesen Teil 3</h3>
+      <p>Richtig / Falsch / Nicht im Text — 11 Aussagen + Makroaufgabe</p>
+      <div class="pb"><div class="pf" id="pb-l3" style="width:0%"></div></div>
+    </button>
+    <button class="mb" onclick="go('vocab')">
+      <div class="ico" style="background:var(--gl);color:var(--g)">🃏</div>
+      <h3>Vokabelkarten</h3>
+      <p>30 C1-Wörter nach Themen — Spaced Repetition</p>
+      <div class="pb"><div class="pf" id="pb-vk" style="width:0%"></div></div>
+    </button>
+  </div>
+</div>
+
+<!-- LESEVERSTEHEN -->
+<div class="sc" id="s-lesen">
+  <div class="sh"><h2>📖 Leseverstehen</h2>
+    <button class="btn sm pr" onclick="checkLesen()">✓ Prüfen</button>
+  </div>
+  <div class="itabs">
+    <button class="it on" onclick="lTab('t1',this)">Teil 1 — Zuordnung</button>
+    <button class="it" onclick="lTab('t2',this)">Teil 2 — Abschnitte</button>
+    <button class="it" onclick="lTab('t3',this)">Teil 3 — R/F/NiT</button>
+  </div>
+
+  <!-- TEIL 1: Textrekonstruktion -->
+  <div class="sub-sc on" id="lt-t1">
+    <div class="explain">
+      <strong>Aufgabentyp Teil 1 — Textrekonstruktion:</strong> Der Text hat 6 Lücken (1–6). Wähle den passenden Satz (a–h) für jede Lücke. Zwei Sätze passen nicht. Lücke (0) ist ein Beispiel.
+    </div>
+    <div class="lg">
+      <div class="ts" id="t1-text"></div>
+      <div class="ql" id="t1-qs"></div>
+    </div>
+    <div class="res-bar" id="t1-res"></div>
+  </div>
+
+  <!-- TEIL 2: Abschnitte -->
+  <div class="sub-sc" id="lt-t2">
+    <div class="explain">
+      <strong>Aufgabentyp Teil 2 — Selektives Lesen:</strong> In welchem Textabschnitt (a–e) findest du die Antwort auf die Frage? Jeder Abschnitt kann mehrfach gewählt werden.
+    </div>
+    <div class="lg">
+      <div class="ts" id="t2-text"></div>
+      <div class="ql" id="t2-qs"></div>
+    </div>
+    <div class="res-bar" id="t2-res"></div>
+  </div>
+
+  <!-- TEIL 3: Richtig/Falsch/Nicht im Text -->
+  <div class="sub-sc" id="lt-t3">
+    <div class="explain">
+      <strong>Aufgabentyp Teil 3 — Detailverstehen:</strong> Sind die Aussagen richtig (+), falsch (–) oder nicht im Text (x)? Außerdem: Welche Überschrift passt am besten zum Text?
+    </div>
+    <div class="lg">
+      <div class="ts" id="t3-text"></div>
+      <div class="ql" id="t3-qs"></div>
+    </div>
+    <div class="res-bar" id="t3-res"></div>
+  </div>
+</div>
+
+<!-- VOKABELKARTEN -->
+<div class="sc" id="s-vocab">
+  <div class="sh"><h2>🃏 Vokabelkarten</h2>
+    <span class="badge bg" id="vc-badge">0/0</span>
+  </div>
+  <div class="vt">
+    <select class="cs" id="vc-cat" onchange="loadVocab()">
+      <option value="all">Alle Kategorien</option>
+      <option value="gesellschaft">Gesellschaft</option>
+      <option value="bildung">Bildung</option>
+      <option value="wirtschaft">Wirtschaft</option>
+      <option value="umwelt">Umwelt</option>
+      <option value="digital">Digitalisierung</option>
+      <option value="konnektoren">Konnektoren C1</option>
+      <option value="redewendungen">Redewendungen</option>
+      <option value="schreiben">Schreiben-Phrasen</option>
+    </select>
+    <button class="vf-btn on" id="vf-all" onclick="setVF('all',this)">Alle</button>
+    <button class="vf-btn" id="vf-new" onclick="setVF('new',this)">Neu</button>
+    <button class="vf-btn" id="vf-hard" onclick="setVF('hard',this)">Schwer 🔁</button>
+    <button class="vf-btn" id="vf-done" onclick="setVF('done',this)">Gelernt ✓</button>
+  </div>
+  <div class="fcw" onclick="flipCard()" title="Klicken zum Umdrehen">
+    <div class="fc" id="flashcard">
+      <div class="cff front">
+        <div class="fw" id="fc-w">—</div>
+        <div class="fh" id="fc-h"></div>
+        <div class="flip-h">↺ klicken zum Umdrehen</div>
+      </div>
+      <div class="cff bk">
+        <div class="ft" id="fc-t">—</div>
+        <div class="fe" id="fc-e"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cnav">
+    <button class="btn sm" onclick="prevC()">◀ Zurück</button>
+    <span style="font-size:13px;color:var(--tx2)" id="fc-ctr">1 / 1</span>
+    <button class="btn sm" onclick="nextC()">Weiter ▶</button>
+  </div>
+  <div class="rrow">
+    <button class="rb rbh" onclick="rate('hard')">😓 Schwer — nochmal</button>
+    <button class="rb rbm" onclick="rate('ok')">🤔 Geht so</button>
+    <button class="rb rbe" onclick="rate('easy')">✅ Gelernt!</button>
+  </div>
+  <div style="font-size:12px;color:var(--tx3);text-align:center;margin-top:-.5rem">
+    Bewerte jede Karte — „Schwer" bringt sie zurück in die Rotation
+  </div>
+</div>
+
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+// ── STATE ──────────────────────────────────────────
+var S={total:0,correct:0,learned:[],hard:[],l1P:0,l2P:0,l3P:0};
+function loadS(){try{var d=localStorage.getItem('telc_m2');if(d)S=Object.assign(S,JSON.parse(d));}catch(e){}updDash();}
+function saveS(){try{localStorage.setItem('telc_m2',JSON.stringify(S));}catch(e){}}
+function updDash(){
+  var pct=S.total>0?Math.round(S.correct/S.total*100):0;
+  tx('ds-t',S.total);tx('ds-p',pct+'%');tx('ds-v',S.learned.length);
+  pw('pb-l1',Math.min(S.l1P,100));pw('pb-l2',Math.min(S.l2P,100));pw('pb-l3',Math.min(S.l3P,100));
+  pw('pb-vk',Math.min(Math.round(S.learned.length/VOCAB.length*100),100));
+}
+function tx(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+function pw(id,v){var e=document.getElementById(id);if(e)e.style.width=v+'%';}
+function toast(msg,type){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+(type||'');t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show');},2500);}
+function go(s){
+  document.querySelectorAll('.sc').forEach(function(e){e.classList.remove('on');});
+  document.querySelectorAll('.nt').forEach(function(e){e.classList.remove('on');});
+  document.getElementById('s-'+s).classList.add('on');
+  var t=document.querySelector('[data-s="'+s+'"]');if(t)t.classList.add('on');
+  if(s==='dash')updDash();
+  if(s==='vocab')loadVocab();
+  if(s==='lesen')renderAllLesen();
+}
+function lTab(id,btn){
+  document.querySelectorAll('.sub-sc').forEach(function(e){e.classList.remove('on');});
+  document.querySelectorAll('.it').forEach(function(e){e.classList.remove('on');});
+  document.getElementById('lt-'+id).classList.add('on');
+  if(btn)btn.classList.add('on');
+}
+
+// ── LESEN DATA ─────────────────────────────────────
+
+// TEIL 1 — Textrekonstruktion (Werbung)
+var T1={
+  title:'Werbung in der sozialen Marktwirtschaft',
+  text:[
+    'Werbung, so behauptet die Werbeindustrie, sei der Motor unserer sozialen Marktwirtschaft. Die Werbung reguliere die Preise, führe zu ständiger Verbesserung der Produkte und informiere den Verbraucher. <span class="gap">(0) z</span>',
+    'Wie jeder andere Wirtschaftszweig funktioniert die Werbung nach dem Prinzip von Angebot und Nachfrage. Die Werbeschaffenden müssen die Werbung attraktiv gestalten, so dass sie unterhält, neugierig macht. <span class="gap">(1)</span> Ein paar Sekunden Aufmerksamkeit — das ist der maximale Preis, den ein Zuschauer bereit ist, für gute Werbung zu zahlen.',
+    'Genau hier liegt das Problem oder vielmehr die Herausforderung für die gesamte Werbeindustrie. <span class="gap">(2)</span>',
+    'Damit beschäftigen sich seit den 1930er Jahren Generationen von Wissenschaftlern. <span class="gap">(3)</span> Besonders die Wirtschaft will wissen, ob das Vermögen gut investiert ist.',
+    'Werbungen überschreiten häufig auch die Grenzen des guten Geschmacks. Jeder Bürger hat das Recht, Beschwerde dagegen einzulegen. <span class="gap">(4)</span> Dieser könnte die Werbegesetze verschärfen.',
+    'Der Deutsche Werberat kann zwar einzelnen Firmen ihre Werbeaktionen nicht verbieten, er kann jedoch Empfehlungen aussprechen. <span class="gap">(5)</span>'
+  ],
+  satze:[
+    {id:'z',t:'z) Kurz: Werbung schaffe Transparenz und eine größere Entscheidungsvielfalt. (Beispiel — Lücke 0)'},
+    {id:'a',t:'a) Allerdings macht nicht jeder Gebrauch davon, und was könnte man schon tun?'},
+    {id:'b',t:'b) Das oberste Ziel der Werbung ist es nämlich, Interesse zu wecken.'},
+    {id:'c',t:'c) Denn diesen Moment Aufmerksamkeit beansprucht jedes beworbene Produkt für sich.'},
+    {id:'d',t:'d) Dies geschieht natürlich nicht allein aus Forschungsdrang.'},
+    {id:'f',t:'f) Häufig hören die Zeitungsverleger und Fernsehanstalten auf diese Empfehlung.'},
+    {id:'g',t:'g) Hier interessiert allein die finanzielle Zukunft der Werbebranche. (passt nicht)'},
+    {id:'h',t:'h) Davor aber fürchten sich die Werbetreibenden, weil so der Gesetzgeber auf den Plan gerufen wird.'}
+  ],
+  qs:[
+    {id:1,t:'Lücke (1):',opts:['a','b','c','d','f','g','h'],ans:'b'},
+    {id:2,t:'Lücke (2):',opts:['a','b','c','d','f','g','h'],ans:'c'},
+    {id:3,t:'Lücke (3):',opts:['a','b','c','d','f','g','h'],ans:'d'},
+    {id:4,t:'Lücke (4):',opts:['a','b','c','d','f','g','h'],ans:'h'},
+    {id:5,t:'Lücke (5):',opts:['a','b','c','d','f','g','h'],ans:'f'}
+  ]
+};
+
+// TEIL 2 — Textabschnitte (Träume)
+var T2={
+  title:'Welche Bedeutung haben Träume?',
+  sections:[
+    {id:'a',title:'Abschnitt a',text:'Was für ein Schrecken! Gerade bekamen Sie die Nachricht, im Lotto gewonnen zu haben ... Und dann reißt Sie der Wecker grausam aus dem Schlaf. Im Traum passieren oft skurrile Dinge. Wir überwinden die Schwerkraft, erheben uns wie ein Vogel in die Lüfte. Oft durchleben wir noch einmal in verfremdeter Form die Widrigkeiten des Alltags. In Albträumen suchen uns dagegen unsere größten Ängste heim.'},
+    {id:'b',title:'Abschnitt b',text:'Doch welche Bedeutung haben Träume eigentlich? Oft haben wir das Gefühl, dass das im Schlaf Erlebte eine wichtige Botschaft enthält. Für Götterbotschaften hielt man in der Antike das nächtliche Kopfkino. Wer leichtgläubig nach einem Schlüssel für Traumsymbole sucht, wird unzählige Websites finden. Dabei stellt sich allerdings die Frage, ob Träume nicht vielmehr sinnlose Abfallprodukte des Gehirns sind.'},
+    {id:'c',title:'Abschnitt c',text:'Tatsächlich ist der Wahrheitsgehalt von Träumen umstritten. Zu den Klassikern gehört Sigmund Freuds Werk „Die Traumdeutung": Für den Begründer der Psychoanalyse manifestierten sich in Traumsymbolen unbewusste, verdrängte Wünsche. Der amerikanische Psychiater Allan Hobson erklärte Träume zum Resultat zufälliger Hirnaktivität, zu reinem Neuronengeflimmer ohne Sinngehalt.'},
+    {id:'d',title:'Abschnitt d',text:'Diese Schwierigkeit liegt darin, dass der Gegenstand der Untersuchung nur schwer zu fassen ist. Im Allgemeinen wird als Traum eine psychische Aktivität während des Schlafes bezeichnet. Widerlegt ist mittlerweile die früher weitverbreitete Annahme, dass wir nur in den sogenannten REM-Phasen träumen. Wir träumen die ganze Nacht.'},
+    {id:'e',title:'Abschnitt e',text:'Eine interessante Spur verfolgen Neuroforscher, die bildgebende Verfahren nutzen, um das träumende Gehirn zu beobachten: Im Traumzustand ist der präfrontale Cortex gehemmt, jener Bereich, der für Logik, Sinn und Moral zuständig ist. Wenn wir uns mit unseren Träumen beschäftigen, sollten wir das rechte Maß einhalten. Wenn die Beschäftigung mit Träumen jedoch zu besserer Selbsterkenntnis verhilft, kann das nur nützlich sein.'}
+  ],
+  qs:[
+    {id:7,t:'In welchem Abschnitt äußert sich die Autorin abfällig (негативно)?',opts:['a','b','c','d','e'],ans:'b'},
+    {id:8,t:'In welchem Abschnitt gibt die Autorin einen Rat?',opts:['a','b','c','d','e'],ans:'e'},
+    {id:9,t:'In welchem Abschnitt liefert die Autorin Definitionen?',opts:['a','b','c','d','e'],ans:'d'},
+    {id:10,t:'In welchem Abschnitt spricht die Autorin einen Wunsch aus?',opts:['a','b','c','d','e'],ans:'d'},
+    {id:11,t:'In welchem Abschnitt stellt die Autorin verschiedene Standpunkte einander gegenüber?',opts:['a','b','c','d','e'],ans:'c'},
+    {id:12,t:'In welchem Abschnitt wirft die Autorin Bedenken auf?',opts:['a','b','c','d','e'],ans:'b'}
+  ]
+};
+
+// TEIL 3 — Richtig/Falsch/Nicht im Text (Mensa)
+var T3={
+  title:'Hinter den Kulissen: Die Universitätsmensa',
+  text:[
+    'Gutes Essen ist auch an den Unis kein kurzfristiger Trend mehr: Viele Mensen achten darauf, dass ihre Produkte aus biologischem Anbau stammen.',
+    'Mittags um zwölf in der Hamburger Mensa: Hunderte Studenten stehen in langen Warteschlangen. Einige mäkeln über das Essen. Und ahnen dabei gar nicht, wie viel Aufwand hinter jeder Mahlzeit steckt. „Schon morgens um sieben treffen wir uns zur ersten Besprechung", sagt Mensaleiter Udo Klein. An einem gewöhnlichen Tag brutzeln die Köche rund 1.200 Currywürste und 500 Wok-Gerichte.',
+    'Den Speiseplan tüfteln die Mensaleiter schon Wochen vorher aus. Schließlich müssen sie bis zum Verkaufstag einwandfreie Ware besorgt haben. Ein EDV-System ermittelt die genauen Mengen und verschickt die Bestellungen automatisch an die Lieferanten.',
+    'Welche Gerichte ausgewählt werden, hängt davon ab, wie sich die Kundschaft zusammensetzt. „Frauen achten eher auf gesunde Ernährung", hat der Mensaleiter beobachtet. Liegt eine Mensa in der Umgebung von ingenieurwissenschaftlichen Instituten, müssen die Verantwortlichen umdenken. „Diese Studenten essen nämlich am liebsten Currywurst und Schnitzel."',
+    'Die Betriebe benötigen eine Zertifizierung und werden in regelmäßigen Abständen von Lebensmittelchemikern kontrolliert. Immer mehr Mensen achten darauf, dass Lebensmittel von Anbietern aus der Region kommen. „Leider kann das nicht bei allen Produkten gewährleistet werden", sagt Birgit Bornemann. „Manche Anbieter können solche großen Mengen einfach nicht bewältigen."',
+    '„Seit 1998 haben wir die Preise nicht erhöht", sagt Mensaleiter Michael Gradtke. „Wenn wir nicht subventioniert würden, könnten wir diese Preise nicht halten." Die finanzielle Grundausstattung stammt unter anderem aus den Sozialbeiträgen der Studierenden.',
+    'Dass hinter ihrem preiswerten Mittagessen auch exakte Wissenschaft steht, ist den meisten Studenten keineswegs bewusst. Die DGE hat Empfehlungen für die Gemeinschaftsverpflegung herausgebracht. Ein Mittagessen sollte optimalerweise 733 Kalorien enthalten: 20% Proteine, 30% Fette, 50% Kohlehydrate. Die Vorstellung vom Koch, der mit ungefähren Rezeptangaben ein leckeres Essen zaubert, ist also fernab der Realität.'
+  ],
+  qs:[
+    {id:13,t:'Einige Studierende bemängeln das Essensangebot.',opts:['+','-','x'],ans:'+'},
+    {id:14,t:'Es wird stets kurzfristig entschieden, welche Gerichte die Mensa anbietet.',opts:['+','-','x'],ans:'-'},
+    {id:15,t:'Auch das Studienfach gibt Aufschluss über die bevorzugten Gerichte.',opts:['+','-','x'],ans:'+'},
+    {id:16,t:'Die Mitarbeiter der Mensen berechnen selbst, wie viel sie von jedem Lebensmittel bestellen müssen.',opts:['+','-','x'],ans:'-'},
+    {id:17,t:'Zulieferer von Lebensmitteln werden nur gelegentlich überprüft.',opts:['+','-','x'],ans:'-'},
+    {id:18,t:'Nicht alle Produkte können in der unmittelbaren Umgebung erworben werden.',opts:['+','-','x'],ans:'+'},
+    {id:19,t:'Die Bedeutung von Bio-Bauern als Mensa-Lieferanten wächst.',opts:['+','-','x'],ans:'x'},
+    {id:20,t:'Die Mensa der Universität Hamburg wird mit Zuschüssen unterstützt.',opts:['+','-','x'],ans:'+'},
+    {id:21,t:'Studierenden ist in der Regel klar, dass die Zusammensetzung der Mahlzeit genau durchdacht ist.',opts:['+','-','x'],ans:'-'},
+    {id:22,t:'Die DGE schreibt verbindlich vor, aus welchen Lebensmitteln ein Mensa-Essen bestehen muss.',opts:['+','-','x'],ans:'-'},
+    {id:23,t:'Von Mensaköchen wird mehr Flexibilität verlangt als von Köchen in einem Restaurant.',opts:['+','-','x'],ans:'x'},
+    {id:24,t:'Welche Überschrift passt am besten zum Text?',opts:['a) Hinter den Kulissen: Wer in der Mensa kocht','b) Qualität um jeden Preis: Warum Mensa-Essen teurer wird','c) Wider die Currywurst — Uni-Mensen setzen auf Qualität'],ans:'a) Hinter den Kulissen: Wer in der Mensa kocht'}
+  ]
+};
+
+var lesenAns={};
+
+function renderAllLesen(){
+  lesenAns={};
+  renderT1();renderT2();renderT3();
+}
+
+function renderT1(){
+  var h='<h4>'+T1.title+'</h4>';
+  T1.text.forEach(function(p){h+='<p>'+p+'</p>';});
+  h+='<div class="satze-box"><h4>Sätze a–h (2 passen nicht):</h4>';
+  T1.satze.forEach(function(s){h+='<div class="satz">'+s.t+'</div>';});
+  h+='</div>';
+  document.getElementById('t1-text').innerHTML=h;
+  var qh='';
+  T1.qs.forEach(function(q){
+    qh+='<div class="qi"><div class="qt">Frage '+q.id+': '+q.t+'</div><div class="qo-list">';
+    q.opts.forEach(function(o){
+      qh+='<button class="qo" onclick="selA(this,\'t1_'+q.id+'\',\''+o+'\')">Satz '+o.toUpperCase()+'</button>';
+    });
+    qh+='</div></div>';
+  });
+  document.getElementById('t1-qs').innerHTML=qh;
+}
+
+function renderT2(){
+  var h='<h4>'+T2.title+'</h4>';
+  T2.sections.forEach(function(s){
+    h+='<p><strong style="color:var(--b)">'+s.title+':</strong> '+s.text+'</p>';
+  });
+  document.getElementById('t2-text').innerHTML=h;
+  var qh='';
+  T2.qs.forEach(function(q){
+    qh+='<div class="qi"><div class="qt">'+q.id+'. '+q.t+'</div><div class="qo-list">';
+    q.opts.forEach(function(o){
+      qh+='<button class="qo" onclick="selA(this,\'t2_'+q.id+'\',\''+o+'\')">Abschnitt '+o.toUpperCase()+'</button>';
+    });
+    qh+='</div></div>';
+  });
+  document.getElementById('t2-qs').innerHTML=qh;
+}
+
+function renderT3(){
+  var h='<h4>'+T3.title+'</h4>';
+  T3.text.forEach(function(p){h+='<p>'+p+'</p>';});
+  document.getElementById('t3-text').innerHTML=h;
+  var qh='';
+  T3.qs.forEach(function(q){
+    var labelMap={'+':{l:'richtig (+)',c:'green'},'-':{l:'falsch (–)',c:'red'},'x':{l:'nicht im Text (x)',c:'amber'}};
+    qh+='<div class="qi"><div class="qt">'+q.id+'. '+q.t+'</div><div class="qo-list">';
+    q.opts.forEach(function(o){
+      var label=q.id===24?o:(labelMap[o]?labelMap[o].l:o);
+      qh+='<button class="qo" onclick="selA(this,\'t3_'+q.id+'\',\''+o.replace(/'/g,"\\'")+'\')">' + label + '</button>';
+    });
+    qh+='</div></div>';
+  });
+  document.getElementById('t3-qs').innerHTML=qh;
+}
+
+function selA(btn,key,val){
+  btn.closest('.qi').querySelectorAll('.qo').forEach(function(b){b.classList.remove('sel','ok','err');});
+  btn.classList.add('sel');
+  lesenAns[key]=val;
+}
+
+function checkLesen(){
+  // find active sub-sc
+  var active=document.querySelector('#s-lesen .sub-sc.on');
+  if(!active)return;
+  var id=active.id; // lt-t1, lt-t2, lt-t3
+  var data=id==='lt-t1'?T1:id==='lt-t2'?T2:T3;
+  var prefix=id==='lt-t1'?'t1_':id==='lt-t2'?'t2_':'t3_';
+  var ok=0;
+  data.qs.forEach(function(q){
+    var given=lesenAns[prefix+q.id];
+    var qEl=active.querySelector('#'+id.replace('lt-','')+'_'+q.id+'-parent');
+    // find all qo buttons in this qi
+    var qis=active.querySelectorAll('.qi');
+    var idx=data.qs.indexOf(q);
+    if(idx<0||idx>=qis.length)return;
+    var btns=qis[idx].querySelectorAll('.qo');
+    btns.forEach(function(b){
+      b.classList.remove('sel','ok','err');
+      var bv=b.textContent.trim();
+      // normalise
+      var bRaw=b.getAttribute('onclick')||'';
+      var bValMatch=bRaw.match(/',\s*'([^']+)'\s*\)/);
+      var bVal=bValMatch?bValMatch[1]:bv;
+      if(bVal===q.ans)b.classList.add('ok');
+      if(given&&given!==q.ans&&bVal===given)b.classList.add('err');
+    });
+    if(given===q.ans)ok++;
+  });
+  S.total+=data.qs.length;S.correct+=ok;
+  if(id==='lt-t1')S.l1P+=20;
+  if(id==='lt-t2')S.l2P+=20;
+  if(id==='lt-t3')S.l3P+=15;
+  saveS();updDash();
+  var pct=Math.round(ok/data.qs.length*100);
+  var col=pct>=80?'var(--g)':pct>=50?'var(--a)':'var(--r)';
+  var res=document.getElementById(id.replace('lt-','')+'_res')||document.getElementById(id.replace('lt-','t')+'-res');
+  // find res bar in active section
+  var resBar=active.querySelector('.res-bar');
+  if(resBar){
+    resBar.style.display='block';
+    resBar.className='res-bar show';
+    resBar.innerHTML='<strong style="color:'+col+'">'+ok+' / '+data.qs.length+' richtig ('+pct+'%)</strong>'+(ok===data.qs.length?' 🎉':'');
+  }
+  toast(ok+'/'+data.qs.length+' richtig!',ok===data.qs.length?'ok':'');
+}
+
+// ── VOCAB ──────────────────────────────────────────
+var VOCAB=[
+  // Gesellschaft
+  {w:'die Ausprägung',h:'Nomen, -en',t:'проявление, форма',e:'Die Ausprägung dieser Krankheit ist sehr unterschiedlich.',c:'gesellschaft',l:'C1'},
+  {w:'beeinträchtigen',h:'Verb, jmdn./etw. ~',t:'ухудшать, нарушать',e:'Der Lärm beeinträchtigt die Konzentration erheblich.',c:'gesellschaft',l:'C1'},
+  {w:'berücksichtigen',h:'Verb, etw. ~',t:'принимать во внимание',e:'Man muss alle Faktoren berücksichtigen.',c:'gesellschaft',l:'B2'},
+  {w:'überwiegen',h:'Verb, untrennbar',t:'преобладать, перевешивать',e:'Die Vorteile überwiegen die Nachteile bei weitem.',c:'gesellschaft',l:'C1'},
+  {w:'das Anliegen',h:'Nomen, Pl. gleich',t:'просьба, дело, пожелание',e:'Sein Anliegen wurde von den Behörden ignoriert.',c:'gesellschaft',l:'C1'},
+  {w:'die Inanspruchnahme',h:'Nomen, nur Sing.',t:'использование, обращение за помощью',e:'Die Inanspruchnahme sozialer Leistungen ist gestiegen.',c:'gesellschaft',l:'C1'},
+  {w:'zum Vorschein kommen',h:'Redewendung',t:'обнаружиться, выявиться',e:'Bei der Analyse kamen überraschende Zusammenhänge zum Vorschein.',c:'gesellschaft',l:'C1'},
+  {w:'auf dem Prüfstand stehen',h:'Redewendung',t:'быть под вопросом, испытываться',e:'Das Bildungssystem steht auf dem Prüfstand.',c:'gesellschaft',l:'C1'},
+  {w:'es lässt sich nicht leugnen',h:'Redewendung + dass',t:'нельзя отрицать, что',e:'Es lässt sich nicht leugnen, dass der Mensch zum Klimawandel beiträgt.',c:'gesellschaft',l:'C1'},
+  // Konnektoren
+  {w:'infolgedessen',h:'Konnektor — Position 1',t:'вследствие этого',e:'Es regnete; infolgedessen blieben wir zu Hause.',c:'konnektoren',l:'C1'},
+  {w:'wenngleich',h:'Konnektor — Nebensatz',t:'хотя, несмотря на то что',e:'Wenngleich das Ergebnis enttäuschend war, gab man nicht auf.',c:'konnektoren',l:'C1'},
+  {w:'geschweige denn',h:'Konnektor',t:'не говоря уже о',e:'Er kann kaum lesen, geschweige denn schreiben.',c:'konnektoren',l:'C1'},
+  {w:'zumal',h:'Konnektor — Nebensatz',t:'тем более что',e:'Wir bleiben zu Hause, zumal das Wetter schlecht ist.',c:'konnektoren',l:'C1'},
+  {w:'nichtsdestotrotz',h:'Konnektor — Position 1',t:'тем не менее',e:'Es war schwer; nichtsdestotrotz gelang es.',c:'konnektoren',l:'C1'},
+  {w:'gleichwohl',h:'Konnektor Position 1 (gehoben)',t:'тем не менее (книжн.)',e:'Die Aufgabe war schwer; gleichwohl haben wir sie gelöst.',c:'konnektoren',l:'C1'},
+  {w:'in Anbetracht (+ Gen.)',h:'Präposition formal',t:'принимая во внимание',e:'In Anbetracht der Umstände war die Entscheidung richtig.',c:'konnektoren',l:'C1'},
+  {w:'im Hinblick auf (+ Akk.)',h:'Präposition',t:'с точки зрения / в отношении',e:'Im Hinblick auf die Kosten ist das Projekt riskant.',c:'konnektoren',l:'C1'},
+  {w:'abgesehen davon, dass',h:'Konnektor',t:'помимо того, что',e:'Abgesehen davon, dass man Zeit spart, profitiert man von mehr Ruhe.',c:'konnektoren',l:'C1'},
+  {w:'einerseits … andererseits',h:'Konnektor-Paar',t:'с одной стороны … с другой',e:'Einerseits spart man Zeit, andererseits leidet die Qualität.',c:'konnektoren',l:'B2'},
+  // Bildung
+  {w:'veranschaulichen',h:'Verb, etw. ~',t:'наглядно показывать',e:'Das Diagramm veranschaulicht den Trend sehr gut.',c:'bildung',l:'C1'},
+  {w:'sich auseinandersetzen mit',h:'Verb, trennbar',t:'разбираться, заниматься чем-л.',e:'Man muss sich intensiv mit diesem Thema auseinandersetzen.',c:'bildung',l:'C1'},
+  {w:'die Schlussfolgerung',h:'Nomen, -en',t:'вывод, заключение',e:'Die Schlussfolgerung des Berichts ist eindeutig.',c:'bildung',l:'B2'},
+  {w:'Stellung nehmen zu',h:'Verb-Phrase (formal)',t:'высказать позицию по чему-л.',e:'Der Minister nahm zu den Vorwürfen Stellung.',c:'bildung',l:'C1'},
+  {w:'es bleibt festzuhalten, dass',h:'Schreiben-Phrase Fazit',t:'следует отметить / итого',e:'Es bleibt festzuhalten, dass beide Seiten gute Argumente haben.',c:'schreiben',l:'C1'},
+  // Wirtschaft
+  {w:'die Förderung',h:'Nomen, -en',t:'поддержка, субсидия',e:'Die staatliche Förderung erneuerbarer Energien nimmt zu.',c:'wirtschaft',l:'B2'},
+  {w:'die Rahmenbedingung',h:'Nomen, meist Plural',t:'рамочные условия',e:'Die wirtschaftlichen Rahmenbedingungen haben sich verändert.',c:'wirtschaft',l:'C1'},
+  {w:'auslagern',h:'Verb, trennbar',t:'передавать на аутсорсинг',e:'Viele Firmen lagern ihre IT-Dienste aus.',c:'wirtschaft',l:'C1'},
+  // Umwelt & Digital
+  {w:'nachhaltig',h:'Adj./Adv.',t:'устойчивый, долгосрочный',e:'Nachhaltige Wirtschaft schont die Ressourcen.',c:'umwelt',l:'B2'},
+  {w:'der Rückgang',h:'Nomen, Rückgänge',t:'спад, снижение',e:'Der Rückgang der Artenvielfalt beunruhigt Wissenschaftler.',c:'umwelt',l:'B2'},
+  {w:'die Vernetzung',h:'Nomen, nur Sing.',t:'сетевое взаимодействие',e:'Die digitale Vernetzung verändert die Kommunikation.',c:'digital',l:'C1'}
+];
+
+var vcFilter='all',vcIdx=0,vcCards=[],vcFlipped=false;
+
+function setVF(f,btn){
+  vcFilter=f;
+  document.querySelectorAll('.vf-btn').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  loadVocab();
+}
+
+function loadVocab(){
+  var cat=document.getElementById('vc-cat').value;
+  vcCards=VOCAB.filter(function(v){
+    var catOk=cat==='all'||v.c===cat;
+    if(vcFilter==='hard')return catOk&&S.hard.indexOf(v.w)>=0;
+    if(vcFilter==='new')return catOk&&S.learned.indexOf(v.w)<0&&S.hard.indexOf(v.w)<0;
+    if(vcFilter==='done')return catOk&&S.learned.indexOf(v.w)>=0;
+    return catOk;
+  });
+  if(!vcCards.length){
+    vcCards=VOCAB.filter(function(v){return cat==='all'||v.c===cat;});
+    if(!vcCards.length)vcCards=VOCAB.slice();
+    toast('Keine Karten in diesem Filter — zeige alle','');
+  }
+  vcIdx=0;vcFlipped=false;showCard();
+}
+
+function showCard(){
+  if(!vcCards.length)return;
+  var v=vcCards[vcIdx];
+  document.getElementById('fc-w').textContent=v.w;
+  document.getElementById('fc-h').textContent=v.h;
+  document.getElementById('fc-t').textContent=v.t;
+  document.getElementById('fc-e').textContent=v.e||'';
+  document.getElementById('fc-ctr').textContent=(vcIdx+1)+' / '+vcCards.length;
+  document.getElementById('vc-badge').textContent=(vcIdx+1)+'/'+vcCards.length;
+  document.getElementById('flashcard').classList.remove('flip');
+  vcFlipped=false;
+}
+
+function flipCard(){
+  vcFlipped=!vcFlipped;
+  document.getElementById('flashcard').classList.toggle('flip',vcFlipped);
+}
+
+function nextC(){vcIdx=(vcIdx+1)%vcCards.length;showCard();}
+function prevC(){vcIdx=(vcIdx-1+vcCards.length)%vcCards.length;showCard();}
+
+function rate(r){
+  if(!vcCards.length)return;
+  var v=vcCards[vcIdx];
+  if(r==='easy'){
+    if(S.learned.indexOf(v.w)<0)S.learned.push(v.w);
+    S.hard=S.hard.filter(function(w){return w!==v.w;});
+    toast('✅ Gelernt!','ok');
+  } else if(r==='hard'){
+    if(S.hard.indexOf(v.w)<0)S.hard.push(v.w);
+    if(S.learned.indexOf(v.w)>=0)S.learned=S.learned.filter(function(w){return w!==v.w;});
+    toast('🔁 Kommt wieder');
+  } else {
+    toast('👍 Weiter so!');
+  }
+  saveS();updDash();
+  setTimeout(nextC,500);
+}
+
+// ── INIT ───────────────────────────────────────────
+loadS();
+renderAllLesen();
+loadVocab();
+</script>
+</body>
+</html>
