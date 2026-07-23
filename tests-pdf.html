@@ -23,95 +23,94 @@
   --bl:#0a1e35;--bd3:#85b7eb;--al:#2a1a05;--ad:#fac775;--rl:#2a0f0f;--rd:#f09595;
 }}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:15px}
-.nav{background:var(--bg2);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;display:flex;align-items:center;overflow-x:auto}
+
+/* NAV */
+.nav{background:var(--bg2);border-bottom:1px solid var(--bd);display:flex;align-items:center;overflow-x:auto;position:sticky;top:0;z-index:200}
 .nav-logo{padding:.8rem 1.1rem;font-weight:700;font-size:15px;white-space:nowrap;border-right:1px solid var(--bd);flex-shrink:0}
 .nav-logo span{color:var(--g)}
-.main{max-width:960px;margin:0 auto;padding:1.25rem}
+.main{max-width:1200px;margin:0 auto;padding:1.25rem}
+
+/* BTNs */
 .btn{padding:7px 16px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;cursor:pointer;transition:all .2s;font-family:inherit}
 .btn:hover{background:var(--bg3)}
 .btn.pr{background:var(--g);color:#fff;border-color:var(--g)}.btn.pr:hover{background:var(--gd)}
 .btn.sm{padding:4px 11px;font-size:12px}
 .card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.25rem}
 .sc{display:none}.sc.on{display:block}
-.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:.5rem}
-.sh h2{font-size:17px;font-weight:600}
 
-/* TEST PICKER */
-.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:1.5rem}
-.test-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1rem;cursor:pointer;transition:all .2s;text-align:left}
-.test-card:hover{border-color:var(--g);transform:translateY(-2px)}
-.test-card .tc-type{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
-.test-card h3{font-size:14px;font-weight:600;margin-bottom:4px}
-.test-card p{font-size:12px;color:var(--tx2);line-height:1.4}
-.test-card .tc-done{font-size:11px;margin-top:6px;color:var(--g);font-weight:600}
-.pb{height:3px;background:var(--bd);border-radius:99px;margin-top:8px;overflow:hidden}
+/* PICKER */
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:1.5rem}
+.tc{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1rem;cursor:pointer;transition:all .2s}
+.tc:hover{border-color:var(--g);transform:translateY(-2px)}
+.tc-type{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.tc h3{font-size:13.5px;font-weight:600;margin-bottom:4px}
+.tc p{font-size:12px;color:var(--tx2);line-height:1.4}
+.tc-score{font-size:11.5px;color:var(--g);font-weight:600;margin-top:6px}
+.pb{height:3px;background:var(--bd);border-radius:99px;margin-top:7px;overflow:hidden}
 .pf{height:100%;border-radius:99px;background:var(--g);transition:width .5s}
+.tag{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:700}
+.tg{background:var(--gl);color:var(--gd)}.tp{background:var(--pl);color:var(--pd)}
+.ta{background:var(--al);color:var(--ad)}.tb{background:var(--bl);color:var(--bd3)}
 
 /* EXAM BAR */
-.exam-bar{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:.9rem 1.1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;position:sticky;top:0;z-index:50}
+.exam-bar{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:.85rem 1.1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;position:sticky;top:56px;z-index:100}
 .exam-bar h3{font-size:14px;font-weight:600}
 .exam-bar p{font-size:12px;color:var(--tx2)}
 .ep{height:4px;background:var(--bd);border-radius:99px;overflow:hidden;margin-bottom:1rem}
 .ef{height:100%;border-radius:99px;background:var(--g);transition:width .3s}
 
-/* LESEN */
-.lesen-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-@media(max-width:640px){.lesen-grid{grid-template-columns:1fr}}
-.text-panel{max-height:500px;overflow-y:auto;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.1rem}
-.text-panel h4{font-size:11px;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.65rem}
-.text-panel p{font-size:13.5px;line-height:1.85;margin-bottom:.7rem;color:var(--tx)}
-.gap-m{background:var(--pl);color:var(--pd);font-weight:700;padding:1px 5px;border-radius:3px}
-.satz-box{margin-top:.9rem;border-top:1px solid var(--bd);padding-top:.75rem}
-.satz-box h4{font-size:11px;font-weight:700;color:var(--tx2);text-transform:uppercase;margin-bottom:.5rem}
-.satz-i{font-size:13px;margin-bottom:5px;color:var(--tx)}
+/* ═══ TWO-PANEL LAYOUT ═══ */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:1rem;height:calc(100vh - 200px);min-height:500px}
+@media(max-width:700px){.dual{grid-template-columns:1fr;height:auto}}
+.panel{overflow-y:auto;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.1rem;height:100%}
+@media(max-width:700px){.panel{height:400px}}
+.panel h4{font-size:11px;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.65rem;position:sticky;top:0;background:var(--bg2);padding-bottom:6px;border-bottom:1px solid var(--bd);z-index:5}
+.panel p{font-size:13.5px;line-height:1.85;margin-bottom:.7rem;color:var(--tx)}
+.panel p strong{color:var(--b)}
+.gap-m{background:var(--pl);color:var(--pd);font-weight:700;padding:1px 5px;border-radius:3px;font-size:13px}
+.satze-box{margin-top:.9rem;border-top:1px solid var(--bd);padding-top:.75rem}
+.satz{font-size:13px;margin-bottom:6px;padding:.3rem .5rem;border-radius:var(--rs);border-left:3px solid var(--bd)}
 
 /* QUESTIONS */
-.q-list{display:flex;flex-direction:column;gap:8px}
-.q-item{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:.85rem}
-.q-num{font-size:10.5px;font-weight:700;color:var(--tx3);margin-bottom:3px}
+.q-item{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.8rem;margin-bottom:8px}
+.q-num{font-size:10px;font-weight:700;color:var(--tx3);margin-bottom:3px}
 .q-text{font-size:13px;font-weight:600;margin-bottom:.5rem;color:var(--tx);line-height:1.5}
 .q-opts{display:flex;flex-direction:column;gap:4px}
-.q-opt{padding:6px 10px;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg3);font-size:13px;text-align:left;cursor:pointer;transition:all .15s;color:var(--tx);font-family:inherit}
-.q-opt:hover{border-color:var(--b);background:var(--bl)}
-.q-opt.sel{border-color:var(--p);background:var(--pl);color:var(--pd)}
-.q-opt.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
+.q-opt{padding:6px 10px;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg2);font-size:13px;text-align:left;cursor:pointer;transition:all .15s;color:var(--tx);font-family:inherit;line-height:1.4}
+.q-opt:hover{border-color:var(--b);background:var(--bl);color:var(--bd3)}
+.q-opt.sel{border-color:var(--p);background:var(--pl);color:var(--pd);font-weight:500}
+.q-opt.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important;font-weight:500}
 .q-opt.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
 
-/* SPRACHBAUSTEINE */
-.sb-text{font-size:14px;line-height:2.2;color:var(--tx)}
-.sb-q{margin-bottom:1rem;padding:1rem;background:var(--bg3);border-radius:var(--rs);border-left:3px solid var(--p)}
-.sb-q .sq-num{font-size:11px;font-weight:700;color:var(--pd);margin-bottom:.5rem}
-.sb-q .sq-ctx{font-size:13px;color:var(--tx2);font-style:italic;margin-bottom:.5rem;line-height:1.6}
-.sq-opts{display:flex;flex-wrap:wrap;gap:6px}
-.sq-opt{padding:5px 13px;border-radius:99px;border:1px solid var(--bd2);background:var(--bg2);font-size:13px;cursor:pointer;transition:all .15s;color:var(--tx);font-family:inherit}
+/* SB QUESTIONS */
+.sb-q{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.75rem;margin-bottom:8px}
+.sb-q .sq-n{font-size:10px;font-weight:700;color:var(--tx3);margin-bottom:3px}
+.sb-q .sq-ctx{font-size:12px;color:var(--tx2);font-style:italic;margin-bottom:.4rem;line-height:1.5}
+.sq-opts{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.sq-opt{padding:5px 8px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);font-size:12.5px;cursor:pointer;transition:all .15s;color:var(--tx);font-family:inherit;text-align:left}
 .sq-opt:hover{border-color:var(--p);background:var(--pl);color:var(--pd)}
 .sq-opt.sel{border-color:var(--p);background:var(--pl);color:var(--pd);font-weight:600}
 .sq-opt.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
 .sq-opt.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
 
+/* INFO */
+.info-box{background:var(--al);border:1px solid var(--a);border-radius:var(--rs);padding:.65rem 1rem;margin-bottom:.9rem;font-size:13px;color:var(--tx);line-height:1.6}
+.info-box strong{color:var(--ad)}
+
 /* RESULTS */
-.result-box{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.5rem;text-align:center;margin-bottom:1rem}
+.result-hero{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.5rem;text-align:center;margin-bottom:1rem}
 .result-score{font-size:56px;font-weight:800;line-height:1}
-.result-grade{font-size:17px;font-weight:600;margin:.5rem 0}
-.review-list{margin-top:1.5rem}
-.rev-item{border:1px solid var(--bd);border-radius:var(--rs);margin-bottom:.75rem;overflow:hidden}
-.rev-head{padding:.6rem .9rem;display:flex;align-items:center;gap:.5rem;font-size:13px;font-weight:600}
-.rev-head.ok{background:var(--gl);color:var(--gd);border-bottom:none}
+.result-grade{font-size:17px;font-weight:600;margin:.4rem 0}
+.review-item{border:1px solid var(--bd);border-radius:var(--rs);margin-bottom:.65rem;overflow:hidden}
+.rev-head{padding:.55rem .9rem;display:flex;align-items:flex-start;gap:.5rem;font-size:13px;font-weight:600}
+.rev-head.ok{background:var(--gl);color:var(--gd)}
 .rev-head.err{background:var(--rl);color:var(--rd)}
 .rev-body{padding:.75rem .9rem;font-size:13px;line-height:1.7;border-top:1px solid var(--bd)}
-.rev-rule{background:var(--al);border-radius:var(--rs);padding:.6rem .9rem;margin-top:.5rem;font-size:12.5px;color:var(--ad)}
-.rev-rule strong{display:block;font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
-.tag{display:inline-block;padding:1px 7px;border-radius:99px;font-size:11px;font-weight:700;margin-right:4px}
-.tg{background:var(--gl);color:var(--gd)}.tp{background:var(--pl);color:var(--pd)}.ta{background:var(--al);color:var(--ad)}.tr{background:var(--rl);color:var(--rd)}
-
-/* VOCAB BOX */
-.vocab-note{background:var(--bl);border:1px solid var(--b);border-radius:var(--rs);padding:.75rem 1rem;margin-top:.75rem;font-size:13px}
-.vocab-note strong{color:var(--bd3);display:block;margin-bottom:.35rem;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
-.vw{display:inline-block;margin:.2rem .3rem .2rem 0;padding:2px 9px;border-radius:99px;background:var(--bg3);border:1px solid var(--bd2);font-size:12.5px}
-
-/* INFO BOX */
-.info-box{background:var(--al);border:1px solid var(--a);border-radius:var(--rs);padding:.75rem 1rem;margin-bottom:.9rem;font-size:13px;color:var(--tx);line-height:1.6}
-.info-box strong{color:var(--ad)}
+.rev-rule{background:var(--al);border-radius:var(--rs);padding:.55rem .9rem;margin-top:.5rem;font-size:12.5px;color:var(--ad);line-height:1.6}
+.rev-rule strong{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.vocab-note{background:var(--bl);border:1px solid var(--b);border-radius:var(--rs);padding:.75rem 1rem;margin-top:.75rem}
+.vocab-note strong{color:var(--bd3);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.35rem}
+.vw{display:inline-block;margin:.2rem .25rem;padding:2px 9px;border-radius:99px;background:var(--bg3);border:1px solid var(--bd2);font-size:12px}
 
 /* TOAST */
 .toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--rr);padding:10px 16px;font-size:13px;color:var(--tx);box-shadow:0 4px 18px rgba(0,0,0,.11);z-index:9999;transform:translateY(70px);opacity:0;transition:all .3s}
@@ -122,392 +121,509 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 <body>
 <nav class="nav">
   <div class="nav-logo">telc <span>C1</span> <small style="font-weight:400;color:var(--tx3)">PDF-Tests</small></div>
-  <a href="index.html" style="padding:.8rem 1rem;font-size:13px;color:var(--tx2);text-decoration:none">← Dashboard</a>
+  <a href="index.html" style="padding:.8rem 1rem;font-size:13px;color:var(--tx2);text-decoration:none;white-space:nowrap">&#8592; Dashboard</a>
 </nav>
 
 <main class="main">
-
-<!-- PICKER -->
 <div class="sc on" id="s-pick">
-  <div class="sh"><h2>📄 Originaltests aus dem Übungsheft</h2></div>
-  <div class="info-box">
-    <strong>Hinweis:</strong> Diese Tests basieren auf dem echten Übungsmaterial (C1 Allgemein). Nach jedem Test erhältst du eine detaillierte Auswertung mit Erklärungen zu jeder Frage und den wichtigsten Vokabeln.
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
+    <h2 style="font-size:17px;font-weight:600">&#128196; Tests aus dem Kursmaterial C1</h2>
+    <span style="font-size:12px;color:var(--tx2)" id="total-done">0 Tests absolviert</span>
   </div>
+  <div class="info-box"><strong>Hinweis:</strong> Text (links) und Fragen (rechts) scrollen unabh&#228;ngig voneinander. So kannst du Text und Antworten gleichzeitig vergleichen — wie zwei Bl&#228;tter nebeneinander. Nach der Auswertung erf&#228;hrst du den richtigen Antwort + Erkl&#228;rung auf Deutsch und Russisch.</div>
   <div class="test-grid" id="test-grid"></div>
 </div>
 
-<!-- ACTIVE TEST -->
 <div class="sc" id="s-test">
   <div class="exam-bar">
-    <div><h3 id="ex-title">Test</h3><p id="ex-sub"></p></div>
+    <div><h3 id="ex-title"></h3><p id="ex-sub"></p></div>
     <div style="display:flex;gap:8px">
-      <button class="btn sm pr" onclick="checkTest()">✓ Auswerten</button>
-      <button class="btn sm" onclick="goBack()">← Zurück</button>
+      <button class="btn sm pr" onclick="checkTest()">&#10003; Auswerten</button>
+      <button class="btn sm" onclick="goBack()">&#8592; Zur&#252;ck</button>
     </div>
   </div>
   <div class="ep"><div class="ef" id="ex-prog" style="width:0%"></div></div>
   <div id="ex-content"></div>
 </div>
 
-<!-- RESULTS -->
 <div class="sc" id="s-result">
-  <div class="result-box">
-    <div class="result-score" id="res-score" style="color:var(--g)">—</div>
+  <div class="result-hero">
+    <div class="result-score" id="res-score">&#8212;</div>
     <div class="result-grade" id="res-grade"></div>
-    <p style="font-size:13px;color:var(--tx2);margin-top:.5rem" id="res-sub"></p>
+    <p style="font-size:13px;color:var(--tx2);margin-top:.4rem" id="res-sub"></p>
   </div>
-  <div class="vocab-note" id="res-vocab"></div>
-  <div class="review-list" id="res-review"></div>
+  <div id="res-vocab"></div>
+  <div id="res-review"></div>
   <div style="display:flex;gap:8px;justify-content:center;margin-top:1.5rem;flex-wrap:wrap">
-    <button class="btn pr" onclick="goBack()">← Alle Tests</button>
-    <button class="btn" onclick="retryTest()">🔄 Nochmal</button>
+    <button class="btn pr" onclick="goBack()">&#8592; Alle Tests</button>
+    <button class="btn" onclick="retryTest()">&#128260; Nochmal</button>
   </div>
 </div>
-
 </main>
 <div class="toast" id="toast"></div>
 
 <script>
-// ── STATE ──────────────────────────────────────────
 var S={done:{},scores:{}};
 function loadS(){try{var d=localStorage.getItem("telc_pdf");if(d)S=Object.assign(S,JSON.parse(d));}catch(e){}renderPicker();}
 function saveS(){try{localStorage.setItem("telc_pdf",JSON.stringify(S));}catch(e){}}
-function toast(msg,type){var t=document.getElementById("toast");t.textContent=msg;t.className="toast "+(type||"");t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove("show");},2500);}
+function toast(m,t){var el=document.getElementById("toast");el.textContent=m;el.className="toast "+(t||"");el.classList.add("show");clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove("show");},2500);}
 function go(id){document.querySelectorAll(".sc").forEach(function(e){e.classList.remove("on");});document.getElementById(id).classList.add("on");window.scrollTo(0,0);}
 function goBack(){go("s-pick");renderPicker();}
 
-// ── TEST DATA ──────────────────────────────────────
-var TESTS=[
+// ═══════════════════════════════════════
+// TEST DATA
+// ═══════════════════════════════════════
+var TESTS = [
 
-  // ── SPRACHBAUSTEINE 1: DAS HANDY ──
-  {id:"sb1",type:"Sprachbausteine",title:"Wer hat eigentlich das \"Handy\" erfunden?",
-   desc:"22 Mehrfachwahl-Lücken · Wortschatz & Grammatik · C1",
-   kind:"sb",
-   text:"Jeder kennt es, fast jeder Deutsche hat auch {25}: das Mobiltelefon oder eben \"Handy\". Ob auf der Straße, in Bus oder Bahn, früher oder später hört man überall Sätze wie \"Gib mir mal das Handy!\" – \"Handy\" gehört inzwischen zur deutschen Sprache. Oder?\n\nEine Umfrage hat gezeigt: Die meisten Deutschen (76%) sind der {26}, dass der Begriff \"Handy\" aus dem Englischen {27}. Das ist jedoch falsch. Tatsächlich sind die {28} Sprechenden die einzigen, die ihr Mobiltelefon als Handy bezeichnen. Und das Wort {29} keineswegs aus dem Englischen – dort {30} man das kleine Telefon meist als \"mobile phone\". Dass die Deutschen sich eines englisch klingenden Phantasiewortes {31}, wird von Kulturpessimisten gern als \"ins Absurde {32} Anglomanie\" bezeichnet. Der Begriff \"Handy\" verdanke sich in Wirklichkeit allein der {33}, der Sprache Luthers und Goethes fehlten im Zeitalter der globalen Kommunikation die Worte. Nun kann man darüber {34}, wie Luther sein Mobiltelefon genannt hätte – vermutlich {35} zu keinem vernünftigen Ergebnis in diesem Punkt gelangen.\n\nSicher ist jedoch, dass der Begriff \"Handy\" keine {36} Schöpfung ist. Um dem Ursprung dieses Begriffs etwas {37}, muss man sich ein wenig mit der Sprachgeschichte befassen und zurückschauen in die 1930er Jahre. Zu jener Zeit wurden – zunächst {38} für den militärischen Einsatz – kleine tragbare Funkgeräte entwickelt. Es {39} sich bei diesen Geräten um eine Weiterentwicklung der sogenannten \"Walkie Talkies\". Während {40} meist rucksackgroße Geräte waren, konnte man die neuen Funkgeräte ganz einfach in eine Tasche stecken oder {41} in der Hand tragen. Diese Geräte wurden von Soldaten als \"Handie Talkies\" bezeichnet, und einige amerikanische Soldaten sollen diesen Ausdruck {42} sogar zu \"Handy\" {43}.\n\nIm deutschen Sprachraum tauchte das Handy dann erstmals in einer Anzeige von 1986 auf und {44} damals noch ein kleines Amateurfunkgerät, bevor sich die {45} dann ab 1990 für Mobiltelefone durchsetzte. Der {46} des Handys konnte nicht mehr aufgehalten werden.",
-   qs:[
-     {n:25,ctx:"fast jeder Deutsche hat auch ___: das Mobiltelefon",opts:["das","ein","eines","es"],ans:"eines",
-      exp:"<strong>eines</strong> — unbestimmter Artikel Neutrum im Akkusativ (Genitiv-Attribut: eines davon). \"ein\" wäre Nominativ, \"das\" bestimmter Artikel.",rule:"Unbestimmter Artikel Akk. Neutr. = <em>eines</em> (nicht \"eins\" — das ist Zahlwort ohne Nomen)"},
-     {n:26,ctx:"sind der ___, dass der Begriff aus dem Englischen kommt",opts:["Auffassung","Aufnahme","Auslegung","Behauptung"],ans:"Auffassung",
-      exp:"<strong>der Auffassung sein, dass</strong> = to be of the opinion. Feste Präposition: <em>der</em> (Genitiv). Behauptung passt grammatisch nicht zu \"der Behauptung sein\".",rule:"Feste Wendung: <em>der Auffassung/Meinung/Ansicht sein, dass…</em> — immer mit Genitiv"},
-     {n:27,ctx:"dass der Begriff aus dem Englischen ___",opts:["ableitet","entlehnt","herleitet","kommt"],ans:"kommt",
-      exp:"<strong>kommt</strong> — \"aus etw. kommen\" = to come from. \"stammen aus\" wäre auch möglich, aber nicht in den Optionen. \"ableiten\" und \"herleiten\" brauchen reflexives Pronomen.",rule:"<em>aus dem Englischen kommen/stammen</em> = спроисходить из английского"},
-     {n:28,ctx:"Tatsächlich sind die ___ Sprechenden die einzigen",opts:["Deutsch","Deutsche","Deutschen","Deutsches"],ans:"Deutsch",
-      exp:"<strong>Deutsch</strong> — hier Adjektiv/Sprachbezeichnung als Attribut: \"die Deutsch Sprechenden\" (= diejenigen, die Deutsch sprechen). Kein Artikel → kein -en.",rule:"Sprachbezeichnungen als Partizip-Attribut: <em>die Deutsch Sprechenden</em> (Nomen+Partizip-Konstruktion)"},
-     {n:29,ctx:"Und das Wort ___ keineswegs aus dem Englischen",opts:["entreißt","entsteht","folgt","stammt"],ans:"stammt",
-      exp:"<strong>stammt</strong> — \"aus etw. stammen\" = to originate from. Feste Präposition: <em>aus</em>.",rule:"<em>stammen aus</em> = происходить из · <em>kommen aus</em> = тоже, но разговорнее"},
-     {n:30,ctx:"dort ___ man das kleine Telefon meist als \"mobile phone\"",opts:["bedrückt","bezeichnet","definiert","deutet"],ans:"bezeichnet",
-      exp:"<strong>bezeichnet</strong> — \"etw. als etw. bezeichnen\" = to call sth. sth. Festes Strukturmuster mit <em>als</em>.",rule:"<em>etw. als etw. bezeichnen/nennen/betrachten</em> — immer mit <em>als</em> + Nominativ"},
-     {n:31,ctx:"Dass die Deutschen sich eines englisch klingenden Phantasiewortes ___",opts:["bedienen","benutzen","gebrauchen","verdienen"],ans:"bedienen",
-      exp:"<strong>sich einer Sache bedienen</strong> (Genitiv!) = to make use of sth. \"benutzen/gebrauchen\" brauchen Akkusativ, nicht Genitiv.",rule:"<em>sich einer Sache bedienen</em> (Gen.) = пользоваться чем-л. (книжн., C1)"},
-     {n:32,ctx:"gern als \"ins Absurde ___ Anglomanie\" bezeichnet",opts:["gerächte","geführte","getriebene","geworfene"],ans:"geführte",
-      exp:"<strong>geführte</strong> — \"ins Absurde führen\" = to take to the absurd → Partizip II als Adjektiv: \"die ins Absurde geführte Anglomanie\".",rule:"Partizip II als Attribut vor Nomen: <em>die geführte</em> (schwache Deklination nach best. Artikel)"},
-     {n:33,ctx:"verdanke sich in Wirklichkeit allein der ___",opts:["Annahme","Einstellung","Stellungnahme","Verstellung"],ans:"Annahme",
-      exp:"<strong>Annahme</strong> = assumption/premise. Hier: die Annahme, dass der deutschen Sprache Worte fehlten.",rule:"<em>die Annahme</em> = предположение · <em>die Einstellung</em> = установка/отношение · <em>Stellungnahme</em> = позиция"},
-     {n:34,ctx:"Nun kann man darüber ___, wie Luther sein Mobiltelefon genannt hätte",opts:["ausbrüten","denken","grübeln","lifteln"],ans:"grübeln",
-      exp:"<strong>grübeln</strong> = to brood/ponder. Passt zu \"darüber grübeln, wie…\". \"Denken\" wäre zu allgemein, \"ausbrüten\" ist umgangssprachlich für \"ausdenken\".",rule:"<em>über etw. grübeln</em> = ломать голову над чем-л. (+ Dativ oder \"darüber\")"},
-     {n:35,ctx:"– vermutlich ___ zu keinem vernünftigen Ergebnis in diesem Punkt gelangen",opts:["aber man wird","man aber wird","wird man aber","wird aber man"],ans:"wird man aber",
-      exp:"<strong>wird man aber</strong> — Nebensatz mit \"vermutlich\" als Modaladverb. Verb \"wird\" steht am Ende des eingeleiteten Infinitivsatzes. Korrekte Wortstellung.",rule:"Modaladverb + Infinitivkonstruktion: \"vermutlich wird man aber … gelangen\" — Verb-End in Infinitivstruktur"},
-     {n:36,ctx:"dass der Begriff \"Handy\" keine ___ Schöpfung ist",opts:["rein deutsche","reindeutsche","reine deutsche","reine Deutsche"],ans:"rein deutsche",
-      exp:"<strong>rein deutsche</strong> — Adjektiv \"rein\" (= purely) + Adjektiv \"deutsch\" als Attribut. Beide werden klein geschrieben. \"reine Deutsche\" wäre Substantivierung.",rule:"<em>rein</em> als Adverb vor Adjektiv = rein/purely — beide klein, Deklination nur beim letzten Adjektiv"},
-     {n:37,ctx:"Um dem Ursprung dieses Begriffs etwas ___, muss man…",opts:["klarzukommen","näherzukommen","zu klären","zu nähern"],ans:"näherzukommen",
-      exp:"<strong>näherzukommen</strong> — \"einer Sache näherkommen\" = to get closer to sth. Infinitiv mit \"zu\" bei trennbaren Verben: \"näherzukommen\" (zusammen).",rule:"Trennbare Verben im Infinitiv mit zu: <em>näher|kommen → näher**zu**kommen</em> (zu steht ZWISCHEN Präfix und Verb)"},
-     {n:38,ctx:"– zunächst ___ für den militärischen Einsatz – kleine tragbare Funkgeräte",opts:["vorbildlich","vorgezogen","vornehmlich","vortrefflich"],ans:"vornehmlich",
-      exp:"<strong>vornehmlich</strong> = primarily/mainly = \"hauptsächlich\". \"Vorbildlich\" = exemplary, \"vortrefflich\" = excellent.",rule:"<em>vornehmlich</em> = hauptsächlich, в первую очередь — typisch für C1-Texte"},
-     {n:39,ctx:"Es ___ sich bei diesen Geräten um eine Weiterentwicklung",opts:["belief","ergab","ging","handelte"],ans:"handelte",
-      exp:"<strong>handelte</strong> — \"es handelt sich um etw.\" = it concerns / it is a matter of. Feste unpersönliche Konstruktion!",rule:"<em>es handelt sich um + Akk.</em> = речь идёт о чём-л. — FESTE WENDUNG, sehr wichtig für C1"},
-     {n:40,ctx:"Während ___ meist rucksackgroße Geräte waren",opts:["Letztere","letztgesagte","letztlich","zuletzt"],ans:"Letztere",
-      exp:"<strong>Letztere</strong> (Plural) — bezieht sich auf die zuletzt genannten Dinge (\"Walkie Talkies\"). Nominativ Plural → \"Letztere\".",rule:"<em>Erstere/Letztere</em> = первые/последние (из упомянутых) — Substantivierung, Deklination wie Adjektiv"},
-     {n:41,ctx:"konnte man … in eine Tasche stecken oder ___ in der Hand tragen",opts:["also","eben","genau","gerade"],ans:"eben",
-      exp:"<strong>eben</strong> = simply / just (in diesem Kontext: \"eben so\" = alternatively). \"Also\" = so/therefore, \"gerade\" = just now/exactly.",rule:"<em>eben</em> als Partikel = просто, именно так — Modalpartikel, sehr typisch C1"},
-     {n:42,ctx:"einige amerikanische Soldaten sollen diesen Ausdruck ___ sogar zu \"Handy\" ___",opts:["dadurch","dagegen","daraufhin","dennoch"],ans:"daraufhin",
-      exp:"<strong>daraufhin</strong> = subsequently / as a result of that. Hier: \"daraufhin … abgekürzt haben\" = then shortened it.",rule:"<em>daraufhin</em> = вследствие этого, затем — Kausaladverb, Position 1 oder nach Verb"},
-     {n:43,ctx:"sogar zu \"Handy\" ___ haben",opts:["abgekürzt","abkürzen","gekürzt","kürzer gemacht"],ans:"abgekürzt",
-      exp:"<strong>abgekürzt</strong> — \"etw. abkürzen\" = to abbreviate. Partizip II für Perfekt. \"abkürzen\" ist trennbar: ab|kürzen → abgekürzt.",rule:"Trennbare Verben Partizip II: <em>ab|kürzen → abgekürzt</em> (Präfix + ge + Stamm + t)"},
-     {n:44,ctx:"tauchte das Handy in einer Anzeige von 1986 auf und ___ damals noch ein kleines Amateurfunkgerät",opts:["bezeichnete","hieß","klassifizierte","nannte"],ans:"bezeichnete",
-      exp:"<strong>bezeichnete</strong> — \"etw. als etw. bezeichnen\" (Vergangenheit). In diesem Kontext: das Wort bezeichnete damals ein Amateurfunkgerät.",rule:"<em>als … bezeichnen</em> vs. <em>nennen</em>: \"bezeichnen als\" ist formeller, für schriftliche C1-Texte bevorzugt"},
-     {n:45,ctx:"bevor sich die ___ dann ab 1990 für Mobiltelefone durchsetzte",opts:["Wörtererschöpfung","Wörterschöpfung","Wörterschopfung","Wortschöpfung"],ans:"Wortschöpfung",
-      exp:"<strong>die Wortschöpfung</strong> = word creation / neologism. Zusammensetzung: Wort + Schöpfung. Kein Umlaut im ersten Teil.",rule:"<em>die Wortschöpfung</em> = словотворчество, новое слово · <em>die Schöpfung</em> = творение, создание"},
-     {n:46,ctx:"Der ___ des Handys konnte nicht mehr aufgehalten werden",opts:["Gewinn","Siegeszug","Trumpf","Vollzug"],ans:"Siegeszug",
-      exp:"<strong>der Siegeszug</strong> = triumphant advance / unstoppable success. \"Der Siegeszug des Handys\" = триумфальное шествие мобильника.",rule:"<em>der Siegeszug</em> = триумфальное шествие · <em>der Vollzug</em> = исполнение/осуществление"}
-   ],
-   vocab:["die Auffassung (-en) — мнение, точка зрения","sich einer Sache bedienen — пользоваться чем-л. (Genitiv!)","es handelt sich um + Akk. — речь идёт о","vornehmlich — главным образом, прежде всего","die Wortschöpfung — словотворчество","der Siegeszug — триумфальное шествие","näherzukommen — приближаться (к пониманию)","daraufhin — вследствие этого, затем"]
-  },
+// ─── SPRACHBAUSTEINE 1: HANDY ───────────
+{id:"sb1", type:"Sprachbausteine", title:"Wer hat das \u201eHandy\u201c erfunden?", desc:"22 L\u00fccken \u00b7 Grammatik & Lexik \u00b7 C1 (Variante 1)", kind:"sb",
+ text:"<h4>Wer hat eigentlich das \u201eHandy\u201c ___0___ (erfunden)?</h4><p>Jeder kennt es, fast jeder Deutsche hat auch <span class=\"gap-m\">(25)</span>: ein Mobiltelefon oder eben \u201eHandy\u201c. Ob auf der Stra\u00dfe, in Bus oder Bahn h\u00f6rt man \u00fcberall S\u00e4tze wie \u201eGib mir mal das Handy!\u201c \u2013 \u201eHandy\u201c geh\u00f6rt inzwischen zur deutschen Sprache. Oder?</p><p>Eine Umfrage hat gezeigt: Die meisten Deutschen (76\u00a0%) sind der <span class=\"gap-m\">(26)</span>, dass der Begriff \u201eHandy\u201c aus dem Englischen <span class=\"gap-m\">(27)</span>. Das ist jedoch falsch. Tats\u00e4chlich sind die <span class=\"gap-m\">(28)</span> Sprechenden die einzigen, die ihr Mobiltelefon als Handy bezeichnen. Und das Wort <span class=\"gap-m\">(29)</span> keineswegs aus dem Englischen \u2013 dort <span class=\"gap-m\">(30)</span> man das kleine Telefon meist als \u201emobile phone\u201c. Dass die Deutschen sich eines englisch klingenden Phantasiewortes <span class=\"gap-m\">(31)</span>, wird von Kulturpessimisten gern als \u201eins Absurde <span class=\"gap-m\">(32)</span> Anglomanie\u201c bezeichnet. Der Begriff \u201eHandy\u201c verdanke sich in Wirklichkeit allein der <span class=\"gap-m\">(33)</span>, der Sprache Luthers und Goethes fehlten im Zeitalter der globalen Kommunikation die Worte. Nun kann man dar\u00fcber <span class=\"gap-m\">(34)</span>, wie Luther sein Mobiltelefon genannt h\u00e4tte \u2013 vermutlich <span class=\"gap-m\">(35)</span> zu keinem vern\u00fcnftigen Ergebnis in diesem Punkt gelangen.</p><p>Sicher ist jedoch, dass der Begriff \u201eHandy\u201c keine <span class=\"gap-m\">(36)</span> Sch\u00f6pfung ist. Um dem Ursprung dieses Begriffs etwas <span class=\"gap-m\">(37)</span>, muss man sich ein wenig mit der Sprachgeschichte befassen und zur\u00fcckschauen in die 1930er Jahre. Zu jener Zeit wurden \u2013 zun\u00e4chst <span class=\"gap-m\">(38)</span> f\u00fcr den milit\u00e4rischen Einsatz \u2013 kleine tragbare Funkger\u00e4te entwickelt. Es <span class=\"gap-m\">(39)</span> sich bei diesen Ger\u00e4ten um eine Weiterentwicklung der sogenannten \u201eWalkie Talkies\u201c. W\u00e4hrend <span class=\"gap-m\">(40)</span> meist rucksackgro\u00dfe Ger\u00e4te waren, konnte man die neuen Funkger\u00e4te ganz einfach in eine Tasche stecken oder <span class=\"gap-m\">(41)</span> in der Hand tragen. Diese Ger\u00e4te wurden von Soldaten als \u201eHandie Talkies\u201c bezeichnet, und einige amerikanische Soldaten sollen diesen Ausdruck <span class=\"gap-m\">(42)</span> sogar zu \u201eHandy\u201c <span class=\"gap-m\">(43)</span>.</p><p>Im deutschen Sprachraum tauchte das Handy dann erstmals in einer Anzeige von 1986 auf und <span class=\"gap-m\">(44)</span> damals noch ein kleines Amateurfunkger\u00e4t, bevor sich die <span class=\"gap-m\">(45)</span> dann ab 1990 f\u00fcr Mobiltelefone durchsetzte. Der <span class=\"gap-m\">(46)</span> des Handys konnte nicht mehr aufgehalten werden.</p>",
+ qs:[
+  {n:25, ctx:"fast jeder Deutsche hat auch ___: ein Mobiltelefon", opts:["a) das","b) ein","c) eines","d) es"], ans:"c) eines",
+   exp:"<strong>eines</strong> (unbestimmter Pronomen, Genitiv/Akk. Neutr.) \u2014 hier als Pronomen f\u00fcr \u201eein Mobiltelefon\u201c. <em>Ein</em> w\u00e4re Artikel vor Nomen, <em>es</em> ist Personalpronomen.", rule:"<em>eines</em> = неопределённое местоимение в ср.р.: \u201ehat auch eines\u201c = имеет (один такой предмет)"},
+  {n:26, ctx:"sind der ___, dass der Begriff aus dem Englischen kommt", opts:["a) Auffassung","b) Aufnahme","c) Auslegung","d) Behauptung"], ans:"a) Auffassung",
+   exp:"<strong>der Auffassung sein, dass</strong> = \u201eмнения что\u201c. Feste Wendung mit Genitiv. <em>Behauptung</em> geht nicht mit \u201eder Behauptung sein\u201c.", rule:"Feste Wendung: <em>der Auffassung / Meinung / Ansicht sein, dass</em> = придерживаться мнения, что"},
+  {n:27, ctx:"dass der Begriff aus dem Englischen ___", opts:["a) ableitet","b) entlehnt","c) herleitet","d) kommt"], ans:"d) kommt",
+   exp:"<strong>aus dem Englischen kommen</strong> = происходить из английского. <em>Ableiten/herleiten</em> брать reflexives Pronomen (sich ableiten von), das fehlt hier.", rule:"<em>aus etw. kommen/stammen</em> = происходить из чего-л. (без Reflexivpronomen)"},
+  {n:28, ctx:"Tats\u00e4chlich sind die ___ Sprechenden die einzigen", opts:["a) Deutsch","b) Deutsche","c) Deutschen","d) Deutsches"], ans:"a) Deutsch",
+   exp:"<strong>Deutsch</strong> \u2014 hier Sprachbezeichnung als Partizip-Attribut: \u201edie Deutsch Sprechenden\u201c = те, кто говорит по-немецки. Kein Artikel \u2192 keine Endung.", rule:"Sprache als Attribut: <em>die Deutsch Sprechenden</em> (substantiviertes Partizip I) = говорящие по-немецки"},
+  {n:29, ctx:"Und das Wort ___ keineswegs aus dem Englischen", opts:["a) entreißt","b) entsteht","c) folgt","d) stammt"], ans:"d) stammt",
+   exp:"<strong>aus dem Englischen stammen</strong> = происходить из английского. Feste Pr\u00e4position: <em>aus</em>.", rule:"<em>stammen aus</em> = происходить из · <em>kommen aus</em> = тоже возможно, но здесь stammt"},
+  {n:30, ctx:"dort ___ man das kleine Telefon meist als \u201emobile phone\u201c", opts:["a) bedr\u00fcckt","b) bezeichnet","c) definiert","d) deutet"], ans:"b) bezeichnet",
+   exp:"<strong>als etw. bezeichnen</strong> = называть что-л. чем-л. Festes Strukturmuster mit <em>als</em>.", rule:"<em>etw. als etw. bezeichnen</em> (с als + Nominativ) = называть, обозначать что-л."},
+  {n:31, ctx:"Dass die Deutschen sich eines Phantasiewortes ___", opts:["a) bedienen","b) benutzen","c) gebrauchen","d) verdienen"], ans:"a) bedienen",
+   exp:"<strong>sich einer Sache bedienen (Genitiv!)</strong> = пользоваться чем-л. (книжн.). <em>Benutzen/gebrauchen</em> verlangen Akkusativ, nicht Genitiv.", rule:"<em>sich einer Sache bedienen</em> (Genitiv) = пользоваться чем-л. (возвышенно, C1)"},
+  {n:32, ctx:"gern als \u201eins Absurde ___ Anglomanie\u201c bezeichnet", opts:["a) ger\u00e4chte","b) gef\u00fchrte","c) getriebene","d) geworfene"], ans:"b) gef\u00fchrte",
+   exp:"<strong>ins Absurde f\u00fchren</strong> = доводить до абсурда \u2192 Partizip II als Adjektiv: <em>die ins Absurde gef\u00fchrte Anglomanie</em>.", rule:"Partizip II als Attribut: <em>die gef\u00fchrte</em> (schwache Dekl. nach best. Artikel Akkusativ fem.)"},
+  {n:33, ctx:"verdanke sich allein der ___, der Sprache Luthers fehlten die Worte", opts:["a) Annahme","b) Einstellung","c) Stellungnahme","d) Verstellung"], ans:"a) Annahme",
+   exp:"<strong>die Annahme</strong> = предположение. Hier: die Annahme, dass der deutschen Sprache Worte fehlten.", rule:"<em>die Annahme</em> = предположение · <em>die Einstellung</em> = установка/отношение · <em>die Stellungnahme</em> = позиция/высказывание"},
+  {n:34, ctx:"Nun kann man dar\u00fcber ___, wie Luther sein Mobiltelefon genannt h\u00e4tte", opts:["a) ausbr\u00fcten","b) denken","c) gr\u00fcbeln","d) lifteln"], ans:"c) gr\u00fcbeln",
+   exp:"<strong>\u00fcber etw. gr\u00fcbeln</strong> = ломать голову над чем-л. Passt zu \u201edar\u00fcber gr\u00fcbeln, wie\u201c.", rule:"<em>\u00fcber etw. gr\u00fcbeln</em> = ломать голову, раздумывать над чем-л."},
+  {n:35, ctx:"vermutlich ___ zu keinem vern\u00fcnftigen Ergebnis gelangen", opts:["a) aber man wird","b) man aber wird","c) wird man aber","d) wird aber man"], ans:"c) wird man aber",
+   exp:"<strong>wird man aber</strong> \u2014 Verb steht auf Position 2 nach dem Adverb \u201evermutlich\u201c. <em>Aber</em> als Modalpartikel nach dem Verb.", rule:"Wortstellung: Adverb (Pos.1) + Verb (Pos.2) + Subjekt + Partikel: <em>vermutlich | wird | man | aber</em>"},
+  {n:36, ctx:"dass der Begriff \u201eHandy\u201c keine ___ Sch\u00f6pfung ist", opts:["a) rein deutsche","b) reindeutsche","c) reine deutsche","d) reine Deutsche"], ans:"a) rein deutsche",
+   exp:"<strong>rein deutsche</strong> \u2014 <em>rein</em> als Adverb (= purely/rein) vor Adjektiv <em>deutsch</em>. Beide klein. <em>reine Deutsche</em> w\u00e4re Substantivierung (eine Deutsche).", rule:"<em>rein</em> als Adverb + Adjektiv: <em>rein deutsch</em> = чисто немецкий; Dekl. nur beim letzten Adj."},
+  {n:37, ctx:"Um dem Ursprung dieses Begriffs etwas ___", opts:["a) klarzukommen","b) n\u00e4herzukommen","c) zu kl\u00e4ren","d) zu n\u00e4hern"], ans:"b) n\u00e4herzukommen",
+   exp:"<strong>einer Sache n\u00e4herkommen</strong> = приближаться к пониманию чего-л. Trennbares Verb: Infinitiv mit zu \u2192 <em>n\u00e4herzukommen</em> (zu zwischen Pr\u00e4fix und Stamm).", rule:"Trennbare Verben + zu: <em>n\u00e4her|kommen \u2192 n\u00e4her<strong>zu</strong>kommen</em> (zu стоит МЕЖДУ приставкой и глаголом)"},
+  {n:38, ctx:"zun\u00e4chst ___ f\u00fcr den milit\u00e4rischen Einsatz", opts:["a) vorbildlich","b) vorgezogen","c) vornehmlich","d) vortrefflich"], ans:"c) vornehmlich",
+   exp:"<strong>vornehmlich</strong> = hauptsächlich, in erster Linie = прежде всего, главным образом. <em>Vorbildlich</em> = образцово, <em>vortrefflich</em> = превосходно.", rule:"<em>vornehmlich</em> = hauptsächlich = прежде всего (типично для C1-текстов)"},
+  {n:39, ctx:"Es ___ sich bei diesen Ger\u00e4ten um eine Weiterentwicklung", opts:["a) belief","b) ergab","c) ging","d) handelte"], ans:"d) handelte",
+   exp:"<strong>es handelt sich um + Akk.</strong> = речь идёт о чём-л. Feste unpersönliche Konstruktion!", rule:"FESTE WENDUNG: <em>es handelt sich um + Akk.</em> = речь идёт о; это является (очень важно для C1!)"},
+  {n:40, ctx:"W\u00e4hrend ___ meist rucksackgro\u00dfe Ger\u00e4te waren", opts:["a) Letztere","b) letztgesagte","c) letztlich","d) zuletzt"], ans:"a) Letztere",
+   exp:"<strong>Letztere (Plural)</strong> = последние из упомянутых. Bezieht sich auf die zuletzt genannten Dinge (\u201eWalkie Talkies\u201c).", rule:"<em>Erstere/Letztere</em> = первые/последние (из упомянутых) \u2014 субстантивация, склоняется как прилагательное"},
+  {n:41, ctx:"konnte man in eine Tasche stecken oder ___ in der Hand tragen", opts:["a) also","b) eben","c) genau","d) gerade"], ans:"b) eben",
+   exp:"<strong>eben</strong> als Modalpartikel = schlicht und einfach = просто так, вот так. <em>Also</em> = итак, <em>gerade</em> = как раз/именно сейчас.", rule:"<em>eben</em> als Partikel = просто, именно так \u2014 Modalpartikel, типичная для C1"},
+  {n:42, ctx:"einige Soldaten sollen diesen Ausdruck ___ sogar zu \u201eHandy\u201c ___", opts:["a) dadurch","b) dagegen","c) daraufhin","d) dennoch"], ans:"c) daraufhin",
+   exp:"<strong>daraufhin</strong> = вследствие этого, затем. Hier: \u201edaraufhin abgek\u00fcrzt haben\u201c = затем сократили.", rule:"<em>daraufhin</em> = вследствие этого, затем \u2014 каузальное наречие, стоит на Pos.1"},
+  {n:43, ctx:"zu \u201eHandy\u201c ___ haben", opts:["a) abgek\u00fcrzt","b) abk\u00fcrzen","c) gek\u00fcrzt","d) k\u00fcrzer gemacht"], ans:"a) abgek\u00fcrzt",
+   exp:"<strong>abgek\u00fcrzt</strong> \u2014 Partizip II von <em>abk\u00fcrzen</em> (трennbar: ab|k\u00fcrzen). F\u00fcr Perfekt mit <em>sollen</em>: sollen + abgek\u00fcrzt haben.", rule:"Trennbares Verb Partizip II: <em>ab|k\u00fcrzen \u2192 abgek\u00fcrzt</em> (Pr\u00e4fix + ge + Stamm + t)"},
+  {n:44, ctx:"tauchte in einer Anzeige von 1986 auf und ___ damals noch ein kleines Amateurfunkger\u00e4t", opts:["a) bezeichnete","b) hie\u00df","c) klassifizierte","d) nannte"], ans:"a) bezeichnete",
+   exp:"<strong>bezeichnete</strong> \u2014 der Begriff bezeichnete = слово обозначало. <em>Hie\u00df</em> auch m\u00f6glich (назывался), aber <em>bezeichnete</em> ist formeller f\u00fcr C1-Texte.", rule:"<em>bezeichnen</em> = обозначать (формально) · <em>hei\u00dfen</em> = называться (разговорнее)"},
+  {n:45, ctx:"bevor sich die ___ dann ab 1990 f\u00fcr Mobiltelefone durchsetzte", opts:["a) W\u00f6rterersch\u00f6pfung","b) Worterschöpfung","c) W\u00f6rtersch\u00f6pfung","d) Wortsch\u00f6pfung"], ans:"d) Wortsch\u00f6pfung",
+   exp:"<strong>die Wortsch\u00f6pfung</strong> = словотворчество, новообразование. Zusammensetzung: Wort + Sch\u00f6pfung. Kein Umlaut im ersten Teil.", rule:"<em>die Wortsch\u00f6pfung</em> = словотворчество · <em>die Sch\u00f6pfung</em> = творение, создание"},
+  {n:46, ctx:"Der ___ des Handys konnte nicht mehr aufgehalten werden", opts:["a) Gewinn","b) Siegeszug","c) Trumpf","d) Vollzug"], ans:"b) Siegeszug",
+   exp:"<strong>der Siegeszug</strong> = триумфальное шествие, победное распространение. <em>Der Vollzug</em> = исполнение, осуществление (юрид.).", rule:"<em>der Siegeszug</em> = триумфальное шествие · <em>den Siegeszug antreten</em> = начать победное шествие"}
+ ],
+ vocab:["die Auffassung (-en) \u2014 мнение, точка зрения","sich einer Sache bedienen (Genitiv) \u2014 пользоваться чем-л.","es handelt sich um + Akk. \u2014 речь идёт о чём-л.","vornehmlich \u2014 главным образом, прежде всего","die Wortsch\u00f6pfung \u2014 словотворчество, неологизм","der Siegeszug \u2014 триумфальное шествие","n\u00e4herzukommen \u2014 приближаться к (пониманию)","daraufhin \u2014 вследствие этого, затем"]
+},
 
-  // ── LESEVERSTEHEN TEIL 1: EINE BOX VERÄNDERT DIE WELT ──
-  {id:"lv1_1",type:"Leseverstehen Teil 1",title:"Eine Box verändert die Welt",
-   desc:"6 Satz-Zuordnungen · Textrekonstruktion · C1",
-   kind:"lv1",
-   text:"Eine gewellte Stahlbox, zwölf Meter lang, drei Meter hoch und genauso breit. Sie ist zum greifbaren Symbol der Globalisierung geworden. Millionen von Containern kreuzen auf immer größeren Schiffen auf den Weltmeeren: <span class=\"gap-m\">(0) z</span>\n\nDer Container hat das Transportwesen revolutioniert. Bis in die 50er Jahre war es üblich, Waren einzeln zu transportieren oder sie in Säcke oder Kisten zu verladen. Für die Hafenarbeiter war das nicht nur Schwerstarbeit. <span class=\"gap-m\">(1)</span>\n\nEs dauerte zehn Tage, bis die \"Warrior\" beladen war – genauso lange, wie die Überfahrt dauerte. Zwar hatte es bereits seit Jahrzehnten Bemühungen gegeben, den Transport effizienter zu gestalten. <span class=\"gap-m\">(2)</span>\n\nAm 26. April 1956 schipperte Malcolm McLean mit einem umgebauten Tanker von Port Newark Richtung Texas. An Bord waren 56 Container. <span class=\"gap-m\">(3)</span> Diese 40-Fuß-Container sind noch heute täglich in Gebrauch.\n\nDass McLean erfolgreich war, lag auch an einem mächtigen Kunden: dem amerikanischen Militär. <span class=\"gap-m\">(4)</span> McLean überzeugte schließlich die Betreiber des Hafens von New York.\n\nHeute reisen rund 90 Prozent der Güter, die über die Meere verschifft werden, in Containern. <span class=\"gap-m\">(5)</span> Der Container reduzierte die Transportkosten enorm. <span class=\"gap-m\">(6)</span> Heute macht er ungefähr die Hälfte des Welthandels aus.",
-   satze:[
-     {id:"z",t:"z) Smartphones aus China, T-Shirts aus Bangladesch, Bananen aus Nicaragua. (Beispiel)"},
-     {id:"a",t:"a) Die Größe, die er für seine Transportbehälter gewählt hatte, wurde zum Standard."},
-     {id:"b",t:"b) Dieses erhoffte sich von den Containern logistische Verbesserungen in der Sicherung des Nachschubs."},
-     {id:"c",t:"c) Doch sie waren am Streit über die Abmessungen der Container und an streikenden Hafenarbeitern gescheitert."},
-     {id:"d",t:"d) Es sollte genau dieser Umstand sein, dem sie in der Folge ihre Beschäftigung verdanken würden."},
-     {id:"e",t:"e) Für die Hafenarbeiter war das nicht nur Schwerstarbeit, sondern lebensgefährlich."},
-     {id:"f",t:"f) Gesteuert und auf ihrer Reise verfolgt werden diese dabei von Computern und globalen Logistiksystemen."},
-     {id:"g",t:"g) Handelsrechtliche Überlegungen dieser Art konnten ihren Siegeszug nicht aufhalten."},
-     {id:"h",t:"h) In den 1960er Jahren betrug der Warenhandel weniger als 20 Prozent der globalen Wirtschaftsleistung."}
-   ],
-   qs:[
-     {n:1,t:"Lücke (1):",opts:["a","b","c","d","e","f","g","h"],ans:"e",
-      exp:"Satz e) schließt direkt an: \"Für die Hafenarbeiter war das nicht nur Schwerstarbeit, sondern lebensgefährlich.\" → ergänzt den vorherigen Satz über Schwerstarbeit.",rule:"Strategie: Suche nach Pronomen (das, diese, er) und logischen Verbindungswörtern im Satz."},
-     {n:2,t:"Lücke (2):",opts:["a","b","c","d","e","f","g","h"],ans:"c",
-      exp:"Satz c) passt: \"Doch sie waren am Streit … gescheitert.\" → \"sie\" = die früheren Bemühungen. Das \"Doch\" signalisiert einen Gegensatz zum vorherigen Satz über Bemühungen.",rule:"Das Pronomen \"sie\" muss sich auf etwas Vorheriges beziehen → \"Bemühungen\" (Plural femininum)."},
-     {n:3,t:"Lücke (3):",opts:["a","b","c","d","e","f","g","h"],ans:"a",
-      exp:"Satz a) passt: \"Die Größe, die er für seine Transportbehälter gewählt hatte, wurde zum Standard.\" → \"er\" = McLean, \"Transportbehälter\" = Container.",rule:"Pronomen \"er\" → bezieht sich auf McLean (im vorherigen Satz genannt)."},
-     {n:4,t:"Lücke (4):",opts:["a","b","c","d","e","f","g","h"],ans:"b",
-      exp:"Satz b) passt: \"Dieses erhoffte sich … logistische Verbesserungen …\" → \"Dieses\" = das Militär (Neutrum, wie \"das Militär\").",rule:"\"Dieses\" (Neutrum) → bezieht sich auf \"das amerikanische Militär\" → Kausalverknüpfung."},
-     {n:5,t:"Lücke (5):",opts:["a","b","c","d","e","f","g","h"],ans:"f",
-      exp:"Satz f) passt: \"Gesteuert und verfolgt werden diese dabei von Computern …\" → \"diese\" = die Container (90% der Güter in Containern).",rule:"Passiv + \"diese\" als Bezug auf Container. Participia am Satzanfang = typisch C1."},
-     {n:6,t:"Lücke (6):",opts:["a","b","c","d","e","f","g","h"],ans:"h",
-      exp:"Satz h) passt: \"In den 1960er Jahren betrug der Warenhandel weniger als 20 Prozent …\" → Kontrast zu \"heute macht er die Hälfte aus\" (folgt direkt danach).",rule:"Zeitangabe \"In den 1960er Jahren\" vs. \"Heute\" = Kontrast, der durch Satz h) aufgebaut wird."}
-   ],
-   vocab:["revolutionieren — совершать революцию в","die Abmessung (-en) — размер, габарит","der Nachschub — снабжение, подвоз","handelsrechtlich — торгово-правовой","die Wirtschaftsleistung — экономическая производительность","der Logistiksystem — логистическая система","der Warenhandel — товарная торговля"]
-  },
+// ─── SPRACHBAUSTEINE 2: DAS GEHIRN DES RAUCHERS ───
+{id:"sb2", type:"Sprachbausteine", title:"Das Gehirn des Rauchers ist weniger flexibel", desc:"22 L\u00fccken \u00b7 Grammatik & Lexik \u00b7 C1", kind:"sb",
+ text:"<h4>Das Gehirn ___0___ (eines) Rauchers ist weniger flexibel</h4><p>Raucher denken weniger flexibel, sie reagieren weniger stark auf alternative Handlungsszenarien. Genau diese Erkenntnis erkl\u00e4rt auch, warum es Rauchern oftmals so schwer\u00e4llt, von ihrer Sucht <span class=\"gap-m\">(25)</span>. Dies sind die Resultate einer neuen Studie <span class=\"gap-m\">(26)</span> Hirnforscher. Die Ergebnisse dieser Studie wurden nun auch im Fachmagazin \u201eNature Neuroscience\u201c <span class=\"gap-m\">(27)</span>. Wir wollen hier das Wichtigste <span class=\"gap-m\">(28)</span>.</p><p>S\u00fcchtige sehen die Welt anders \u2013 das ist <span class=\"gap-m\">(29)</span> nur eine subjektive Behauptung, sondern nun auch wissenschaftlich belegt. Dabei beeinflusst die Sucht das Verhalten der Betroffenen <span class=\"gap-m\">(30)</span> vielf\u00e4ltige Weise. S\u00fcchtige lassen sich zum Beispiel schwerer s\u00e4ttigen, sie machen exzessiv mit einem Verhalten weiter, wenn andere l\u00e4ngst <span class=\"gap-m\">(31)</span>.</p><p>Ziel der Forscher war es, die Sucht der Raucher <span class=\"gap-m\">(32)</span>. Rauchen ver\u00e4ndert die Wahrnehmung \u2013 das war bekannt. Beim Rauchen werden Belohnungszentren im Gehirn aktiviert, beim Nichtrauchen fehlt ihm dieser Reiz, was <span class=\"gap-m\">(33)</span> zu Schmerzen f\u00fchren kann.</p><p>Jetzt entdeckten die Hirnforscher: Raucher lassen sich nicht davon <span class=\"gap-m\">(34)</span>, was h\u00e4tte sein k\u00f6nnen, wenn sie eine andere Entscheidung <span class=\"gap-m\">(35)</span> \u2013 wenn sie zum Beispiel die letzte Zigarette nicht gebraucht h\u00e4tten.</p><p>Die Forscher <span class=\"gap-m\">(36)</span> Raucher und Nichtraucher an einem B\u00f6rsenspiel teilnehmen. Die Spieler erhielten jeweils 100 Dollar. Nach jedem Spielzug <span class=\"gap-m\">(37)</span> die Spieler, wie sie mehr Geld h\u00e4tten gewinnen k\u00f6nnen. Am Ende <span class=\"gap-m\">(38)</span> Raucher und Nichtraucher zwar gleich gut ab, doch sie <span class=\"gap-m\">(39)</span> unterschiedliche Spielstrategien. Nichtraucher \u00e4nderten oft ihre Spielweise, sobald sie erfuhren, dass sie in der Vergangenheit mit einer <span class=\"gap-m\">(40)</span> Strategie mehr Geld gewonnen h\u00e4tten. Raucher dagegen <span class=\"gap-m\">(41)</span> dem keine Beachtung und spielten weiter. Die Forscher f\u00fchren dies auf eine Unf\u00e4higkeit der Raucher <span class=\"gap-m\">(42)</span>, auf alternative Szenarien zu reagieren.</p><p>Um den Unterschied zu erkl\u00e4ren, wurde w\u00e4hrend des Versuchs auch <span class=\"gap-m\">(43)</span> die Gehirnaktivit\u00e4t aufgezeichnet. Die Forscher leiteten <span class=\"gap-m\">(44)</span> ab, dass Raucher mit denselben Informationen anders umgehen als Nichtraucher: Raucher <span class=\"gap-m\">(45)</span> sie einfach. Dies kann auch das Aufh\u00f6ren selbst <span class=\"gap-m\">(46)</span>: F\u00fcr Raucher ist es schwerer, die Vorteile des Nichtrauchens zu erkennen.</p>",
+ qs:[
+  {n:25, ctx:"warum es Rauchern schwer\u00e4llt, von ihrer Sucht ___", opts:["a) abzulassen","b) aufzuh\u00f6ren","c) wegzulassen","d) zu beenden"], ans:"a) abzulassen",
+   exp:"<strong>von etw. ablassen</strong> = отказаться от чего-л., бросить. Feste Pr\u00e4position: <em>von</em>. <em>Aufh\u00f6ren mit</em> braucht \u201emit\u201c, nicht \u201evon\u201c.", rule:"<em>von etw. ablassen</em> (von + Dativ) = отказываться от чего-л.; trennbares Verb: ab|lassen"},
+  {n:26, ctx:"Resultate einer neuen Studie ___ Hirnforscher", opts:["a) drei amerikanischer","b) dreien amerikanischer","c) dreier amerikanischen","d) dreier amerikanischer"], ans:"d) dreier amerikanischer",
+   exp:"<strong>dreier amerikanischer</strong> = troих американских (Genitiv Plural nach Zahlwort). Zahlwort <em>drei</em> \u2192 Genitiv: <em>dreier</em>. Adjektiv ohne Artikel im Gen.Pl.: <em>amerikanischer</em>.", rule:"Genitiv Plural ohne Artikel: <em>dreier amerikanischer Hirnforscher</em> = троих американских исследователей мозга"},
+  {n:27, ctx:"wurden im Fachmagazin ___ (ver\u00f6ffentlicht)", opts:["a) angek\u00fcndigt","b) geschrieben","c) publiziert","d) weitergegeben"], ans:"c) publiziert",
+   exp:"<strong>publiziert</strong> = опубликован (в журнале). <em>Ver\u00f6ffentlicht</em> auch m\u00f6glich, aber hier unter den Optionen <em>publiziert</em>.", rule:"<em>publizieren</em> = публиковать (формально, научный контекст) = <em>ver\u00f6ffentlichen</em>"},
+  {n:28, ctx:"Wir wollen hier das Wichtigste ___", opts:["a) kurznachfassen","b) kurz zusammenfassen","c) kutz zusammenlegen","d) kurzfassen"], ans:"b) kurz zusammenfassen",
+   exp:"<strong>kurz zusammenfassen</strong> = кратко резюмировать. <em>Kurzfassen</em> existiert nicht als Kompositum. <em>Zusammenfassen</em> = подводить итог.", rule:"<em>kurz zusammenfassen</em> = кратко резюмировать (zwei W\u00f6rter, kein Kompositum!)"},
+  {n:29, ctx:"das ist ___ nur eine subjektive Behauptung, sondern auch wissenschaftlich belegt", opts:["a) in keinen F\u00e4llen","b) keinfalls","c) keineswegs","d) ohnegleichen"], ans:"c) keineswegs",
+   exp:"<strong>keineswegs</strong> = ни в коем случае, отнюдь не. Passt zu \u201enicht nur\u2026 sondern auch\u201c-Struktur.", rule:"<em>keineswegs</em> = ни в коем случае, отнюдь не (C1, книжн.) · <em>auf keinen Fall</em> = разговорный эквивалент"},
+  {n:30, ctx:"beeinflusst die Sucht das Verhalten der Betroffenen ___ vielf\u00e4ltige Weise", opts:["a) an","b) auf","c) in","d) \u00fcber"], ans:"b) auf",
+   exp:"<strong>auf vielf\u00e4ltige Weise</strong> = самыми разнообразными способами. Feste Wendung: <em>auf diese/verschiedene Weise</em>.", rule:"Feste Wendung: <em>auf + Adjektiv + Weise</em> = каким-л. образом; на каком-л. уровне"},
+  {n:31, ctx:"wenn andere l\u00e4ngst ___", opts:["a) aufh\u00f6ren m\u00fcssten","b) aufh\u00f6ren sollten","c) aufgeh\u00f6rt h\u00e4tten","d) aufzuh\u00f6ren haben"], ans:"c) aufgeh\u00f6rt h\u00e4tten",
+   exp:"<strong>aufgeh\u00f6rt h\u00e4tten</strong> \u2014 Konjunktiv II Perfekt (= уже бы бросили). Beschreibt hypothetisches Ergebnis in der Vergangenheit.", rule:"Konj.II Perfekt: <em>h\u00e4tten + Partizip II</em> = гипотетическое действие в прошлом"},
+  {n:32, ctx:"Ziel der Forscher war es, die Sucht der Raucher ___", opts:["a) abzuschaffen","b) abzuw\u00e4gen","c) einzusehen","d) zu verstehen"], ans:"d) zu verstehen",
+   exp:"<strong>zu verstehen</strong> = понять (суть никотиновой зависимости). <em>Einzusehen</em> = признать, <em>abzuschaffen</em> = отменить.", rule:"<em>etw. verstehen</em> = понимать что-л. · Infinitiv mit zu nach <em>es war das Ziel</em>"},
+  {n:33, ctx:"was ___ zu Schmerzen f\u00fchren kann", opts:["a) daraus","b) dar\u00fcber","c) durchaus","d) hindurch"], ans:"c) durchaus",
+   exp:"<strong>durchaus</strong> = вполне, очень даже. Hier: \u201ewas durchaus zu Schmerzen f\u00fchren kann\u201c = что вполне может вызвать боль.", rule:"<em>durchaus</em> = вполне, совершенно (усилитель утверждения в C1)"},
+  {n:34, ctx:"Raucher lassen sich nicht davon ___, was h\u00e4tte sein k\u00f6nnen", opts:["a) begleiten","b) folgen","c) leiten","d) zeigen"], ans:"c) leiten",
+   exp:"<strong>sich von etw. leiten lassen</strong> = руководствоваться чем-л., поддаваться влиянию. <em>Lassen sich nicht leiten</em> = не поддаются влиянию.", rule:"<em>sich von etw. leiten lassen</em> = руководствоваться, поддаваться влиянию чего-л."},
+  {n:35, ctx:"wenn sie eine andere Entscheidung ___ \u2013 wenn sie die letzte Zigarette nicht gebraucht h\u00e4tten", opts:["a) getroffen h\u00e4tten","b) trafen","c) treffen werden","d) treffen w\u00fcrden"], ans:"a) getroffen h\u00e4tten",
+   exp:"<strong>getroffen h\u00e4tten</strong> = Konj.II Perfekt, passend zur hypothetischen Situation in der Vergangenheit. Eine Entscheidung treffen = принять решение.", rule:"<em>eine Entscheidung treffen</em> = принять решение · Konj.II Perf.: <em>h\u00e4tten getroffen</em>"},
+  {n:36, ctx:"Die Forscher ___ Raucher und Nichtraucher an einem B\u00f6rsenspiel teilnehmen", opts:["a) brauchten","b) hatten","c) lie\u00dfen","d) veranlassten"], ans:"c) lie\u00dfen",
+   exp:"<strong>lie\u00dfen teilnehmen</strong> = Kausativkonstruktion: jmdn. etw. tun lassen = заставили/позволили участвовать. <em>Veranlassen</em> braucht zu+Infinitiv.", rule:"Kausativ: <em>jmdn. etw. tun lassen</em> = заставить/позволить кому-л. что-л. сделать (без zu!)"},
+  {n:37, ctx:"Nach jedem Spielzug ___ die Spieler, wie sie mehr Geld h\u00e4tten gewinnen k\u00f6nnen", opts:["a) erfuhren","b) einheiten","c) realisierten","d) tr\u00e4umten"], ans:"a) erfuhren",
+   exp:"<strong>erfuhren</strong> = узнали (Pr\u00e4teritum von erfahren). <em>Erfuhren, wie&#8230;</em> = узнали о том, как...", rule:"<em>erfahren</em> = узнавать (новую информацию) · Pr\u00e4t.: <em>erfuhren</em>"},
+  {n:38, ctx:"Am Ende ___ Raucher und Nichtraucher zwar gleich gut ab", opts:["a) liefen","b) trennten","c) schnitten","d) machten"], ans:"c) schnitten",
+   exp:"<strong>schnitten ab</strong> = Pr\u00e4teritum von \u201eabschneiden\u201c: gut/schlecht abschneiden = показать хорошие/плохие результаты. Feste Wendung!", rule:"<em>gut/schlecht abschneiden</em> = показать хорошие/плохие результаты (экзамен, тест и т.д.)"},
+  {n:39, ctx:"doch sie ___ unterschiedliche Spielstrategien", opts:["a) nahmen","b) unternahmen","c) verbrauchten","d) verfolgten"], ans:"d) verfolgten",
+   exp:"<strong>eine Strategie verfolgen</strong> = придерживаться стратегии, следовать стратегии. <em>Verfolgen</em> = преследовать, следовать.", rule:"<em>eine Strategie / ein Ziel verfolgen</em> = придерживаться стратегии / следовать цели"},
+  {n:40, ctx:"dass sie in der Vergangenheit mit einer ___ Strategie mehr Geld gewonnen h\u00e4tten", opts:["a) anderen als die gew\u00e4hlte","b) anderen als der gew\u00e4hlten","c) gew\u00e4hlten als der anderen","d) gew\u00e4hlten anderen"], ans:"b) anderen als der gew\u00e4hlten",
+   exp:"<strong>mit einer anderen Strategie als der gew\u00e4hlten</strong> = mit einer Strategie, die anders ist als die, die sie gew\u00e4hlt haben. <em>Als</em> beim Komparativ + Dativ.", rule:"Komparativ-Vergleich mit Attribut: <em>einer anderen als der gew\u00e4hlten</em> = другой, чем выбранная (Dat. nach als bei Attribut)"},
+  {n:41, ctx:"Raucher dagegen ___ dem keine Beachtung und spielten weiter", opts:["a) entrichteten","b) gaben","c) schenkten","d) z\u00e4hlten"], ans:"c) schenkten",
+   exp:"<strong>keine Beachtung schenken</strong> = не обращать внимания. Feste Wendung: <em>jmdm./etw. Beachtung schenken</em>.", rule:"Feste Wendung: <em>jmdm. Beachtung schenken / keine Beachtung schenken</em> = уделять / не уделять внимание"},
+  {n:42, ctx:"Unf\u00e4higkeit der Raucher ___, auf alternative Szenarien zu reagieren", opts:["a) heraus","b) hinzu","c) nach","d) zur\u00fcck"], ans:"d) zur\u00fcck",
+   exp:"<strong>zur\u00fcckf\u00fchren auf</strong> = объяснять чем-л., объяснять причиной. Hier: <em>auf eine Unf\u00e4higkeit zur\u00fcckf\u00fchren</em>.", rule:"<em>etw. auf etw. zur\u00fcckf\u00fchren</em> = объяснять что-л. чем-л., относить к причине"},
+  {n:43, ctx:"wurde w\u00e4hrend des Versuchs auch ___ die Gehirnaktivit\u00e4t aufgezeichnet", opts:["a) fortgegangen","b) fortgehen","c) fortgelaufen","d) fortlaufend"], ans:"d) fortlaufend",
+   exp:"<strong>fortlaufend</strong> = непрерывно, постоянно (als Adverb). <em>Fortlaufend aufgezeichnet</em> = непрерывно записывалась.", rule:"<em>fortlaufend</em> = непрерывно, постоянно (Adverb, C1)"},
+  {n:44, ctx:"Die Forscher leiteten ___ ab, dass Raucher anders umgehen", opts:["a) dadurch","b) danach","c) daraus","d) dazu"], ans:"c) daraus",
+   exp:"<strong>daraus ableiten</strong> = сделать вывод из этого. <em>Aus etw. ableiten</em> = делать вывод из чего-л.; <em>daraus</em> = da + aus.", rule:"<em>daraus ableiten</em> = делать вывод из этого (da + aus = из этого)"},
+  {n:45, ctx:"Raucher ___ sie einfach", opts:["a) ber\u00fccksichtigen","b) beziehen","c) ignorieren","d) vermeiden"], ans:"c) ignorieren",
+   exp:"<strong>ignorieren</strong> = игнорировать, не обращать внимания. Passt semantisch: Raucher ignorieren die Informationen.", rule:"<em>ignorieren</em> = игнорировать · <em>nicht beachten</em> = не обращать внимания (синоним)"},
+  {n:46, ctx:"Dies kann auch das Aufh\u00f6ren selbst ___", opts:["a) bek\u00e4mpfen","b) beschweren","c) erschweren","d) vermeiden"], ans:"c) erschweren",
+   exp:"<strong>erschweren</strong> = затруднять. <em>Das Aufh\u00f6ren erschweren</em> = затруднять отказ от курения.", rule:"<em>erschweren</em> = затруднять · <em>erleichtern</em> = облегчать (антоним)"}
+ ],
+ vocab:["von etw. ablassen \u2014 отказаться от чего-л.","keineswegs \u2014 ни в коем случае, отнюдь не","auf ... Weise \u2014 каким-л. образом","sich von etw. leiten lassen \u2014 руководствоваться чем-л.","gut/schlecht abschneiden \u2014 показать хорошие/плохие результаты","eine Strategie verfolgen \u2014 придерживаться стратегии","Beachtung schenken \u2014 уделять внимание","daraus ableiten \u2014 делать вывод из этого","fortlaufend \u2014 непрерывно, постоянно","erschweren \u2014 затруднять"]
+},
 
-  // ── LESEVERSTEHEN TEIL 3: VERPACKUNGSINDUSTRIE ──
-  {id:"lv3_1",type:"Leseverstehen Teil 3",title:"Zukunftsperspektiven für die Verpackungsindustrie",
-   desc:"11 Aussagen R/F/NiT + Makroaufgabe · C1",
-   kind:"lv3",
-   text:"Verbraucher erachten sie als selbstverständlich: die Verpackung. Sie ist aus Kundensicht nicht nur unerlässlich für Transport, sondern auch wesentlich an der Kaufentscheidung beteiligt. Im Unterbewusstsein lenkt die Verpackung unser Kaufverhalten.\n\nDie Verpackung ist aber mehr als eine Verkaufshilfe. Im vergangenen Jahr beschäftigte die deutsche Verpackungsindustrie rund 110.000 Personen und erzielte einen Umsatz von 31,8 Milliarden Euro. Mengenmäßig stellten Verpackungen aus Papier und Pappe mit 48% den größten Anteil. Am umsatzstärksten sind allerdings Kunststoffverpackungen: auf sie entfallen 41% des Gesamtumsatzes. Um im Wettbewerb mit Ländern bestehen zu können, in denen Personalkosten niedrig sind, muss die deutsche Verpackungsindustrie auf Innovation setzen.\n\nAn erster Stelle ist die Transportmöglichkeit zu nennen. Unmittelbar damit verbunden ist der Schutz des verpackten Produktes: Schutz vor Verschmutzung, vor Beschädigung, vor Sauerstoff oder vor Licht. Weiterhin dient die Verpackung der Information und der Selbstdarstellung von Marken.\n\nVerbraucher stellen ständig wachsende Anforderungen an Hygiene und Qualität. So waren etwa Mineralöle in Schokoladenverpackungen aus Karton gefunden worden. In Lebensmittelverpackungen gelangen Mineralöle in der Regel über Druckfarben. Das ließe sich vermeiden, wenn Papier ohne Mineralöle verwendet würde.\n\nDer größte Trend heißt eindeutig Nachhaltigkeit. Kunden fordern recyclebare Verpackungen, die nicht beim Konsumenten bleiben, sondern wiederverwertet werden können. Neue Verpackungen sollen den Bedürfnissen der Konsumenten entsprechen und dabei Umweltverschmutzung vermeiden.\n\nInnovationen gibt es nicht nur in Bezug auf Bequemlichkeit. Auch emotional soll die Verpackung den Kunden ansprechen – über möglichst viele Sinne. Nicht nur das Sehen, sondern auch der Tastsinn ist beteiligt. Den Geruchssinn sprechen Duftetiketten an. Letztes Jahr wurde eine sprechende Verpackung ausgezeichnet: Hält der Kunde einen Stift an eine bestimmte Stelle, wird die Sprachausgabe gestartet. Nur der Geschmackssinn bleibt noch außer vor.\n\nDie Unternehmen müssen sich weiteren Herausforderungen stellen. Flexibilität ist ein wichtiges Schlagwort. Die Unternehmen müssen für anpassungsfähige Produktionsprozesse sorgen, damit sie im Rahmen von Sonderaktionen rasch kleine Mengen neuer Verpackungen liefern können.",
-   qs:[
-     {n:13,t:"Konsumenten nehmen Verpackungen als gegeben hin.",opts:["+","-","x"],ans:"+",
-      exp:"Richtig (+). Paragraph 1: \"Verbraucher erachten sie als selbstverständlich.\" = sie nehmen sie als gegeben hin.",rule:"Schlüsselwort \"selbstverständlich\" = als gegeben hin."},
-     {n:14,t:"Der Umsatz der deutschen Verpackungsindustrie ist bei Papier- und Pappverpackungen am höchsten.",opts:["+","-","x"],ans:"-",
-      exp:"Falsch (-). Im Text: Papier/Pappe = mengenmäßig größter Anteil (48%), aber umsatzstärkste sind Kunststoffverpackungen (41% des Umsatzes).",rule:"Unterschied: <em>mengenmäßig</em> vs. <em>umsatzstärkst</em> — beides steht im Text, aber für verschiedene Materialien!"},
-     {n:15,t:"Die Konkurrenz aus Niedriglohnländern bescherte der Verpackungsindustrie milliardenschwere Einbußen.",opts:["+","-","x"],ans:"-",
-      exp:"Falsch (-). Im Text steht, dass Konkurrenz aus Ländern mit niedrigen Personalkosten <em>droht</em> – von \"milliardenschweren Einbußen\" ist keine Rede.",rule:"Vorsicht: Im Text steht \"drohen\", nicht dass Verluste bereits eingetreten sind."},
-     {n:16,t:"Verpackungen dienen ursprünglich dem Schutz vor Verschmutzung.",opts:["+","-","x"],ans:"+",
-      exp:"Richtig (+). Im Text: \"An erster Stelle ist die Transportmöglichkeit zu nennen. Unmittelbar damit verbunden ist der Schutz … vor Verschmutzung.\"",rule:"Vorsicht: \"ursprünglich\" vs. tatsächliche Reihenfolge im Text — Transport kommt zuerst, Schutz ist \"unmittelbar damit verbunden\""},
-     {n:17,t:"Verbraucherverbände warnen vor Mineralöl in Verpackungen.",opts:["+","-","x"],ans:"x",
-      exp:"Nicht im Text (x). Mineralöl wird erwähnt, aber von \"Verbraucherverbänden\" steht nichts im Text.",rule:"x = nicht im Text: die Aussage ist weder bestätigt noch widerlegt."},
-     {n:18,t:"Die Verpackungsindustrie muss in Zukunft die Forschung in den Mittelpunkt stellen.",opts:["+","-","x"],ans:"-",
-      exp:"Falsch (-). Im Text: \"muss biologisch abbaubare Materialien und eine Optimierung der Herstellungsprozesse in den Mittelpunkt … stellen\" — nicht nur Forschung.",rule:"Partielle Übereinstimmung reicht nicht für (+). Der Satz übertreibt/vereinfacht."},
-     {n:19,t:"Immer mehr Forscher versuchen als Alternative zu Plastik Bio-Kunststoffe zu entwickeln.",opts:["+","-","x"],ans:"x",
-      exp:"Nicht im Text (x). Bio-Kunststoffe werden nicht erwähnt.",rule:"x wählen wenn das Thema im Text gar nicht vorkommt."},
-     {n:20,t:"Innovative Lebensmittelverpackungen werden die Angabe des Mindesthaltbarkeitsdatums überflüssig machen.",opts:["+","-","x"],ans:"+",
-      exp:"Richtig (+). Im Text: \"Folien, die anzeigen, ob das Produkt noch genießbar oder bereits verdorben ist, weit genauer als das bisherige Mindesthaltbarkeitsdatum.\"",rule:"Das impliziert, dass das MHD überflüssig werden könnte — direkte Schlussfolgerung aus dem Text."},
-     {n:21,t:"Um für die Konsumenten attraktiv zu sein, sprechen Verpackungen schon heute alle fünf Sinne an.",opts:["+","-","x"],ans:"-",
-      exp:"Falsch (-). Im Text: \"Nur der Geschmackssinn bleibt noch außer vor.\" Also NICHT alle fünf Sinne.",rule:"Schlüsselwort: \"Nur der Geschmackssinn bleibt noch außer vor\" = nicht alle Sinne angesprochen."},
-     {n:22,t:"Verbraucherinformationen brauchen in Zukunft fast doppelt so viel Platz auf der Verpackung.",opts:["+","-","x"],ans:"x",
-      exp:"Nicht im Text (x). Das neue System verdoppelt die <em>verfügbare Fläche für Informationen</em>, aber Verbraucherinformationen BRAUCHEN nicht mehr Platz — sie HABEN mehr Platz.",rule:"Inhalt vs. Konsequenz: mehr verfügbare Fläche ≠ mehr Platz gebraucht."},
-     {n:23,t:"Die Unternehmen der Verpackungsindustrie müssen ihre Produktion besser an den kurzfristigen Bedarf anpassen.",opts:["+","-","x"],ans:"+",
-      exp:"Richtig (+). Im Text: \"damit sie im Rahmen von Sonderaktionen rasch kleine Mengen … liefern können.\" = kurzfristiger Bedarf.",rule:"Paraphrase: \"rasch kleine Mengen liefern\" = \"kurzfristigen Bedarf anpassen\""},
-     {n:24,t:"Welche Überschrift passt am besten?",opts:["a) Die Verpackung der Zukunft: sprechende Tüten und duftende Kartons","b) Nachhaltige Verpackungen auf dem Vormarsch","c) Zukunftsperspektiven für die Verpackungsindustrie"],ans:"c) Zukunftsperspektiven für die Verpackungsindustrie",
-      exp:"c) ist am besten: Der Text behandelt ALLE Aspekte der Zukunft (Nachhaltigkeit, Innovation, Flexibilität, Sinnesansprache, Herausforderungen). a) ist zu eng (nur Innovation), b) ist zu eng (nur Nachhaltigkeit).",rule:"Makroaufgabe: Suche die Überschrift, die den GESAMTEN Text abdeckt, nicht nur einen Teil."}
-   ],
-   vocab:["erachten als — считать, расценивать как","die Kaufentscheidung — решение о покупке","der Gesamtumsatz — общий оборот","recyclebar — пригодный для переработки","wiederverwertet — вторично переработанный","der Duftetikette — ароматический ярлык","die Sonderaktion (-en) — акция, специальное предложение","anpassungsfähig — способный к адаптации"]
-  },
+// ─── LV TEIL 1: EINE BOX VERAENDERT DIE WELT ───
+{id:"lv1_1", type:"Leseverstehen Teil 1", title:"Eine Box ver\u00e4ndert die Welt", desc:"6 Satz-Zuordnungen \u00b7 Textrekonstruktion \u00b7 C1", kind:"lv1",
+ satze:[
+  {id:"z",t:"z) Smartphones aus China, T-Shirts aus Bangladesch, Bananen aus Nicaragua, Kaffee aus \u00c4thiopien oder Wein aus Neuseeland. <em>(Beispiel \u2014 L\u00fccke 0)</em>"},
+  {id:"a",t:"a) Die Gr\u00f6\u00dfe, die er f\u00fcr seine Transportbeh\u00e4lter gew\u00e4hlt hatte, wurde zum Standard."},
+  {id:"b",t:"b) Dieses erhoffte sich von den Containern logistische Verbesserungen in der Sicherung des Nachschubs."},
+  {id:"c",t:"c) Doch sie waren am Streit \u00fcber die Abmessungen der Container und an streikenden Hafenarbeitern gescheitert."},
+  {id:"d",t:"d) Es sollte genau dieser Umstand sein, dem sie in der Folge ihre Besch\u00e4ftigung verdanken w\u00fcrden."},
+  {id:"e",t:"e) F\u00fcr die Hafenarbeiter war das nicht nur Schwerstarbeit, sondern lebensgef\u00e4hrlich."},
+  {id:"f",t:"f) Gesteuert und auf ihrer Reise verfolgt werden diese dabei von Computern und globalen Logistiksystemen."},
+  {id:"g",t:"g) Handelsrechtliche \u00dcberlegungen dieser Art konnten ihren Siegeszug nicht aufhalten."},
+  {id:"h",t:"h) In den 1960er Jahren betrug der Warenhandel weniger als 20 Prozent der globalen Wirtschaftsleistung."}
+ ],
+ textps:[
+  "Eine gewellte Stahlbox, zw\u00f6lf Meter lang, drei Meter hoch und genauso breit. Sie ist zum greifbaren Symbol der Globalisierung geworden. Millionen von Containern kreuzen auf immer gr\u00f6\u00dferen Schiffen auf den Weltmeeren und schaffen Produkte von A nach B: <span class=\"gap-m\">(0) z</span>",
+  "Der Container hat das Transportwesen auf See und an Land revolutioniert. Bis in die 50er Jahre war es \u00fcblich, Waren einzeln zu transportieren oder sie in S\u00e4cke oder Kisten zu verladen. 1954 fuhr ein Frachtschiff namens \u201eWarrior\u201c von Brooklyn nach Bremerhaven. An Bord befanden sich 5000 Tonnen Lebensmittel, verteilt auf 194.582 F\u00e4sser, Kisten und S\u00e4cke. Jedes St\u00fcck war per Hand in ein Warenhaus und von dort an Bord geschleppt worden. <span class=\"gap-m\">(1)</span> Immer wieder passierten n\u00e4mlich in den gro\u00dfen H\u00e4fen der Welt schwere Unf\u00e4lle.",
+  "Es dauerte zehn Tage, bis die \u201eWarrior\u201c beladen war \u2013 genauso lange wie die \u00dcberfahrt. Zwar hatte es bereits seit Jahrzehnten Bem\u00fchungen gegeben, den Transport effizienter zu gestalten. <span class=\"gap-m\">(2)</span> Erst einem US-amerikanischen Unternehmer gelang es, gemeinsam mit der Marine die Idee einer universellen Transportbox durchzusetzen.",
+  "Am 26. April 1956 schipperte Malcolm McLean mit einem umgebauten Tanker von Port Newark Richtung Texas. An Bord waren 56 Container. <span class=\"gap-m\">(3)</span> Diese 40-Fu\u00df-Container sind noch heute t\u00e4glich in Gebrauch.",
+  "Dass McLean erfolgreich war, lag auch an dem m\u00e4chtigen Kunden an seiner Seite, dem amerikanischen Milit\u00e4r. <span class=\"gap-m\">(4)</span> McLean \u00fcberzeugte schlie\u00dflich die Betreiber des Hafens von New York, einen eigenen Containerterminal einzurichten.",
+  "Heute reisen rund 90 Prozent der G\u00fcter, die \u00fcber die Meere verschifft werden, in Containern. <span class=\"gap-m\">(5)</span> Der Container reduzierte die Transportkosten von G\u00fctern auf einen Bruchteil und brachte die weltweiten Warenstr\u00f6me zum Flie\u00dfen.",
+  "<span class=\"gap-m\">(6)</span> Heute macht er ungef\u00e4hr die H\u00e4lfte des Welthandels aus. Ohne Container w\u00e4re der globalisierte Warenfluss undenkbar."
+ ],
+ qs:[
+  {n:1,t:"L\u00fccke (1):",opts:["a","b","c","d","e","f","g","h"],ans:"e",
+   exp:"Satz e) \u201eF\u00fcr die Hafenarbeiter war das nicht nur Schwerstarbeit, sondern lebensgef\u00e4hrlich.\u201c erg\u00e4nzt direkt den vorherigen Satz \u00fcber schwere Arbeit per Hand. <em>Das</em> = das Schleppen von Hand.",rule:"Strategie (стратегия): Demonstrativpronomen <em>das</em> verweist auf das Vorherige. Suche den Satz, der die zuletzt beschriebene Situation erg\u00e4nzt."},
+  {n:2,t:"L\u00fccke (2):",opts:["a","b","c","d","e","f","g","h"],ans:"c",
+   exp:"Satz c) \u201eDoch sie waren am Streit \u2026 gescheitert.\u201c \u2014 <em>sie</em> = die fr\u00fcheren Bem\u00fchungen (Plural). Das \u201eDoch\u201c signalisiert Gegensar: Bem\u00fchungen gab es, aber sie scheiterten.",rule:"Strategie: <em>Doch</em> + <em>sie</em> (Plural) \u2192 Gegenargument zu den Bem\u00fchungen. Pronomen zeigen Referenz."},
+  {n:3,t:"L\u00fccke (3):",opts:["a","b","c","d","e","f","g","h"],ans:"a",
+   exp:"Satz a) \u201eDie Gr\u00f6\u00dfe, die <em>er</em> gew\u00e4hlt hatte, wurde zum Standard.\u201c \u2014 <em>er</em> = McLean. Direkt nach dem Satz \u00fcber McLeans 56 Container.",rule:"Pronomen <em>er</em> \u2192 McLean (zuletzt im Text erw\u00e4hnt). Zeitliche Logik: erst Container, dann Standard."},
+  {n:4,t:"L\u00fccke (4):",opts:["a","b","c","d","e","f","g","h"],ans:"b",
+   exp:"Satz b) \u201eDieses erhoffte sich \u2026 logistische Verbesserungen \u2026\u201c \u2014 <em>Dieses</em> (Neutrum) = das amerikanische Milit\u00e4r.",rule:"Pronomen: <em>Dieses</em> (Neutrum) \u2192 bezieht sich auf <em>das amerikanische Milit\u00e4r</em>. Logistik des Nachschubs = конкретный мотив военных."},
+  {n:5,t:"L\u00fccke (5):",opts:["a","b","c","d","e","f","g","h"],ans:"f",
+   exp:"Satz f) \u201eGesteuert und verfolgt werden <em>diese</em> dabei von Computern \u2026\u201c \u2014 <em>diese</em> = die Container (90% der G\u00fcter).",rule:"<em>diese</em> (Plural) \u2192 Container. Passiv am Satzanfang (Partizip) = typisch C1. Logistische Erg\u00e4nzung zum Transport."},
+  {n:6,t:"L\u00fccke (6):",opts:["a","b","c","d","e","f","g","h"],ans:"h",
+   exp:"Satz h) \u201eIn den 1960er Jahren betrug der Warenhandel weniger als 20 Prozent \u2026\u201c \u2014 Kontrast zum \u201eheute macht er ungef\u00e4hr die H\u00e4lfte aus\u201c (direkt danach).",rule:"Zeitlicher Kontrast: \u201e1960er Jahre\u201c (Satz h) vs. \u201eheute\u201c (folgender Satz). Statistik baut den Kontrast auf."}
+ ],
+ vocab:["revolutionieren \u2014 совершать революцию в","die Abmessung (-en) \u2014 размер, габарит","der Nachschub \u2014 снабжение, подвоз","handelsrechtlich \u2014 торгово-правовой","die Wirtschaftsleistung \u2014 экономическая производительность","die Bem\u00fchung (-en) \u2014 усилие, попытка","auf einen Bruchteil reduzieren \u2014 сократить до доли"]
+},
 
-  // ── LESEVERSTEHEN TEIL 2: SELBERMACHEN ──
-  {id:"lv2_1",type:"Leseverstehen Teil 2",title:"Selbermachen als Trend",
-   desc:"6 Fragen — in welchem Abschnitt? · C1",
-   kind:"lv2",
-   text:"<strong style=\"color:var(--b)\">Abschnitt a:</strong> Mach es selbst! \"Do it yourself\" hat heute Hochkonjunktur. Vom Eierwärmer bis zur Stoffserviette muss alles individuell gestaltet sein. Selbermachen schone den Planeten und dämme den Massenkonsum ein, jubeln Aktivisten. Würden Sie, liebe Leser, sich der Meinung anschließen, dass in diesem Fall die Begeisterung ein wenig übertrieben ist? Wie etwa Sauerkraut aus der Dose – das findet man schließlich in jedem Lebensmittelgeschäft.\n\n<strong style=\"color:var(--b)\">Abschnitt b:</strong> Ja, ich gebe zu: Ich bin leicht zufriedenzustellen. Mir schmecken Produkte aus dem Supermarkt. Ich kann diesem Trend durchaus positive Seiten abgewinnen. Mit den eigenen Händen etwas herzustellen kann schließlich dazu beitragen, dass man sich entspannt. Andererseits stört es mich aber gewaltig, wie sehr das Selbermachen heutzutage überhöht wird.\n\n<strong style=\"color:var(--b)\">Abschnitt c:</strong> Das Heimwerken solle das Glücksempfinden erhöhen, den Konsum eindämmen: Solche Behauptungen hört man immer wieder. Denjenigen, die so hohe Erwartungen haben, möchte man entgegenrufen: Schaltet mal einen Gang herunter! Dass Selbermachen den Konsum reduziert, ist durchaus fraglich. Die Industrie hat den Trend erkannt und bietet zahlreiche Produkte in halbfertigem Zustand an. Man könnte behaupten, dass der Konsum durch Heimwerken sogar angekurbelt wird.\n\n<strong style=\"color:var(--b)\">Abschnitt d:</strong> Doch warum ist das Heimwerken eigentlich zum Trend geworden? Wer im Beruf tagein, tagaus am Computer sitzt, sehnt sich irgendwann nach einem Ausgleich. Im Beruf, so eine These des Neurobiologen Gerald Hüther, spüren viele längst nicht mehr die Wichtigkeit ihres Tuns. Zuhause aber haben sie das Sagen.\n\n<strong style=\"color:var(--b)\">Abschnitt e:</strong> Nicht immer reicht die eigene Fantasie aus. Ob sie etwas nähen oder ein neues Bett bauen wollen – online finden Bastler zu jedem Thema eine Anleitung. Durch den Austausch entstehen Communitys. Man könnte annehmen, dass die Menschen sich auf diese Weise näherkommen. Letztlich kommt es womöglich gar nicht darauf an, dass selbstgemachtes Sauerkraut besser schmeckt – sondern darauf, dass man mit anderen darüber reden kann.",
-   qs:[
-     {n:7,t:"In welchem Abschnitt arbeitet die Autorin mit einem Vergleich?",opts:["a","b","c","d","e"],ans:"c",
-      exp:"Abschnitt c): \"wie Hammer und Nagel\" – direkter Vergleich. \"Heimwerken und Kaufen gehören zusammen wie Hammer und Nagel.\"",rule:"Vergleich erkennbar durch: <em>wie…, genauso wie…, ähnlich wie…</em>"},
-     {n:8,t:"In welchem Abschnitt argumentiert die Autorin mithilfe einer fremden Autorität?",opts:["a","b","c","d","e"],ans:"d",
-      exp:"Abschnitt d): Die Autorin zitiert den Neurobiologen Gerald Hüther als Autorität für ihre These.",rule:"Fremde Autorität = Experte, Wissenschaftler, Studie wird zitiert"},
-     {n:9,t:"In welchem Abschnitt formuliert die Autorin einen Appell?",opts:["a","b","c","d","e"],ans:"c",
-      exp:"Abschnitt c): \"Schaltet mal einen Gang herunter!\" – direkter Appell (Imperativ) an die Leser/Befürworter.",rule:"Appell erkennbar durch: Imperativ, direkte Ansprache, Aufforderung"},
-     {n:10,t:"In welchem Abschnitt legt die Autorin ihre persönliche Haltung dar?",opts:["a","b","c","d","e"],ans:"b",
-      exp:"Abschnitt b): \"Ja, ich gebe zu…\" – die Autorin spricht in der Ich-Form und legt ihre persönliche Einstellung dar.",rule:"Persönliche Haltung: Ich-Form, \"ich finde\", \"meiner Meinung nach\""},
-     {n:11,t:"In welchem Abschnitt spricht die Autorin eine Vermutung aus?",opts:["a","b","c","d","e"],ans:"e",
-      exp:"Abschnitt e): \"Man könnte annehmen, dass die Menschen sich … näherkommen.\" – \"könnte annehmen\" = Vermutung.",rule:"Vermutung erkennbar durch: <em>könnte, dürfte, vermutlich, wahrscheinlich, womöglich</em>"},
-     {n:12,t:"In welchem Abschnitt sucht die Autorin bei den Lesern nach Zustimmung?",opts:["a","b","c","d","e"],ans:"a",
-      exp:"Abschnitt a): \"Würden Sie, liebe Leser, sich der Meinung anschließen, dass … die Begeisterung übertrieben ist?\" – direkte Frage an Leser = Zustimmung suchen.",rule:"Zustimmung suchen: direkte Leserfrage, \"Finden Sie nicht auch…?\", \"Würden Sie zustimmen?\""}
-   ],
-   vocab:["Hochkonjunktur haben — переживать бум","eindämmen — сдерживать, ограничивать","überhöhen — преувеличивать, возводить в абсолют","ankurbeln — стимулировать, запускать","sich sehnen nach — тосковать по, стремиться к","der Ausgleich — компенсация, баланс","die Behauptung (-en) — утверждение","die Anleitung (-en) — инструкция, руководство"]
-  }
-];
+// ─── LV TEIL 1: SATZZEICHEN ───
+{id:"lv1_2", type:"Leseverstehen Teil 1", title:"Satzzeichen, m\u00e4chtige Werkzeuge", desc:"6 Satz-Zuordnungen \u00b7 Textrekonstruktion \u00b7 C1", kind:"lv1",
+ satze:[
+  {id:"z",t:"z) Als Victor Hugo 1862 im Urlaub weilte und neugierig war, wie sich sein Roman <em>Die Elenden</em> verkauft, lie\u00df er seinem Verleger ein schlichtes \u201e?\u201c kabeln. <em>(Beispiel \u2014 L\u00fccke 0)</em>"},
+  {id:"a",t:"a) Bereits 1762 bem\u00e4ngelte der Gelehrte Johann Christoph Gottsched, dass es im Deutschen keine Zeichen f\u00fcr Staunen oder Mitleid gebe."},
+  {id:"b",t:"b) Dabei konnte damals von verbindlichen Normen noch gar keine Rede sein."},
+  {id:"c",t:"c) Das beklagen selbst die leidenschaftlichsten Verfechter von Kurznachrichten."},
+  {id:"d",t:"d) Erst im Mittelalter kamen irische M\u00f6nche auf die Idee, diese Textschlangen mit Zeichen zu versehen, um anderen Lesern das Leben einfacher zu machen."},
+  {id:"e",t:"e) Erst viel sp\u00e4ter \u2013 mit den neuen Medien \u2013 ging dieser langgehegte Wunsch in Erf\u00fcllung."},
+  {id:"f",t:"f) In ihr reiht sich Buchstabe an Buchstabe, Wort an Wort."},
+  {id:"g",t:"g) Rund 2500 Jahre nach den ersten Schriftzeichen trennen darin erstmals Striche und Punkte die Worte."},
+  {id:"h",t:"h) Um dies zu verstehen, muss man die Arbeitsweise in den mittelalterlichen Schreibstuben beachten."}
+ ],
+ textps:[
+  "Jeder Smartphonebesitzer wei\u00df, dass ein Semikolon und eine Klammer Freundschaften retten k\u00f6nnen. Braucht es doch nur diese zwei Symbole, und eine Beleidigung wird zum Witz &#8230;;) Selbst mit blo\u00dfen Satzzeichen lassen sich mitunter noch ganze Konversationen gestalten. <span class=\"gap-m\">(0) z</span> Wenig sp\u00e4ter erhielt er die ebenso knappe wie pr\u00e4zise Antwort: \u201e!\u201c",
+  "Als Ur-Satzzeichen gelten die Markierungen in einem Text auf der sogenannten Mescha-Stele aus dem 9. Jahrhundert vor Christus. <span class=\"gap-m\">(1)</span> Dass es damals schon Satzzeichen gab, hei\u00dft aber nicht, dass sie auch allgemein Verwendung fanden. Werke der griechischen und lateinischen Dichter sind aufgezeichnet in der sogenannten <em>scriptio continua</em>.",
+  "<span class=\"gap-m\">(2)</span> Experten erkl\u00e4ren das so: In jener ersten Phase war Schrift prim\u00e4r eine Erinnerungsst\u00fctze f\u00fcr den professionellen Vortrag. Die Notwendigkeit, sie f\u00fcr andere m\u00f6glichst einfach lesbar zu machen, bestand nicht.",
+  "<span class=\"gap-m\">(3)</span> Sp\u00e4testens die Erfindung des Buchdrucks durch Gutenberg l\u00e4utete dann die zweite gro\u00dfe Phase ein. Text war nicht mehr prim\u00e4r gedacht zum Vortrag, sondern f\u00fcr einen stummen Leser.",
+  "Es regte sich aber auch Kritik: Um 1750 befand Jean-Jacques Rousseau, dass es einer niedergeschriebenen Sprache an Lebendigkeit mangele. <span class=\"gap-m\">(4)</span> So verwendete etwa Goethe Punkt und Komma noch nach Gutd\u00fcnken.",
+  "Dabei scheint schon lange vorher Bedarf an gr\u00f6\u00dferen Ausdrucksm\u00f6glichkeiten bestanden zu haben. <span class=\"gap-m\">(5)</span> In der Philosophie, glaubte er, k\u00f6nnten solche durchaus n\u00fctzlich sein.",
+  "<span class=\"gap-m\">(6)</span> Die extreme Verk\u00fcrzung der schriftlichen Kommunikation mittels Kurznachrichten verlangt anscheinend wieder nach einer Simulation von M\u00fcndlichkeit. Der Erfolg der Emojis entspringe dem Wunsch, Affekte in geschriebene Sprache zu \u00fcberf\u00fchren."
+ ],
+ qs:[
+  {n:1,t:"L\u00fccke (1):",opts:["a","b","c","d","e","f","g","h"],ans:"g",
+   exp:"Satz g) \u201eRund 2500 Jahre nach den ersten Schriftzeichen trennen darin erstmals Striche und Punkte die Worte.\u201c \u2014 erg\u00e4nzt die Mescha-Stele (9. Jh. v.Chr.) zeitlich: 2500 Jahre nach ersten Schriftzeichen = konkrete zeitliche Einordnung.",rule:"Strategie: Satz g) kn\u00fcpft an die Stele an. <em>Darin</em> = in der Stele. Zeitliche Progression."},
+  {n:2,t:"L\u00fccke (2):",opts:["a","b","c","d","e","f","g","h"],ans:"f",
+   exp:"Satz f) \u201eIn ihr reiht sich Buchstabe an Buchstabe, Wort an Wort.\u201c \u2014 beschreibt die <em>scriptio continua</em> (erw\u00e4hnt am Ende des vorherigen Absatzes): kein Abstand, kein Zeichen.",rule:"<em>In ihr</em> = in der scriptio continua. Parallelismus \u201eBuchstabe an Buchstabe\u201c beschreibt ununterbrochenen Text."},
+  {n:3,t:"L\u00fccke (3):",opts:["a","b","c","d","e","f","g","h"],ans:"d",
+   exp:"Satz d) \u201eErst im Mittelalter kamen irische M\u00f6nche auf die Idee \u2026\u201c \u2014 \u00dcbergang von scriptio continua zur Lesbarkeit. <em>Erst</em> betont die Verzögerung.",rule:"Zeitliche Abfolge: scriptio continua (keine Zeichen) \u2192 <em>erst im Mittelalter</em> \u2192 Buche+druck (n\u00e4chster Absatz)."},
+  {n:4,t:"L\u00fccke (4):",opts:["a","b","c","d","e","f","g","h"],ans:"b",
+   exp:"Satz b) \u201eDabei konnte damals von verbindlichen Normen noch gar keine Rede sein.\u201c \u2014 erkl\u00e4rt, warum Goethe Kommas nach Gutd\u00fcnken setzen konnte: Es gab keine Normen.",rule:"<em>Dabei</em> + <em>damals</em> \u2192 zeitlicher R\u00fcckbezug. Satz b) erkl\u00e4rt Goethes Freiheit bei der Zeichensetzung."},
+  {n:5,t:"L\u00fccke (5):",opts:["a","b","c","d","e","f","g","h"],ans:"a",
+   exp:"Satz a) \u201eBereits 1762 bem\u00e4ngelte Gottsched, dass es im Deutschen keine Zeichen f\u00fcr Staunen oder Mitleid gebe.\u201c \u2014 historisches Beispiel f\u00fcr den \u201eBedarf an Ausdrucksm\u00f6glichkeiten\u201c.",rule:"Satz a) liefert das historische Beispiel (1762) f\u00fcr den Bedarf an neuen Zeichen. <em>Er</em> im n\u00e4chsten Satz = Gottsched."},
+  {n:6,t:"L\u00fccke (6):",opts:["a","b","c","d","e","f","g","h"],ans:"e",
+   exp:"Satz e) \u201eErst viel sp\u00e4ter \u2013 mit den neuen Medien \u2013 ging dieser langgehegte Wunsch in Erf\u00fcllung.\u201c \u2014 Wunsch nach neuen Zeichen (Gottsched, 1762) erf\u00fcllte sich erst mit Emojis/Kurznachrichten.",rule:"<em>dieser Wunsch</em> \u2192 Bezug auf Gottscheds Wunsch (L\u00fccke 5). <em>Erst viel sp\u00e4ter</em> = mit den neuen Medien."}
+ ],
+ vocab:["verbindlich \u2014 обязательный, обязывающий","die Norm (-en) \u2014 норма","die Erinnerungsst\u00fctze \u2014 инструмент памяти","die scriptio continua \u2014 непрерывное письмо без пробелов","die Schreibstube (-n) \u2014 средневековый скрипторий","der Wunsch in Erf\u00fcllung gehen \u2014 желание сбывается","die Verk\u00fcrzung \u2014 сокращение, усечение"]
+},
 
-// ── RENDER PICKER ──────────────────────────────────
+// ─── LV TEIL 1: HAMBURGER-HYPOTHESE ───
+{id:"lv1_3", type:"Leseverstehen Teil 1", title:"Die Hamburger-Hypothese", desc:"6 Satz-Zuordnungen \u00b7 Textrekonstruktion \u00b7 C1", kind:"lv1",
+ satze:[
+  {id:"z",t:"z) Weil der Burger eine amerikanische Ikone ist, haben in der Vergangenheit etliche US-St\u00e4dte Anspruch auf die Vaterschaft erhoben. <em>(Beispiel \u2014 L\u00fccke 0)</em>"},
+  {id:"a",t:"a) Beweisen l\u00e4sst es sich zwar nicht, aber dass der Hamburger an Bord eines Auswandererschiffs erfunden wurde, ist bislang die wahrscheinlichste Annahme."},
+  {id:"b",t:"b) Diese beiden Beispiele zeigen, dass gehacktes oder geschnetzeltes Fleisch wohl generell als Hamburg bezeichnet wurde."},
+  {id:"c",t:"c) Diese besagt, dass die aus dieser Stadt stammenden Br\u00fcder Frank und Charles Menches Ende des 19. Jahrhunderts den Burger erfunden haben sollen."},
+  {id:"d",t:"d) Ebenso liegt die Vermutung nahe, dass ein Ort namens Hamburg dem Burger seinen Namen gab."},
+  {id:"e",t:"e) In vielen amerikanischen Kochb\u00fcchern aus dieser Zeit findet man Rezepte f\u00fcr seine Zubereitung."},
+  {id:"f",t:"f) Kochen war dort vermutlich schwierig \u2013 doch pur und ohne Beilagen schmeckte das z\u00e4he P\u00f6kelfleisch nicht besonders."},
+  {id:"g",t:"g) Noch immer wird der Name Hamburger oft irrt\u00fcmlich auf das Wort <em>ham</em> (Englisch f\u00fcr Schinken) zur\u00fcckgef\u00fchrt."},
+  {id:"h",t:"h) Tats\u00e4chlich wurde wohl in keiner dieser St\u00e4dte der erste Burger serviert, denn ein \u00e4hnliches Gericht gab es schon fr\u00fcher."}
+ ],
+ textps:[
+  "\u201eHei\u00dfen Leute aus Hamburg wirklich Hamburger?\u201c Jeder Hanseat, der die Vereinigten Staaten bereist, muss sich diese Frage stellen lassen. Anders als bei angels\u00e4chsischen Leihw\u00f6rtern ist beim Hamburger weitgehend unklar, warum er hei\u00dft, wie er hei\u00dft. <span class=\"gap-m\">(0) z</span> Das St\u00e4dtchen Seymour in Wisconsin etwa verweist stolz darauf, der Imbiss-Betreiber Charlie Nagreen habe 1885 die weltweit ersten flachgedr\u00fcckten Fleischb\u00e4llchen serviert.",
+  "Eine \u00e4hnliche Geschichte tischt die Gemeinde Hamburg (Bundesstaat New York) der \u00d6ffentlichkeit auf: <span class=\"gap-m\">(1)</span> Dokumente, die das beweisen, haben Hamburg und Seymour bislang ebenso wenig vorlegen k\u00f6nnen wie zahlreiche weitere St\u00e4dte, die sich ebenfalls r\u00fchmen, den ersten Burger gebraten zu haben.",
+  "<span class=\"gap-m\">(2)</span> Bereits 50 Jahre zuvor kannte man das Hamburg Steak, das der Vorl\u00e4ufer des Hamburgers gewesen sein d\u00fcrfte. In New Yorks Restaurant Delmonico\u2019s soll bereits 1834 ein solches auf der Karte gestanden haben.",
+  "Als gesichert gilt hingegen, dass das Hamburg Steak Anfang des 20. Jahrhunderts in den USA ein g\u00e4ngiges Gericht war. <span class=\"gap-m\">(3)</span> In einer Rezeptsammlung von 1911 ist das Hamburg Steak eine zu Kugeln geformte Hacksmasse, die in Semmelkr\u00fcseln gewendet wird. <span class=\"gap-m\">(4)</span>",
+  "Das Oxford English Dictionary von 1802 definierte Hamburg Steak als gep\u00f6keltes Rindfleisch. Es ist plausibel anzunehmen, dass die Hunderttausenden von Auswanderern, die \u00fcber die Hansestadt in die USA verschifft wurden, das mit Salz haltbar gemachte Fleisch als Proviant mit sich f\u00fchrten.",
+  "Die Verpflegung an Bord war miserabel, zumindest f\u00fcr die weniger betuchten Zwischendeck-Passagiere. <span class=\"gap-m\">(5)</span> Was lag da n\u00e4her, als es in Streifen zu schneiden und \u2013 mangels Teller und Besteck \u2013 zwischen zwei Scheiben Brot zu klemmen?",
+  "<span class=\"gap-m\">(6)</span> Die Immigranten-Notverpflegung w\u00e4re dann zwischenzeitlich bei Delmonico\u2019s zum Gourmet-Schmankerl der US-Oberschicht aufgestiegen, um hundert Jahre sp\u00e4ter bei McDonald\u2019s wieder das zu werden, was sie vielleicht einst war: unkomplizierter Proviant f\u00fcr zwischendurch."
+ ],
+ qs:[
+  {n:1,t:"L\u00fccke (1):",opts:["a","b","c","d","e","f","g","h"],ans:"c",
+   exp:"Satz c) \u201eDiese besagt, dass die &#8230; Br\u00fcder &#8230; den Burger erfunden haben sollen.\u201c \u2014 <em>Diese</em> (fem.) = die Geschichte (zuletzt erw\u00e4hnt). Erkl\u00e4rt den Anspruch der Gemeinde Hamburg NY.",rule:"<em>Diese</em> (fem., Nom.) \u2192 bezieht sich auf <em>die Geschichte</em> (fem.). Logik: Geschichte \u2192 Inhalt der Geschichte."},
+  {n:2,t:"L\u00fccke (2):",opts:["a","b","c","d","e","f","g","h"],ans:"h",
+   exp:"Satz h) \u201eTats\u00e4chlich wurde wohl in keiner dieser St\u00e4dte der erste Burger serviert, denn ein \u00e4hnliches Gericht gab es schon fr\u00fcher.\u201c \u2014 \u00dcberleitung zu \u201e50 Jahre zuvor\u201c im n\u00e4chsten Satz.",rule:"<em>denn ein \u00e4hnliches Gericht gab es schon fr\u00fcher</em> \u2192 Verbindung zum Hamburg Steak (50 Jahre fr\u00fcher)."},
+  {n:3,t:"L\u00fccke (3):",opts:["a","b","c","d","e","f","g","h"],ans:"e",
+   exp:"Satz e) \u201eIn vielen amerikanischen Kochb\u00fcchern &#8230; findet man Rezepte f\u00fcr seine Zubereitung.\u201c \u2014 <em>seine</em> = das Hamburg Steaks. Belegt die Aussage \u201eein g\u00e4ngiges Gericht war\u201c mit Quellen.",rule:"<em>seine</em> \u2192 das Hamburg Steak. Satz e) belegt mit Kochb\u00fcchern die These des vorherigen Satzes."},
+  {n:4,t:"L\u00fccke (4):",opts:["a","b","c","d","e","f","g","h"],ans:"b",
+   exp:"Satz b) \u201eDiese beiden Beispiele zeigen &#8230;\u201c \u2014 <em>diese beiden Beispiele</em> = Delmonico\u2019s-Rezept + Kochsammlung 1911. Fazit-Satz nach zwei Beispielen.",rule:"<em>Diese beiden Beispiele</em> \u2192 fasst die zwei genannten Rezept-Quellen zusammen. Fazit-Formulierung."},
+  {n:5,t:"L\u00fccke (5):",opts:["a","b","c","d","e","f","g","h"],ans:"f",
+   exp:"Satz f) \u201eKochen war dort vermutlich schwierig \u2013 doch pur schmeckte das z\u00e4he P\u00f6kelfleisch nicht besonders.\u201c \u2014 <em>dort</em> = an Bord des Auswandererschiffs. Erkl\u00e4rt, warum man es zwischen Brot klemmte.",rule:"<em>dort</em> \u2192 an Bord. Kausalit\u00e4t: Schwieriges Kochen + Geschmack \u2192 deshalb Brot als L\u00f6sung."},
+  {n:6,t:"L\u00fccke (6):",opts:["a","b","c","d","e","f","g","h"],ans:"a",
+   exp:"Satz a) \u201eBeweisen l\u00e4sst es sich zwar nicht, aber &#8230; ist bislang die wahrscheinlichste Annahme.\u201c \u2014 fasst die gesamte Hypothese zusammen. <em>zwar &#8230; aber</em> = relativierende Schlussfolgerung.",rule:"Strukturell: <em>zwar &#8230; aber</em> = хотя ... но. Schlusssatz fasst die Hamburger-Hypothese zusammen."}
+ ],
+ vocab:["die Vaterschaft (hier) \u2014 авторство, происхождение","sich r\u00fchmen \u2014 хвастаться, хвалиться (чем-л.)","g\u00e4ngig \u2014 распространённый, обычный","der Proviant \u2014 провизия, дорожный паёк","das P\u00f6kelfleisch \u2014 солёное мясо","miserabel \u2014 ужасный, скверный","beweisen l\u00e4sst es sich nicht \u2014 это нельзя доказать"]
+},
+
+// ─── LV TEIL 2: TRÄUME ───
+{id:"lv2_1", type:"Leseverstehen Teil 2", title:"Welche Bedeutung haben Tr\u00e4ume?", desc:"6 Fragen \u00b7 In welchem Abschnitt? \u00b7 C1", kind:"lv2",
+ textps:[
+  "<strong>Abschnitt a:</strong> Was f\u00fcr ein Schrecken! Gerade bekamen Sie die Nachricht, im Lotto gewonnen zu haben &#8230; Und dann rei\u00dft Sie der Wecker grausam aus dem Schlaf. Im Traum passieren oft skurrile Dinge. Wir \u00fcberwinden die Schwerkraft, erheben uns wie ein Vogel. Oft durchleben wir noch einmal in verfremdeter Form die Widrigkeiten des Alltags. In Albtr\u00e4umen suchen uns dagegen unsere gr\u00f6\u00dften \u00c4ngste heim. Manche n\u00e4chtlichen Schreckensszenarien sind weitverbreitet: Tr\u00e4ume, in denen man verfolgt wird, ins Bodenlose st\u00fcrzt oder sich hoffnungslos blamiert, sind \u00fcber Kulturgrenzen hinweg bekannt.",
+  "<strong>Abschnitt b:</strong> Doch welche Bedeutung haben Tr\u00e4ume eigentlich? Oft haben wir das Gef\u00fchl, dass das im Schlaf Erlebte eine wichtige Botschaft enth\u00e4lt. F\u00fcr G\u00f6tterbotschaften hielt man in der Antike das n\u00e4chtliche Kopfkino. Wer leichtgl\u00e4ubig nach einem Schl\u00fcssel f\u00fcr Traumsymbole sucht, wird unz\u00e4hlige Websites finden. Dabei stellt sich die Frage, ob die Ansicht, Tr\u00e4ume enthielten eine Bedeutung, m\u00f6glicherweise auf einem Missverst\u00e4ndnis basiert. Sind die n\u00e4chtlichen Bilder nicht vielmehr sinnlose Abfallprodukte des Gehirns? Sollte man sie nicht am besten einfach ignorieren?",
+  "<strong>Abschnitt c:</strong> Tats\u00e4chlich ist der Wahrheitsgehalt von Tr\u00e4umen umstritten, und die Geschichte der Traumdeutung ist gepr\u00e4gt von einem jahrzehntelangen Konflikt zwischen Anh\u00e4ngern und Skeptikern. Zu den Klassikern geh\u00f6rt Sigmund Freuds 1899 erschienenes Werk \u201eDie Traumdeutung\u201c: F\u00fcr den Begr\u00fcnder der Psychoanalyse manifestierten sich in Traumsymbolen unbewusste, verdrängte W\u00fcnsche. Der amerikanische Psychiater Allan Hobson erkl\u00e4rte Tr\u00e4ume zum Resultat zuf\u00e4lliger Hirnaktivit\u00e4t, zu reinem Neuronengeflimmer ohne jeglichen Sinngehalt. Doch auch von dieser These r\u00fcckt die Psychologie inzwischen wieder ab.",
+  "<strong>Abschnitt d:</strong> Diese Schwierigkeit k\u00f6nnte auch darin begr\u00fcndet liegen, dass der Gegenstand der Untersuchung nur schwer zu fassen ist. Im Allgemeinen wird als Traum eine psychische Aktivit\u00e4t w\u00e4hrend des Schlafes bezeichnet. Widerlegt ist mittlerweile die fr\u00fcher weitverbreitete Annahme, dass wir nur in den sogenannten REM-Phasen tr\u00e4umen \u2013 wir tr\u00e4umen die ganze Nacht. Die Frage nach dem \u201eWann\u201c scheint also mittlerweile gekl\u00e4rt zu sein. <em>Da bleibt es nur zu hoffen, dass auch bald die interessante Frage gekl\u00e4rt wird, warum im Schlaf Bilder in unserem Kopf entstehen.</em>",
+  "<strong>Abschnitt e:</strong> Eine interessante Spur verfolgen dabei Neuroforscher, die bildgebende Verfahren nutzen, um das tr\u00e4umende Gehirn zu beobachten. Dabei kamen sie zu einem verbl\u00fcffenden Ergebnis: Im Traumzustand ist der pr\u00e4frontale Cortex gehemmt, jener Bereich im Gehirn, der f\u00fcr Logik, Sinn und Moral zust\u00e4ndig ist. So kann sich die Fantasie befreit von Zw\u00e4ngen entfalten. Wenn wir uns mit unseren Tr\u00e4umen besch\u00e4ftigen, sollten wir vor allem das rechte Ma\u00df einhalten: Wer in jedem Traum zwanghaft nach wichtigen Botschaften sucht, k\u00f6nnte leicht in eine Abh\u00e4ngigkeit geraten."
+ ],
+ qs:[
+  {n:7,t:"In welchem Abschnitt \u00e4u\u00dfert sich die Autorin abf\u00e4llig (негативно / скептически)?",opts:["a","b","c","d","e"],ans:"b",
+   exp:"Abschnitt b): \u201eSollte man sie nicht am besten einfach ignorieren?\u201c + \u201ewer leichtgl\u00e4ubig sucht\u201c = negativ-skeptische Bewertung der Glaubensinhalte \u00fcber Tr\u00e4ume.",rule:"Abf\u00e4llig (пренебрежительно) = Konjunktiv (sollte man&#8230;?) + negatives Adjektiv (leichtgl\u00e4ubig = легковерный)."},
+  {n:8,t:"In welchem Abschnitt gibt die Autorin einen Rat (совет)?",opts:["a","b","c","d","e"],ans:"e",
+   exp:"Abschnitt e): \u201esollten wir vor allem das rechte Ma\u00df einhalten\u201c = klar formulierter Rat (Konjunktiv II + \u201evor allem\u201c als Empfehlung).",rule:"Rat erkennbar durch: <em>sollten</em> (Konjunktiv II als H\u00f6flichkeitsform) + \u201evor allem\u201c = рекомендация."},
+  {n:9,t:"In welchem Abschnitt liefert die Autorin Definitionen (определения)?",opts:["a","b","c","d","e"],ans:"d",
+   exp:"Abschnitt d): \u201eIm Allgemeinen wird als Traum eine psychische Aktivit\u00e4t w\u00e4hrend des Schlafes bezeichnet.\u201c = klassische Definition (Passiv + \u201eals &#8230; bezeichnet\u201c).",rule:"Definition erkennbar: <em>als &#8230; bezeichnet werden</em> (Passiv) + <em>Im Allgemeinen</em> = официальное определение."},
+  {n:10,t:"In welchem Abschnitt spricht die Autorin einen Wunsch aus (выражает желание)?",opts:["a","b","c","d","e"],ans:"d",
+   exp:"Abschnitt d): <em>\u201eDa bleibt es nur zu hoffen, dass auch bald die interessante Frage gekl\u00e4rt wird &#8230;\u201c</em> = Wunsch/Hoffnung, dass eine Frage bald gel\u00f6st wird.",rule:"Wunsch erkennbar: <em>es bleibt zu hoffen</em> = остаётся лишь надеяться = выражение пожелания."},
+  {n:11,t:"In welchem Abschnitt stellt die Autorin verschiedene Standpunkte einander gegen\u00fcber (сопоставляет точки зрения)?",opts:["a","b","c","d","e"],ans:"c",
+   exp:"Abschnitt c): Freud (Tr\u00e4ume = unbewusste W\u00fcnsche) vs. Hobson (Tr\u00e4ume = zuf\u00e4llige Hirnaktivit\u00e4t) = zwei entgegengesetzte Theorien.",rule:"Kontrastierung erkennbar: zwei Namen + gegenteilige Thesen. <em>Der eine sagt&#8230;, der andere sagt&#8230;</em>"},
+  {n:12,t:"In welchem Abschnitt wirft die Autorin Bedenken auf (выражает сомнения)?",opts:["a","b","c","d","e"],ans:"b",
+   exp:"Abschnitt b): \u201eSind die n\u00e4chtlichen Bilder nicht vielmehr sinnlose Abfallprodukte des Gehirns?\u201c = rhetorische Frage mit Zweifel an der Bedeutung von Tr\u00e4umen.",rule:"Bedenken: rhetorische Frage + <em>nicht vielmehr</em> = nicht eher? = выражение сомнения."}
+ ],
+ vocab:["skurril \u2014 нелепый, причудливый","die Widrigkeit (-en) \u2014 трудность, невзгода","der Wahrheitsgehalt \u2014 правдивость, истинность содержания","die Traumdeutung \u2014 толкование снов","das Neuronengeflimmer \u2014 мерцание нейронов","der pr\u00e4frontale Cortex \u2014 префронтальная кора (отдел мозга)","das rechte Ma\u00df einhalten \u2014 соблюдать правильную меру","es bleibt zu hoffen \u2014 остаётся надеяться"]
+},
+
+// ─── LV TEIL 3: VERPACKUNGSINDUSTRIE ───
+{id:"lv3_1", type:"Leseverstehen Teil 3", title:"Zukunftsperspektiven f\u00fcr die Verpackungsindustrie", desc:"11 Aussagen R/F/NiT + Makroaufgabe \u00b7 C1", kind:"lv3",
+ textps:[
+  "<strong>Absatz 1:</strong> Verbraucher erachten sie als selbstverst\u00e4ndlich und nehmen sie oft nicht einmal bewusst wahr: die Verpackung. Sie ist aus Kundensicht nicht nur unerl\u00e4sslich f\u00fcr einen bequemen und sicheren Transport von Waren aller Art, sondern sie ist auch wesentlich an der Kaufentscheidung beteiligt. Im Unterbewusstsein lenkt die Verpackung unser Kaufverhalten. Die Verpackung ist das Gesicht des Produktes.",
+  "<strong>Absatz 2:</strong> Doch die Verpackung ist mehr als eine Verkaufshilfe. Im vergangenen Jahr besch\u00e4ftigte die deutsche Verpackungsindustrie rund 110.000 Personen und erzielte einen Umsatz von 31,8 Milliarden Euro. Mengenmäßig stellten Verpackungen aus Papier und Pappe mit 48% den gr\u00f6\u00dften Anteil. Am umsatzst\u00e4rksten sind allerdings Kunststoffverpackungen: auf sie entfallen 41% des Gesamtumsatzes. Um im Wettbewerb bestehen zu k\u00f6nnen, muss die deutsche Verpackungsindustrie auf Innovation setzen. Sonst drohen hohe Verluste.",
+  "<strong>Absatz 3:</strong> Zun\u00e4chst soll an die urspr\u00fcnglichen Aufgaben einer Verpackung erinnert werden. An erster Stelle ist die Transportm\u00f6glichkeit zu nennen. Unmittelbar damit verbunden ist der Schutz des verpackten Produktes: Schutz vor Verschmutzung, vor Besch\u00e4digung, vor Sauerstoff oder vor Licht. Weiterhin dient die Verpackung der Information. Verpackungen liefern Hinweise \u00fcber die Beschaffenheit des Produktes, seinen Verwendungszweck, seine Herkunft, Inhaltsstoffe und m\u00f6gliche Risiken. Sie dient auch der Selbstdarstellung von Marken und Werbezwecken.",
+  "<strong>Absatz 4:</strong> Verbraucher stellen st\u00e4ndig wachsende Anforderungen an Hygiene und Qualit\u00e4t. So waren etwa Mineralöle in Schokoladenverpackungen aus Karton gefunden worden. In Lebensmittelverpackungen gelangen Mineral\u00f6le in der Regel \u00fcber Druckfarben. Das lie\u00dfe sich vermeiden, wenn Papier ohne Mineral\u00f6le verwendet w\u00fcrde.",
+  "<strong>Absatz 5:</strong> Der gr\u00f6\u00dfte Trend hei\u00dft eindeutig Nachhaltigkeit. Die Kunden fordern recycelbare Verpackungen, die wiederverwertet werden k\u00f6nnen. Die Produktion soll sparsam im Energieverbrauch sein und auf erneuerbare Rohstoffe setzen. Das bedeutet f\u00fcr die Verpackungsindustrie: biologisch abbaubare oder wiederverwertbare Materialien und eine Optimierung der Herstellungsprozesse m\u00fcssen in den Mittelpunkt der Forschungen gestellt werden.",
+  "<strong>Absatz 6:</strong> Solange Kunststoffe auf der Basis von Roh\u00f6l noch nicht durch nachwachsende Rohstoffe ersetzt werden k\u00f6nnen, m\u00fcssen sie m\u00f6glichst effizient eingesetzt werden. Um weniger Material zu verbrauchen, werden immer d\u00fcnnere Folien entwickelt.",
+  "<strong>Absatz 7:</strong> Die Verpackung der Zukunft soll nicht nur sparsam und nachhaltig sein, sondern auch neue Funktionen \u00fcbernehmen. Folien werden mit speziellen Eigenschaften ausgestattet, um zum Beispiel den Eintritt von Sauerstoff zu blockieren. <em>K\u00fcnftig wird es auch Folien geben, die anzeigen, ob das Produkt noch genie\u00dfbar oder bereits verdorben ist, weit genauer als das bisherige Mindesthaltbarkeitsdatum.</em>",
+  "<strong>Absatz 8:</strong> Innovationen gibt es nicht nur in Bezug auf Bequemlichkeit. Auch emotional soll die Verpackung den Kunden ansprechen \u2013 \u00fcber m\u00f6glichst viele Sinne. Den Geruchssinn sprechen Duftetiketten an. Letztes Jahr wurde eine sprechende Verpackung ausgezeichnet: H\u00e4lt der Kunde einen Stift an eine bestimmte Stelle, wird die Sprachausgabe gestartet. <em>Nur der Geschmackssinn bleibt noch au\u00dfer vor.</em>",
+  "<strong>Absatz 9:</strong> Verbraucherinformation stellt die Verpackungsindustrie vor neue Herausforderungen. Ein System, das k\u00fcrzlich vorgestellt wurde, besteht aus zwei Etiketten. Wenn man das \u00e4u\u00dfere Etikett dreht, erscheint ein durchsichtiges Fenster, durch das man die Beschriftung des inneren Etiketts lesen kann. So wird die f\u00fcr Informationen verf\u00fcgbare Fl\u00e4che fast verdoppelt.",
+  "<strong>Absatz 10:</strong> Die Verpackungsindustrie sieht sich mit wachsenden Forderungen nach erweiterter Funktionalit\u00e4t konfrontiert. Flexibilit\u00e4t ist ein wichtiges Schlagwort. Die Unternehmen m\u00fcssen f\u00fcr anpassungsf\u00e4hige Produktionsprozesse sorgen, damit sie im Rahmen von Sonderaktionen rasch kleine Mengen neuer Verpackungen liefern k\u00f6nnen."
+ ],
+ qs:[
+  {n:13,t:"Konsumenten nehmen Verpackungen als gegeben hin.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig (+). Absatz 1: \u201eVerbraucher erachten sie als selbstverst\u00e4ndlich\u201c = als selbstverst\u00e4ndlich hin. Paraphrase: als gegeben hinnehmen = als selbstverst\u00e4ndlich betrachten.",rule:"Paraphrase: <em>als selbstverst\u00e4ndlich erachten</em> = воспринимать как само собой разумеющееся = als gegeben hinnehmen."},
+  {n:14,t:"Der Umsatz der deutschen Verpackungsindustrie ist bei Papier- und Pappverpackungen am h\u00f6chsten.",opts:["+","-","x"],ans:"-",
+   exp:"Falsch (-). Absatz 2: Papier/Pappe = <em>mengenm\u00e4\u00dfig</em> gr\u00f6\u00dfter Anteil (48%), aber <em>umsatzst\u00e4rkste</em> sind Kunststoffverpackungen (41% des Umsatzes). WICHTIGER UNTERSCHIED!",rule:"Menge ≠ Umsatz! <em>Mengenm\u00e4\u00dfig gr\u00f6\u00dfter Anteil</em> ≠ <em>umsatzst\u00e4rkste</em>. Solche Details m\u00fcssen genau gelesen werden."},
+  {n:15,t:"Die Konkurrenz aus Niedriglohnl\u00e4ndern bescherte der Verpackungsindustrie milliardenschwere Einbu\u00dfen.",opts:["+","-","x"],ans:"-",
+   exp:"Falsch (-). Absatz 2 sagt: Konkurrenz <em>droht</em> \u2013 von tats\u00e4chlichen Einbu\u00dfen in Milliardengr\u00f6\u00dfe steht nichts im Text. <em>Drohen</em> = nur Gefahr, noch nicht passiert.",rule:"<em>drohen</em> (угрожать) ≠ <em>beschert haben</em> (причинило). Gefahr ≠ Tatsache!"},
+  {n:16,t:"Verpackungen dienen urspr\u00fcnglich dem Schutz vor Verschmutzung.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig (+). Absatz 3: \u201eAn erster Stelle ist die Transportm\u00f6glichkeit zu nennen. Unmittelbar damit verbunden ist der Schutz &#8230; vor Verschmutzung.\u201c = urspr\u00fcngliche, prim\u00e4re Funktion.",rule:"<em>urspr\u00fcnglich</em> = изначально. Absatz 3 beschreibt die prim\u00e4ren Aufgaben = urspr\u00fcngliche Funktionen."},
+  {n:17,t:"Verbraucherverb\u00e4nde warnen vor Mineral\u00f6l in Verpackungen.",opts:["+","-","x"],ans:"x",
+   exp:"Nicht im Text (x). Mineral\u00f6le werden erw\u00e4hnt (Absatz 4), aber von <em>Verbraucherverb\u00e4nden</em> steht nichts im Text.",rule:"x = Thema existiert im Text (Mineralöle), aber DIESER ASPEKT (Verbraucherverbände) kommt im Text nicht vor."},
+  {n:18,t:"Die Verpackungsindustrie muss in Zukunft die Forschung in den Mittelpunkt stellen.",opts:["+","-","x"],ans:"-",
+   exp:"Falsch (-). Absatz 5: \u201ebioabbaubare Materialien und eine Optimierung der Herstellungsprozesse m\u00fcssen in den Mittelpunkt &#8230; gestellt werden\u201c \u2013 nicht \u201edie Forschung\u201c allgemein.",rule:"Aussage vereinfacht/verallgemeinert das Textdetail. Text: spezifische Materialien + Prozesse; Aussage: \u201eForschung\u201c allgemein."},
+  {n:19,t:"Immer mehr Forscher versuchen als Alternative zu Plastik Bio-Kunststoffe zu entwickeln.",opts:["+","-","x"],ans:"x",
+   exp:"Nicht im Text (x). Bio-Kunststoffe als solche werden im Text nicht erw\u00e4hnt.",rule:"x = dieses spezifische Thema kommt im Text schlicht nicht vor."},
+  {n:20,t:"Innovative Lebensmittelverpackungen werden die Angabe des Mindesthaltbarkeitsdatums \u00fcberfl\u00fcssig machen.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig (+). Absatz 7: \u201eFolien, die anzeigen, ob das Produkt noch genie\u00dfbar oder bereits verdorben ist, <em>weit genauer als das bisherige Mindesthaltbarkeitsdatum</em>\u201c \u2014 impliziert, es wird \u00fcberfl\u00fcssig.",rule:"Schlussfolgerung: genauere Anzeige \u2192 MHD wird \u00fcberfl\u00fcssig. Logische Implikation aus dem Text."},
+  {n:21,t:"Um f\u00fcr die Konsumenten attraktiv zu sein, sprechen Verpackungen schon heute alle f\u00fcnf Sinne an.",opts:["+","-","x"],ans:"-",
+   exp:"Falsch (-). Absatz 8: \u201eNur der Geschmackssinn bleibt noch au\u00dfer vor.\u201c = Geschmackssinn wird NICHT angesprochen.",rule:"Schl\u00fcsselwort: <em>Nur der Geschmackssinn bleibt noch au\u00dfer vor</em> = NICHT alle 5 Sinne. Au\u00dfer vor bleiben = ausgeschlossen sein."},
+  {n:22,t:"Verbraucherinformationen brauchen in Zukunft fast doppelt so viel Platz auf der Verpackung.",opts:["+","-","x"],ans:"x",
+   exp:"Nicht im Text (x). Absatz 9: Die verf\u00fcgbare <em>Fl\u00e4che f\u00fcr Informationen wird fast verdoppelt</em> \u2014 aber nicht weil Informationen mehr Platz <em>brauchen</em>, sondern weil die neue Technik mehr Platz <em>bietet</em>.",rule:"Inhalt vs. Konsequenz: mehr verf\u00fcgbare Fl\u00e4che ≠ mehr Platz ben\u00f6tigt. Kausalit\u00e4t ist umgekehrt!"},
+  {n:23,t:"Die Unternehmen der Verpackungsindustrie m\u00fcssen ihre Produktion besser an den kurzfristigen Bedarf anpassen.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig (+). Absatz 10: \u201edamit sie im Rahmen von Sonderaktionen rasch kleine Mengen &#8230; liefern k\u00f6nnen\u201c = kurzfristiger Bedarf, flexible Anpassung.",rule:"Paraphrase: <em>rasch kleine Mengen liefern</em> = auf kurzfristigen Bedarf reagieren."},
+  {n:24,t:"Welche \u00dcberschrift passt am besten?",opts:["a) Die Verpackung der Zukunft: sprechende T\u00fcten und duftende Kartons","b) Nachhaltige Verpackungen auf dem Vormarsch","c) Zukunftsperspektiven f\u00fcr die Verpackungsindustrie"],ans:"c) Zukunftsperspektiven f\u00fcr die Verpackungsindustrie",
+   exp:"c) deckt ALLE Themen ab: Nachhaltigkeit, Innovation, Sinnesansprache, Herausforderungen, Flexibilit\u00e4t. a) und b) sind zu eng (nur ein Aspekt).",rule:"Makroaufgabe: W\u00e4hle die \u00dcberschrift, die den GESAMTEN Text abdeckt, nicht nur einen Teilaspekt!"}
+ ],
+ vocab:["erachten als \u2014 считать, расценивать как","die Kaufentscheidung \u2014 решение о покупке","recycelbar \u2014 пригодный для переработки","wiederverwertet \u2014 вторично переработанный","das Mindesthaltbarkeitsdatum \u2014 срок годности","die Sonderaktion (-en) \u2014 акция, специальное предложение","anpassungsf\u00e4hig \u2014 способный к адаптации","au\u00dfer vor bleiben \u2014 оставаться исключением, быть не задействованным"]
+}
+
+]; // end TESTS array
+
+// ════════════════════════════════════════
+// RENDER PICKER
+// ════════════════════════════════════════
 function renderPicker(){
-  var typeColors={
-    "Sprachbausteine":"tp","Leseverstehen Teil 1":"tg",
-    "Leseverstehen Teil 2":"ta","Leseverstehen Teil 3":"tb"
-  };
+  var done=0;
+  var tagMap={Sprachbausteine:"tp","Leseverstehen Teil 1":"tg","Leseverstehen Teil 2":"ta","Leseverstehen Teil 3":"tb"};
   document.getElementById("test-grid").innerHTML=TESTS.map(function(t){
-    var done=S.done[t.id]||0;
-    var score=S.scores[t.id]||0;
-    var total=t.qs.length;
-    var pct=done?Math.round(score/total*100):0;
-    var col=typeColors[t.type]||"tg";
-    return "<div class=\"test-card\" onclick=\"startTest('"+t.id+"')\">"+
-      "<div class=\"tc-type\"><span class=\"tag "+col+"\">"+t.type+"</span></div>"+
-      "<h3>"+t.title+"</h3>"+
-      "<p>"+t.desc+"</p>"+
-      (done?"<div class=\"tc-done\">✓ "+score+"/"+total+" richtig ("+pct+"%)</div>":"")+
-      "<div class=\"pb\"><div class=\"pf\" style=\"width:"+pct+'%\"></div></div>'+
+    var sc=S.scores[t.id]||0,tot=t.qs.length,pct=S.done[t.id]?Math.round(sc/tot*100):0;
+    if(S.done[t.id])done++;
+    return "<div class=\"tc\" onclick=\"startTest('"+t.id+"')\">"+
+      "<div class=\"tc-type\"><span class=\"tag "+(tagMap[t.type]||"tg")+"\">"+t.type+"</span></div>"+
+      "<h3>"+t.title+"</h3><p>"+t.desc+"</p>"+
+      (S.done[t.id]?"<div class=\"tc-score\">&#10003; "+sc+"/"+tot+" ("+pct+"%)</div>":"")+
+      "<div class=\"pb\"><div class=\"pf\" style=\"width:"+pct+"%\"></div></div>"+
     "</div>";
   }).join("");
+  document.getElementById("total-done").textContent=done+" von "+TESTS.length+" Tests absolviert";
 }
 
-// ── START TEST ─────────────────────────────────────
-var currentTest=null,currentAnswers={};
+// ════════════════════════════════════════
+// START TEST
+// ════════════════════════════════════════
+var curTest=null,curAns={};
 function startTest(id){
-  currentTest=TESTS.find(function(t){return t.id===id;});
-  if(!currentTest)return;
-  currentAnswers={};
-  document.getElementById("ex-title").textContent=currentTest.title;
-  document.getElementById("ex-sub").textContent=currentTest.type+" · "+currentTest.qs.length+" Aufgaben";
+  curTest=TESTS.find(function(t){return t.id===id;});
+  if(!curTest)return;
+  curAns={};
+  document.getElementById("ex-title").textContent=curTest.title;
+  document.getElementById("ex-sub").textContent=curTest.type+" \u00b7 "+curTest.qs.length+" Aufgaben";
   document.getElementById("ex-prog").style.width="0%";
-  document.getElementById("ex-content").innerHTML=buildTest(currentTest);
+  document.getElementById("ex-content").innerHTML=buildTest(curTest);
   go("s-test");
-  window.scrollTo(0,0);
 }
+function retryTest(){if(curTest)startTest(curTest.id);}
 
 function buildTest(t){
-  if(t.kind==="sb")return buildSB(t);
-  if(t.kind==="lv1")return buildLV1(t);
-  if(t.kind==="lv2"||t.kind==="lv3")return buildLV23(t);
-  return "";
+  if(t.kind==="sb")return buildSBTest(t);
+  if(t.kind==="lv1")return buildLV1Test(t);
+  return buildLV23Test(t);
 }
 
-function buildSB(t){
-  var qh=t.qs.map(function(q){
-    return "<div class=\"sb-q\" id=\"qw-"+q.n+"\">"+
-      "<div class=\"sq-num\">Aufgabe "+q.n+"</div>"+
-      "<div class=\"sq-ctx\">…"+q.ctx+"…</div>"+
-      "<div class=\"sq-opts\">"+q.opts.map(function(o){
-        return "<button class=\"sq-opt\" onclick=\"selSB("+q.n+",'"+o+"',this)\">"+o+"</button>";
-      }).join("")+"</div>"+
-    "</div>";
-  }).join("");
-  return "<div class=\"info-box\"><strong>Format Sprachbausteine:</strong> Wähle für jede Lücke die richtige Lösung (a, b, c oder d). Beachte den Kontext des Satzes!</div>"+
-    "<div class=\"card\" style=\"margin-bottom:1rem\"><div class=\"sb-text\">"+t.text.replace(/\n/g,"<br><br>")+"</div></div>"+
-    "<div>"+qh+"</div>";
+// ─── SB LAYOUT: text left, questions right ───
+function buildSBTest(t){
+  return "<div class=\"dual\">"+
+    "<div class=\"panel\"><h4>TEXT &#8212; "+t.title+"</h4>"+t.text+"</div>"+
+    "<div class=\"panel\"><h4>AUFGABEN (25&#8211;46)</h4>"+
+      t.qs.map(function(q){
+        return "<div class=\"sb-q\" id=\"qw-"+q.n+"\">"+
+          "<div class=\"sq-n\">Aufgabe "+q.n+"</div>"+
+          "<div class=\"sq-ctx\">&#8230;"+q.ctx+"&#8230;</div>"+
+          "<div class=\"sq-opts\">"+q.opts.map(function(o){
+            return "<button class=\"sq-opt\" onclick=\"selSB("+q.n+",'"+o.replace(/'/g,"\\'")+"',this)\">"+o+"</button>";
+          }).join("")+"</div>"+
+        "</div>";
+      }).join("")+
+    "</div>"+
+  "</div>";
 }
 
-function buildLV1(t){
+// ─── LV1 LAYOUT ───
+function buildLV1Test(t){
   var textH="<h4>"+t.title+"</h4>";
-  t.text.split("\n").forEach(function(p){if(p.trim())textH+="<p>"+p+"</p>";});
-  textH+="<div class=\"satz-box\"><h4>Sätze a–h (2 passen nicht):</h4>";
-  t.satze.forEach(function(s){textH+="<div class=\"satz-i\">"+s.t+"</div>";});
+  t.textps.forEach(function(p){textH+="<p>"+p+"</p>";});
+  textH+="<div class=\"satze-box\"><h4>S\u00e4tze a&#8211;h (2 passen nicht):</h4>";
+  t.satze.forEach(function(s){textH+="<div class=\"satz\">"+s.t+"</div>";});
   textH+="</div>";
-  var qh=t.qs.map(function(q){
+  var qH=t.qs.map(function(q){
     return "<div class=\"q-item\"><div class=\"q-num\">Aufgabe "+q.n+"</div>"+
       "<div class=\"q-text\">"+q.t+"</div>"+
       "<div class=\"q-opts\">"+q.opts.map(function(o){
         return "<button class=\"q-opt\" onclick=\"selQ("+q.n+",'"+o+"',this)\">Satz "+o.toUpperCase()+"</button>";
       }).join("")+"</div></div>";
   }).join("");
-  return "<div class=\"info-box\"><strong>Format Teil 1:</strong> Welcher Satz a–h passt in die Lücke? 2 Sätze passen nicht.</div>"+
-    "<div class=\"lesen-grid\"><div class=\"text-panel\">"+textH+"</div>"+
-    "<div class=\"q-list\">"+qh+"</div></div>";
+  return "<div class=\"dual\"><div class=\"panel\">"+textH+"</div><div class=\"panel\"><h4>AUFGABEN</h4>"+qH+"</div></div>";
 }
 
-function buildLV23(t){
+// ─── LV2/LV3 LAYOUT ───
+function buildLV23Test(t){
   var textH="<h4>"+t.title+"</h4>";
-  t.text.split("\n").forEach(function(p){if(p.trim())textH+="<p>"+p+"</p>";});
-  var qh=t.qs.map(function(q){
+  t.textps.forEach(function(p){textH+="<p>"+p+"</p>";});
+  var qH=t.qs.map(function(q){
     return "<div class=\"q-item\"><div class=\"q-num\">Aufgabe "+q.n+"</div>"+
       "<div class=\"q-text\">"+q.t+"</div>"+
       "<div class=\"q-opts\">"+q.opts.map(function(o){
-        return "<button class=\"q-opt\" onclick=\"selQ("+q.n+",'"+o.replace(/'/g,"\\'")+"',this)\">"+o+"</button>";
+        var label=t.kind==="lv2"?"Abschnitt "+o.toUpperCase():o;
+        return "<button class=\"q-opt\" onclick=\"selQ("+q.n+",'"+o.replace(/'/g,"\\'")+"',this)\">"+label+"</button>";
       }).join("")+"</div></div>";
   }).join("");
-  var typeLabel=t.kind==="lv2"?"In welchem Abschnitt a–e findest du die Antwort?":"Richtig (+) / Falsch (–) / Nicht im Text (x)?";
-  return "<div class=\"info-box\"><strong>Format "+t.type+":</strong> "+typeLabel+"</div>"+
-    "<div class=\"lesen-grid\"><div class=\"text-panel\">"+textH+"</div>"+
-    "<div class=\"q-list\">"+qh+"</div></div>";
+  return "<div class=\"dual\"><div class=\"panel\">"+textH+"</div><div class=\"panel\"><h4>AUFGABEN</h4>"+qH+"</div></div>";
 }
 
-// ── ANSWER SELECTION ───────────────────────────────
+// ─── ANSWER SELECTION ───
 function selSB(n,val,btn){
-  var wrap=document.getElementById("qw-"+n);
-  wrap.querySelectorAll(".sq-opt").forEach(function(b){b.classList.remove("sel");});
+  document.getElementById("qw-"+n).querySelectorAll(".sq-opt").forEach(function(b){b.classList.remove("sel");});
   btn.classList.add("sel");
-  currentAnswers[n]=val;
-  updateProgress();
+  curAns[n]=val;
+  updateProg();
 }
 function selQ(n,val,btn){
   btn.closest(".q-item").querySelectorAll(".q-opt").forEach(function(b){b.classList.remove("sel");});
   btn.classList.add("sel");
-  currentAnswers[n]=val;
-  updateProgress();
+  curAns[n]=val;
+  updateProg();
 }
-function updateProgress(){
-  var answered=Object.keys(currentAnswers).length;
-  var total=currentTest.qs.length;
-  document.getElementById("ex-prog").style.width=Math.round(answered/total*100)+"%";
+function updateProg(){
+  var a=Object.keys(curAns).length,tot=curTest.qs.length;
+  document.getElementById("ex-prog").style.width=Math.round(a/tot*100)+"%";
 }
 
-// ── CHECK TEST ─────────────────────────────────────
+// ════════════════════════════════════════
+// CHECK TEST
+// ════════════════════════════════════════
 function checkTest(){
-  var t=currentTest,ok=0;
-  var reviewHTML="<h3 style=\"font-size:14px;font-weight:600;margin-bottom:.75rem;color:var(--tx2)\">📋 Detaillierter Durchgang:</h3>";
-  
+  var t=curTest,ok=0,revH="<h2 style=\"font-size:15px;font-weight:600;margin-bottom:1rem\">&#128203; Ausf\u00fchrliche Auswertung:</h2>";
   t.qs.forEach(function(q){
-    var given=currentAnswers[q.n];
-    var correct=q.ans;
-    var isOk=given&&(given===correct||given.startsWith(correct));
+    var given=curAns[q.n]||"",corr=q.ans,isOk=given&&(given===corr||given.replace(/^[a-d]\)\s*/,"")===corr.replace(/^[a-d]\)\s*/,""));
     if(isOk)ok++;
-    
-    // highlight in UI
-    var qEl=null;
+    // highlight in DOM
     if(t.kind==="sb"){
-      qEl=document.getElementById("qw-"+q.n);
-      if(qEl)qEl.querySelectorAll(".sq-opt").forEach(function(b){
-        if(b.textContent.trim()===correct)b.classList.add("ok");
-        if(given&&b.textContent.trim()===given&&!isOk)b.classList.add("err");
+      var wrap=document.getElementById("qw-"+q.n);
+      if(wrap)wrap.querySelectorAll(".sq-opt").forEach(function(b){
+        var bv=b.textContent.trim();
+        if(bv===corr)b.classList.add("ok");
+        else if(given&&bv===given&&!isOk)b.classList.add("err");
       });
     } else {
-      document.querySelectorAll(".q-item").forEach(function(item){
-        var num=item.querySelector(".q-num");
-        if(num&&num.textContent.includes("Aufgabe "+q.n)){
-          item.querySelectorAll(".q-opt").forEach(function(b){
+      document.querySelectorAll(".q-item").forEach(function(el){
+        var numEl=el.querySelector(".q-num");
+        if(numEl&&numEl.textContent.indexOf("Aufgabe "+q.n)>=0){
+          el.querySelectorAll(".q-opt").forEach(function(b){
             var bv=b.textContent.trim();
-            if(bv===correct||bv.startsWith(correct))b.classList.add("ok");
-            if(given&&(bv===given||bv.startsWith(given))&&!isOk)b.classList.add("err");
+            var bRaw=b.getAttribute("onclick")||"";
+            var m=bRaw.match(/,'([^']+)'/);var bVal=m?m[1]:bv;
+            if(bVal===corr||bv===corr)b.classList.add("ok");
+            if(given&&bVal===given&&bVal!==corr&&bv!==corr)b.classList.add("err");
           });
         }
       });
     }
-    
-    // review item
-    var cls=isOk?"ok":"err";
-    var icon=isOk?"✓":"✗";
-    reviewHTML+="<div class=\"rev-item\">"+
-      "<div class=\"rev-head "+cls+"\">"+icon+" Aufgabe "+q.n+(isOk?" — Richtig":" — Falsch (deine Antwort: "+(given||"—")+", richtig: <em>"+correct+"</em>)")+"</div>";
-    if(!isOk||true){
-      reviewHTML+="<div class=\"rev-body\">"+q.exp+
-        "<div class=\"rev-rule\"><strong>📐 Regel / Strategie</strong>"+q.rule+"</div>"+
-      "</div>";
-    }
-    reviewHTML+="</div>";
+    var cls=isOk?"ok":"err",ic=isOk?"&#10003;":"&#10007;";
+    revH+="<div class=\"review-item\"><div class=\"rev-head "+cls+"\">"+ic+" Aufgabe "+q.n+(isOk?" &#8212; Richtig":" &#8212; Falsch"+(given?" (deine Antwort: <em>"+given+"</em>, richtig: <em>"+corr+"</em>)":"(keine Antwort &#8212; richtig w\u00e4re: <em>"+corr+"</em>)"))+"</div>"+
+      "<div class=\"rev-body\">"+q.exp+"<div class=\"rev-rule\"><strong>&#128210; Regel / Strategie</strong>"+q.rule+"</div></div></div>";
   });
-  
-  // save
-  S.done[t.id]=(S.done[t.id]||0)+1;
-  S.scores[t.id]=ok;
-  S.total=(S.total||0)+t.qs.length;
-  S.correct=(S.correct||0)+ok;
-  saveS();
-  
-  // show result
+  S.done[t.id]=(S.done[t.id]||0)+1;S.scores[t.id]=ok;saveS();
   var pct=Math.round(ok/t.qs.length*100);
   var col=pct>=80?"var(--g)":pct>=60?"var(--a)":"var(--r)";
-  var grade=pct>=90?"Ausgezeichnet! 🎉":pct>=75?"Sehr gut! 👍":pct>=60?"Gut 👌":pct>=40?"Weiter üben 💪":"Nochmal versuchen 🔄";
-  
-  document.getElementById("res-score").textContent=ok+"/"+t.qs.length;
+  var grade=pct>=90?"Ausgezeichnet! &#127881;":pct>=75?"Sehr gut! &#128077;":pct>=60?"Gut &#128076;":pct>=40?"Weiter \u00fcben &#128170;":"Nochmal versuchen &#128260;";
   document.getElementById("res-score").style.color=col;
+  document.getElementById("res-score").textContent=ok+"/"+t.qs.length;
   document.getElementById("res-grade").textContent=grade+" ("+pct+"%)";
-  document.getElementById("res-sub").textContent=t.title+" · "+t.type;
-  
-  // vocab
-  document.getElementById("res-vocab").innerHTML="<strong>📚 Wichtige Vokabeln aus diesem Test</strong>"+
-    t.vocab.map(function(v){return "<span class=\"vw\">"+v+"</span>";}).join("");
-  
-  document.getElementById("res-review").innerHTML=reviewHTML;
+  document.getElementById("res-sub").textContent=t.title+" \u00b7 "+t.type;
+  document.getElementById("res-vocab").innerHTML="<div class=\"vocab-note\"><strong>&#128218; Wichtige Vokabeln aus diesem Test:</strong>"+t.vocab.map(function(v){return "<span class=\"vw\">"+v+"</span>";}).join("")+"</div>";
+  document.getElementById("res-review").innerHTML=revH;
   go("s-result");
+  toast(ok+"/"+t.qs.length+" richtig!",ok===t.qs.length?"ok":"");
 }
 
-function retryTest(){startTest(currentTest.id);}
-
-// ── INIT ───────────────────────────────────────────
 loadS();
 </script>
 </body>
