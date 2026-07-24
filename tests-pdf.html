@@ -332,6 +332,45 @@ var TESTS = [
  vocab:["von etw. ablassen \u2014 отказаться от чего-л.","keineswegs \u2014 ни в коем случае, отнюдь не","auf ... Weise \u2014 каким-л. образом","sich von etw. leiten lassen \u2014 руководствоваться чем-л.","gut/schlecht abschneiden \u2014 показать хорошие/плохие результаты","eine Strategie verfolgen \u2014 придерживаться стратегии","Beachtung schenken \u2014 уделять внимание","daraus ableiten \u2014 делать вывод из этого","fortlaufend \u2014 непрерывно, постоянно","erschweren \u2014 затруднять"]
 },
 
+// ─── LV TEIL 1: KLIMAWANDEL UND BIODIVERSITÄT ───
+{id:"lv1_4", type:"Leseverstehen Teil 1", title:"Der Klimawandel bedroht die Biodiversität", desc:"6 Satz-Zuordnungen · Textrekonstruktion · C1", kind:"lv1",
+ satze:[
+  {id:"z",t:"z) Viele Arten verlieren ihren Lebensraum, weil die Temperaturen steigen und Wetterextreme zunehmen. <em>(Beispiel — Lücke 0)</em>"},
+  {id:"a",t:"a) Besonders betroffen sind Korallenriffe, die durch die Erwärmung der Ozeane bleichen und absterben."},
+  {id:"b",t:"b) Experten warnen jedoch, dass der Schutz allein nicht ausreicht, wenn die globale Erwärmung nicht gestoppt wird."},
+  {id:"c",t:"c) In den Alpen verschieben sich die Vegetationszonen nach oben, wodurch viele Pflanzenarten ihren Platz verlieren."},
+  {id:"d",t:"d) Bereits jetzt sind zahlreiche Tier- und Pflanzenarten vom Aussterben bedroht."},
+  {id:"e",t:"e) Naturschutzgebiete können helfen, gefährdete Arten zu erhalten."},
+  {id:"f",t:"f) Die Erderwärmung schreitet schneller voran als noch vor wenigen Jahrzehnten prognostiziert."},
+  {id:"g",t:"g) Auch Insektenpopulationen gehen dramatisch zurück, was die gesamte Nahrungskette gefährdet."},
+  {id:"h",t:"h) Forscher fordern daher dringend internationale Maßnahmen zur Reduzierung von Treibhausgasen."}
+ ],
+ textps:[
+  "Der Klimawandel ist eine der größten Herausforderungen unserer Zeit. Seine Auswirkungen auf die biologische Vielfalt sind bereits deutlich spürbar. <span class=\"gap-m\">(0) z</span>",
+  "Wälder, Meere und Gebirge verändern sich in einem Tempo, das viele Ökosysteme überfordert. <span class=\"gap-m\">(1)</span> Besonders dramatisch ist die Situation in tropischen Regionen.",
+  "<span class=\"gap-m\">(2)</span> Wissenschaftler beobachten, dass sich Arten entweder anpassen, wandern oder aussterben müssen.",
+  "In den Alpen und anderen Gebirgsregionen ist der Druck besonders hoch. <span class=\"gap-m\">(3)</span> Gleichzeitig schrumpfen die Lebensräume für Tiere, die auf kalte Bedingungen angewiesen sind.",
+  "Auch in den Ozeanen sind die Folgen gravierend. <span class=\"gap-m\">(4)</span> Dies hat nicht nur Auswirkungen auf die Meeresbewohner, sondern auch auf die Fischerei und die Ernährungssicherheit vieler Küstenregionen.",
+  "Naturschutzorganisationen setzen sich für den Erhalt bedrohter Arten ein. <span class=\"gap-m\">(5)</span> Dennoch sind solche Projekte nur eine kurzfristige Lösung.",
+  "<span class=\"gap-m\">(6)</span> Ohne einen radikalen Wandel in der globalen Energie- und Wirtschaftspolitik wird der Verlust an Biodiversität weiter zunehmen."
+ ],
+ qs:[
+  {n:1,t:"Lücke (1):",opts:["a","b","c","d","e","f","g","h"],ans:"f",
+   exp:"Satz f) passt perfekt: Die Erderwärmung schreitet schneller voran → erklärt, warum Ökosysteme überfordert sind.",rule:"Zeitliche und kausale Logik: allgemeine Aussage → Verschärfung des Problems."},
+  {n:2,t:"Lücke (2):",opts:["a","b","c","d","e","f","g","h"],ans:"d",
+   exp:"Satz d) fasst die Konsequenz zusammen: Arten sind bereits jetzt bedroht.",rule:"<em>Bereits jetzt</em> verbindet die aktuelle Situation mit dem vorherigen Satz."},
+  {n:3,t:"Lücke (3):",opts:["a","b","c","d","e","f","g","h"],ans:"c",
+   exp:"Satz c) beschreibt konkret die Situation in den Alpen — direkter Bezug zum folgenden Satz über Gebirgsregionen.",rule:"Geografische Spezifizierung + Pronomen-Referenz."},
+  {n:4,t:"Lücke (4):",opts:["a","b","c","d","e","f","g","h"],ans:"a",
+   exp:"Satz a) behandelt Korallenriffe — logische Fortsetzung zum Thema Ozeane.",rule:"<em>Besonders betroffen</em> leitet ein konkretes Beispiel ein."},
+  {n:5,t:"Lücke (5):",opts:["a","b","c","d","e","f","g","h"],ans:"e",
+   exp:"Satz e) spricht von Naturschutzgebieten — passt zum Einsatz von Naturschutzorganisationen.",rule:"Lösungsansatz nach Problembeschreibung."},
+  {n:6,t:"Lücke (6):",opts:["a","b","c","d","e","f","g","h"],ans:"h",
+   exp:"Satz h) fordert internationale Maßnahmen — starker abschließender Appell.",rule:"Schlussfolgerung: Schutzmaßnahmen reichen nicht → globale Politik notwendig."}
+ ],
+ vocab:["die Biodiversität — биоразнообразие","das Ökosystem (-e) — экосистема","die Erderwärmung — глобальное потепление","bleichen — обесцвечиваться (о кораллах)","das Treibhausgas (-e) — парниковый газ","die Nahrungskette (-n) — пищевая цепь","vom Aussterben bedroht — находящийся под угрозой исчезновения","die Vegetationszone (-n) — зона растительности"]
+},
+  
 // ─── LV TEIL 1: EINE BOX VERAENDERT DIE WELT ───
 {id:"lv1_1", type:"Leseverstehen Teil 1", title:"Eine Box ver\u00e4ndert die Welt", desc:"6 Satz-Zuordnungen \u00b7 Textrekonstruktion \u00b7 C1", kind:"lv1",
  satze:[
@@ -449,6 +488,33 @@ var TESTS = [
  vocab:["die Vaterschaft (hier) \u2014 авторство, происхождение","sich r\u00fchmen \u2014 хвастаться, хвалиться (чем-л.)","g\u00e4ngig \u2014 распространённый, обычный","der Proviant \u2014 провизия, дорожный паёк","das P\u00f6kelfleisch \u2014 солёное мясо","miserabel \u2014 ужасный, скверный","beweisen l\u00e4sst es sich nicht \u2014 это нельзя доказать"]
 },
 
+// ─── LV TEIL 2: SOZIALE MEDIEN UND PSYCHE ───
+{id:"lv2_2", type:"Leseverstehen Teil 2", title:"Welche Rolle spielen soziale Medien für die psychische Gesundheit?", desc:"6 Fragen · In welchem Abschnitt? · C1", kind:"lv2",
+ textps:[
+  "<strong>Abschnitt a:</strong> Immer mehr Jugendliche verbringen mehrere Stunden täglich auf Plattformen wie Instagram, TikTok oder Snapchat. Die ständige Präsenz in der digitalen Welt beeinflusst ihr Selbstbild, ihre sozialen Beziehungen und ihren Schlaf. Besonders das Vergleichen mit scheinbar perfekten Leben anderer kann zu Unzufriedenheit und Angst führen.",
+  "<strong>Abschnitt b:</strong> Studien zeigen einen klaren Zusammenhang zwischen intensiver Nutzung sozialer Medien und steigenden Raten von Depressionen sowie Angststörungen bei Jugendlichen. Allerdings ist es schwierig, Kausalität eindeutig zu beweisen. Spielt die Nutzung eine Rolle oder suchen vor allem vulnerable Jugendliche Zuflucht in der digitalen Welt?",
+  "<strong>Abschnitt c:</strong> Plattformen verdienen ihr Geld vor allem durch Aufmerksamkeit. Algorithmen sind so programmiert, dass sie Inhalte bevorzugen, die starke Emotionen auslösen – oft negative. Dieses Geschäftsmodell führt dazu, dass Nutzer länger bleiben und mehr Inhalte konsumieren, was langfristig schädlich sein kann.",
+  "<strong>Abschnitt d:</strong> Nicht alles ist negativ. Soziale Medien ermöglichen es jungen Menschen, sich zu vernetzen, Unterstützung zu finden und gesellschaftliche Themen wie Klimaschutz oder mentale Gesundheit selbst anzusprechen. Viele finden dort Gemeinschaften, in denen sie sich verstanden fühlen.",
+  "<strong>Abschnitt e:</strong> Experten fordern von den Betreibern der Plattformen mehr Verantwortung. Altersbeschränkungen, bessere Erkennung schädlicher Inhalte und Transparenz bei Algorithmen sind notwendig. Gleichzeitig sollten Schulen und Eltern die Medienkompetenz der Jugendlichen stärken.",
+  "<strong>Abschnitt f:</strong> Letztlich geht es um ein gesundes Gleichgewicht. Soziale Medien sind aus dem Leben vieler Jugendlicher nicht mehr wegzudenken. Die Frage ist nicht, ob man sie nutzt, sondern wie bewusst und in welchem Maß. Eine kritische Auseinandersetzung mit der eigenen Mediennutzung scheint der wichtigste Schritt zu sein."
+ ],
+ qs:[
+  {n:7,t:"In welchem Abschnitt wird das Geschäftsmodell der Plattformen kritisiert?",opts:["a","b","c","d","e","f"],ans:"c",
+   exp:"Abschnitt c beschreibt explizit, wie Algorithmen Emotionen ausnutzen und Aufmerksamkeit maximieren.",rule:"Suche nach wirtschaftlichen Motiven und Kritik am Design der Plattformen."},
+  {n:8,t:"In welchem Abschnitt wird ein positiver Aspekt hervorgehoben?",opts:["a","b","c","d","e","f"],ans:"d",
+   exp:"Abschnitt d betont Vernetzung, Unterstützung und gesellschaftliches Engagement.",rule:"Positive Formulierungen wie <em>ermöglichen</em>, <em>vernetzen</em>, <em>verstanden fühlen</em>."},
+  {n:9,t:"In welchem Abschnitt wird die Schwierigkeit wissenschaftlicher Beweisführung thematisiert?",opts:["a","b","c","d","e","f"],ans:"b",
+   exp:"Abschnitt b spricht direkt von der Schwierigkeit, Kausalität zu beweisen.",rule:"Wörter wie <em>Zusammenhang</em>, <em>schwierig zu beweisen</em>, <em>vulnerable Jugendliche</em>."},
+  {n:10,t:"In welchem Abschnitt werden konkrete Forderungen an Plattformen und Gesellschaft gestellt?",opts:["a","b","c","d","e","f"],ans:"e",
+   exp:"Abschnitt e fordert Verantwortung, Altersbeschränkungen, Medienkompetenz usw.",rule:"Forderungen erkennbar durch Verben wie <em>fordern</em>, <em>notwendig</em>, <em>stärken</em>."},
+  {n:11,t:"In welchem Abschnitt wird eine ausgewogene Haltung empfohlen?",opts:["a","b","c","d","e","f"],ans:"f",
+   exp:"Abschnitt f spricht von <em>gesundem Gleichgewicht</em> und <em>bewusster Nutzung</em>.",rule:"Schlussfolgernder, moderater Ton mit <em>letzten Endes</em> / <em>es geht um</em>."},
+  {n:12,t:"In welchem Abschnitt werden negative Auswirkungen auf Selbstbild und Emotionen beschrieben?",opts:["a","b","c","d","e","f"],ans:"a",
+   exp:"Abschnitt a behandelt Vergleichen mit anderen, Unzufriedenheit und Angst.",rule:"Persönliche, psychologische Ebene: <em>Selbstbild</em>, <em>Vergleichen</em>, <em>Angst</em>."}
+ ],
+ vocab:["die psychische Gesundheit — психическое здоровье","die Depression (-en) — депрессия","die Angststörung (-en) — тревожное расстройство","der Algorithmus (-men) — алгоритм","die Medienkompetenz — медиаграмотность","das Gleichgewicht — равновесие","sich vernetzen — объединяться в сеть","vulnerabel — уязвимый"]
+},
+  
 // ─── LV TEIL 2: TRÄUME ───
 {id:"lv2_1", type:"Leseverstehen Teil 2", title:"Welche Bedeutung haben Tr\u00e4ume?", desc:"6 Fragen \u00b7 In welchem Abschnitt? \u00b7 C1", kind:"lv2",
  textps:[
@@ -475,6 +541,45 @@ var TESTS = [
  vocab:["skurril \u2014 нелепый, причудливый","die Widrigkeit (-en) \u2014 трудность, невзгода","der Wahrheitsgehalt \u2014 правдивость, истинность содержания","die Traumdeutung \u2014 толкование снов","das Neuronengeflimmer \u2014 мерцание нейронов","der pr\u00e4frontale Cortex \u2014 префронтальная кора (отдел мозга)","das rechte Ma\u00df einhalten \u2014 соблюдать правильную меру","es bleibt zu hoffen \u2014 остаётся надеяться"]
 },
 
+// ─── LV TEIL 3: NACHHALTIGE MOBILITÄT ───
+{id:"lv3_2", type:"Leseverstehen Teil 3", title:"Zukunft der Mobilität: Weniger Autos, mehr Lebensqualität?", desc:"11 Aussagen R/F/NiT + Makroaufgabe · C1", kind:"lv3",
+ textps:[
+  "<strong>Absatz 1:</strong> Viele europäische Städte setzen auf eine Verkehrswende. Das Ziel ist klar: weniger private Autos, mehr Platz für Menschen. Paris, Barcelona und Kopenhagen machen vor, wie autofreie oder autoarme Zonen die Lebensqualität verbessern können.",
+  "<strong>Absatz 2:</strong> Der Umstieg auf Fahrräder, öffentliche Verkehrsmittel und Sharing-Angebote wird durch Investitionen in Infrastruktur gefördert. Gleichzeitig werden Parkplätze reduziert und Innenstädte für Autos teurer gemacht.",
+  "<strong>Absatz 3:</strong> Kritiker argumentieren, dass nicht alle Bürger auf das Auto verzichten können – vor allem Pendler aus dem Umland oder Menschen mit eingeschränkter Mobilität. Eine einseitige Politik könnte zu sozialer Ungleichheit führen.",
+  "<strong>Absatz 4:</strong> In Kopenhagen liegt der Anteil des Fahrradverkehrs bei über 60 Prozent der täglichen Wege. Die Stadt zeigt, dass eine konsequente Förderung des Radverkehrs möglich ist und die Luftqualität deutlich verbessert.",
+  "<strong>Absatz 5:</strong> Elektroautos gelten vielen als Lösung. Allerdings lösen sie nicht das Platzproblem in den Städten und erfordern seltene Rohstoffe für Batterien.",
+  "<strong>Absatz 6:</strong> Städteplaner sprechen von der „15-Minuten-Stadt“. Alles Wichtige soll innerhalb von 15 Minuten zu Fuß oder mit dem Rad erreichbar sein.",
+  "<strong>Absatz 7:</strong> In Barcelona wurden ganze Straßenzüge in sogenannte „Superblocks“ umgewandelt, in denen der Durchgangsverkehr stark eingeschränkt wurde. Die Anwohner berichten von mehr Ruhe und sozialen Kontakten.",
+  "<strong>Absatz 8:</strong> Die Akzeptanz solcher Maßnahmen hängt stark von einer guten Kommunikation und Beteiligung der Bürger ab. Wo Menschen einbezogen werden, sinkt der Widerstand.",
+  "<strong>Absatz 9:</strong> Langfristig könnte die Verkehrswende nicht nur die Umwelt entlasten, sondern auch die Gesundheit der Bevölkerung verbessern – durch mehr Bewegung und weniger Lärm und Abgase.",
+  "<strong>Absatz 10:</strong> Die EU unterstützt diese Entwicklung mit Richtlinien und Fördermitteln. Dennoch bleibt die Umsetzung Aufgabe der einzelnen Städte und Länder."
+ ],
+ qs:[
+  {n:13,t:"Viele europäische Metropolen versuchen, den Autoverkehr deutlich zu reduzieren.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig. Absatz 1 und 2 beschreiben genau diese Strategie.",rule:"Paraphrase von <em>Verkehrswende</em> und <em>weniger private Autos</em>."},
+  {n:14,t:"In Kopenhagen fahren mehr als die Hälfte der Menschen täglich mit dem Fahrrad zur Arbeit.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig. Absatz 4: über 60 Prozent.",rule:"Genauer Wert im Text."},
+  {n:15,t:"Elektroautos lösen alle Probleme der urbanen Mobilität.",opts:["+","-","x"],ans:"-",
+   exp:"Falsch. Absatz 5: Sie lösen das Platzproblem nicht.",rule:"Einschränkung im Text."},
+  {n:16,t:"Die 15-Minuten-Stadt bedeutet, dass alle wichtigen Einrichtungen schnell erreichbar sind.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig. Absatz 6.",rule:"Direkte Definition."},
+  {n:17,t:"Superblocks in Barcelona haben zu weniger sozialen Kontakten geführt.",opts:["+","-","x"],ans:"-",
+   exp:"Falsch. Absatz 7: mehr soziale Kontakte.",rule:"Gegenteil der Aussage."},
+  {n:18,t:"Die Akzeptanz neuer Verkehrskonzepte hängt vor allem von der Höhe der Strafen ab.",opts:["+","-","x"],ans:"x",
+   exp:"Nicht im Text. Absatz 8 spricht von Kommunikation und Beteiligung, nicht von Strafen.",rule:"x = Thema existiert, aber dieser Aspekt fehlt."},
+  {n:19,t:"Die Verkehrswende kann langfristig positive Effekte auf die öffentliche Gesundheit haben.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig. Absatz 9.",rule:"Kombination aus Bewegung + weniger Lärm/Abgase."},
+  {n:20,t:"Die EU schreibt den Städten exakt vor, wie sie ihre Verkehrspolitik gestalten müssen.",opts:["+","-","x"],ans:"-",
+   exp:"Falsch. Absatz 10: Unterstützung, aber Umsetzung bleibt Sache der Städte.",rule:"<em>unterstützt</em> ≠ <em>vorschreibt</em>."},
+  {n:21,t:"Pendler aus dem Umland sind von autofreien Zonen besonders betroffen.",opts:["+","-","x"],ans:"+",
+   exp:"Richtig. Absatz 3.",rule:"Direkt genannt."},
+  {n:22,t:"Welche Überschrift passt am besten?",opts:["a) Elektroautos als einzige Zukunftslösung","b) Weniger Autos für mehr Lebensqualität in europäischen Städten","c) Warum das Fahrrad die Zukunft ist"],ans:"b) Weniger Autos für mehr Lebensqualität in europäischen Städten",
+   exp:"b) deckt das gesamte Spektrum ab: Reduktion des Autoverkehrs, Vorteile für Lebensqualität, Herausforderungen und Beispiele.",rule:"Makroaufgabe: Die breiteste und treffendste Überschrift wählen."}
+ ],
+ vocab:["die Verkehrswende — транспортный переход","die Lebensqualität — качество жизни","der Superblock (-blöcke) — супер-квартал","die Akzeptanz — принятие","die Infrastruktur — инфраструктура","die Pendler — маятниковые мигранты","die Luftqualität — качество воздуха","die Beteiligung der Bürger — участие граждан"]
+}
+  
 // ─── LV TEIL 3: VERPACKUNGSINDUSTRIE ───
 {id:"lv3_1", type:"Leseverstehen Teil 3", title:"Zukunftsperspektiven f\u00fcr die Verpackungsindustrie", desc:"11 Aussagen R/F/NiT + Makroaufgabe \u00b7 C1", kind:"lv3",
  textps:[
