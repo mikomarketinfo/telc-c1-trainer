@@ -178,3 +178,30 @@ footer{
     margin-right:10px;
 
 }
+.check-button{
+
+    margin-top:40px;
+
+    padding:12px 24px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:#184a8b;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.check-button:hover{
+
+    background:#0f3565;
+
+}
