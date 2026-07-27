@@ -8,6 +8,7 @@ import { CONFIG } from "./config.js";
 import { TestLoader } from "./engine/testLoader.js";
 import { renderTest } from "./ui/renderer.js";
 import { $, debug } from "./utils/helpers.js";
+import { collectAnswers } from "./engine/answerCollector.js";
 
 window.addEventListener(
 
@@ -42,6 +43,15 @@ async function init(){
         );
 
         renderTest(test);
+        const button = $("checkAnswers");
+
+    button.addEventListener("click", () => {
+
+    const answers = collectAnswers();
+
+    console.log("Selected answers:", answers);
+
+});
 
     }
 
