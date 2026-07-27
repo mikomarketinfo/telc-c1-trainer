@@ -141,3 +141,40 @@ footer{
         1px solid #ddd;
 
 }
+.question{
+
+    margin-top:35px;
+
+    padding:25px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    background:#fafafa;
+
+}
+
+.question h3{
+
+    color:#184a8b;
+
+    margin-bottom:15px;
+
+}
+
+.option{
+
+    display:block;
+
+    margin:12px 0;
+
+    cursor:pointer;
+
+}
+
+.option input{
+
+    margin-right:10px;
+
+}
