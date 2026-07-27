@@ -48,7 +48,7 @@ export function renderSprachbausteine(test) {
 
     const container = $("questions");
 
-    test.questions.forEach(question => {
+        test.questions.forEach(question => {
 
         container.appendChild(
 
@@ -57,6 +57,16 @@ export function renderSprachbausteine(test) {
         );
 
     });
+
+    const button = create("button");
+
+    button.id = "checkAnswers";
+
+    button.className = "check-button";
+
+    button.textContent = "Antworten prüfen";
+
+    card.appendChild(button);
 
 }
 
