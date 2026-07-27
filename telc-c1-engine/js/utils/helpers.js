@@ -1,15 +1,17 @@
 /**
  * ==========================================================
- * Helper Functions
+ * TELC C1 Engine
+ * Utility Helpers
  * ==========================================================
  */
 
 /**
- * Returns DOM element by id.
+ * Returns element by id.
+ *
  * @param {string} id
  * @returns {HTMLElement|null}
  */
-export function $(id){
+export function $(id) {
 
     return document.getElementById(id);
 
@@ -17,41 +19,56 @@ export function $(id){
 
 /**
  * Creates HTML element.
+ *
  * @param {string} tag
  * @returns {HTMLElement}
  */
-export function create(tag){
+export function create(tag) {
 
     return document.createElement(tag);
 
 }
 
 /**
- * Clears element.
+ * Clears HTML element.
+ *
  * @param {HTMLElement} element
  */
-export function clear(element){
+export function clear(element) {
 
-    element.innerHTML="";
+    element.innerHTML = "";
 
 }
 
 /**
- * Prints debug information.
+ * Safe console output.
+ *
  * @param {...any} args
  */
-export function debug(...args){
+export function debug(...args) {
 
-    console.log("[TELC]",...args);
+    console.log("[TELC]", ...args);
 
 }
 
 /**
- * Returns current date.
+ * Returns current ISO date.
+ *
  * @returns {string}
  */
-export function today(){
+export function today() {
 
     return new Date().toISOString();
+
+}
+
+/**
+ * Creates horizontal line.
+ *
+ * @returns {HTMLHRElement}
+ */
+export function hr() {
+
+    return document.createElement("hr");
 
 }
