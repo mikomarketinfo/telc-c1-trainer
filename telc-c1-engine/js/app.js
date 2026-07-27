@@ -1,86 +1,64 @@
 /**
  * ==========================================================
  * TELC C1 Engine
- * Application Entry Point
  * ==========================================================
  */
 
 import { CONFIG } from "./config.js";
-import { $, debug } from "./utils/helpers.js";
 import { TestLoader } from "./engine/testLoader.js";
+import { renderTest } from "./ui/renderer.js";
+import { $, debug } from "./utils/helpers.js";
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener(
 
-async function init() {
+    "DOMContentLoaded",
 
-    showVersion();
+    init
 
-    debug("Application started.");
+);
 
-    try {
+async function init(){
 
-        const test = await TestLoader.load(
-            "../data/sprachbausteine/sb0001.json"
+    $("version").textContent=
+
+        CONFIG.VERSION;
+
+    try{
+
+        const test=
+
+            await TestLoader.load(
+
+                "../data/sprachbausteine/sb0001.json"
+
+            );
+
+        debug(
+
+            "Loaded",
+
+            test.meta.id
+
         );
 
         renderTest(test);
 
-    } catch (error) {
+    }
+
+    catch(error){
 
         console.error(error);
 
-        $("app").innerHTML = `
-            <section class="card">
-                <h1>Fehler</h1>
+        $("app").innerHTML=
+
+            `<section class="card">
+
+                <h2>Fehler</h2>
+
                 <p>${error.message}</p>
-            </section>
-        `;
+
+            </section>`;
 
     }
-
-}
-
-function showVersion() {
-
-    $("version").textContent = CONFIG.VERSION;
-
-}
-
-function renderTest(test) {
-
-    const app = $("app");
-
-    const question = test.questions[0];
-
-    app.innerHTML = `
-        <section class="card">
-
-            <h1>${test.meta.title}</h1>
-
-            <p><strong>Thema:</strong> ${test.meta.topic}</p>
-
-            <hr>
-
-            <p>${test.content.text}</p>
-
-            <br>
-
-            <h2>Beispiel</h2>
-
-            <p>${question.text}</p>
-
-            <ul>
-                ${question.options
-                    .map(
-                        (option, index) =>
-                            `<li>${String.fromCharCode(
-                                65 + index
-                            )}. ${option}</li>`
-                    )
-                    .join("")}
-            </ul>
-
-        </section>
-    `;
 
 }
