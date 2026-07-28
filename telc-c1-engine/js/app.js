@@ -9,6 +9,9 @@ import { TestLoader } from "./engine/testLoader.js";
 import { renderTest } from "./ui/renderer.js";
 import { $, debug } from "./utils/helpers.js";
 import { collectAnswers } from "./engine/answerCollector.js";
+import { calculateScore } from "./engine/scoreEngine.js";
+import { renderResult } from "./ui/resultRenderer.js";
+import { buildResult } from "./engine/resultBuilder.js";
 
 window.addEventListener(
 
@@ -49,7 +52,25 @@ async function init(){
 
     const answers = collectAnswers();
 
-    console.log("Selected answers:", answers);
+    const score = calculateScore(
+
+        test,
+
+        answers
+
+    );
+
+    const html = buildResult(
+
+    test,
+
+    answers,
+
+    score
+
+);
+
+renderResult(html);
 
 });
 
@@ -72,3 +93,4 @@ async function init(){
     }
 
 }
+

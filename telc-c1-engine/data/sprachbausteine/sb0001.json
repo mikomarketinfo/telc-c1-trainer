@@ -25,9 +25,13 @@
         "mit"
       ],
       "correct": 2,
+      "grammarId": "verben_mit_praepositionen",
       "skills": [
-        "präposition"
-      ],
+        "grammatik",
+        "präposition",
+        "arbeitswelt",
+        "wortschatz"
+        ],
       "explanation": {
         "rule": "Man investiert in etwas.",
         "correctWhy": "Das Verb 'investieren' verlangt die Präposition 'in'."

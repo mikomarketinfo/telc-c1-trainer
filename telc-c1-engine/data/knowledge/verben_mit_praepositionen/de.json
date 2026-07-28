@@ -1,0 +1,26 @@
+{
+    "id": "verben_mit_praepositionen",
+
+    "language": "de",
+
+    "title": "Verben mit Präpositionen",
+
+    "shortExplanation": "Viele deutsche Verben verlangen eine feste Präposition. Diese muss zusammen mit dem Verb gelernt werden.",
+
+    "example": "Das Unternehmen investiert in moderne Technologien.",
+
+    "more": {
+        "rule": "Das Verb 'investieren' wird mit der Präposition 'in' verwendet.",
+
+        "commonMistakes": [
+            "für",
+            "an",
+            "mit"
+        ],
+
+        "tips": [
+            "Lerne Verb und Präposition immer zusammen.",
+            "Merke dir Beispielsätze statt einzelner Wörter."
+        ]
+    }
+}

@@ -205,3 +205,29 @@ footer{
     background:#0f3565;
 
 }
+
+#resultPanel{
+
+    margin-top:30px;
+
+}
+
+#resultPanel h2{
+
+    color:#184a8b;
+
+    margin-bottom:15px;
+
+}
+
+.result-question{
+
+    margin-top:25px;
+
+}
+
+.result-question strong{
+
+    color:#184a8b;
+
+}
