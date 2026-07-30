@@ -1,0 +1,42 @@
+{
+    "meta": {
+        "id": "sb0001",
+        "exam": "telc-c1-allgemein",
+        "module": "sprachbausteine",
+        "level": "C1",
+        "title": "Künstliche Intelligenz verändert die Arbeitswelt",
+        "topic": "Arbeitswelt",
+        "version": "1.0.0"
+    },
+
+    "content": {
+        "instruction": "Wählen Sie für jede Lücke die richtige Lösung.",
+        "text": "Künstliche Intelligenz verändert die Arbeitswelt in nahezu allen Branchen. Unternehmen investieren zunehmend in moderne Systeme, um Prozesse effizienter zu gestalten."
+    },
+
+    "questions": [
+        {
+            "id": 1,
+            "text": "Unternehmen investieren ________ moderne Systeme.",
+            "options": ["an", "für", "in", "mit"],
+            "correct": 2,
+            "grammarId": "verben_mit_praepositionen",
+            "skills": ["grammatik", "präposition", "arbeitswelt", "wortschatz"],
+            "explanation": {
+                "rule": "Man investiert in etwas.",
+                "correctWhy": "Das Verb 'investieren' verlangt die Präposition 'in'."
+            }
+        }
+    ],
+
+    "vocabulary": [
+        {
+            "word": "die Arbeitswelt",
+            "translation": "рынок труда"
+        },
+        {
+            "word": "effizient",
+            "translation": "эффективный"
+        }
+    ]
+}

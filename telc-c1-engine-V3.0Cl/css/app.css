@@ -1,0 +1,419 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    font-size:16px;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    font-family:
+
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#eef3f9;
+
+    color:#222;
+
+}
+
+.topbar{
+
+    height:72px;
+
+    background:#184a8b;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 32px;
+
+    box-shadow:
+
+        0 3px 10px
+
+        rgba(0,0,0,.15);
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    letter-spacing:.5px;
+
+}
+
+.version{
+
+    font-size:14px;
+
+    opacity:.85;
+
+}
+
+main{
+
+    flex:1;
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:0 24px;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:14px;
+
+    padding:40px;
+
+    box-shadow:
+
+        0 10px 25px
+
+        rgba(0,0,0,.08);
+
+}
+
+.card h1{
+
+    margin-bottom:20px;
+
+    color:#184a8b;
+
+    font-size:34px;
+
+}
+
+.card p{
+
+    margin-bottom:14px;
+
+    line-height:1.6;
+
+    font-size:18px;
+
+}
+
+footer{
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:white;
+
+    color:#666;
+
+    border-top:
+
+        1px solid #ddd;
+
+}
+.question{
+
+    margin-top:35px;
+
+    padding:25px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    background:#fafafa;
+
+}
+
+.question h3{
+
+    color:#184a8b;
+
+    margin-bottom:15px;
+
+}
+
+.option{
+
+    display:block;
+
+    margin:12px 0;
+
+    cursor:pointer;
+
+}
+
+.option input{
+
+    margin-right:10px;
+
+}
+.check-button{
+
+    margin-top:40px;
+
+    padding:12px 24px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:#184a8b;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+.check-button:hover{
+
+    background:#0f3565;
+
+}
+
+#resultPanel{
+
+    margin-top:30px;
+
+}
+
+#resultPanel h2{
+
+    color:#184a8b;
+
+    margin-bottom:15px;
+
+}
+
+.result-question{
+
+    margin-top:25px;
+
+}
+
+.result-question strong{
+
+    color:#184a8b;
+
+}
+/* ==========================================================
+   Navigation
+========================================================== */
+
+#breadcrumb{
+
+    max-width:1200px;
+
+    width:100%;
+
+    margin:20px auto 0;
+
+    padding:0 24px;
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+button{
+
+    font-family:inherit;
+
+}
+
+.primary-button{
+
+    background:#184a8b;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+.primary-button:hover{
+
+    background:#12396b;
+
+}
+
+.secondary-button{
+
+    background:white;
+
+    color:#184a8b;
+
+    border:1px solid #184a8b;
+
+    padding:12px 24px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.2s;
+
+}
+
+.secondary-button:hover{
+
+    background:#eef4ff;
+
+}
+
+.learnMore{
+
+    margin-top:15px;
+
+}
+
+/* ==========================================================
+   Knowledge Viewer
+========================================================== */
+
+#app h3{
+
+    margin-top:24px;
+
+    color:#184a8b;
+
+}
+
+#app hr{
+
+    margin:24px 0;
+
+}
+
+#app button{
+
+    margin-right:10px;
+
+    margin-top:15px;
+
+}
+
+.layout{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+.sidebar{
+
+    width:260px;
+
+    flex-shrink:0;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+}
+
+.sidebar h2{
+
+    margin-bottom:20px;
+
+    color:#184a8b;
+
+}
+
+.sidebar nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.sidebar button{
+
+    border:none;
+
+    background:#f5f7fb;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    font-size:15px;
+
+}
+
+.sidebar button:hover{
+
+    background:#dfe9f8;
+
+}
+
+.content{
+
+    flex:1;
+
+}
