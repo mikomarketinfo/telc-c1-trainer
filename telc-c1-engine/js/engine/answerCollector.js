@@ -10,7 +10,11 @@
  *
  * @returns {Object}
  */
+import { setAnswer, clearAnswers } from "./appState.js";
+
 export function collectAnswers() {
+    
+    clearAnswers();
 
     const answers = {};
 
@@ -22,7 +26,17 @@ export function collectAnswers() {
 
         const questionId = radio.name.replace("q", "");
 
-        answers[questionId] = Number(radio.value);
+        const selected = Number(radio.value);
+
+        answers[questionId] = selected;
+
+            setAnswer(
+
+                questionId,
+
+                selected
+
+            );
 
     });
 

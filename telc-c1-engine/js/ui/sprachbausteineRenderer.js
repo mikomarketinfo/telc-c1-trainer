@@ -5,6 +5,7 @@
  */
 
 import { $, create } from "../utils/helpers.js";
+import { getAnswers } from "../engine/appState.js";
 
 export function renderSprachbausteine(test) {
 
@@ -38,9 +39,7 @@ export function renderSprachbausteine(test) {
 
         <br>
 
-        <div id="questions">
-
-        </div>
+        <div id="questions"></div>
 
     `;
 
@@ -48,11 +47,19 @@ export function renderSprachbausteine(test) {
 
     const container = $("questions");
 
-        test.questions.forEach(question => {
+    const answers = getAnswers();
+
+    test.questions.forEach(question => {
 
         container.appendChild(
 
-            createQuestion(question)
+            createQuestion(
+
+                question,
+
+                answers
+
+            )
 
         );
 
@@ -70,7 +77,13 @@ export function renderSprachbausteine(test) {
 
 }
 
-function createQuestion(question) {
+function createQuestion(
+
+    question,
+
+    answers
+
+){
 
     const block = create("div");
 
@@ -96,6 +109,18 @@ function createQuestion(question) {
 
         (option,index)=>{
 
+            const checked =
+
+                Number(
+
+                    answers[question.id]
+
+                ) === index
+
+                    ? "checked"
+
+                    : "";
+
             html += `
 
             <label class="option">
@@ -106,7 +131,9 @@ function createQuestion(question) {
 
                     name="q${question.id}"
 
-                    value="${index}">
+                    value="${index}"
+
+                    ${checked}>
 
                 ${String.fromCharCode(65+index)}.
 

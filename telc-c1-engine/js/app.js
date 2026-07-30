@@ -11,7 +11,10 @@ import { $, debug } from "./utils/helpers.js";
 import { collectAnswers } from "./engine/answerCollector.js";
 import { calculateScore } from "./engine/scoreEngine.js";
 import { renderResult } from "./ui/resultRenderer.js";
+import { openKnowledge } from "./ui/knowledgeViewer.js";
 import { buildResult } from "./engine/resultBuilder.js";
+import { registerPage } from "./router.js";
+import { setCurrentTest } from "./engine/appState.js";
 
 window.addEventListener(
 
@@ -46,9 +49,23 @@ async function init(){
         );
 
         renderTest(test);
+        setCurrentTest(test);
+        registerPage(
+
+        (state) => {
+
+            renderTest(
+
+                state.currentTest
+
+            );
+
+        }
+
+        );
         const button = $("checkAnswers");
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
 
     const answers = collectAnswers();
 
@@ -60,7 +77,7 @@ async function init(){
 
     );
 
-    const html = buildResult(
+    const html = await buildResult(
 
     test,
 
@@ -71,6 +88,29 @@ async function init(){
 );
 
 renderResult(html);
+document
+
+    .querySelectorAll(".learnMore")
+
+    .forEach(button => {
+
+        button.addEventListener(
+
+            "click",
+
+            async () => {
+
+                await openKnowledge(
+
+                    button.dataset.grammar
+
+                );
+
+            }
+
+        );
+
+    });
 
 });
 

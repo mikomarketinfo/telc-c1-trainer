@@ -4,7 +4,9 @@
  * ==========================================================
  */
 
-export function buildResult(test, answers, score) {
+import { KnowledgeEngine } from "./knowledgeEngine.js";
+
+export async function buildResult(test, answers, score) {
 
     let html = `
         <h2>Ergebnis</h2>
@@ -12,11 +14,15 @@ export function buildResult(test, answers, score) {
         <hr>
     `;
 
-    test.questions.forEach(question => {
+    for (const question of test.questions) {
 
         const userAnswer = answers[question.id];
 
         const isCorrect = userAnswer === question.correct;
+
+        const knowledge = await KnowledgeEngine.load(
+            question.grammarId
+        );
 
         const userText =
             userAnswer !== undefined
@@ -32,35 +38,33 @@ export function buildResult(test, answers, score) {
 
                 <h3>Aufgabe ${question.id}</h3>
 
-                <p>
-
-                    ${isCorrect ? "✅ Richtig" : "❌ Falsch"}
-
-                </p>
+                <p>${isCorrect ? "✅ Richtig" : "❌ Falsch"}</p>
 
                 <p>
-
                     <strong>Ihre Antwort:</strong>
-
                     ${userText}
-
                 </p>
 
                 <p>
-
                     <strong>Richtige Antwort:</strong>
-
                     ${correctText}
-
                 </p>
 
                 <p>
-
                     <strong>Erklärung:</strong>
-
-                    ${question.explanation.correctWhy}
-
+                    ${knowledge.shortExplanation}
                 </p>
+
+                <p>
+                    <strong>Beispiel:</strong>
+                    ${knowledge.example}
+                </p>
+
+                <button
+                    class="learnMore primary-button"
+                    data-grammar="${question.grammarId}">
+                    📚 Mehr erfahren und Übungen
+                </button>
 
                 <hr>
 
@@ -68,7 +72,7 @@ export function buildResult(test, answers, score) {
 
         `;
 
-    });
+    }
 
     return html;
 
