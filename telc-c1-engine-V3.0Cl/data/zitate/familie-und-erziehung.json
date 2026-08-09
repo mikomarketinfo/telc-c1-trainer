@@ -1,0 +1,66 @@
+{
+    "theme": "familie-und-erziehung",
+    "title": "Familie und Erziehung",
+    "quotes": [
+        {
+            "id": 4,
+            "quote": "Für die Definition von Familie spielt es keine Rolle, ob Eltern und Kinder genetisch verwandt sind.",
+            "meaning": "Familie entsteht nicht nur durch genetische Verwandtschaft, sondern ebenso durch Fürsorge, Verantwortung und gegenseitigen Rückhalt.",
+            "phrases": ["Verantwortung übernehmen", "Geborgenheit vermitteln", "Werte vorleben", "Grenzen setzen", "Vertrauen aufbauen", "Kinder erziehen", "familiären Rückhalt geben", "Selbstständigkeit fördern", "eine Beziehung pflegen", "Konflikte lösen", "Rücksicht nehmen", "Orientierung bieten"]
+        },
+        {
+            "id": 5,
+            "quote": "Die richtige Erziehung gibt es nicht.",
+            "meaning": "Es gibt keine Erziehungsmethode, die für jedes Kind und jede Situation gleichermaßen geeignet ist.",
+            "phrases": ["Verantwortung übernehmen", "Geborgenheit vermitteln", "Werte vorleben", "Grenzen setzen", "Vertrauen aufbauen", "Kinder erziehen", "familiären Rückhalt geben", "Selbstständigkeit fördern", "eine Beziehung pflegen", "Konflikte lösen", "Rücksicht nehmen", "Orientierung bieten"]
+        },
+        {
+            "id": 27,
+            "quote": "Kinder und Narren sagen immer die Wahrheit.",
+            "meaning": "Kinder und unbedachte Menschen sprechen oft offen aus, was andere aus Höflichkeit oder Vorsicht verschweigen.",
+            "phrases": ["Verantwortung übernehmen", "Geborgenheit vermitteln", "Werte vorleben", "Grenzen setzen", "Vertrauen aufbauen", "Kinder erziehen", "familiären Rückhalt geben", "Selbstständigkeit fördern", "eine Beziehung pflegen", "Konflikte lösen", "Rücksicht nehmen", "Orientierung bieten"]
+        },
+        {
+            "id": 45,
+            "quote": "Kinder brauchen keine Strafen.",
+            "meaning": "Kinder können durch Gespräch, Ermutigung, klare Grenzen und nachvollziehbare Konsequenzen statt durch Strafen erzogen werden.",
+            "phrases": ["Verantwortung übernehmen", "Geborgenheit vermitteln", "Werte vorleben", "Grenzen setzen", "Vertrauen aufbauen", "Kinder erziehen", "familiären Rückhalt geben", "Selbstständigkeit fördern", "eine Beziehung pflegen", "Konflikte lösen", "Rücksicht nehmen", "Orientierung bieten"]
+        },
+        {
+            "id": 96,
+            "quote": "Das Wohl der Familie ist wichtiger als das Streben nach individueller Erfüllung.",
+            "meaning": "Familiärer Zusammenhalt kann wichtiger als individuelle Selbstverwirklichung sein, darf persönliche Freiheit jedoch nicht völlig verdrängen.",
+            "phrases": ["Verantwortung übernehmen", "Geborgenheit vermitteln", "Werte vorleben", "Grenzen setzen", "Vertrauen aufbauen", "Kinder erziehen", "familiären Rückhalt geben", "Selbstständigkeit fördern", "eine Beziehung pflegen", "Konflikte lösen", "Rücksicht nehmen", "Orientierung bieten"]
+        },
+        {
+            "id": 98,
+            "quote": "Auch die Medien erziehen unsere Kinder.",
+            "meaning": "Medien prägen neben Familie und Schule die Werte, Verhaltensweisen und Vorstellungen von Kindern.",
+            "phrases": ["Bildung vermitteln", "Wissen erwerben", "Kompetenzen entwickeln", "den Zugang zu Bildung ermöglichen", "kritisches Denken fördern", "Chancengleichheit schaffen", "Lernprozesse gestalten", "Kenntnisse vertiefen", "eine Qualifikation erwerben", "Potenziale entfalten", "Verantwortung übernehmen", "gesellschaftliche Teilhabe ermöglichen"]
+        },
+        {
+            "id": 104,
+            "quote": "Bei Stellenbesetzungen sollte die familiäre Situation der Bewerberinnen und Bewerber stärker berücksichtigt werden.",
+            "meaning": "Familiäre Umstände können bei Einstellungen berücksichtigt werden, dürfen Qualifikation und Chancengleichheit jedoch nicht verdrängen.",
+            "phrases": ["den Lebensunterhalt bestreiten", "berufliche Ziele verfolgen", "Karrierechancen verbessern", "Leistung anerkennen", "Verantwortung übernehmen", "Kompetenzen nachweisen", "Arbeitsbedingungen gestalten", "sich beruflich verwirklichen", "Kontakte knüpfen", "eine Qualifikation erwerben", "Interessen abwägen", "Erfolg haben"]
+        },
+        {
+            "id": 112,
+            "quote": "Vater werden ist nicht schwer, Vater sein dagegen sehr.",
+            "meaning": "Vater zu werden ist leichter, als dauerhaft Verantwortung für Erziehung, Fürsorge und Unterstützung eines Kindes zu tragen.",
+            "phrases": ["Verantwortung übernehmen", "Geborgenheit vermitteln", "Werte vorleben", "Grenzen setzen", "Vertrauen aufbauen", "Kinder erziehen", "familiären Rückhalt geben", "Selbstständigkeit fördern", "eine Beziehung pflegen", "Konflikte lösen", "Rücksicht nehmen", "Orientierung bieten"]
+        },
+        {
+            "id": 116,
+            "quote": "Kinder und Uhren dürfen nicht beständig aufgezogen werden. Man muss sie auch gehen lassen.",
+            "meaning": "Kinder brauchen Orientierung, doch ständige Kontrolle behindert Selbstständigkeit und persönliche Entwicklung.",
+            "phrases": ["Verantwortung übernehmen", "Geborgenheit vermitteln", "Werte vorleben", "Grenzen setzen", "Vertrauen aufbauen", "Kinder erziehen", "familiären Rückhalt geben", "Selbstständigkeit fördern", "eine Beziehung pflegen", "Konflikte lösen", "Rücksicht nehmen", "Orientierung bieten"]
+        },
+        {
+            "id": 138,
+            "quote": "Erziehung heißt vorleben; alles andere ist höchstens Dressur.",
+            "meaning": "Kinder lernen stärker am gelebten Beispiel Erwachsener als durch bloße Belehrungen und Anweisungen.",
+            "phrases": ["Verantwortung übernehmen", "Geborgenheit vermitteln", "Werte vorleben", "Grenzen setzen", "Vertrauen aufbauen", "Kinder erziehen", "familiären Rückhalt geben", "Selbstständigkeit fördern", "eine Beziehung pflegen", "Konflikte lösen", "Rücksicht nehmen", "Orientierung bieten"]
+        }
+    ]
+}

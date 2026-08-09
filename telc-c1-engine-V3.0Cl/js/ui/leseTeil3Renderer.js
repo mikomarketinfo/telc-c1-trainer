@@ -1,6 +1,6 @@
 /**
  * ==========================================================
- * Sprachbausteine Renderer
+ * Leseverstehen Teil 3 — Globalverstehen
  * ==========================================================
  */
 import { $, create } from "../utils/helpers.js";
@@ -8,9 +8,11 @@ import { getAnswers } from "../engine/appState.js";
 import { createQuestionBlock } from "./questionBlock.js";
 import { renderTestHeader } from "./testHeader.js";
 
-export function renderSprachbausteine(test) {
+export function renderLeseTeil3(test) {
     const app = $("app");
     app.innerHTML = "";
+
+    const paragraphs = test.content.text.map((p) => `<p>${p}</p>`).join("");
 
     const card = create("section");
     card.className = "card";
@@ -18,8 +20,8 @@ export function renderSprachbausteine(test) {
         ${renderTestHeader(test)}
         <hr>
         <p>${test.content.instruction}</p>
-        <div class="reading-text">${test.content.text}</div>
-        <br>
+        <div class="reading-text">${paragraphs}</div>
+        <hr>
         <div id="questions"></div>
     `;
     app.appendChild(card);

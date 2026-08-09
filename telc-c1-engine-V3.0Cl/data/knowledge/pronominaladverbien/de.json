@@ -1,0 +1,15 @@
+{
+    "id": "pronominaladverbien",
+    "language": "de",
+    "title": "Pronominaladverbien (darauf, damit, davon, dabei)",
+    "shortExplanation": "Pronominaladverbien (da(r) + Präposition) ersetzen ein Präpositionalobjekt, wenn danach ein dass-Satz oder Infinitivsatz folgt statt eines Nomens.",
+    "example": "Experten weisen darauf hin, dass die Erwerbsbeteiligung steigen muss.",
+    "more": {
+        "rule": "Feste Verbindung 'hinweisen auf' → vor einem dass-Satz wird daraus 'darauf hinweisen, dass ...'.",
+        "commonMistakes": ["damit", "dabei", "davon"],
+        "tips": [
+            "Vor Vokal wird ein 'r' eingefügt: da + auf → darauf.",
+            "Lerne Pronominaladverbien zusammen mit dem jeweiligen Verb, nicht isoliert."
+        ]
+    }
+}

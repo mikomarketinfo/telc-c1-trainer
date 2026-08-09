@@ -1,9 +1,57 @@
 {
-    "version": 1,
+    "version": 2,
     "topics": [
         {
             "id": "verben_mit_praepositionen",
             "title": "Verben mit Präpositionen",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "kausale_konnektoren",
+            "title": "Kausale Konnektoren (weil, da, denn)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "konzessive_konnektoren",
+            "title": "Konzessive Konnektoren (obwohl, trotzdem, dennoch)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "finale_konnektoren",
+            "title": "Finale Konnektoren (damit, um ... zu)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "relativpronomen",
+            "title": "Relativpronomen (der, die, das, deren, dessen)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "pronominaladverbien",
+            "title": "Pronominaladverbien (darauf, damit, davon, dabei)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "nomen_verb_verbindung",
+            "title": "Nomen-Verb-Verbindungen (eine Rolle spielen)",
+            "category": "Wortschatz",
+            "level": "C1"
+        },
+        {
+            "id": "konjunktiv_hoeflich",
+            "title": "Konjunktiv II bei hypothetischen Folgen",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "modalverben_vermutung",
+            "title": "Modalverben für logische Notwendigkeit",
             "category": "Grammatik",
             "level": "C1"
         }

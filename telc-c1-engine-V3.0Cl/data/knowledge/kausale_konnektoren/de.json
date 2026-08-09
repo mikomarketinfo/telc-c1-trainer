@@ -1,0 +1,15 @@
+{
+    "id": "kausale_konnektoren",
+    "language": "de",
+    "title": "Kausale Konnektoren (weil, da, denn)",
+    "shortExplanation": "Kausale Konnektoren nennen den Grund für einen Sachverhalt. 'weil' und 'da' leiten einen Nebensatz ein, 'denn' einen Hauptsatz.",
+    "example": "Sie lernt intensiv Deutsch, da sie die TELC-C1-Prüfung bestehen möchte.",
+    "more": {
+        "rule": "weil/da + Nebensatz (Verb am Ende); denn + Hauptsatz (Verb an Position 2). 'da' steht oft am Satzanfang oder wenn der Grund bereits bekannt ist.",
+        "commonMistakes": ["obwohl", "trotzdem", "sodass"],
+        "tips": [
+            "'da' wirkt formeller als 'weil' und passt gut in Berichte und offizielle Texte.",
+            "Nach 'denn' bleibt die Wortstellung wie im Hauptsatz."
+        ]
+    }
+}

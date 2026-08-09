@@ -1,0 +1,15 @@
+{
+    "id": "konzessive_konnektoren",
+    "language": "de",
+    "title": "Konzessive Konnektoren (obwohl, trotzdem, dennoch)",
+    "shortExplanation": "Konzessive Konnektoren drücken einen unerwarteten Gegensatz aus: Trotz Grund X passiert Y.",
+    "example": "Obwohl er gut qualifiziert ist, findet er keine passende Stelle.",
+    "more": {
+        "rule": "'obwohl' + Nebensatz (Verb am Ende). 'trotzdem'/'dennoch' + Hauptsatz, meist mit Verb-Zweit-Stellung nach dem Konnektor.",
+        "commonMistakes": ["weil", "da", "sodass"],
+        "tips": [
+            "Frage zum Testen: Passt hier 'aber trotzdem'? Wenn ja, ist es konzessiv, nicht kausal.",
+            "'trotzdem' kann auch mitten im Satz stehen: 'Er findet trotzdem keine Stelle.'"
+        ]
+    }
+}

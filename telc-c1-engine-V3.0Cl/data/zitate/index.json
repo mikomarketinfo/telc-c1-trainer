@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "themes": [
+        {
+            "slug": "bildung-und-lernen",
+            "title": "Bildung und Lernen",
+            "count": 15,
+            "path": "../data/zitate/bildung-und-lernen.json"
+        },
+        {
+            "slug": "erfolg-und-mut",
+            "title": "Erfolg und Mut",
+            "count": 12,
+            "path": "../data/zitate/erfolg-und-mut.json"
+        },
+        {
+            "slug": "familie-und-erziehung",
+            "title": "Familie und Erziehung",
+            "count": 10,
+            "path": "../data/zitate/familie-und-erziehung.json"
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "meta": {
+        "id": "lv-t2-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "leseverstehen-teil2",
+        "level": "C1",
+        "title": "Fachkräftemangel: Entspannung oder nur eine Verschnaufpause?",
+        "topic": "Arbeit und Wirtschaft",
+        "version": "1.0.0"
+    },
+
+    "content": {
+        "instruction": "Lesen Sie den folgenden Text. In welchem Abschnitt a-e finden Sie die Antworten auf die Fragen? Es gibt jeweils nur eine richtige Lösung. Jeder Abschnitt kann Antworten auf mehrere Fragen enthalten.",
+        "sections": [
+            {
+                "id": "a",
+                "text": "Nach Jahren der Alarmmeldungen kommt aus der deutschen Wirtschaft in letzter Zeit ein vorsichtig positives Signal: Der Fachkräftemangel hat sich spürbar entspannt. Laut einer aktuellen Erhebung des ifo-Instituts meldeten Anfang 2026 nur noch rund 23 Prozent der befragten Unternehmen, durch fehlendes Personal in ihrer Geschäftstätigkeit eingeschränkt zu sein – der niedrigste Stand seit vielen Jahren."
+            },
+            {
+                "id": "b",
+                "text": "Ganz verschwunden ist das Problem jedoch keineswegs. Die Bundesagentur für Arbeit zählt weiterhin mehr als 160 sogenannte Engpassberufe, in denen offene Stellen besonders lange unbesetzt bleiben. Das Institut der deutschen Wirtschaft beziffert die Zahl der Stellen, für die sich keine passend qualifizierten Bewerberinnen und Bewerber finden lassen, auf annähernd eine halbe Million. Besonders stark betroffen bleibt das Gesundheitswesen."
+            },
+            {
+                "id": "c",
+                "text": "Ökonomen führen die aktuelle Entspannung vor allem auf die schwache Konjunktur zurück: Wenn Unternehmen weniger investieren und langsamer wachsen, sinkt kurzfristig auch ihr Bedarf an zusätzlichem Personal. Der eigentliche, strukturelle Treiber des Fachkräftemangels bleibt davon jedoch unberührt – der demografische Wandel. Sobald sich die Konjunktur erholt, dürfte der Personalbedarf der Unternehmen daher rasch wieder steigen."
+            },
+            {
+                "id": "d",
+                "text": "Gleichzeitig verweisen Fachleute auf ein bislang zu wenig genutztes Potenzial: Ein erheblicher Teil der Menschen ohne Beschäftigung verfügt über eine mittlere oder sogar hohe berufliche Qualifikation, findet aber aus verschiedenen Gründen keinen passenden Einstieg in den Arbeitsmarkt. Wer dieses Potenzial – etwa durch bessere Kinderbetreuung, gezielte Weiterbildung oder erleichterte Zuwanderung – konsequenter erschließt, könnte den demografischen Druck zumindest abfedern."
+            },
+            {
+                "id": "e",
+                "text": "Die aktuelle Entspannung beim Fachkräftemangel ist somit eher eine Verschnaufpause als eine dauerhafte Lösung. Ohne strukturelle Reformen dürfte sich die Lücke zwischen Arbeitskräfteangebot und -nachfrage in den kommenden Jahren erneut vergrößern. Wer jetzt handelt, hat allerdings noch Zeit, sich auf die absehbare Verschärfung vorzubereiten."
+            }
+        ]
+    },
+
+    "questions": [
+        {
+            "id": 1,
+            "text": "In welchem Abschnitt wird eine aktuelle, positive Entwicklung vorgestellt?",
+            "options": ["Abschnitt a", "Abschnitt b", "Abschnitt c", "Abschnitt d", "Abschnitt e"],
+            "correct": 0,
+            "skills": ["leseverstehen", "selektives-lesen"],
+            "explanation": { "correctWhy": "Abschnitt a nennt die aktuelle Entspannung laut ifo-Erhebung." }
+        },
+        {
+            "id": 2,
+            "text": "In welchem Abschnitt wird eine besonders betroffene Branche genannt?",
+            "options": ["Abschnitt a", "Abschnitt b", "Abschnitt c", "Abschnitt d", "Abschnitt e"],
+            "correct": 1,
+            "skills": ["leseverstehen", "selektives-lesen"],
+            "explanation": { "correctWhy": "Abschnitt b nennt ausdrücklich das Gesundheitswesen als besonders betroffen." }
+        },
+        {
+            "id": 3,
+            "text": "In welchem Abschnitt wird eine mögliche Erklärung für die aktuelle Entwicklung gegeben?",
+            "options": ["Abschnitt a", "Abschnitt b", "Abschnitt c", "Abschnitt d", "Abschnitt e"],
+            "correct": 2,
+            "skills": ["leseverstehen", "selektives-lesen"],
+            "explanation": { "correctWhy": "Abschnitt c erklärt die Entspannung mit der schwachen Konjunktur." }
+        },
+        {
+            "id": 4,
+            "text": "In welchem Abschnitt wird ein ungenutztes Potenzial beschrieben?",
+            "options": ["Abschnitt a", "Abschnitt b", "Abschnitt c", "Abschnitt d", "Abschnitt e"],
+            "correct": 3,
+            "skills": ["leseverstehen", "selektives-lesen"],
+            "explanation": { "correctWhy": "Abschnitt d beschreibt Erwerbslose mit Qualifikation als ungenutztes Potenzial." }
+        },
+        {
+            "id": 5,
+            "text": "In welchem Abschnitt wird ein möglicher künftiger Verlauf angedeutet?",
+            "options": ["Abschnitt a", "Abschnitt b", "Abschnitt c", "Abschnitt d", "Abschnitt e"],
+            "correct": 2,
+            "skills": ["leseverstehen", "selektives-lesen"],
+            "explanation": { "correctWhy": "Abschnitt c deutet an, dass der Personalbedarf bei einer Erholung der Konjunktur wieder steigen dürfte." }
+        },
+        {
+            "id": 6,
+            "text": "In welchem Abschnitt wird die aktuelle Entwicklung abschließend eingeordnet und bewertet?",
+            "options": ["Abschnitt a", "Abschnitt b", "Abschnitt c", "Abschnitt d", "Abschnitt e"],
+            "correct": 4,
+            "skills": ["leseverstehen", "selektives-lesen"],
+            "explanation": { "correctWhy": "Abschnitt e ordnet die Entspannung als 'Verschnaufpause' ein, nicht als Lösung." }
+        }
+    ],
+
+    "vocabulary": [
+        { "word": "der Engpassberuf", "translation": "профессия с дефицитом кадров" },
+        { "word": "abfedern", "translation": "смягчать (последствия)" },
+        { "word": "die Verschnaufpause", "translation": "временная передышка" }
+    ],
+
+    "generator": {
+        "source": "original text written by Claude, grounded in public 2026 data (ifo-Institut, IW Köln, Bundesagentur für Arbeit); no article reproduced verbatim; format modeled on the official telc Deutsch C1 Übungstest (Leseverstehen Teil 2)",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

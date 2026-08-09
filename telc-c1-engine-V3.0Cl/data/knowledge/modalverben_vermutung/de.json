@@ -1,0 +1,15 @@
+{
+    "id": "modalverben_vermutung",
+    "language": "de",
+    "title": "Modalverben für logische Notwendigkeit (müssen, dürfte, könnte)",
+    "shortExplanation": "'müssen' drückt eine logisch zwingende Konsequenz aus einer genannten Bedingung aus, nicht nur eine Pflicht.",
+    "example": "Bleibt die Erwerbsbeteiligung niedrig, muss Deutschland mit wirtschaftlichen Folgen rechnen.",
+    "more": {
+        "rule": "Bei einer klaren Wenn-Dann-Logik ('Wenn A, dann zwingend B') passt 'müssen', nicht 'sollen' (Empfehlung) oder 'dürfen' (Erlaubnis).",
+        "commonMistakes": ["soll", "darf", "mag"],
+        "tips": [
+            "Frage: Ist die Folge zwingend/logisch oder nur eine Empfehlung? Zwingend → müssen.",
+            "'dürfte' (Konjunktiv II) drückt dagegen eine Vermutung aus, nicht dieselbe Bedeutung wie 'muss'."
+        ]
+    }
+}

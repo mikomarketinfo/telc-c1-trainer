@@ -1,0 +1,40 @@
+{
+    "version": 2,
+    "tests": [
+        {
+            "id": "sb0001",
+            "module": "sprachbausteine",
+            "title": "Künstliche Intelligenz verändert die Arbeitswelt",
+            "topic": "Arbeitswelt",
+            "path": "../data/sprachbausteine/sb0001.json"
+        },
+        {
+            "id": "sb0002",
+            "module": "sprachbausteine",
+            "title": "Der demografische Wandel in Deutschland",
+            "topic": "Gesellschaft",
+            "path": "../data/sprachbausteine/sb0002.json"
+        },
+        {
+            "id": "lv-t1-0001",
+            "module": "leseverstehen-teil1",
+            "title": "Datenschutz und künstliche Intelligenz: Reformdruck in Deutschland und der EU",
+            "topic": "Technologie und Recht",
+            "path": "../data/leseverstehen/lv-t1-0001.json"
+        },
+        {
+            "id": "lv-t2-0001",
+            "module": "leseverstehen-teil2",
+            "title": "Fachkräftemangel: Entspannung oder nur eine Verschnaufpause?",
+            "topic": "Arbeit und Wirtschaft",
+            "path": "../data/leseverstehen/lv-t2-0001.json"
+        },
+        {
+            "id": "lv-t3-0001",
+            "module": "leseverstehen-teil3",
+            "title": "Künstliche Intelligenz: Jobkiller oder Jobmotor?",
+            "topic": "Technologie und Arbeit",
+            "path": "../data/leseverstehen/lv-t3-0001.json"
+        }
+    ]
+}

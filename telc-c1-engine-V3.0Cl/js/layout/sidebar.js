@@ -1,38 +1,37 @@
 /**
  * ==========================================================
- * Sidebar Component
+ * Sidebar
+ * Real anchor links (#/path) so the browser handles focus,
+ * middle-click-to-open-in-new-tab, etc. "out of the box".
  * ==========================================================
  */
-export function getSidebar() {
+const NAV_ITEMS = [
+    { path: "/library", icon: "📚", label: "Bibliothek" },
+    { path: "/zitate", icon: "💬", label: "Zitate" },
+    { path: "/exercises", icon: "🧩", label: "Übungen" },
+    { path: "/knowledge", icon: "🧠", label: "Wissen" },
+    { path: "/exam", icon: "🏆", label: "Volle Prüfung" },
+    { path: "/profile", icon: "👤", label: "Profil" }
+];
+
+/**
+ * Render the sidebar markup.
+ *
+ * @param {string} currentPath - the router's current path, used
+ *                                to highlight the active section
+ * @returns {string}
+ */
+export function renderSidebar(currentPath) {
+    const links = NAV_ITEMS.map((item) => {
+        const isActive = currentPath.startsWith(item.path);
+        const activeClass = isActive ? "active" : "";
+        return `<a href="#${item.path}" class="sidebar-link ${activeClass}">${item.icon} ${item.label}</a>`;
+    }).join("");
+
     return `
         <aside class="sidebar">
             <h2>TELC C1</h2>
-            <nav>
-                <button data-page="home">
-                    🏠 Home
-                </button>
-                <button data-page="sprachbausteine">
-                    📘 Sprachbausteine
-                </button>
-                <button data-page="lesen">
-                    📖 Leseverstehen
-                </button>
-                <button data-page="hoeren">
-                    🎧 Hörverstehen
-                </button>
-                <button data-page="schreiben">
-                    ✍ Schreiben
-                </button>
-                <button data-page="wissen">
-                    🧠 Wissen
-                </button>
-                <button data-page="statistik">
-                    📊 Statistik
-                </button>
-                <button data-page="settings">
-                    ⚙ Einstellungen
-                </button>
-            </nav>
+            <nav>${links}</nav>
         </aside>
     `;
 }

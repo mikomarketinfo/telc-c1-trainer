@@ -1,6 +1,6 @@
 /**
  * ==========================================================
- * Sprachbausteine Renderer
+ * Leseverstehen Teil 1 — Textrekonstruktion
  * ==========================================================
  */
 import { $, create } from "../utils/helpers.js";
@@ -8,9 +8,14 @@ import { getAnswers } from "../engine/appState.js";
 import { createQuestionBlock } from "./questionBlock.js";
 import { renderTestHeader } from "./testHeader.js";
 
-export function renderSprachbausteine(test) {
+export function renderLeseTeil1(test) {
     const app = $("app");
     app.innerHTML = "";
+
+    const paragraphs = test.content.paragraphs.map((p) => `<p>${p}</p>`).join("");
+    const sentenceList = test.content.sentences
+        .map((s) => `<p><strong>${s.id})</strong> ${s.text}</p>`)
+        .join("");
 
     const card = create("section");
     card.className = "card";
@@ -18,8 +23,12 @@ export function renderSprachbausteine(test) {
         ${renderTestHeader(test)}
         <hr>
         <p>${test.content.instruction}</p>
-        <div class="reading-text">${test.content.text}</div>
-        <br>
+        <div class="reading-text">${paragraphs}</div>
+        <div class="sentence-pool">
+            <h3>Sätze (2 passen nicht):</h3>
+            ${sentenceList}
+        </div>
+        <hr>
         <div id="questions"></div>
     `;
     app.appendChild(card);

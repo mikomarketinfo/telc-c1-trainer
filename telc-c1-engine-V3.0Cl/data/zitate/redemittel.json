@@ -1,0 +1,85 @@
+{
+    "structure": [
+        { "step": 1, "title": "Einleitung", "hint": "Was bedeutet das Zitat? Kernaussage erklären." },
+        { "step": 2, "title": "Eigene Meinung", "hint": "Stimmen Sie zu, teilweise, oder gar nicht?" },
+        { "step": 3, "title": "Argument 1 + Beispiel", "hint": "Ein Grund für Ihre Position, mit einem konkreten Beispiel." },
+        { "step": 4, "title": "Argument 2 + Beispiel", "hint": "Ein zweiter, unabhängiger Grund, mit Beispiel." },
+        { "step": 5, "title": "Gegenargument", "hint": "Auch eine andere Sichtweise anerkennen." },
+        { "step": 6, "title": "Fazit", "hint": "Zusammenfassen und die eigene Position abschließend bekräftigen." }
+    ],
+
+    "categories": [
+        {
+            "id": "meinung",
+            "title": "Eigene Meinung ausdrücken",
+            "phrases": [
+                "Ich bin der Auffassung, dass ...",
+                "Meiner Ansicht nach ...",
+                "Meines Erachtens ...",
+                "Ich vertrete die Ansicht, dass ...",
+                "Ich halte diese Aussage für überzeugend."
+            ]
+        },
+        {
+            "id": "teilzustimmung",
+            "title": "Teilweise Zustimmung",
+            "phrases": [
+                "Ich stimme dieser Aussage nur teilweise zu.",
+                "Diese Aussage trifft nur unter bestimmten Bedingungen zu.",
+                "Im Allgemeinen stimmt das, allerdings ...",
+                "Grundsätzlich bin ich derselben Meinung, jedoch ..."
+            ]
+        },
+        {
+            "id": "widerspruch",
+            "title": "Widerspruch / Nichtzustimmung",
+            "phrases": [
+                "Dem kann ich nicht zustimmen.",
+                "Ich sehe das etwas anders.",
+                "Diese Aussage erscheint mir zu pauschal.",
+                "Ich bin eher skeptisch."
+            ]
+        },
+        {
+            "id": "argumente",
+            "title": "Argumente hinzufügen",
+            "phrases": [
+                "Außerdem ...",
+                "Darüber hinaus ...",
+                "Ein weiterer Aspekt ist ...",
+                "Nicht zu vergessen ist ...",
+                "Ebenso wichtig ist ..."
+            ]
+        },
+        {
+            "id": "gegenposition",
+            "title": "Gegenposition anerkennen",
+            "phrases": [
+                "Auf der anderen Seite ...",
+                "Allerdings darf man nicht außer Acht lassen ...",
+                "Es gibt jedoch auch Gegenargumente.",
+                "Dennoch sollte man berücksichtigen ..."
+            ]
+        },
+        {
+            "id": "beispiele",
+            "title": "Beispiele anführen",
+            "phrases": [
+                "Ein gutes Beispiel dafür ist ...",
+                "Man kann das am Beispiel von ... erkennen.",
+                "In meinem Umfeld habe ich erlebt ...",
+                "Aus eigener Erfahrung weiß ich ..."
+            ]
+        },
+        {
+            "id": "fazit",
+            "title": "Fazit ziehen",
+            "phrases": [
+                "Zusammenfassend lässt sich sagen, dass ...",
+                "Letztendlich kommt es darauf an ...",
+                "Es gibt keine allgemeingültige Antwort.",
+                "Entscheidend ist vielmehr ..."
+            ]
+        }
+    ]
+}

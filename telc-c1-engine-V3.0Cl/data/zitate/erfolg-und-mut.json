@@ -1,0 +1,78 @@
+{
+    "theme": "erfolg-und-mut",
+    "title": "Erfolg und Mut",
+    "quotes": [
+        {
+            "id": 25,
+            "quote": "Ich kenne keinen sicheren Weg zum Erfolg, aber einen sicheren Weg zum Misserfolg: Es allen recht machen zu wollen.",
+            "meaning": "Wer es allen recht machen will, verliert leicht die eigene Haltung und erhöht dadurch das Risiko des Scheiterns.",
+            "phrases": ["ein Risiko eingehen", "Mut zeigen", "den Mut aufbringen", "Chancen nutzen", "eine Chance ergreifen", "Erfolg haben", "ein Ziel erreichen", "Herausforderungen annehmen", "Entscheidungen treffen", "Rückschläge überwinden", "aus Fehlern lernen", "die Komfortzone verlassen"]
+        },
+        {
+            "id": 37,
+            "quote": "Wer kämpft, kann verlieren. Wer nicht kämpft, hat schon verloren.",
+            "meaning": "Wer handelt und kämpft, riskiert zwar eine Niederlage; ohne jeden Versuch ist ein Scheitern jedoch sicher.",
+            "phrases": ["ein Risiko eingehen", "Mut zeigen", "den Mut aufbringen", "Chancen nutzen", "eine Chance ergreifen", "Erfolg haben", "ein Ziel erreichen", "Herausforderungen annehmen", "Entscheidungen treffen", "Rückschläge überwinden", "aus Fehlern lernen", "die Komfortzone verlassen"]
+        },
+        {
+            "id": 41,
+            "quote": "Wenn einer einen Fehler begeht und ihn nicht korrigiert, begeht er bereits den zweiten.",
+            "meaning": "Ein Fehler ist menschlich; ihn nicht zu erkennen oder zu korrigieren, führt jedoch zu einem weiteren Fehler.",
+            "phrases": ["ein Risiko eingehen", "Mut zeigen", "den Mut aufbringen", "Chancen nutzen", "eine Chance ergreifen", "Erfolg haben", "ein Ziel erreichen", "Herausforderungen annehmen", "Entscheidungen treffen", "Rückschläge überwinden", "aus Fehlern lernen", "die Komfortzone verlassen"]
+        },
+        {
+            "id": 65,
+            "quote": "Frei ist, wer den Mut hat, sich seines eigenen Verstandes zu bedienen.",
+            "meaning": "Geistige Freiheit setzt den Mut voraus, selbstständig zu denken und nicht blind fremden Urteilen zu folgen.",
+            "phrases": ["Freiheit genießen", "Verantwortung übernehmen", "Grenzen setzen", "Rechte wahren", "Pflichten erfüllen", "Entscheidungen treffen", "Konsequenzen tragen", "Handlungsspielräume erweitern", "Rücksicht nehmen", "Selbstbestimmung ermöglichen", "Interessen abwägen", "für etwas einstehen"]
+        },
+        {
+            "id": 72,
+            "quote": "Suche nicht nach Fehlern, suche nach Lösungen.",
+            "meaning": "Die Suche nach Lösungen ist produktiver als die bloße Suche nach Schuldigen oder Fehlern.",
+            "phrases": ["ein Risiko eingehen", "Mut zeigen", "den Mut aufbringen", "Chancen nutzen", "eine Chance ergreifen", "Erfolg haben", "ein Ziel erreichen", "Herausforderungen annehmen", "Entscheidungen treffen", "Rückschläge überwinden", "aus Fehlern lernen", "die Komfortzone verlassen"]
+        },
+        {
+            "id": 78,
+            "quote": "Dem Zufall muss man auch eine Chance geben.",
+            "meaning": "Nicht jede Chance lässt sich planen; auch unerwartete Ereignisse können wertvolle Möglichkeiten eröffnen.",
+            "phrases": ["ein Risiko eingehen", "Mut zeigen", "den Mut aufbringen", "Chancen nutzen", "eine Chance ergreifen", "Erfolg haben", "ein Ziel erreichen", "Herausforderungen annehmen", "Entscheidungen treffen", "Rückschläge überwinden", "aus Fehlern lernen", "die Komfortzone verlassen"]
+        },
+        {
+            "id": 84,
+            "quote": "Karriere machen kann man nur allein.",
+            "meaning": "Beruflicher Erfolg verlangt Eigeninitiative, hängt jedoch oft ebenso von Zusammenarbeit und Netzwerken ab.",
+            "phrases": ["den Lebensunterhalt bestreiten", "berufliche Ziele verfolgen", "Karrierechancen verbessern", "Leistung anerkennen", "Verantwortung übernehmen", "Kompetenzen nachweisen", "Arbeitsbedingungen gestalten", "sich beruflich verwirklichen", "Kontakte knüpfen", "eine Qualifikation erwerben", "Interessen abwägen", "Erfolg haben"]
+        },
+        {
+            "id": 87,
+            "quote": "Wer zugibt, dass er feige ist, hat Mut.",
+            "meaning": "Die eigene Angst offen einzugestehen erfordert Mut und kann daher selbst ein Zeichen von Stärke sein.",
+            "phrases": ["Freiheit genießen", "Verantwortung übernehmen", "Grenzen setzen", "Rechte wahren", "Pflichten erfüllen", "Entscheidungen treffen", "Konsequenzen tragen", "Handlungsspielräume erweitern", "Rücksicht nehmen", "Selbstbestimmung ermöglichen", "Interessen abwägen", "für etwas einstehen"]
+        },
+        {
+            "id": 93,
+            "quote": "Erfolg ist eine Frage des Willens.",
+            "meaning": "Willenskraft trägt zum Erfolg bei, reicht jedoch ohne Fähigkeiten, Chancen und günstige Bedingungen nicht immer aus.",
+            "phrases": ["ein Risiko eingehen", "Mut zeigen", "den Mut aufbringen", "Chancen nutzen", "eine Chance ergreifen", "Erfolg haben", "ein Ziel erreichen", "Herausforderungen annehmen", "Entscheidungen treffen", "Rückschläge überwinden", "aus Fehlern lernen", "die Komfortzone verlassen"]
+        },
+        {
+            "id": 100,
+            "quote": "Man muss über seine Leistungen und Erfolge sprechen, um Beachtung zu finden.",
+            "meaning": "Wer beruflich oder akademisch wahrgenommen werden will, muss eigene Leistungen häufig sichtbar und verständlich darstellen.",
+            "phrases": ["sachlich argumentieren", "eine Position vertreten", "Wertschätzung ausdrücken", "Kritik üben", "auf Gegenargumente eingehen", "Missverständnisse vermeiden", "überzeugend auftreten", "Aufmerksamkeit gewinnen", "einen Konflikt lösen", "Informationen vermitteln", "Vertrauen aufbauen", "Beziehungen pflegen"]
+        },
+        {
+            "id": 121,
+            "quote": "Wer nichts wagt, der darf nichts hoffen.",
+            "meaning": "Ohne Mut zum Risiko und zum Handeln bleiben viele Chancen und mögliche Erfolge unerreichbar.",
+            "phrases": ["ein Risiko eingehen", "Mut zeigen", "den Mut aufbringen", "Chancen nutzen", "eine Chance ergreifen", "Erfolg haben", "ein Ziel erreichen", "Herausforderungen annehmen", "Entscheidungen treffen", "Rückschläge überwinden", "aus Fehlern lernen", "die Komfortzone verlassen"]
+        },
+        {
+            "id": 133,
+            "quote": "Der Weg zum Misserfolg ist einfacher als der Weg zum Erfolg.",
+            "meaning": "Der Weg zum Scheitern wird leichter, wenn Einsatz, Planung und Verantwortung vermieden werden.",
+            "phrases": ["ein Risiko eingehen", "Mut zeigen", "den Mut aufbringen", "Chancen nutzen", "eine Chance ergreifen", "Erfolg haben", "ein Ziel erreichen", "Herausforderungen annehmen", "Entscheidungen treffen", "Rückschläge überwinden", "aus Fehlern lernen", "die Komfortzone verlassen"]
+        }
+    ]
+}

@@ -1,16 +1,13 @@
 /**
  * ==========================================================
- * Main Layout
+ * Layout
+ * Mounts/refreshes the sidebar. The content area itself
+ * (#app) is rendered independently by each page.
  * ==========================================================
  */
-import { getSidebar } from "./sidebar.js";
-export function renderLayout(content) {
-    return `
-        <div class="layout">
-            ${getSidebar()}
-            <main class="content">
-                ${content}
-            </main>
-        </div>
-    `;
+import { $ } from "../utils/helpers.js";
+import { renderSidebar } from "./sidebar.js";
+
+export function updateSidebar(currentPath) {
+    $("sidebar").innerHTML = renderSidebar(currentPath);
 }
