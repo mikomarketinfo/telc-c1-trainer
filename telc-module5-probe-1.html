@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELC C1 — Probeprüfung</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f7f4;--bg2:#fff;--bg3:#f0efe9;
+  --bd:#e2e1d8;--bd2:#c8c7be;
+  --tx:#1a1a18;--tx2:#6b6b65;--tx3:#9b9b94;
+  --g:#1d9e75;--gl:#e1f5ee;--gd:#0f6e56;
+  --p:#7f77dd;--pl:#eeedfe;--pd:#534ab7;
+  --b:#378add;--bl:#e6f1fb;--bd3:#185fa5;
+  --a:#ba7517;--al:#faeeda;--ad:#633806;
+  --r:#e24b4a;--rl:#fcebeb;--rd:#a32d2d;
+  --rr:10px;--rs:6px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1a1a18;--bg2:#242420;--bg3:#2c2c28;
+  --bd:#3a3a34;--bd2:#4a4a44;
+  --tx:#f0efe9;--tx2:#a0a09a;--tx3:#6b6b65;
+  --gl:#0a3020;--gd:#9fe1cb;--pl:#1e1c40;--pd:#afa9ec;
+  --bl:#0a1e35;--bd3:#85b7eb;--al:#2a1a05;--ad:#fac775;
+  --rl:#2a0f0f;--rd:#f09595;
+}}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:15px}
+.nav{background:var(--bg2);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:100;display:flex;align-items:center;overflow-x:auto}
+.nav-logo{padding:.8rem 1.1rem;font-weight:700;font-size:15px;white-space:nowrap;border-right:1px solid var(--bd);flex-shrink:0}
+.nav-logo span{color:var(--g)}
+.main{max-width:960px;margin:0 auto;padding:1.25rem}
+.btn{padding:7px 16px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;cursor:pointer;transition:all .2s;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{background:var(--bg3)}
+.btn.pr{background:var(--g);color:#fff;border-color:var(--g)}.btn.pr:hover{background:var(--gd)}
+.btn.pu{background:var(--p);color:#fff;border-color:var(--p)}
+.btn.rd{background:var(--r);color:#fff;border-color:var(--r)}
+.btn.sm{padding:4px 12px;font-size:12px}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.25rem}
+
+/* INTRO */
+.intro-hero{text-align:center;padding:2rem 1rem;margin-bottom:1.5rem}
+.intro-hero h1{font-size:28px;font-weight:700;margin-bottom:.5rem}
+.intro-hero p{font-size:14px;color:var(--tx2);max-width:500px;margin:0 auto}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+@media(max-width:500px){.mode-grid{grid-template-columns:1fr}}
+.mode-card{border:2px solid var(--bd);border-radius:var(--rr);padding:1.25rem;cursor:pointer;transition:all .2s;background:var(--bg2);text-align:center}
+.mode-card:hover{border-color:var(--g)}
+.mode-card.selected{border-color:var(--g);background:var(--gl)}
+.mode-card .ico{font-size:32px;margin-bottom:.5rem}
+.mode-card h3{font-size:15px;font-weight:600;margin-bottom:.4rem}
+.mode-card p{font-size:12.5px;color:var(--tx2);line-height:1.5}
+.structure-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:1.5rem}
+.structure-table th{background:var(--bg3);padding:7px 12px;border:1px solid var(--bd);text-align:left;font-size:12px;color:var(--tx2);font-weight:600}
+.structure-table td{padding:7px 12px;border:1px solid var(--bd);color:var(--tx);vertical-align:top}
+.structure-table .sec{background:var(--bg3);font-weight:600;color:var(--b)}
+
+/* EXAM HEADER */
+.exam-bar{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;position:sticky;top:0;z-index:50}
+.exam-bar-left h3{font-size:15px;font-weight:600}
+.exam-bar-left p{font-size:12px;color:var(--tx2);margin-top:2px}
+.timer{font-size:28px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--r);min-width:90px;text-align:center}
+.timer.warning{animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.timer.hidden{display:none}
+.exam-prog{height:4px;background:var(--bd);border-radius:99px;overflow:hidden;margin-bottom:1rem}
+.exam-prog-fill{height:100%;border-radius:99px;background:var(--g);transition:width .3s}
+.section-label{font-size:11px;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.07em;padding:.4rem .9rem;background:var(--bg3);border-radius:var(--rs);margin-bottom:.9rem;display:inline-block}
+
+/* LESEN LAYOUT */
+.lesen-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:640px){.lesen-grid{grid-template-columns:1fr}}
+.text-panel{max-height:460px;overflow-y:auto;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.1rem}
+.text-panel h4{font-size:11.5px;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.65rem}
+.text-panel p{font-size:13.5px;line-height:1.85;margin-bottom:.7rem;color:var(--tx)}
+.gap-marker{background:var(--pl);color:var(--pd);font-weight:700;padding:1px 5px;border-radius:3px}
+.satze-section{margin-top:.9rem;border-top:1px solid var(--bd);padding-top:.75rem}
+.satz-item{font-size:13px;margin-bottom:5px;color:var(--tx)}
+
+/* QUESTIONS */
+.q-list{display:flex;flex-direction:column;gap:8px}
+.q-item{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:.85rem}
+.q-num{font-size:11px;font-weight:700;color:var(--tx3);margin-bottom:4px}
+.q-text{font-size:13px;font-weight:600;margin-bottom:.5rem;color:var(--tx);line-height:1.5}
+.q-opts{display:flex;flex-direction:column;gap:4px}
+.q-opt{padding:6px 10px;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg3);font-size:13px;text-align:left;cursor:pointer;transition:all .15s;color:var(--tx);font-family:inherit}
+.q-opt:hover{border-color:var(--b);background:var(--bl)}
+.q-opt.sel{border-color:var(--p);background:var(--pl);color:var(--pd)}
+.q-opt.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
+.q-opt.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
+
+/* SPRACHBAUSTEINE */
+.sb-text{font-size:14.5px;line-height:2.3;color:var(--tx);margin-bottom:1rem}
+.slot{display:inline-flex;align-items:center;min-width:110px;height:27px;border-bottom:2px solid var(--g);padding:0 5px;margin:0 3px;cursor:pointer;vertical-align:middle;font-size:13.5px;color:var(--g);border-radius:4px 4px 0 0;transition:all .2s;position:relative}
+.slot.dov{background:var(--gl)}.slot.filled{color:var(--tx);border-color:var(--bd2);font-weight:500}
+.slot.ok{border-color:var(--g)!important;color:var(--g)!important;background:var(--gl)!important}
+.slot.err{border-color:var(--r)!important;color:var(--r)!important;background:var(--rl)!important}
+.sn{font-size:9px;color:var(--tx3);position:absolute;top:-13px;left:0}
+.chips{display:flex;flex-wrap:wrap;gap:7px;padding-top:.9rem;border-top:1px solid var(--bd);margin-top:.5rem}
+.chip{padding:5px 13px;border-radius:99px;border:1px solid var(--bd2);background:var(--bg3);font-size:13px;cursor:grab;transition:all .2s;user-select:none;color:var(--tx)}
+.chip:hover{border-color:var(--g);color:var(--g);background:var(--gl)}
+.chip.sel{border-color:var(--g);background:var(--gl);color:var(--gd);font-weight:500}
+.chip.used{opacity:.25;pointer-events:none}
+
+/* SCHREIBEN */
+.task-box{background:var(--bl);border:1px solid var(--b);border-radius:var(--rr);padding:1.1rem;margin-bottom:.9rem}
+.task-label{font-size:11px;font-weight:700;color:var(--bd3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem}
+.task-box p{font-size:13.5px;color:var(--tx);line-height:1.7;white-space:pre-line}
+.sta{width:100%;min-height:200px;border:1px solid var(--bd2);border-radius:var(--rr);padding:.9rem;font-size:13.5px;line-height:1.85;resize:vertical;font-family:inherit;color:var(--tx);background:var(--bg2)}
+.sta:focus{outline:none;border-color:var(--g)}
+.wc{font-size:12px;text-align:right;margin-top:4px;color:var(--tx3)}
+
+/* RESULTS */
+.result-hero{text-align:center;padding:2rem;margin-bottom:1.5rem}
+.result-hero .score{font-size:64px;font-weight:700;line-height:1}
+.result-hero .grade{font-size:20px;font-weight:600;margin-top:.5rem}
+.result-hero p{font-size:14px;color:var(--tx2);margin-top:.5rem}
+.result-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:1.5rem}
+.result-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1rem;text-align:center}
+.result-card .rc-n{font-size:26px;font-weight:700}
+.result-card .rc-l{font-size:12px;color:var(--tx2);margin-top:2px}
+.result-card .rc-pct{font-size:13px;font-weight:600;margin-top:4px}
+.result-card.pass{border-color:var(--g)}.result-card.fail{border-color:var(--r)}
+.answer-review{margin-top:1.5rem}
+.answer-review h3{font-size:14px;font-weight:600;margin-bottom:.75rem;color:var(--tx2)}
+.ar-item{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;border-radius:var(--rs);margin-bottom:4px;font-size:13px}
+.ar-item.ok{background:var(--gl);color:var(--gd)}
+.ar-item.err{background:var(--rl);color:var(--rd)}
+.ar-item.skip{background:var(--bg3);color:var(--tx3)}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--rr);padding:10px 16px;font-size:13px;color:var(--tx);box-shadow:0 4px 18px rgba(0,0,0,.11);z-index:9999;transform:translateY(70px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.ok{border-color:var(--g);color:var(--gd);background:var(--gl)}
+.toast.bad{border-color:var(--r);color:var(--rd);background:var(--rl)}
+
+/* SCREENS */
+.sc{display:none}.sc.on{display:block}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">telc <span>C1</span> <small style="font-weight:400;color:var(--tx3)">Modul 5 — Probeprüfung</small></div>
+</nav>
+
+<main class="main">
+
+<!-- INTRO SCREEN -->
+<div class="sc on" id="s-intro">
+  <div class="intro-hero">
+    <div style="font-size:48px;margin-bottom:.75rem">🎓</div>
+    <h1>Probeprüfung TELC C1</h1>
+    <p>Vollständiger Testdurchlauf im echten Prüfungsformat — mit oder ohne Zeitlimit</p>
+  </div>
+
+  <div class="mode-grid">
+    <div class="mode-card selected" id="mode-free" onclick="selectMode('free')">
+      <div class="ico">⏸</div>
+      <h3>Ohne Zeitlimit</h3>
+      <p>Übe in deinem eigenen Tempo — ideal zum Kennenlernen des Formats</p>
+    </div>
+    <div class="mode-card" id="mode-timed" onclick="selectMode('timed')">
+      <div class="ico">⏱</div>
+      <h3>Mit Zeitlimit (TELC)</h3>
+      <p>Echte Prüfungszeiten: 90 Min. schriftlich + 60 Min. Schreiben</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:1.5rem">
+    <div style="font-size:14px;font-weight:600;margin-bottom:1rem">📋 Prüfungsaufbau — TELC C1</div>
+    <table class="structure-table">
+      <thead><tr><th>Teil</th><th>Aufgabe</th><th>Punkte</th><th>Zeit</th></tr></thead>
+      <tbody>
+        <tr><td class="sec" colspan="4">Schriftliche Prüfung</td></tr>
+        <tr><td>Leseverstehen Teil 1</td><td>6 Satz-Zuordnungen (Textrekonstruktion)</td><td>12</td><td rowspan="4">90 Min.</td></tr>
+        <tr><td>Leseverstehen Teil 2</td><td>6 Fragen — welcher Abschnitt?</td><td>12</td></tr>
+        <tr><td>Leseverstehen Teil 3</td><td>11 × Richtig/Falsch/Nicht im Text + Makro</td><td>24</td></tr>
+        <tr><td>Sprachbausteine</td><td>22 Mehrfachwahl-Lücken</td><td>22</td></tr>
+        <tr><td>Schriftlicher Ausdruck</td><td>Pflicht + Wahlaufgabe</td><td>48</td><td>60 Min.</td></tr>
+        <tr><td class="sec" colspan="4">Mündliche Prüfung</td></tr>
+        <tr><td>Hörverstehen</td><td>Teil 1–3 (Zuordnung, Multiple Choice, Transfer)</td><td>48</td><td>40 Min.</td></tr>
+        <tr><td>Sprechen</td><td>Präsentation + Zusammenfassung + Diskussion</td><td>48</td><td>16 Min.</td></tr>
+        <tr style="background:var(--gl)"><td colspan="2"><strong>Gesamt</strong></td><td><strong>214</strong></td><td>~150 Min.</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:12.5px;color:var(--tx2);line-height:1.7">
+      <strong>Bestehen:</strong> Mindestens 60% gesamt (≥128/214) <strong>UND</strong> mindestens 40% in jedem Subtest.<br>
+      <strong>Noten:</strong> sehr gut ≥193 · gut ≥171 · befriedigend ≥150 · ausreichend ≥128 · nicht bestanden &lt;128
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:center">
+    <button class="btn pr" style="font-size:15px;padding:12px 32px" onclick="startExam()">
+      ▶ Prüfung starten
+    </button>
+  </div>
+</div>
+
+<!-- EXAM SCREEN -->
+<div class="sc" id="s-exam">
+  <div class="exam-bar">
+    <div class="exam-bar-left">
+      <h3 id="ex-title">Leseverstehen Teil 1</h3>
+      <p id="ex-sub">Teil 1 von 5</p>
+    </div>
+    <div class="timer hidden" id="ex-timer">00:00</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn sm pr" onclick="nextSection()">Nächster Teil →</button>
+      <button class="btn sm rd" onclick="confirmEnd()">✕ Beenden</button>
+    </div>
+  </div>
+  <div class="exam-prog"><div class="exam-prog-fill" id="ex-prog-fill" style="width:0%"></div></div>
+  <div id="ex-content"></div>
+</div>
+
+<!-- RESULTS SCREEN -->
+<div class="sc" id="s-results">
+  <div class="result-hero" id="result-hero"></div>
+  <div class="result-grid" id="result-grid"></div>
+  <div class="answer-review" id="answer-review"></div>
+  <div style="text-align:center;margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <button class="btn pr" onclick="resetExam()">🔄 Neue Prüfung</button>
+    <button class="btn" onclick="window.print()">🖨 Drucken</button>
+  </div>
+</div>
+
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+// ── UTILS ──────────────────────────────────────────
+function tx(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function toast(msg,type){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+(type||'');t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('show');},2500);}
+function go(id){document.querySelectorAll('.sc').forEach(function(e){e.classList.remove('on');});document.getElementById(id).classList.add('on');}
+
+// ── STATE ──────────────────────────────────────────
+var examMode='free';
+var examSection=0;
+var answers={};   // key -> chosen answer
+var correct={};   // key -> correct answer
+var sectionScores=[];
+var timerInterval=null;
+var timerSecs=0;
+
+var SECTIONS=[
+  {id:'l1',title:'Leseverstehen — Teil 1',sub:'Textrekonstruktion (6 Satz-Zuordnungen)',time:30,maxPts:12,build:buildL1},
+  {id:'l2',title:'Leseverstehen — Teil 2',sub:'Selektives Verstehen (6 Fragen)',time:20,maxPts:12,build:buildL2},
+  {id:'l3',title:'Leseverstehen — Teil 3',sub:'Richtig / Falsch / Nicht im Text (11+1)',time:20,maxPts:24,build:buildL3},
+  {id:'sb',title:'Sprachbausteine',sub:'22 Mehrfachwahl-Lücken (Grammatik & Lexik)',time:20,maxPts:22,build:buildSB},
+  {id:'wr',title:'Schriftlicher Ausdruck',sub:'Pflichtaufgabe + Wahlaufgabe (selbst bewertet)',time:60,maxPts:48,build:buildWR}
+];
+
+function selectMode(m){
+  examMode=m;
+  document.getElementById('mode-free').classList.toggle('selected',m==='free');
+  document.getElementById('mode-timed').classList.toggle('selected',m==='timed');
+}
+
+function startExam(){
+  examSection=0;answers={};correct={};sectionScores=[];
+  go('s-exam');
+  showSection();
+}
+
+function showSection(){
+  var sec=SECTIONS[examSection];
+  tx('ex-title',sec.title);
+  tx('ex-sub',sec.sub+' · Teil '+(examSection+1)+' von '+SECTIONS.length);
+  document.getElementById('ex-prog-fill').style.width=(examSection/SECTIONS.length*100)+'%';
+  document.getElementById('ex-content').innerHTML=sec.build();
+  // timer
+  clearInterval(timerInterval);
+  var t=document.getElementById('ex-timer');
+  if(examMode==='timed'){
+    t.classList.remove('hidden');
+    timerSecs=sec.time*60;
+    updateTimerDisplay();
+    timerInterval=setInterval(function(){
+      timerSecs--;
+      updateTimerDisplay();
+      if(timerSecs<=60)t.classList.add('warning');
+      if(timerSecs<=0){clearInterval(timerInterval);toast('⏰ Zeit abgelaufen!','bad');setTimeout(nextSection,1500);}
+    },1000);
+  } else {
+    t.classList.add('hidden');
+  }
+}
+
+function updateTimerDisplay(){
+  var m=Math.floor(timerSecs/60),s=timerSecs%60;
+  tx('ex-timer',(m<10?'0':'')+m+':'+(s<10?'0':'')+s);
+}
+
+function nextSection(){
+  clearInterval(timerInterval);
+  // score current section
+  scoreSection();
+  examSection++;
+  if(examSection>=SECTIONS.length){showResults();return;}
+  showSection();
+  window.scrollTo(0,0);
+  toast('Weiter zu: '+SECTIONS[examSection].title);
+}
+
+function confirmEnd(){
+  if(confirm('Prüfung wirklich beenden?')){clearInterval(timerInterval);scoreSection();showResults();}
+}
+
+// ── SCORING ────────────────────────────────────────
+function scoreSection(){
+  var sec=SECTIONS[examSection];
+  var keys=Object.keys(correct).filter(function(k){return k.startsWith(sec.id+'_');});
+  var ok=0,total=keys.length;
+  keys.forEach(function(k){if(answers[k]===correct[k])ok++;});
+  // writing = manual, give half marks as placeholder
+  if(sec.id==='wr'){ok=Math.floor(sec.maxPts*0.5);total=sec.maxPts;}
+  sectionScores.push({id:sec.id,title:sec.title,ok:ok,total:total,maxPts:sec.maxPts,manual:sec.id==='wr'});
+}
+
+function showResults(){
+  go('s-results');
+  var totalOk=0,totalMax=0;
+  sectionScores.forEach(function(s){totalOk+=s.ok;totalMax+=s.maxPts;});
+  // scale to 214
+  var scaled=Math.round(totalOk/Math.max(totalMax,1)*214);
+  var pct=Math.round(totalOk/Math.max(totalMax,1)*100);
+  var grade=scaled>=193?'sehr gut (1)':scaled>=171?'gut (2)':scaled>=150?'befriedigend (3)':scaled>=128?'ausreichend (4)':'nicht bestanden (5)';
+  var passed=pct>=60&&sectionScores.every(function(s){return s.manual||s.total===0||(s.ok/s.total)>=0.4;});
+  var col=passed?'var(--g)':'var(--r)';
+
+  document.getElementById('result-hero').innerHTML=
+    '<div class="score" style="color:'+col+'">'+pct+'%</div>'+
+    '<div class="grade" style="color:'+col+'">'+(passed?'✅ Bestanden':'❌ Nicht bestanden')+'</div>'+
+    '<div class="grade" style="font-size:16px;margin-top:4px">Note: '+grade+'</div>'+
+    '<p style="margin-top:.75rem">Hochgerechnete Punkte: ~'+scaled+' / 214<br>'+
+    '<small>Hinweis: Schriftlicher Ausdruck wurde mit 50% bewertet — bewerte ihn selbst nach TELC-Kriterien.</small></p>';
+
+  var gridH='';
+  sectionScores.forEach(function(s){
+    var sp=s.total>0?Math.round(s.ok/s.total*100):0;
+    var ok40=s.manual||(s.total===0)||(sp>=40);
+    gridH+='<div class="result-card '+(ok40?'pass':'fail')+'">'+
+      '<div class="rc-n" style="color:'+(ok40?'var(--g)':'var(--r)')+'">'+
+        (s.manual?'—':s.ok+'/'+s.total)+'</div>'+
+      '<div class="rc-l">'+s.title+'</div>'+
+      '<div class="rc-pct" style="color:'+(ok40?'var(--g)':'var(--r)')+'">'+
+        (s.manual?'(selbst bewertet)':sp+'%'+(ok40?' ✓':' ✗ <40%'))+'</div>'+
+    '</div>';
+  });
+  document.getElementById('result-grid').innerHTML=gridH;
+
+  // answer review
+  var revH='<h3>Antworten im Überblick:</h3>';
+  var allKeys=Object.keys(correct).sort();
+  if(!allKeys.length){revH+='<p style="color:var(--tx3);font-size:13px">Keine auswertbaren Antworten.</p>';}
+  allKeys.forEach(function(k){
+    var given=answers[k],right=correct[k];
+    var cls=!given?'skip':given===right?'ok':'err';
+    var icon=cls==='ok'?'✓':cls==='err'?'✗':'—';
+    revH+='<div class="ar-item '+cls+'">'+icon+' <strong>'+k+':</strong> '+
+      (given?esc(given):'(keine Antwort)')+
+      (cls==='err'?' → Richtig: <em>'+esc(right)+'</em>':'')+'</div>';
+  });
+  document.getElementById('answer-review').innerHTML=revH;
+}
+
+function resetExam(){go('s-intro');}
+
+// ── LESEN TEIL 1 ──────────────────────────────────
+function buildL1(){
+  var title='Werbung in der sozialen Marktwirtschaft';
+  var paras=[
+    'Werbung, so behauptet die Werbeindustrie, sei der Motor unserer sozialen Marktwirtschaft. Sie reguliere die Preise, führe zu ständiger Verbesserung der Produkte und informiere den Verbraucher. <span class="gap-marker">(0) z</span>',
+    'Wie jeder Wirtschaftszweig funktioniert die Werbung nach Angebot und Nachfrage. Die Werbeschaffenden müssen die Werbung attraktiv gestalten. <span class="gap-marker">(1)</span> Ein paar Sekunden Aufmerksamkeit — das ist der maximale Preis.',
+    'Genau hier liegt das Problem für die Werbeindustrie. <span class="gap-marker">(2)</span>',
+    'Damit beschäftigen sich seit den 1930er Jahren Generationen von Wissenschaftlern. <span class="gap-marker">(3)</span> Besonders die Wirtschaft will wissen, ob das Vermögen gut investiert ist.',
+    'Werbungen überschreiten häufig die Grenzen des guten Geschmacks. Jeder Bürger kann Beschwerde einlegen. <span class="gap-marker">(4)</span> Dieser könnte die Werbegesetze verschärfen.',
+    'Der Deutsche Werberat kann Empfehlungen aussprechen. <span class="gap-marker">(5)</span>'
+  ];
+  var satze=[
+    {id:'a',t:'a) Allerdings macht nicht jeder Gebrauch davon.'},
+    {id:'b',t:'b) Das oberste Ziel der Werbung ist es nämlich, Interesse zu wecken.'},
+    {id:'c',t:'c) Denn diesen Moment Aufmerksamkeit beansprucht jedes Produkt für sich.'},
+    {id:'d',t:'d) Dies geschieht natürlich nicht allein aus Forschungsdrang.'},
+    {id:'f',t:'f) Häufig hören die Zeitungsverleger auf diese Empfehlung.'},
+    {id:'g',t:'g) Hier interessiert allein die finanzielle Zukunft der Werbebranche.'},
+    {id:'h',t:'h) Davor fürchten sich die Werbetreibenden, weil der Gesetzgeber auf den Plan gerufen wird.'},
+    {id:'z',t:'z) Kurz: Werbung schaffe Transparenz und Entscheidungsvielfalt. (Beispiel — 0)'}
+  ];
+  var qs=[
+    {n:1,opts:['a','b','c','d','f','g','h'],ans:'b'},
+    {n:2,opts:['a','b','c','d','f','g','h'],ans:'c'},
+    {n:3,opts:['a','b','c','d','f','g','h'],ans:'d'},
+    {n:4,opts:['a','b','c','d','f','g','h'],ans:'h'},
+    {n:5,opts:['a','b','c','d','f','g','h'],ans:'f'}
+  ];
+  qs.forEach(function(q){correct['l1_'+q.n]=q.ans;});
+
+  var th='<h4>'+title+'</h4>';
+  paras.forEach(function(p){th+='<p>'+p+'</p>';});
+  th+='<div class="satze-section"><h4>Sätze a–h (2 passen nicht):</h4>';
+  satze.forEach(function(s){th+='<div class="satz-item">'+s.t+'</div>';});
+  th+='</div>';
+
+  var qh=qs.map(function(q){
+    return '<div class="q-item"><div class="q-num">Aufgabe '+q.n+'</div>'+
+      '<div class="q-text">Welcher Satz passt in Lücke ('+q.n+')?</div>'+
+      '<div class="q-opts">'+q.opts.map(function(o){
+        return '<button class="q-opt" onclick="selA(this,\'l1_'+q.n+'\',\''+o+'\')">Satz '+o.toUpperCase()+'</button>';
+      }).join('')+'</div></div>';
+  }).join('');
+
+  return '<div class="section-label">📖 Leseverstehen — Teil 1 — Textrekonstruktion</div>'+
+    '<div class="lesen-grid"><div class="text-panel">'+th+'</div><div class="q-list">'+qh+'</div></div>';
+}
+
+// ── LESEN TEIL 2 ──────────────────────────────────
+function buildL2(){
+  var title='Welche Bedeutung haben Träume?';
+  var sections=[
+    {id:'a',t:'<strong style="color:var(--b)">Abschnitt a:</strong> Was für ein Schrecken! Gerade bekamen Sie die Nachricht, im Lotto gewonnen zu haben — und dann reißt Sie der Wecker grausam aus dem Schlaf. Im Traum passieren oft skurrile Dinge: Wir überwinden die Schwerkraft, erheben uns wie ein Vogel. In Albträumen suchen uns dagegen unsere größten Ängste heim.'},
+    {id:'b',t:'<strong style="color:var(--b)">Abschnitt b:</strong> Doch welche Bedeutung haben Träume? Für Götterbotschaften hielt man in der Antike das nächtliche Kopfkino. Wer nach einem Schlüssel für Traumsymbole sucht, wird unzählige Websites finden. Dabei stellt sich die Frage, ob Träume nicht vielmehr sinnlose Abfallprodukte des Gehirns sind. Sollte man sie nicht einfach ignorieren?'},
+    {id:'c',t:'<strong style="color:var(--b)">Abschnitt c:</strong> Tatsächlich ist der Wahrheitsgehalt von Träumen umstritten. Freud sah in Traumsymbolen verdrängte Wünsche. Der Psychiater Allan Hobson erklärte Träume zum Resultat zufälliger Hirnaktivität — reines Neuronengeflimmer ohne Sinngehalt. Doch auch von dieser These rückt die Psychologie inzwischen wieder ab.'},
+    {id:'d',t:'<strong style="color:var(--b)">Abschnitt d:</strong> Diese Schwierigkeit liegt darin, dass der Gegenstand nur schwer zu fassen ist. Im Allgemeinen wird als Traum eine psychische Aktivität während des Schlafes bezeichnet. Widerlegt ist die Annahme, dass wir nur in REM-Phasen träumen — wir träumen die ganze Nacht. Die Frage nach dem „Wann" scheint geklärt zu sein.'},
+    {id:'e',t:'<strong style="color:var(--b)">Abschnitt e:</strong> Neuroforscher entdeckten: Im Traumzustand ist der präfrontale Cortex gehemmt — jener Bereich für Logik und Moral. So entfaltet sich die Fantasie frei. Wenn die Beschäftigung mit Träumen zu besserer Selbsterkenntnis verhilft, kann das nur nützlich sein — aber mit dem rechten Maß.'}
+  ];
+  var qs=[
+    {n:7,t:'In welchem Abschnitt äußert sich die Autorin abfällig (skeptisch)?',opts:['a','b','c','d','e'],ans:'b'},
+    {n:8,t:'In welchem Abschnitt gibt die Autorin einen Rat?',opts:['a','b','c','d','e'],ans:'e'},
+    {n:9,t:'In welchem Abschnitt liefert die Autorin Definitionen?',opts:['a','b','c','d','e'],ans:'d'},
+    {n:10,t:'In welchem Abschnitt spricht die Autorin einen Wunsch aus?',opts:['a','b','c','d','e'],ans:'d'},
+    {n:11,t:'In welchem Abschnitt stellt die Autorin verschiedene Standpunkte gegenüber?',opts:['a','b','c','d','e'],ans:'c'},
+    {n:12,t:'In welchem Abschnitt wirft die Autorin Bedenken auf?',opts:['a','b','c','d','e'],ans:'b'}
+  ];
+  qs.forEach(function(q){correct['l2_'+q.n]=q.ans;});
+
+  var th='<h4>'+title+'</h4>';
+  sections.forEach(function(s){th+='<p>'+s.t+'</p>';});
+
+  var qh=qs.map(function(q){
+    return '<div class="q-item"><div class="q-num">Aufgabe '+q.n+'</div>'+
+      '<div class="q-text">'+q.t+'</div>'+
+      '<div class="q-opts">'+q.opts.map(function(o){
+        return '<button class="q-opt" onclick="selA(this,\'l2_'+q.n+'\',\''+o+'\')">Abschnitt '+o.toUpperCase()+'</button>';
+      }).join('')+'</div></div>';
+  }).join('');
+
+  return '<div class="section-label">📖 Leseverstehen — Teil 2 — Selektives Lesen</div>'+
+    '<div class="lesen-grid"><div class="text-panel">'+th+'</div><div class="q-list">'+qh+'</div></div>';
+}
+
+// ── LESEN TEIL 3 ──────────────────────────────────
+function buildL3(){
+  var title='Hinter den Kulissen: Die Universitätsmensa';
+  var paras=[
+    'Mittags um zwölf in der Hamburger Mensa: Hunderte Studenten stehen in Warteschlangen. Einige mäkeln über das Essen — und ahnen nicht, wie viel Aufwand dahintersteckt.',
+    '„Schon morgens um sieben treffen wir uns zur ersten Besprechung", sagt Mensaleiter Udo Klein. An einem gewöhnlichen Tag brutzeln die Köche rund 1.200 Currywürste und 500 Wok-Gerichte.',
+    'Den Speiseplan tüfteln die Mensaleiter schon Wochen vorher aus. Ein EDV-System ermittelt die genauen Mengen und verschickt Bestellungen automatisch an Lieferanten.',
+    'Frauen achten eher auf gesunde Ernährung. Studierende ingenieurwissenschaftlicher Institute essen am liebsten Currywurst und Schnitzel.',
+    'Betriebe werden in regelmäßigen Abständen von Lebensmittelchemikern kontrolliert. Nicht alle Produkte können regional bezogen werden — manche Anbieter können große Mengen nicht bewältigen.',
+    '„Seit 1998 haben wir die Preise nicht erhöht", sagt Michael Gradtke. „Ohne Subventionen könnten wir diese Preise nicht halten." Die Grundausstattung stammt aus den Sozialbeiträgen der Studierenden.',
+    'Die DGE empfiehlt: 733 Kalorien pro Mittagessen — 20% Proteine, 30% Fette, 50% Kohlehydrate. Dass exakte Wissenschaft dahintersteckt, ist den meisten Studenten nicht bewusst.'
+  ];
+  var qs=[
+    {n:13,t:'Einige Studierende bemängeln das Essensangebot.',ans:'+'},
+    {n:14,t:'Es wird stets kurzfristig entschieden, welche Gerichte angeboten werden.',ans:'-'},
+    {n:15,t:'Auch das Studienfach gibt Aufschluss über die bevorzugten Gerichte.',ans:'+'},
+    {n:16,t:'Die Mitarbeiter berechnen selbst, wie viel sie von jedem Lebensmittel bestellen.',ans:'-'},
+    {n:17,t:'Zulieferer werden nur gelegentlich überprüft.',ans:'-'},
+    {n:18,t:'Nicht alle Produkte können in der unmittelbaren Umgebung erworben werden.',ans:'+'},
+    {n:19,t:'Die Bedeutung von Bio-Bauern als Mensa-Lieferanten wächst.',ans:'x'},
+    {n:20,t:'Die Hamburger Mensa wird mit Zuschüssen unterstützt.',ans:'+'},
+    {n:21,t:'Studierenden ist klar, dass die Mahlzeiten genau durchdacht sind.',ans:'-'},
+    {n:22,t:'Die DGE schreibt verbindlich vor, aus welchen Lebensmitteln ein Essen bestehen muss.',ans:'-'},
+    {n:23,t:'Von Mensaköchen wird mehr Flexibilität verlangt als von Restaurantköchen.',ans:'x'},
+    {n:24,t:'Welche Überschrift passt am besten?',ans:'a'}
+  ];
+  qs.forEach(function(q){correct['l3_'+q.n]=q.ans;});
+
+  var th='<h4>'+title+'</h4>';
+  paras.forEach(function(p){th+='<p>'+p+'</p>';});
+
+  var labelMap={'+':'richtig (+)','-':'falsch (–)','x':'nicht im Text (x)'};
+  var qh=qs.map(function(q){
+    var opts=q.n===24?['a','b','c']:['+','-','x'];
+    var optLabels=q.n===24?
+      ['a) Hinter den Kulissen: Wer in der Mensa kocht',
+       'b) Qualität um jeden Preis: Warum Mensa-Essen teurer wird',
+       'c) Wider die Currywurst — Uni-Mensen setzen auf Qualität']
+      :opts.map(function(o){return labelMap[o];});
+    return '<div class="q-item"><div class="q-num">Aufgabe '+q.n+(q.n===24?' (Makroaufgabe)':'')+'</div>'+
+      '<div class="q-text">'+q.t+'</div>'+
+      '<div class="q-opts">'+opts.map(function(o,i){
+        var safeO=o.replace(/'/g,"\\'");
+        return '<button class="q-opt" onclick="selA(this,\'l3_'+q.n+'\',\''+safeO+'\')">'+optLabels[i]+'</button>';
+      }).join('')+'</div></div>';
+  }).join('');
+
+  return '<div class="section-label">📖 Leseverstehen — Teil 3 — Richtig / Falsch / Nicht im Text</div>'+
+    '<div class="lesen-grid"><div class="text-panel">'+th+'</div><div class="q-list">'+qh+'</div></div>';
+}
+
+// ── SPRACHBAUSTEINE ────────────────────────────────
+function buildSB(){
+  var text='Jeder kennt es, fast jeder Deutsche hat auch {0}: das Mobiltelefon oder eben „Handy". Eine Umfrage hat gezeigt: Die meisten Deutschen (76%) sind der {1}, dass der Begriff „Handy" aus dem Englischen {2}. Das ist jedoch falsch. Tatsächlich sind die {3} Sprechenden die einzigen, die ihr Mobiltelefon als Handy bezeichnen. Das Wort {4} keineswegs aus dem Englischen — dort {5} man das kleine Telefon meist als „mobile phone".';
+  var slots=['eines','Auffassung','stammt','Deutschen','kommt','bezeichnet'];
+  var opts=['eines','Auffassung','stammt','Deutschen','kommt','bezeichnet','eins','Meinung','ableitet','Deutsche','geht','nennt','ein','Ansicht','herleitet','Deutsches','folgt','definiert'];
+  slots.forEach(function(s,i){correct['sb_'+i]=s;});
+
+  var shuffled=opts.slice().sort(function(){return Math.random()-.5;});
+  var txt=text.replace(/\{(\d+)\}/g,function(m,i){
+    return '<span class="slot" id="sl-'+i+'" onclick="clickSlot('+i+')" ondragover="event.preventDefault();this.classList.add(\'dov\')" ondragleave="this.classList.remove(\'dov\')" ondrop="dropSlot(event,'+i+')"><span class="sn">'+(parseInt(i)+1)+'</span>&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+  });
+  var chips=shuffled.map(function(w,i){
+    return '<span class="chip" id="ch-'+i+'" draggable="true" data-w="'+w+'" onclick="clickChip(\''+w+'\',\'ch-'+i+'\')" ondragstart="dragChip(event,\''+w+'\',\'ch-'+i+'\')" ondragend="this.classList.remove(\'used\')">'+w+'</span>';
+  }).join('');
+
+  return '<div class="section-label">🧩 Sprachbausteine — Lückentext (Drag & Drop oder Klick)</div>'+
+    '<div class="card"><p style="font-size:12.5px;color:var(--tx2);margin-bottom:.75rem">Klicke erst auf ein Wort unten, dann auf die Lücke — oder ziehe das Wort per Drag & Drop.</p>'+
+    '<div class="sb-text">'+txt+'</div>'+
+    '<div class="chips">'+chips+'</div></div>';
+}
+
+// SB interaction
+var selCh=null,selEl=null;
+function clickChip(w,id){if(selEl)selEl.classList.remove('sel');selCh={w:w,id:id};selEl=document.getElementById(id);selEl.classList.add('sel');}
+function clickSlot(i){if(!selCh)return;fillSlot(i,selCh.w,selCh.id);}
+function fillSlot(i,w,cid){
+  var sl=document.getElementById('sl-'+i);
+  if(sl.dataset.cid){var o=document.getElementById(sl.dataset.cid);if(o)o.classList.remove('used','sel');}
+  sl.innerHTML='<span class="sn">'+(i+1)+'</span>'+w;sl.dataset.w=w;sl.dataset.cid=cid;sl.classList.add('filled');
+  var ch=document.getElementById(cid);if(ch){ch.classList.add('used');ch.classList.remove('sel');}
+  answers['sb_'+i]=w;selCh=null;selEl=null;
+}
+function dragChip(e,w,id){e.dataTransfer.setData('w',w);e.dataTransfer.setData('id',id);}
+function dropSlot(e,i){e.preventDefault();document.getElementById('sl-'+i).classList.remove('dov');fillSlot(i,e.dataTransfer.getData('w'),e.dataTransfer.getData('id'));}
+
+// ── SCHREIBEN ──────────────────────────────────────
+function buildWR(){
+  return '<div class="section-label">✍️ Schriftlicher Ausdruck — Pflichtaufgabe + Wahlaufgabe</div>'+
+    '<div class="task-box">'+
+      '<div class="task-label">Pflichtaufgabe — ca. 200 Wörter</div>'+
+      '<p>Sie erhalten eine E-Mail von einer Bekannten, die eine Lesegruppe für deutschsprachige Literatur gründen möchte. Sie schlägt vor, zunächst einen längeren Roman zu lesen.\n\nTeilen Sie Ihrer Bekannten mit:\n• ob Sie Interesse haben, an den Treffen teilzunehmen\n• für wie wichtig Sie die Lektüre von deutschsprachiger Literatur halten\n• ob Sie den Vorschlag, einen längeren Roman zu lesen, gut finden</p>'+
+    '</div>'+
+    '<textarea class="sta" id="wr-ta1" placeholder="Schreiben Sie hier Ihre Pflichtaufgabe..." oninput="updWC1()" style="margin-bottom:.5rem"></textarea>'+
+    '<div class="wc" id="wc1">0 Wörter (Ziel: ~200)</div>'+
+    '<div style="margin:1.25rem 0 .75rem"><strong style="font-size:14px">Wahlaufgabe — wähle eine:</strong></div>'+
+    '<div style="display:flex;gap:8px;margin-bottom:.75rem;flex-wrap:wrap">'+
+      '<button class="btn sm" onclick="setWahl(this,0)" id="wahl-0">A — Brief (Privatunterricht)</button>'+
+      '<button class="btn sm" onclick="setWahl(this,1)" id="wahl-1">B — Aufsatz (Fertiggerichte)</button>'+
+      '<button class="btn sm" onclick="setWahl(this,2)" id="wahl-2">C — Leserbrief (Auto)</button>'+
+      '<button class="btn sm" onclick="setWahl(this,3)" id="wahl-3">D — Bericht (Austausch)</button>'+
+    '</div>'+
+    '<div class="task-box" id="wahl-task-box" style="display:none">'+
+      '<div class="task-label" id="wahl-task-label">Wahlaufgabe — ca. 150 Wörter</div>'+
+      '<p id="wahl-task-text"></p>'+
+    '</div>'+
+    '<textarea class="sta" id="wr-ta2" placeholder="Schreiben Sie hier Ihre Wahlaufgabe..." oninput="updWC2()" style="display:none;margin-bottom:.5rem"></textarea>'+
+    '<div class="wc" id="wc2" style="display:none">0 Wörter (Ziel: ~150)</div>';
+}
+
+var WAHL_TASKS=[
+  {l:'Wahlaufgabe A — ca. 150 Wörter',t:'Herr Lorenz sucht Privatunterricht in Ihrer Muttersprache. Schreiben Sie einen Brief: wie Sie den Unterricht organisieren wollen und welche Inhalte Sie vorschlagen.'},
+  {l:'Wahlaufgabe B — ca. 150 Wörter',t:'Ihre Kursleiterin lehnt Fertiggerichte und Fast Food grundsätzlich ab. Schreiben Sie einen kurzen Aufsatz: was Sie von dieser Einstellung halten und wie Ihre eigenen Essgewohnheiten aussehen.'},
+  {l:'Wahlaufgabe C — ca. 150 Wörter',t:'Eine Tageszeitung möchte wissen, ob Leser sich ein Leben ohne Auto vorstellen können. Schreiben Sie einen kurzen Leserbrief, in dem Sie beschreiben, welche Rolle Autos in Ihrem Leben spielen.'},
+  {l:'Wahlaufgabe D — ca. 150 Wörter',t:'Sie haben einem ausländischen Studierenden geholfen, sich einzuleben. Schreiben Sie einen kurzen Bericht darüber, welche Informationen für Neuankömmlinge besonders wichtig sind.'}
+];
+function setWahl(btn,i){
+  document.querySelectorAll('[id^="wahl-"]').forEach(function(b){if(b.tagName==='BUTTON')b.classList.remove('pr');});
+  btn.classList.add('pr');
+  var box=document.getElementById('wahl-task-box');
+  var ta=document.getElementById('wr-ta2');
+  var wc=document.getElementById('wc2');
+  box.style.display='block';ta.style.display='block';wc.style.display='block';
+  document.getElementById('wahl-task-label').textContent=WAHL_TASKS[i].l;
+  document.getElementById('wahl-task-text').textContent=WAHL_TASKS[i].t;
+}
+function updWC1(){
+  var t=document.getElementById('wr-ta1').value.trim(),n=t?t.split(/\s+/).length:0;
+  var col=n<80?'var(--r)':n<150?'var(--a)':'var(--g)';
+  document.getElementById('wc1').innerHTML='<span style="color:'+col+'">'+n+' Wörter</span> (Ziel: ~200)';
+  answers['wr_text1']=document.getElementById('wr-ta1').value;
+}
+function updWC2(){
+  var t=document.getElementById('wr-ta2').value.trim(),n=t?t.split(/\s+/).length:0;
+  var col=n<60?'var(--r)':n<110?'var(--a)':'var(--g)';
+  document.getElementById('wc2').innerHTML='<span style="color:'+col+'">'+n+' Wörter</span> (Ziel: ~150)';
+  answers['wr_text2']=document.getElementById('wr-ta2').value;
+}
+
+// ── ANSWER SELECTION ───────────────────────────────
+function selA(btn,key,val){
+  btn.closest('.q-item').querySelectorAll('.q-opt').forEach(function(b){b.classList.remove('sel','ok','err');});
+  btn.classList.add('sel');
+  answers[key]=val;
+}
+</script>
+</body>
+</html>

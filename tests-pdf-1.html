@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELC C1 — PDF-Tests</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f7f4;--bg2:#fff;--bg3:#f0efe9;--bd:#e2e1d8;--bd2:#c8c7be;
+  --tx:#1a1a18;--tx2:#6b6b65;--tx3:#9b9b94;
+  --g:#1d9e75;--gl:#e1f5ee;--gd:#0f6e56;
+  --p:#7f77dd;--pl:#eeedfe;--pd:#534ab7;
+  --b:#378add;--bl:#e6f1fb;--bd3:#185fa5;
+  --a:#ba7517;--al:#faeeda;--ad:#633806;
+  --r:#e24b4a;--rl:#fcebeb;--rd:#a32d2d;
+  --rr:10px;--rs:6px;
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#1a1a18;--bg2:#242420;--bg3:#2c2c28;--bd:#3a3a34;--bd2:#4a4a44;
+  --tx:#f0efe9;--tx2:#a0a09a;--tx3:#6b6b65;
+  --gl:#0a3020;--gd:#9fe1cb;--pl:#1e1c40;--pd:#afa9ec;
+  --bl:#0a1e35;--bd3:#85b7eb;--al:#2a1a05;--ad:#fac775;--rl:#2a0f0f;--rd:#f09595;
+}}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;font-size:15px}
+
+/* NAV */
+.nav{background:var(--bg2);border-bottom:1px solid var(--bd);display:flex;align-items:center;position:sticky;top:0;z-index:200;overflow-x:auto}
+.nav-logo{padding:.8rem 1.1rem;font-weight:700;font-size:15px;white-space:nowrap;border-right:1px solid var(--bd);flex-shrink:0}
+.nav-logo span{color:var(--g)}
+.nav a{padding:.8rem 1rem;font-size:13px;color:var(--tx2);text-decoration:none;white-space:nowrap}
+.nav a:hover{color:var(--tx)}
+.settings-btn{margin-left:auto;padding:.5rem .9rem;background:none;border:1px solid var(--bd2);border-radius:var(--rs);font-size:12px;color:var(--tx2);cursor:pointer;font-family:inherit;white-space:nowrap;flex-shrink:0}
+.settings-btn:hover{background:var(--bg3)}
+
+/* LAYOUT */
+.main{max-width:1200px;margin:0 auto;padding:1.25rem}
+.sc{display:none}.sc.on{display:block}
+
+/* BUTTONS */
+.btn{padding:7px 16px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;cursor:pointer;transition:all .2s;font-family:inherit}
+.btn:hover{background:var(--bg3)}
+.btn.pr{background:var(--g);color:#fff;border-color:var(--g)}.btn.pr:hover{background:var(--gd)}
+.btn.sm{padding:4px 11px;font-size:12px}
+
+/* PICKER */
+.test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:1.5rem}
+.tc{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1rem;cursor:pointer;transition:all .2s}
+.tc:hover{border-color:var(--g);transform:translateY(-2px)}
+.tc-type{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.tc h3{font-size:13.5px;font-weight:600;margin-bottom:4px}
+.tc p{font-size:12px;color:var(--tx2);line-height:1.4}
+.tc-score{font-size:11.5px;color:var(--g);font-weight:600;margin-top:6px}
+.pb{height:3px;background:var(--bd);border-radius:99px;margin-top:7px;overflow:hidden}
+.pf{height:100%;border-radius:99px;background:var(--g);transition:width .5s}
+.tag{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:700}
+.tg{background:var(--gl);color:var(--gd)}.tp{background:var(--pl);color:var(--pd)}
+.ta{background:var(--al);color:var(--ad)}.tb{background:var(--bl);color:var(--bd3)}
+
+/* EXAM BAR */
+.exam-bar{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:.85rem 1.1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;position:sticky;top:56px;z-index:100}
+.exam-bar h3{font-size:14px;font-weight:600}
+.exam-bar p{font-size:12px;color:var(--tx2)}
+.ep{height:4px;background:var(--bd);border-radius:99px;overflow:hidden;margin-bottom:1rem}
+.ef{height:100%;border-radius:99px;background:var(--g);transition:width .3s}
+
+/* DUAL PANEL - the key layout fix */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:1rem;height:calc(100vh - 210px);min-height:480px}
+@media(max-width:700px){.dual{grid-template-columns:1fr;height:auto}}
+.panel{overflow-y:auto;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.1rem}
+@media(max-width:700px){.panel{height:400px}}
+.panel-title{font-size:11px;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.65rem;position:sticky;top:0;background:var(--bg2);padding-bottom:6px;border-bottom:1px solid var(--bd);z-index:5;padding-top:2px}
+.panel p{font-size:13.5px;line-height:1.85;margin-bottom:.75rem;color:var(--tx)}
+.panel p strong{color:var(--b)}
+
+/* LV1 DROPDOWN GAPS */
+.gap-sel{display:inline-block;padding:3px 8px;border:2px solid var(--g);border-radius:var(--rs);background:var(--gl);color:var(--gd);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin:0 2px;vertical-align:middle;min-width:80px}
+.gap-sel:focus{outline:none;border-color:var(--p)}
+.gap-sel.answered{background:var(--bg3);border-color:var(--bd2);color:var(--tx)}
+.gap-sel.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
+.gap-sel.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
+.gap-example{background:var(--p);color:#fff;padding:1px 8px;border-radius:3px;font-weight:700;font-size:13px}
+
+/* SENTENCE CARDS (LV1 right panel) */
+.sent-grid{display:flex;flex-direction:column;gap:7px}
+.sent-card{padding:.65rem .85rem;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg3);font-size:13px;color:var(--tx);line-height:1.5;transition:all .2s}
+.sent-card.example{border-color:var(--b);background:var(--bl);color:var(--bd3);font-size:12.5px}
+.sent-card.used{opacity:.35;background:var(--bg);border-style:dashed;color:var(--tx3);text-decoration:line-through}
+.sent-card.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important;opacity:1;text-decoration:none;font-weight:500}
+.sent-card.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important;opacity:1;text-decoration:none}
+
+/* QUESTIONS (LV2/LV3) */
+.q-list{display:flex;flex-direction:column;gap:8px}
+.q-item{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.8rem}
+.q-num{font-size:10px;font-weight:700;color:var(--tx3);margin-bottom:3px}
+.q-text{font-size:13px;font-weight:600;margin-bottom:.5rem;color:var(--tx);line-height:1.5}
+.q-opts{display:flex;flex-direction:column;gap:4px}
+.q-opt{padding:6px 10px;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg2);font-size:13px;text-align:left;cursor:pointer;transition:all .15s;color:var(--tx);font-family:inherit;line-height:1.4}
+.q-opt:hover{border-color:var(--b);background:var(--bl);color:var(--bd3)}
+.q-opt.sel{border-color:var(--p);background:var(--pl);color:var(--pd);font-weight:500}
+.q-opt.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important;font-weight:500}
+.q-opt.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
+
+/* SPRACHBAUSTEINE QUESTIONS */
+.sb-q{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.75rem;margin-bottom:8px}
+.sq-n{font-size:10px;font-weight:700;color:var(--tx3);margin-bottom:3px}
+.sq-ctx{font-size:12px;color:var(--tx2);font-style:italic;margin-bottom:.4rem;line-height:1.5}
+.sq-opts{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.sq-opt{padding:5px 8px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);font-size:12.5px;cursor:pointer;transition:all .15s;color:var(--tx);font-family:inherit;text-align:left}
+.sq-opt:hover{border-color:var(--p);background:var(--pl);color:var(--pd)}
+.sq-opt.sel{border-color:var(--p);background:var(--pl);color:var(--pd);font-weight:600}
+.sq-opt.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
+.sq-opt.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
+
+/* INFO BOX */
+.info-box{background:var(--al);border:1px solid var(--a);border-radius:var(--rs);padding:.65rem 1rem;margin-bottom:.9rem;font-size:13px;color:var(--tx);line-height:1.6}
+.info-box strong{color:var(--ad)}
+
+/* RESULTS */
+.result-hero{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.5rem;text-align:center;margin-bottom:1rem}
+.result-score{font-size:56px;font-weight:800;line-height:1}
+.result-grade{font-size:17px;font-weight:600;margin:.4rem 0}
+.review-item{border:1px solid var(--bd);border-radius:var(--rs);margin-bottom:.65rem;overflow:hidden}
+.rev-head{padding:.55rem .9rem;display:flex;align-items:flex-start;gap:.5rem;font-size:13px;font-weight:600;line-height:1.4}
+.rev-head.ok{background:var(--gl);color:var(--gd)}
+.rev-head.err{background:var(--rl);color:var(--rd)}
+.rev-body{padding:.75rem .9rem;font-size:13px;line-height:1.7;border-top:1px solid var(--bd)}
+.rev-rule{background:var(--al);border-radius:var(--rs);padding:.5rem .9rem;margin-top:.5rem;font-size:12.5px;color:var(--ad);line-height:1.6}
+.rev-rule strong{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;margin-bottom:3px;letter-spacing:.04em}
+.rev-textref{background:var(--bl);border:1px solid var(--b);border-radius:var(--rs);padding:.5rem .9rem;margin-top:.5rem;font-size:12px;color:var(--bd3);line-height:1.6;font-style:italic}
+.rev-textref strong{font-style:normal;display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.vocab-note{background:var(--bl);border:1px solid var(--b);border-radius:var(--rs);padding:.75rem 1rem;margin-bottom:1rem}
+.vocab-note strong{color:var(--bd3);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.35rem}
+.vw{display:inline-block;margin:.2rem .25rem;padding:2px 9px;border-radius:99px;background:var(--bg3);border:1px solid var(--bd2);font-size:12px}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9000;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-bg.show{display:flex}
+.modal-box{background:var(--bg2);border-radius:var(--rr);padding:1.5rem;max-width:460px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.modal-box h3{font-size:15px;font-weight:700;margin-bottom:.75rem}
+.modal-box p{font-size:13px;color:var(--tx2);margin-bottom:1rem;line-height:1.6}
+.fi{width:100%;padding:9px 12px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;font-family:inherit;margin-bottom:.75rem}
+.fi:focus{outline:none;border-color:var(--g)}
+
+/* AI explain */
+.ai-box{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.75rem;margin-top:.5rem;font-size:13px;line-height:1.7;display:none}
+.ai-box.show{display:block}
+
+/* LOADING */
+.loading-screen{text-align:center;padding:3rem;color:var(--tx2)}
+.loading-screen p{font-size:14px;margin-top:.5rem}
+
+/* TOAST */
+.toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--rr);padding:10px 16px;font-size:13px;color:var(--tx);box-shadow:0 4px 18px rgba(0,0,0,.11);z-index:9999;transform:translateY(70px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.ok{border-color:var(--g);color:var(--gd);background:var(--gl)}
+.toast.bad{border-color:var(--r);color:var(--rd);background:var(--rl)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">telc <span>C1</span> <small style="font-weight:400;color:var(--tx3)">PDF-Tests</small></div>
+  <a href="index.html">&larr; Dashboard</a>
+  <button class="settings-btn" onclick="document.getElementById('key-modal').classList.add('show')">&#9881; API-Key</button>
+</nav>
+
+<main class="main">
+
+<!-- PICKER -->
+<div class="sc on" id="s-pick">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
+    <h2 style="font-size:17px;font-weight:600">&#128196; Tests aus dem Kursmaterial C1</h2>
+    <span style="font-size:12px;color:var(--tx2)" id="total-done">Lade Tests...</span>
+  </div>
+  <div class="info-box">
+    <strong>So funktioniert es:</strong>
+    Text (links) und Fragen (rechts) scrollen unabh&auml;ngig &mdash; wie zwei Bl&auml;tter nebeneinander.
+    <strong>Teil 1:</strong> W&auml;hle Buchstaben aus dem Dropdown in den L&uuml;cken &mdash; gew&auml;hlte S&auml;tze werden grau durchgestrichen.
+    Nach der Auswertung siehst du richtige Antworten <span style="color:var(--g);font-weight:600">gr&uuml;n</span> und falsche <span style="color:var(--r);font-weight:600">rot</span> &mdash; mit Erkl&auml;rung und Textverweis.
+  </div>
+  <div id="test-grid" class="test-grid">
+    <div class="loading-screen" style="grid-column:1/-1">
+      <div style="font-size:32px">&#8987;</div>
+      <p>Tests werden geladen...</p>
+    </div>
+  </div>
+</div>
+
+<!-- ACTIVE TEST -->
+<div class="sc" id="s-test">
+  <div class="exam-bar">
+    <div><h3 id="ex-title"></h3><p id="ex-sub"></p></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn sm pr" onclick="checkTest()">&#10003; Auswerten</button>
+      <button class="btn sm" onclick="goBack()">&larr; Zur&uuml;ck</button>
+    </div>
+  </div>
+  <div class="ep"><div class="ef" id="ex-prog" style="width:0%"></div></div>
+  <div id="ex-content"></div>
+</div>
+
+<!-- RESULTS -->
+<div class="sc" id="s-result">
+  <div class="result-hero">
+    <div class="result-score" id="res-score">-</div>
+    <div class="result-grade" id="res-grade"></div>
+    <p style="font-size:13px;color:var(--tx2);margin-top:.4rem" id="res-sub"></p>
+  </div>
+  <div id="res-vocab"></div>
+  <div id="res-review"></div>
+  <div style="display:flex;gap:8px;justify-content:center;margin-top:1.5rem;flex-wrap:wrap">
+    <button class="btn pr" onclick="goBack()">&larr; Alle Tests</button>
+    <button class="btn" onclick="retryTest()">Nochmal versuchen</button>
+  </div>
+</div>
+
+</main>
+
+<!-- API KEY MODAL -->
+<div class="modal-bg" id="key-modal">
+  <div class="modal-box">
+    <h3>&#128273; Anthropic API-Schl&uuml;ssel</h3>
+    <p>F&uuml;r KI-Erkl&auml;rungen mit Beispielen. Erhalte ihn kostenlos auf <strong>console.anthropic.com</strong>.<br>
+    Wird nur lokal gespeichert &mdash; nie an Server &uuml;bertragen.</p>
+    <input class="fi" type="password" id="key-input" placeholder="sk-ant-...">
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn sm" onclick="document.getElementById('key-modal').classList.remove('show')">Abbrechen</button>
+      <button class="btn sm pr" onclick="saveKey()">Speichern</button>
+    </div>
+    <p style="font-size:11px;color:var(--tx3);margin-top:.75rem;margin-bottom:0">
+      Schl&uuml;ssel holen: console.anthropic.com &rarr; API Keys &rarr; Create Key
+    </p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Load test data from separate file -->
+<script src="tests-data.js"></script>
+
+<script>
+// ══════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════
+var S = {done:{}, scores:{}};
+function loadS(){
+  try{var d=localStorage.getItem("telc_pdf");if(d)S=Object.assign(S,JSON.parse(d));}catch(e){}
+}
+function saveS(){
+  try{localStorage.setItem("telc_pdf",JSON.stringify(S));}catch(e){}
+}
+
+// ══════════════════════════════════════════
+// UTILS
+// ══════════════════════════════════════════
+function toast(m,t){
+  var el=document.getElementById("toast");
+  el.textContent=m;el.className="toast "+(t||"");el.classList.add("show");
+  clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove("show");},2500);
+}
+function go(id){
+  document.querySelectorAll(".sc").forEach(function(e){e.classList.remove("on");});
+  document.getElementById(id).classList.add("on");window.scrollTo(0,0);
+}
+function goBack(){go("s-pick");renderPicker();}
+function getKey(){return localStorage.getItem("anthropic_key")||"";}
+function saveKey(){
+  var k=document.getElementById("key-input").value.trim();
+  if(!k){toast("Bitte Schluessel eingeben","bad");return;}
+  localStorage.setItem("anthropic_key",k);
+  document.getElementById("key-modal").classList.remove("show");
+  toast("API-Schluessel gespeichert","ok");
+}
+
+// ══════════════════════════════════════════
+// PICKER
+// ══════════════════════════════════════════
+var tagMap={
+  "Sprachbausteine":"tp",
+  "Leseverstehen Teil 1":"tg",
+  "Leseverstehen Teil 2":"ta",
+  "Leseverstehen Teil 3":"tb"
+};
+
+function renderPicker(){
+  if(typeof TESTS === "undefined"){
+    document.getElementById("test-grid").innerHTML =
+      '<div class="loading-screen" style="grid-column:1/-1">' +
+      '<div style="font-size:32px">&#9888;</div>' +
+      '<p>Fehler: tests-data.js nicht geladen.<br>' +
+      '<small>Stelle sicher, dass tests-data.js im selben Ordner liegt.</small></p></div>';
+    return;
+  }
+  var done=0;
+  document.getElementById("test-grid").innerHTML = TESTS.map(function(t){
+    var sc=S.scores[t.id]||0, tot=t.qs.length, pct=S.done[t.id]?Math.round(sc/tot*100):0;
+    if(S.done[t.id])done++;
+    return '<div class="tc" onclick="startTest(\''+t.id+'\')">'+
+      '<div class="tc-type"><span class="tag '+(tagMap[t.type]||"tg")+'">'+t.type+'</span></div>'+
+      '<h3>'+esc(t.title)+'</h3>'+
+      '<p>'+esc(t.desc)+'</p>'+
+      (S.done[t.id]?'<div class="tc-score">&#10003; '+sc+'/'+tot+' ('+pct+'%)</div>':'')+
+      '<div class="pb"><div class="pf" style="width:'+pct+'%"></div></div>'+
+    '</div>';
+  }).join('');
+  document.getElementById("total-done").textContent =
+    done+" von "+TESTS.length+" absolviert ("+TESTS.length+" Tests gesamt)";
+}
+
+function esc(s){
+  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+// ══════════════════════════════════════════
+// START TEST
+// ══════════════════════════════════════════
+var curTest=null, curAns={};
+
+function startTest(id){
+  curTest=TESTS.find(function(t){return t.id===id;});
+  if(!curTest)return;
+  curAns={};
+  document.getElementById("ex-title").textContent=curTest.title;
+  document.getElementById("ex-sub").textContent=curTest.type+" \u00b7 "+curTest.qs.length+" Aufgaben";
+  document.getElementById("ex-prog").style.width="0%";
+  document.getElementById("ex-content").innerHTML=buildTest(curTest);
+  go("s-test");
+}
+
+function retryTest(){if(curTest)startTest(curTest.id);}
+
+function buildTest(t){
+  if(t.kind==="sb") return buildSB(t);
+  if(t.kind==="lv1") return buildLV1(t);
+  return buildLV23(t);
+}
+
+// ══════════════════════════════════════════
+// BUILD SPRACHBAUSTEINE
+// ══════════════════════════════════════════
+function buildSB(t){
+  var qH = t.qs.map(function(q){
+    return '<div class="sb-q" id="qw-'+q.n+'">'+
+      '<div class="sq-n">Aufgabe '+q.n+'</div>'+
+      '<div class="sq-ctx">&#8230;'+q.ctx+'&#8230;</div>'+
+      '<div class="sq-opts">'+q.opts.map(function(o){
+        return '<button class="sq-opt" onclick="selSB('+q.n+',\''+o.replace(/'/g,"\\'")+"',this)\">"+esc(o)+'</button>';
+      }).join('')+'</div>'+
+    '</div>';
+  }).join('');
+  return '<div class="dual">'+
+    '<div class="panel"><div class="panel-title">TEXT &#8212; '+esc(t.title)+'</div>'+t.text+'</div>'+
+    '<div class="panel"><div class="panel-title">AUFGABEN (25&#8211;46)</div>'+qH+'</div>'+
+  '</div>';
+}
+
+// ══════════════════════════════════════════
+// BUILD LV1 WITH DROPDOWNS
+// ══════════════════════════════════════════
+function buildLV1(t){
+  var letters = t.satze.filter(function(s){return s.id!=='z';}).map(function(s){return s.id;});
+
+  // Build text replacing {N} with selects
+  var textH = '<div class="panel-title">TEXT &#8212; '+esc(t.title)+'</div>';
+  textH += '<p style="font-size:12px;color:var(--tx3);margin-bottom:.75rem">'+
+    'Beispiel (0) = Satz z (bereits eingesetzt). '+
+    'W&auml;hle f&uuml;r jede L&uuml;cke den passenden Buchstaben.</p>';
+
+  t.textps.forEach(function(p){
+    var html = p.replace(/\{(\d+)\}/g, function(m,n){
+      if(n==='0') return '<span class="gap-example">(0) z &#10003;</span>';
+      var opts = '<option value="">-- w&auml;hlen --</option>' +
+        letters.map(function(l){
+          return '<option value="'+l+'">'+l.toUpperCase()+'</option>';
+        }).join('');
+      return '<select class="gap-sel" id="gs-'+n+'" onchange="lv1Sel('+n+',this)">'+opts+'</select>';
+    });
+    textH += '<p>'+html+'</p>';
+  });
+
+  // Build sentences panel
+  var sentH = '<div class="panel-title">S&Auml;TZE a&#8211;h <small style="font-weight:400;text-transform:none">(2 passen nicht)</small></div>';
+  sentH += '<div class="sent-grid">';
+  t.satze.forEach(function(s){
+    var cls = s.id==='z' ? ' example' : '';
+    sentH += '<div class="sent-card'+cls+'" id="sent-'+s.id+'">'+s.t+'</div>';
+  });
+  sentH += '</div>';
+  sentH += '<p style="margin-top:.75rem;font-size:11.5px;color:var(--tx3)">'+
+    'Gew&auml;hlte S&auml;tze werden grau/durchgestrichen. Am Ende bleiben 2 S&auml;tze normal.</p>';
+
+  return '<div class="dual">'+
+    '<div class="panel">'+textH+'</div>'+
+    '<div class="panel">'+sentH+'</div>'+
+  '</div>';
+}
+
+// LV1 selection: mutual exclusivity across dropdowns
+function lv1Sel(gapNum, sel){
+  var newLetter = sel.value;
+  var prev = curAns[gapNum];
+
+  // Un-grey previously selected sentence for THIS gap
+  if(prev){
+    var prevCard = document.getElementById('sent-'+prev);
+    if(prevCard) prevCard.classList.remove('used');
+  }
+
+  if(!newLetter){
+    delete curAns[gapNum];
+    sel.classList.remove('answered');
+    updateProg(); return;
+  }
+
+  // If this letter already used in ANOTHER gap -> clear that gap
+  Object.keys(curAns).forEach(function(key){
+    if(parseInt(key)!==gapNum && curAns[key]===newLetter){
+      var otherSel = document.getElementById('gs-'+key);
+      if(otherSel){otherSel.value=''; otherSel.classList.remove('answered');}
+      var otherCard = document.getElementById('sent-'+newLetter);
+      if(otherCard) otherCard.classList.remove('used');
+      delete curAns[key];
+    }
+  });
+
+  curAns[gapNum] = newLetter;
+  sel.classList.add('answered');
+
+  // Grey out the selected sentence
+  var card = document.getElementById('sent-'+newLetter);
+  if(card) card.classList.add('used');
+  updateProg();
+}
+
+// ══════════════════════════════════════════
+// BUILD LV2 / LV3
+// ══════════════════════════════════════════
+function buildLV23(t){
+  var textH = '<div class="panel-title">TEXT &#8212; '+esc(t.title)+'</div>';
+  t.textps.forEach(function(p){textH += '<p>'+p+'</p>';});
+
+  var qH = t.qs.map(function(q){
+    return '<div class="q-item">'+
+      '<div class="q-num">Aufgabe '+q.n+'</div>'+
+      '<div class="q-text">'+q.t+'</div>'+
+      '<div class="q-opts">'+q.opts.map(function(o){
+        var lbl = t.kind==='lv2' ? 'Abschnitt '+o.toUpperCase() : o;
+        return '<button class="q-opt" onclick="selQ('+q.n+',\''+o.replace(/'/g,"\\'")+"',this)\">"+esc(lbl)+'</button>';
+      }).join('')+'</div>'+
+    '</div>';
+  }).join('');
+
+  return '<div class="dual">'+
+    '<div class="panel">'+textH+'</div>'+
+    '<div class="panel"><div class="panel-title">AUFGABEN</div><div class="q-list">'+qH+'</div></div>'+
+  '</div>';
+}
+
+// ══════════════════════════════════════════
+// ANSWER SELECTION
+// ══════════════════════════════════════════
+function selSB(n,val,btn){
+  document.getElementById("qw-"+n).querySelectorAll(".sq-opt").forEach(function(b){b.classList.remove("sel");});
+  btn.classList.add("sel"); curAns[n]=val; updateProg();
+}
+function selQ(n,val,btn){
+  btn.closest(".q-item").querySelectorAll(".q-opt").forEach(function(b){b.classList.remove("sel");});
+  btn.classList.add("sel"); curAns[n]=val; updateProg();
+}
+function updateProg(){
+  var a=Object.keys(curAns).length, tot=curTest.qs.length;
+  document.getElementById("ex-prog").style.width=Math.round(a/tot*100)+"%";
+}
+
+// ══════════════════════════════════════════
+// CHECK TEST
+// ══════════════════════════════════════════
+function checkTest(){
+  var t=curTest, ok=0;
+  var revH = '<h2 style="font-size:15px;font-weight:600;margin-bottom:1rem">Ausf&uuml;hrliche Auswertung:</h2>';
+
+  t.qs.forEach(function(q){
+    var given = curAns[q.n] || '';
+    var corr  = q.ans;
+    var isOk  = given && (given===corr || given.replace(/^[a-d]\)\s*/,'')===corr.replace(/^[a-d]\)\s*/,''));
+    if(isOk) ok++;
+
+    // Highlight DOM
+    if(t.kind==='sb'){
+      var wrap = document.getElementById("qw-"+q.n);
+      if(wrap) wrap.querySelectorAll(".sq-opt").forEach(function(b){
+        if(b.textContent.trim()===corr) b.classList.add("ok");
+        else if(given && b.textContent.trim()===given && !isOk) b.classList.add("err");
+      });
+    } else if(t.kind==='lv1'){
+      // Highlight sentence cards
+      var corrCard = document.getElementById('sent-'+corr);
+      if(corrCard){corrCard.classList.remove('used'); corrCard.classList.add('ok');}
+      if(given && given!==corr){
+        var givenCard = document.getElementById('sent-'+given);
+        if(givenCard){givenCard.classList.remove('used'); givenCard.classList.add('err');}
+      }
+      var gSel = document.getElementById('gs-'+q.n);
+      if(gSel) gSel.className = 'gap-sel '+(isOk?'ok':'err');
+    } else {
+      document.querySelectorAll(".q-item").forEach(function(el){
+        var numEl = el.querySelector(".q-num");
+        if(numEl && numEl.textContent.indexOf("Aufgabe "+q.n)>=0){
+          el.querySelectorAll(".q-opt").forEach(function(b){
+            var bRaw = b.getAttribute("onclick")||"";
+            var m = bRaw.match(/,'([^']+)'/); var bVal = m?m[1]:b.textContent.trim();
+            b.classList.remove('sel','ok','err');
+            if(bVal===corr || b.textContent.trim()===corr) b.classList.add("ok");
+            if(given && bVal===given && bVal!==corr) b.classList.add("err");
+          });
+        }
+      });
+    }
+
+    // Build review entry
+    var cls = isOk?"ok":"err", ic = isOk?"\u2713":"\u2717";
+    var ansInfo = isOk
+      ? ' \u2014 Richtig'
+      : ' \u2014 Falsch'+(given
+          ?' (gegeben: <em>'+esc(given)+'</em>, richtig: <em>'+esc(corr)+'</em>)'
+          :' (keine Antwort \u2014 richtig: <em>'+esc(corr)+'</em>)');
+
+    revH += '<div class="review-item">'+
+      '<div class="rev-head '+cls+'">'+ic+' Aufgabe '+q.n+ansInfo+'</div>'+
+      '<div class="rev-body">'+
+        (q.exp||'')+
+        (q.textref?'<div class="rev-textref"><strong>Textstelle im Original:</strong>'+q.textref+'</div>':'')+
+        '<div class="rev-rule"><strong>Regel / Strategie</strong>'+(q.rule||'')+'</div>'+
+        '<button class="btn sm" style="margin-top:.5rem" onclick="aiExplain('+JSON.stringify(q).replace(/</g,'&lt;')+',this)">'+
+          '&#129302; KI-Erkl&auml;rung mit Beispielen</button>'+
+        '<div class="ai-box" id="ai-'+q.n+'"></div>'+
+      '</div>'+
+    '</div>';
+  });
+
+  S.done[t.id]=(S.done[t.id]||0)+1; S.scores[t.id]=ok; saveS();
+
+  var pct = Math.round(ok/t.qs.length*100);
+  var col = pct>=80?"var(--g)":pct>=60?"var(--a)":"var(--r)";
+  var grade = pct>=90?"Ausgezeichnet!":pct>=75?"Sehr gut!":pct>=60?"Gut":pct>=40?"Weiter ueben":"Nochmal versuchen";
+
+  document.getElementById("res-score").textContent = ok+"/"+t.qs.length;
+  document.getElementById("res-score").style.color = col;
+  document.getElementById("res-grade").textContent = grade+" ("+pct+"%)";
+  document.getElementById("res-sub").textContent = t.title+" \u00b7 "+t.type;
+
+  var vocabHTML = "";
+  if(t.vocab && t.vocab.length){
+    vocabHTML = '<div class="vocab-note"><strong>Wichtige Vokabeln aus diesem Test:</strong>'+
+      t.vocab.map(function(v){return '<span class="vw">'+esc(v)+'</span>';}).join('')+'</div>';
+  }
+  document.getElementById("res-vocab").innerHTML = vocabHTML;
+  document.getElementById("res-review").innerHTML = revH;
+  go("s-result");
+  toast(ok+"/"+t.qs.length+" richtig!", ok===t.qs.length?"ok":"");
+}
+
+// ══════════════════════════════════════════
+// AI EXPLAIN
+// ══════════════════════════════════════════
+async function aiExplain(q, btn){
+  var key = getKey();
+  if(!key){document.getElementById("key-modal").classList.add("show"); return;}
+  var box = document.getElementById("ai-"+q.n);
+  box.className = "ai-box show"; box.textContent = "KI denkt nach..."; btn.disabled=true;
+  var prompt = 'Erklaere auf Deutsch und Russisch (Russisch in Klammern), warum "'+q.ans+'" korrekt ist.\n'+
+    'Kontext: "...'+q.ctx+'..."\n'+
+    'Gib: 1) Warum richtig (Grammatikregel mit Formel) 2) Warum andere falsch 3) 2 Beispielsaetze C1-Niveau 4) Merkformel';
+  try{
+    var r = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':key,
+        'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:700,
+        messages:[{role:'user',content:prompt}]})});
+    var d = await r.json();
+    if(d.error) throw new Error(d.error.message);
+    box.innerHTML = d.content[0].text
+      .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+      .replace(/\n/g,'<br>');
+  }catch(e){
+    box.textContent = "Fehler: "+e.message; btn.disabled=false;
+  }
+}
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+loadS();
+// Wait for tests-data.js to load, then render
+if(typeof TESTS !== "undefined"){
+  renderPicker();
+} else {
+  window.addEventListener("load", function(){
+    setTimeout(function(){
+      if(typeof TESTS !== "undefined") renderPicker();
+      else document.getElementById("total-done").textContent = "Fehler: tests-data.js fehlt!";
+    }, 100);
+  });
+}
+</script>
+</body>
+</html>
