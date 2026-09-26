@@ -1,0 +1,126 @@
+{
+    "meta": {
+        "id": "zitat-ex-0016",
+        "exam": "zitate-training",
+        "module": "leseverstehen-teil1",
+        "level": "C1",
+        "title": "Musterantwort üben: „Es ist leichter, ein Atom zu zertrümmern ...\"",
+        "topic": "Bildung und Vorurteile",
+        "version": "1.0.0"
+    },
+
+    "content": {
+        "instruction": "Ergänzen Sie die Musterantwort mit den passenden Satzteilen a-h. Drei Sätze passen nicht.",
+        "paragraphs": [
+            "(1) Technische Probleme lassen sich oft mit Wissen, Forschung und genügend Zeit lösen. Vorurteile dagegen sind tief in unserem Denken verankert und entstehen häufig schon in der Kindheit. Sie werden durch Familie, Freunde, Medien oder persönliche Erfahrungen beeinflusst.",
+            "(2) Wer nie Kontakt zu Menschen aus anderen Kulturen hatte, übernimmt oft unbewusst stereotype Vorstellungen. Erst wenn man gemeinsam arbeitet, reist oder miteinander spricht, erkennt man, dass viele Vorurteile unbegründet sind.",
+            "(3) Schule und Universität sollten nicht nur Fachwissen vermitteln, sondern auch kritisches Denken fördern. Menschen müssen lernen, Informationen zu hinterfragen und unterschiedliche Perspektiven zu berücksichtigen.",
+            "(4) Algorithmen zeigen uns häufig Inhalte, die unsere bisherigen Ansichten bestätigen. Dadurch entstehen sogenannte „Filterblasen\", in denen Vorurteile sogar verstärkt werden können.",
+            "(5) Offenheit, Bildung und persönliche Erfahrungen können wesentlich dazu beitragen, Menschen toleranter und verständnisvoller zu machen."
+        ],
+        "sentences": [
+            { "id": "a", "text": "Meiner Ansicht nach hat Albert Einstein mit dieser Aussage bis heute recht." },
+            { "id": "b", "text": "Ein gutes Beispiel dafür ist der Umgang mit Menschen aus anderen Kulturen." },
+            { "id": "c", "text": "Meiner Meinung nach spielt Bildung dabei eine entscheidende Rolle." },
+            { "id": "d", "text": "Gleichzeitig darf man den Einfluss sozialer Medien nicht unterschätzen." },
+            { "id": "e", "text": "Zusammenfassend würde ich sagen, dass Vorurteile zwar schwer abzubauen sind, aber keineswegs unveränderlich." },
+            { "id": "f", "text": "Dem kann ich nicht zustimmen, denn Vorurteile spielen in der modernen Gesellschaft ohnehin keine Rolle mehr. (passt nicht)" },
+            { "id": "g", "text": "Aus diesem Grund sollte man technische Erfindungen grundsätzlich kritisch betrachten. (passt nicht)" },
+            { "id": "h", "text": "Ich bin in dieser Frage völlig unentschieden und habe dazu keine eigene Meinung. (passt nicht)" }
+        ]
+    },
+
+    "questions": [
+        {
+            "id": 1,
+            "text": "Lücke (1):",
+            "options": [
+                "Meiner Ansicht nach hat Albert Einstein mit dieser Aussage bis heute recht.",
+                "Ein gutes Beispiel dafür ist der Umgang mit Menschen aus anderen Kulturen.",
+                "Meiner Meinung nach spielt Bildung dabei eine entscheidende Rolle.",
+                "Gleichzeitig darf man den Einfluss sozialer Medien nicht unterschätzen.",
+                "Zusammenfassend würde ich sagen, dass Vorurteile zwar schwer abzubauen sind, aber keineswegs unveränderlich.",
+                "Dem kann ich nicht zustimmen, denn Vorurteile spielen in der modernen Gesellschaft ohnehin keine Rolle mehr.",
+                "Aus diesem Grund sollte man technische Erfindungen grundsätzlich kritisch betrachten.",
+                "Ich bin in dieser Frage völlig unentschieden und habe dazu keine eigene Meinung."
+            ],
+            "correct": 0,
+            "skills": ["zitate", "argumentation", "meinung-aeussern"],
+            "explanation": { "correctWhy": "Satz a) eröffnet die Antwort mit einer klaren eigenen Position — der klassische Einstieg." }
+        },
+        {
+            "id": 2,
+            "text": "Lücke (2):",
+            "options": [
+                "Meiner Ansicht nach hat Albert Einstein mit dieser Aussage bis heute recht.",
+                "Ein gutes Beispiel dafür ist der Umgang mit Menschen aus anderen Kulturen.",
+                "Meiner Meinung nach spielt Bildung dabei eine entscheidende Rolle.",
+                "Gleichzeitig darf man den Einfluss sozialer Medien nicht unterschätzen.",
+                "Zusammenfassend würde ich sagen, dass Vorurteile zwar schwer abzubauen sind, aber keineswegs unveränderlich.",
+                "Dem kann ich nicht zustimmen, denn Vorurteile spielen in der modernen Gesellschaft ohnehin keine Rolle mehr.",
+                "Aus diesem Grund sollte man technische Erfindungen grundsätzlich kritisch betrachten.",
+                "Ich bin in dieser Frage völlig unentschieden und habe dazu keine eigene Meinung."
+            ],
+            "correct": 1,
+            "skills": ["zitate", "argumentation", "beispiel-einleiten"],
+            "explanation": { "correctWhy": "Satz b) leitet das folgende konkrete Beispiel ein." }
+        },
+        {
+            "id": 3,
+            "text": "Lücke (3):",
+            "options": [
+                "Meiner Ansicht nach hat Albert Einstein mit dieser Aussage bis heute recht.",
+                "Ein gutes Beispiel dafür ist der Umgang mit Menschen aus anderen Kulturen.",
+                "Meiner Meinung nach spielt Bildung dabei eine entscheidende Rolle.",
+                "Gleichzeitig darf man den Einfluss sozialer Medien nicht unterschätzen.",
+                "Zusammenfassend würde ich sagen, dass Vorurteile zwar schwer abzubauen sind, aber keineswegs unveränderlich.",
+                "Dem kann ich nicht zustimmen, denn Vorurteile spielen in der modernen Gesellschaft ohnehin keine Rolle mehr.",
+                "Aus diesem Grund sollte man technische Erfindungen grundsätzlich kritisch betrachten.",
+                "Ich bin in dieser Frage völlig unentschieden und habe dazu keine eigene Meinung."
+            ],
+            "correct": 2,
+            "skills": ["zitate", "argumentation", "argument-einleiten"],
+            "explanation": { "correctWhy": "Satz c) leitet ein neues Argument (die Rolle der Bildung) ein." }
+        },
+        {
+            "id": 4,
+            "text": "Lücke (4):",
+            "options": [
+                "Meiner Ansicht nach hat Albert Einstein mit dieser Aussage bis heute recht.",
+                "Ein gutes Beispiel dafür ist der Umgang mit Menschen aus anderen Kulturen.",
+                "Meiner Meinung nach spielt Bildung dabei eine entscheidende Rolle.",
+                "Gleichzeitig darf man den Einfluss sozialer Medien nicht unterschätzen.",
+                "Zusammenfassend würde ich sagen, dass Vorurteile zwar schwer abzubauen sind, aber keineswegs unveränderlich.",
+                "Dem kann ich nicht zustimmen, denn Vorurteile spielen in der modernen Gesellschaft ohnehin keine Rolle mehr.",
+                "Aus diesem Grund sollte man technische Erfindungen grundsätzlich kritisch betrachten.",
+                "Ich bin in dieser Frage völlig unentschieden und habe dazu keine eigene Meinung."
+            ],
+            "correct": 3,
+            "skills": ["zitate", "argumentation", "gegenargument"],
+            "explanation": { "correctWhy": "Satz d) bringt einen einschränkenden Gegenaspekt (soziale Medien) ins Spiel." }
+        },
+        {
+            "id": 5,
+            "text": "Lücke (5):",
+            "options": [
+                "Meiner Ansicht nach hat Albert Einstein mit dieser Aussage bis heute recht.",
+                "Ein gutes Beispiel dafür ist der Umgang mit Menschen aus anderen Kulturen.",
+                "Meiner Meinung nach spielt Bildung dabei eine entscheidende Rolle.",
+                "Gleichzeitig darf man den Einfluss sozialer Medien nicht unterschätzen.",
+                "Zusammenfassend würde ich sagen, dass Vorurteile zwar schwer abzubauen sind, aber keineswegs unveränderlich.",
+                "Dem kann ich nicht zustimmen, denn Vorurteile spielen in der modernen Gesellschaft ohnehin keine Rolle mehr.",
+                "Aus diesem Grund sollte man technische Erfindungen grundsätzlich kritisch betrachten.",
+                "Ich bin in dieser Frage völlig unentschieden und habe dazu keine eigene Meinung."
+            ],
+            "correct": 4,
+            "skills": ["zitate", "argumentation", "fazit"],
+            "explanation": { "correctWhy": "Satz e) fasst die Position abschließend zusammen — klassisches Fazit." }
+        }
+    ],
+
+    "generator": {
+        "source": "model answer and exercise structure provided directly by the user for this project (Zitate-Vertiefung, Kapitel 1)",
+        "validated": true,
+        "validatorVersion": "1.0"
+    }
+}

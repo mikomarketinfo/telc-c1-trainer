@@ -1,0 +1,15 @@
+{
+    "id": "finale_konnektoren",
+    "language": "de",
+    "title": "Finale Konnektoren (damit, um ... zu)",
+    "shortExplanation": "Finale Konnektoren nennen ein Ziel oder einen Zweck. 'um ... zu' wird bei gleichem Subjekt in Haupt- und Nebensatz verwendet, 'damit' bei unterschiedlichem Subjekt.",
+    "example": "Die Regierung fördert Weiterbildung, damit ältere Arbeitnehmer im Beruf bleiben können.",
+    "more": {
+        "rule": "Gleiches Subjekt → um + Infinitiv + zu. Unterschiedliches Subjekt → damit + Nebensatz mit konjugiertem Verb.",
+        "commonMistakes": ["weil", "sodass", "obwohl"],
+        "tips": [
+            "Schneller Test: Ist das Subjekt in beiden Satzteilen identisch? Wenn ja → 'um ... zu'.",
+            "'damit' braucht ein eigenes Subjekt und ein konjugiertes Verb am Satzende."
+        ]
+    }
+}

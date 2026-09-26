@@ -1,0 +1,153 @@
+{
+    "meta": {
+        "id": "sb0002",
+        "exam": "telc-c1-allgemein",
+        "module": "sprachbausteine",
+        "level": "C1",
+        "title": "Der demografische Wandel in Deutschland",
+        "topic": "Gesellschaft",
+        "version": "1.0.0"
+    },
+
+    "content": {
+        "instruction": "Wählen Sie für jede Lücke die richtige Lösung a, b, c oder d.",
+        "text": "Deutschland steht vor einem tiefgreifenden demografischen Wandel: Die geburtenstarken Jahrgänge der sogenannten Babyboomer gehen in den kommenden Jahren nach und nach in den Ruhestand, während deutlich weniger junge Menschen nachrücken. Lesen Sie den folgenden Text und ergänzen Sie die fehlenden Wörter."
+    },
+
+    "questions": [
+        {
+            "id": 1,
+            "text": "Schätzungen zufolge könnte dem Arbeitsmarkt bis 2035 ein erheblicher Teil der Erwerbsbevölkerung fehlen, was ________ einer spürbaren Verschärfung des Fachkräftemangels führt.",
+            "options": ["zu", "an", "mit", "für"],
+            "correct": 0,
+            "grammarId": "verben_mit_praepositionen",
+            "skills": ["grammatik", "präposition", "gesellschaft"],
+            "explanation": {
+                "rule": "Man führt zu etwas (Ergebnis/Konsequenz).",
+                "correctWhy": "Das Verb 'führen' verlangt in dieser Bedeutung die Präposition 'zu'."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Besonders betroffen sind Branchen wie das Gesundheitswesen und das Handwerk, ________ dort offene Stellen schon heute über Monate hinweg unbesetzt bleiben.",
+            "options": ["obwohl", "da", "trotzdem", "sodass"],
+            "correct": 1,
+            "grammarId": "kausale_konnektoren",
+            "skills": ["grammatik", "konnektoren", "gesellschaft"],
+            "explanation": {
+                "rule": "'da' leitet einen Kausalsatz ein und steht meist am Satzanfang bzw. vor dem Hauptsatz.",
+                "correctWhy": "Der Nebensatz nennt den Grund für die Betroffenheit der Branchen, daher passt die kausale Konjunktion 'da'."
+            }
+        },
+        {
+            "id": 3,
+            "text": "Ökonomen weisen ________ hin, dass ein Teil des Arbeitskräftepotenzials bislang kaum genutzt wird.",
+            "options": ["darauf", "damit", "dabei", "davon"],
+            "correct": 0,
+            "grammarId": "pronominaladverbien",
+            "skills": ["grammatik", "pronominaladverbien", "gesellschaft"],
+            "explanation": {
+                "rule": "Die feste Verbindung lautet 'auf etwas hinweisen', daher das Pronominaladverb 'darauf'.",
+                "correctWhy": "'hinweisen auf' verlangt 'darauf', wenn kein konkretes Nomen folgt, sondern ein dass-Satz."
+            }
+        },
+        {
+            "id": 4,
+            "text": "Viele Erwerbslose verfügen über eine solide Qualifikation, ________ ihnen der passende Einstieg in den Arbeitsmarkt oft fehlt.",
+            "options": ["weil", "obwohl", "damit", "indem"],
+            "correct": 1,
+            "grammarId": "konzessive_konnektoren",
+            "skills": ["grammatik", "konnektoren", "gesellschaft"],
+            "explanation": {
+                "rule": "'obwohl' leitet einen Konzessivsatz ein: ein Gegensatz zur Erwartung.",
+                "correctWhy": "Trotz guter Qualifikation gelingt der Einstieg nicht – das ist ein unerwarteter Gegensatz, also 'obwohl'."
+            }
+        },
+        {
+            "id": 5,
+            "text": "Politik und Wirtschaft diskutieren Maßnahmen, ________ bestehende Potenziale bei Frauen und älteren Beschäftigten gezielter zu fördern.",
+            "options": ["damit", "um", "weil", "sodass"],
+            "correct": 1,
+            "grammarId": "finale_konnektoren",
+            "skills": ["grammatik", "konnektoren", "gesellschaft"],
+            "explanation": {
+                "rule": "'um ... zu + Infinitiv' drückt eine Absicht mit gleichem Subjekt im Haupt- und Nebensatz aus.",
+                "correctWhy": "Subjekt von Haupt- und Nebensatz ist identisch (Politik und Wirtschaft fördern), daher 'um ... zu' statt 'damit'."
+            }
+        },
+        {
+            "id": 6,
+            "text": "Auch die Zuwanderung qualifizierter Fachkräfte, ________ Bedeutung in den letzten Jahren deutlich zugenommen hat, spielt eine zentrale Rolle.",
+            "options": ["die", "deren", "denen", "der"],
+            "correct": 1,
+            "grammarId": "relativpronomen",
+            "skills": ["grammatik", "relativpronomen", "gesellschaft"],
+            "explanation": {
+                "rule": "Possessives Relativpronomen: 'deren Bedeutung' = die Bedeutung der Zuwanderung.",
+                "correctWhy": "Es wird ein besitzanzeigender Bezug hergestellt ('ihre Bedeutung'), dafür braucht man 'deren', nicht 'die' oder 'der'."
+            }
+        },
+        {
+            "id": 7,
+            "text": "Eine zentrale ________ spielt dabei auch die Vereinbarkeit von Familie und Beruf, die viele qualifizierte Frauen von einer Vollzeitstelle abhält.",
+            "options": ["Rolle", "Funktion", "Aufgabe", "Wirkung"],
+            "correct": 0,
+            "grammarId": "nomen_verb_verbindung",
+            "skills": ["grammatik", "wortschatz", "nomen-verb-verbindung"],
+            "explanation": {
+                "rule": "Feste Nomen-Verb-Verbindung: 'eine Rolle spielen'.",
+                "correctWhy": "Nur 'Rolle' bildet mit 'spielen' eine feste, idiomatische Verbindung im Deutschen."
+            }
+        },
+        {
+            "id": 8,
+            "text": "Ohne eine deutliche Erhöhung der Erwerbsbeteiligung ________ sich der Fachkräftemangel in den kommenden Jahren weiter verschärfen.",
+            "options": ["wird", "würde", "werde", "wurde"],
+            "correct": 1,
+            "grammarId": "konjunktiv_hoeflich",
+            "skills": ["grammatik", "konjunktiv", "gesellschaft"],
+            "explanation": {
+                "rule": "Konjunktiv II ('würde' + Infinitiv) drückt hier eine hypothetische Folge unter einer nicht erfüllten Bedingung aus.",
+                "correctWhy": "'Ohne eine deutliche Erhöhung' impliziert eine irreale Bedingung, daher steht die Folge im Konjunktiv II: 'würde sich verschärfen'."
+            }
+        },
+        {
+            "id": 9,
+            "text": "Die Bundesregierung hat mehrere Programme ________, um die Weiterbildung älterer Arbeitnehmer zu fördern.",
+            "options": ["aufgestellt", "erlassen", "aufgelegt", "eingesetzt"],
+            "correct": 2,
+            "grammarId": "nomen_verb_verbindung",
+            "skills": ["grammatik", "wortschatz", "kollokation"],
+            "explanation": {
+                "rule": "Feste Kollokation: 'ein Programm auflegen'.",
+                "correctWhy": "Im Kontext von Förderprogrammen ist 'ein Programm auflegen' die im Deutschen übliche Kollokation."
+            }
+        },
+        {
+            "id": 10,
+            "text": "Bleibt die Erwerbsbeteiligung auf dem heutigen Niveau, ________ Deutschland langfristig mit erheblichen wirtschaftlichen Folgen rechnen.",
+            "options": ["muss", "soll", "darf", "mag"],
+            "correct": 0,
+            "grammarId": "modalverben_vermutung",
+            "skills": ["grammatik", "modalverben", "gesellschaft"],
+            "explanation": {
+                "rule": "'müssen' drückt hier eine logisch zwingende Notwendigkeit aus.",
+                "correctWhy": "Aus der genannten Bedingung folgt zwingend eine Konsequenz, dafür passt 'muss' (Notwendigkeit), nicht 'soll' oder 'darf'."
+            }
+        }
+    ],
+
+    "vocabulary": [
+        { "word": "der demografische Wandel", "translation": "демографические изменения" },
+        { "word": "die Erwerbsbevölkerung", "translation": "трудоспособное население" },
+        { "word": "der Ruhestand", "translation": "выход на пенсию" },
+        { "word": "die Erwerbsbeteiligung", "translation": "участие в трудовой деятельности" },
+        { "word": "das Arbeitskräftepotenzial", "translation": "трудовой потенциал" }
+    ],
+
+    "generator": {
+        "source": "manually curated by Claude based on public 2026 labor-market data (ifo, IW Köln, DIHK, Destatis); no article reproduced verbatim",
+        "validated": false,
+        "validatorVersion": "none"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "nomen_verb_verbindung",
+    "language": "de",
+    "title": "Nomen-Verb-Verbindungen (eine Rolle spielen, in Kraft treten)",
+    "shortExplanation": "Viele deutsche Ausdrücke bestehen aus einem festen Nomen-Verb-Paar, das man nicht wörtlich übersetzen kann und als Ganzes lernen muss.",
+    "example": "Die Vereinbarkeit von Familie und Beruf spielt eine zentrale Rolle.",
+    "more": {
+        "rule": "Nomen-Verb-Verbindungen sind idiomatisch fest: nur eine bestimmte Nomen-Verb-Kombination ist korrekt (z. B. 'eine Rolle spielen', nicht 'eine Rolle machen').",
+        "commonMistakes": ["Funktion", "Aufgabe", "Wirkung"],
+        "tips": [
+            "Lerne diese Ausdrücke immer als feste Einheit, inklusive Präposition, falls vorhanden.",
+            "Für C1-Prüfungen lohnt sich eine eigene Liste der häufigsten Nomen-Verb-Verbindungen."
+        ]
+    }
+}

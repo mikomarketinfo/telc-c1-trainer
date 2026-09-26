@@ -1,0 +1,151 @@
+{
+    "meta": {
+        "id": "lv-t1-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "leseverstehen-teil1",
+        "level": "C1",
+        "title": "Datenschutz und künstliche Intelligenz: Reformdruck in Deutschland und der EU",
+        "topic": "Technologie und Recht",
+        "version": "1.0.0"
+    },
+
+    "content": {
+        "instruction": "Lesen Sie den folgenden Text. Welche der Sätze a-h gehören in die Lücken 1-6? Es gibt jeweils nur eine richtige Lösung. Zwei Sätze passen nicht. Lücke (0) ist ein Beispiel.",
+        "paragraphs": [
+            "Kaum ein Rechtsgebiet steht in Deutschland und der EU derzeit so stark unter Reformdruck wie der Datenschutz. Im Zentrum steht die Frage, wie sich die seit 2018 geltende Datenschutz-Grundverordnung mit dem rasanten Einsatz künstlicher Intelligenz vereinbaren lässt. (0) Damit rückt ein Grundsatzkonflikt zwischen Innovationsförderung und Grundrechtsschutz in den Mittelpunkt. Die deutsche Datenschutzkonferenz hat sich zuletzt ausdrücklich für gezielte, KI-spezifische Anpassungen der Verordnung ausgesprochen. (1)",
+            "Auf europäischer Ebene hat die Kommission bereits reagiert: Ende 2025 legte sie gleich zwei parallele Reformpakete vor, die inzwischen als „Digital Omnibus\" und „Digital Omnibus on AI\" bekannt sind. (2) Ein zentraler Streitpunkt dabei betrifft den Zeitplan: Die ursprünglich vorgesehenen strengeren Pflichten für Hochrisiko-KI-Systeme wurden zeitlich nach hinten verschoben, auf Ende 2027 beziehungsweise Mitte 2028. (3)",
+            "Auch national tut sich einiges: Der Bundesrat hat einer Reform des Bundesdatenschutzgesetzes zugestimmt, die unter anderem die Marktüberwachung für KI-Systeme bei der Bundesnetzagentur bündelt. (4) Gleichzeitig wird diskutiert, ob kleinere Unternehmen von bestimmten deutschen Sonderpflichten entlastet werden sollen.",
+            "Abseits der großen Gesetzgebungsverfahren sorgt sich der praktische Alltag um ein greifbareres Problem: die sogenannte Schatten-KI. (5) Meist geschieht das nicht aus böser Absicht, sondern aus reiner Bequemlichkeit im Arbeitsalltag.",
+            "Insgesamt zeigt sich: Trotz aller Reformdebatten bleibt die Datenschutz-Grundverordnung im Kern bestehen. (6) Für Unternehmen bedeutet die aktuelle Übergangsphase vor allem eines: mit unterschiedlichen, sich teils überschneidenden Leitlinien arbeiten zu müssen, bis die neuen Regeln endgültig feststehen."
+        ],
+        "sentences": [
+            { "id": "z", "text": "Damit rückt ein Grundsatzkonflikt zwischen Innovationsförderung und Grundrechtsschutz in den Mittelpunkt. (Beispiel — Lücke 0)" },
+            { "id": "a", "text": "Ihr Argument: Der bisherige, technikneutrale Ansatz der Grundverordnung stößt beim Training großer KI-Modelle an seine Grenzen." },
+            { "id": "b", "text": "Beide Vorhaben sollen einerseits mehr Rechtssicherheit für Unternehmen schaffen, andererseits aber ein hohes Schutzniveau für Betroffene bewahren." },
+            { "id": "c", "text": "Kritiker befürchten dadurch eine faktische Verwässerung des ursprünglich strengeren Schutzniveaus." },
+            { "id": "d", "text": "Zugleich ordnet die Reform die Zuständigkeiten der Aufsichtsbehörden neu." },
+            { "id": "e", "text": "Gemeint ist der Fall, dass Beschäftigte dienstliche Aufgaben mit privaten KI-Anwendungen erledigen, ohne dass Arbeitgeber oder Datenschutzbeauftragte davon wissen." },
+            { "id": "f", "text": "Für ganz neue Erfindungen wird es daher vorerst keine gesetzliche Definition geben. (passt nicht)" },
+            { "id": "g", "text": "Aufsichtsbehörden warnen ausdrücklich davor, dass auf diesem Weg sensible Informationen über ungesicherte Kanäle verarbeitet werden. (passt nicht)" },
+            { "id": "h", "text": "Nur einzelne Vorschriften werden gezielt nachgeschärft, nicht das gesamte Regelwerk." }
+        ]
+    },
+
+    "questions": [
+        {
+            "id": 1,
+            "text": "Lücke (1):",
+            "options": [
+                "Ihr Argument: Der bisherige, technikneutrale Ansatz der Grundverordnung stößt beim Training großer KI-Modelle an seine Grenzen.",
+                "Beide Vorhaben sollen einerseits mehr Rechtssicherheit für Unternehmen schaffen, andererseits aber ein hohes Schutzniveau für Betroffene bewahren.",
+                "Kritiker befürchten dadurch eine faktische Verwässerung des ursprünglich strengeren Schutzniveaus.",
+                "Zugleich ordnet die Reform die Zuständigkeiten der Aufsichtsbehörden neu.",
+                "Gemeint ist der Fall, dass Beschäftigte dienstliche Aufgaben mit privaten KI-Anwendungen erledigen, ohne dass Arbeitgeber oder Datenschutzbeauftragte davon wissen.",
+                "Für ganz neue Erfindungen wird es daher vorerst keine gesetzliche Definition geben.",
+                "Aufsichtsbehörden warnen ausdrücklich davor, dass auf diesem Weg sensible Informationen über ungesicherte Kanäle verarbeitet werden.",
+                "Nur einzelne Vorschriften werden gezielt nachgeschärft, nicht das gesamte Regelwerk."
+            ],
+            "correct": 0,
+            "skills": ["leseverstehen", "textrekonstruktion"],
+            "explanation": { "correctWhy": "Satz a) liefert das erwartete Argument der Datenschutzkonferenz für ihre Forderung." }
+        },
+        {
+            "id": 2,
+            "text": "Lücke (2):",
+            "options": [
+                "Ihr Argument: Der bisherige, technikneutrale Ansatz der Grundverordnung stößt beim Training großer KI-Modelle an seine Grenzen.",
+                "Beide Vorhaben sollen einerseits mehr Rechtssicherheit für Unternehmen schaffen, andererseits aber ein hohes Schutzniveau für Betroffene bewahren.",
+                "Kritiker befürchten dadurch eine faktische Verwässerung des ursprünglich strengeren Schutzniveaus.",
+                "Zugleich ordnet die Reform die Zuständigkeiten der Aufsichtsbehörden neu.",
+                "Gemeint ist der Fall, dass Beschäftigte dienstliche Aufgaben mit privaten KI-Anwendungen erledigen, ohne dass Arbeitgeber oder Datenschutzbeauftragte davon wissen.",
+                "Für ganz neue Erfindungen wird es daher vorerst keine gesetzliche Definition geben.",
+                "Aufsichtsbehörden warnen ausdrücklich davor, dass auf diesem Weg sensible Informationen über ungesicherte Kanäle verarbeitet werden.",
+                "Nur einzelne Vorschriften werden gezielt nachgeschärft, nicht das gesamte Regelwerk."
+            ],
+            "correct": 1,
+            "skills": ["leseverstehen", "textrekonstruktion"],
+            "explanation": { "correctWhy": "Satz b) beschreibt das Ziel beider Reformpakete, das direkt zuvor angekündigt wurde." }
+        },
+        {
+            "id": 3,
+            "text": "Lücke (3):",
+            "options": [
+                "Ihr Argument: Der bisherige, technikneutrale Ansatz der Grundverordnung stößt beim Training großer KI-Modelle an seine Grenzen.",
+                "Beide Vorhaben sollen einerseits mehr Rechtssicherheit für Unternehmen schaffen, andererseits aber ein hohes Schutzniveau für Betroffene bewahren.",
+                "Kritiker befürchten dadurch eine faktische Verwässerung des ursprünglich strengeren Schutzniveaus.",
+                "Zugleich ordnet die Reform die Zuständigkeiten der Aufsichtsbehörden neu.",
+                "Gemeint ist der Fall, dass Beschäftigte dienstliche Aufgaben mit privaten KI-Anwendungen erledigen, ohne dass Arbeitgeber oder Datenschutzbeauftragte davon wissen.",
+                "Für ganz neue Erfindungen wird es daher vorerst keine gesetzliche Definition geben.",
+                "Aufsichtsbehörden warnen ausdrücklich davor, dass auf diesem Weg sensible Informationen über ungesicherte Kanäle verarbeitet werden.",
+                "Nur einzelne Vorschriften werden gezielt nachgeschärft, nicht das gesamte Regelwerk."
+            ],
+            "correct": 2,
+            "skills": ["leseverstehen", "textrekonstruktion"],
+            "explanation": { "correctWhy": "Satz c) benennt die Kritik an der zeitlichen Verschiebung, die direkt zuvor erwähnt wurde." }
+        },
+        {
+            "id": 4,
+            "text": "Lücke (4):",
+            "options": [
+                "Ihr Argument: Der bisherige, technikneutrale Ansatz der Grundverordnung stößt beim Training großer KI-Modelle an seine Grenzen.",
+                "Beide Vorhaben sollen einerseits mehr Rechtssicherheit für Unternehmen schaffen, andererseits aber ein hohes Schutzniveau für Betroffene bewahren.",
+                "Kritiker befürchten dadurch eine faktische Verwässerung des ursprünglich strengeren Schutzniveaus.",
+                "Zugleich ordnet die Reform die Zuständigkeiten der Aufsichtsbehörden neu.",
+                "Gemeint ist der Fall, dass Beschäftigte dienstliche Aufgaben mit privaten KI-Anwendungen erledigen, ohne dass Arbeitgeber oder Datenschutzbeauftragte davon wissen.",
+                "Für ganz neue Erfindungen wird es daher vorerst keine gesetzliche Definition geben.",
+                "Aufsichtsbehörden warnen ausdrücklich davor, dass auf diesem Weg sensible Informationen über ungesicherte Kanäle verarbeitet werden.",
+                "Nur einzelne Vorschriften werden gezielt nachgeschärft, nicht das gesamte Regelwerk."
+            ],
+            "correct": 3,
+            "skills": ["leseverstehen", "textrekonstruktion"],
+            "explanation": { "correctWhy": "Satz d) ergänzt eine weitere Neuerung der Reform, passend zur Bundesrats-Entscheidung davor." }
+        },
+        {
+            "id": 5,
+            "text": "Lücke (5):",
+            "options": [
+                "Ihr Argument: Der bisherige, technikneutrale Ansatz der Grundverordnung stößt beim Training großer KI-Modelle an seine Grenzen.",
+                "Beide Vorhaben sollen einerseits mehr Rechtssicherheit für Unternehmen schaffen, andererseits aber ein hohes Schutzniveau für Betroffene bewahren.",
+                "Kritiker befürchten dadurch eine faktische Verwässerung des ursprünglich strengeren Schutzniveaus.",
+                "Zugleich ordnet die Reform die Zuständigkeiten der Aufsichtsbehörden neu.",
+                "Gemeint ist der Fall, dass Beschäftigte dienstliche Aufgaben mit privaten KI-Anwendungen erledigen, ohne dass Arbeitgeber oder Datenschutzbeauftragte davon wissen.",
+                "Für ganz neue Erfindungen wird es daher vorerst keine gesetzliche Definition geben.",
+                "Aufsichtsbehörden warnen ausdrücklich davor, dass auf diesem Weg sensible Informationen über ungesicherte Kanäle verarbeitet werden.",
+                "Nur einzelne Vorschriften werden gezielt nachgeschärft, nicht das gesamte Regelwerk."
+            ],
+            "correct": 4,
+            "skills": ["leseverstehen", "textrekonstruktion"],
+            "explanation": { "correctWhy": "Satz e) definiert den Begriff Schatten-KI, der direkt zuvor eingeführt wurde." }
+        },
+        {
+            "id": 6,
+            "text": "Lücke (6):",
+            "options": [
+                "Ihr Argument: Der bisherige, technikneutrale Ansatz der Grundverordnung stößt beim Training großer KI-Modelle an seine Grenzen.",
+                "Beide Vorhaben sollen einerseits mehr Rechtssicherheit für Unternehmen schaffen, andererseits aber ein hohes Schutzniveau für Betroffene bewahren.",
+                "Kritiker befürchten dadurch eine faktische Verwässerung des ursprünglich strengeren Schutzniveaus.",
+                "Zugleich ordnet die Reform die Zuständigkeiten der Aufsichtsbehörden neu.",
+                "Gemeint ist der Fall, dass Beschäftigte dienstliche Aufgaben mit privaten KI-Anwendungen erledigen, ohne dass Arbeitgeber oder Datenschutzbeauftragte davon wissen.",
+                "Für ganz neue Erfindungen wird es daher vorerst keine gesetzliche Definition geben.",
+                "Aufsichtsbehörden warnen ausdrücklich davor, dass auf diesem Weg sensible Informationen über ungesicherte Kanäle verarbeitet werden.",
+                "Nur einzelne Vorschriften werden gezielt nachgeschärft, nicht das gesamte Regelwerk."
+            ],
+            "correct": 7,
+            "skills": ["leseverstehen", "textrekonstruktion"],
+            "explanation": { "correctWhy": "Satz h) präzisiert, dass die DSGVO im Kern bestehen bleibt und nur punktuell nachgeschärft wird." }
+        }
+    ],
+
+    "vocabulary": [
+        { "word": "der Reformdruck", "translation": "давление в пользу реформы" },
+        { "word": "die Schatten-KI", "translation": "теневой (несанкционированный) ИИ" },
+        { "word": "die Verwässerung", "translation": "размывание, ослабление (норм)" },
+        { "word": "nachschärfen", "translation": "уточнять, ужесточать (задним числом)" }
+    ],
+
+    "generator": {
+        "source": "original text written by Claude, grounded in public 2025-2026 data (Datenschutzkonferenz DSK, EU-Kommission Digital Omnibus, Bundesrat BDSG-Reform); no article reproduced verbatim; format modeled on the official telc Deutsch C1 Übungstest (Leseverstehen Teil 1)",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "konjunktiv_hoeflich",
+    "language": "de",
+    "title": "Konjunktiv II bei hypothetischen Folgen",
+    "shortExplanation": "Konjunktiv II ('würde' + Infinitiv) beschreibt nicht nur höfliche Bitten, sondern auch hypothetische Folgen unter einer nicht erfüllten Bedingung.",
+    "example": "Ohne eine Erhöhung der Erwerbsbeteiligung würde sich der Fachkräftemangel weiter verschärfen.",
+    "more": {
+        "rule": "Eine irreale oder nicht erfüllte Bedingung (auch ohne 'wenn', z. B. mit 'ohne') verlangt im Folgesatz den Konjunktiv II.",
+        "commonMistakes": ["wird", "werde", "wurde"],
+        "tips": [
+            "Konjunktiv II erkennt man oft an Signalwörtern wie 'ohne', 'sonst', 'andernfalls'.",
+            "'werde' ist Konjunktiv I (indirekte Rede) und passt hier nicht zum hypothetischen Kontext."
+        ]
+    }
+}

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TELC C1 — Tests</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f8f7f4;--bg2:#fff;--bg3:#f0efe9;--bd:#e2e1d8;--bd2:#c8c7be;--tx:#1a1a18;--tx2:#6b6b65;--tx3:#9b9b94;--g:#1d9e75;--gl:#e1f5ee;--gd:#0f6e56;--p:#7f77dd;--pl:#eeedfe;--pd:#534ab7;--b:#378add;--bl:#e6f1fb;--bd3:#185fa5;--a:#ba7517;--al:#faeeda;--ad:#633806;--r:#e24b4a;--rl:#fcebeb;--rd:#a32d2d;--rr:10px;--rs:6px}
+@media(prefers-color-scheme:dark){:root{--bg:#1a1a18;--bg2:#242420;--bg3:#2c2c28;--bd:#3a3a34;--bd2:#4a4a44;--tx:#f0efe9;--tx2:#a0a09a;--tx3:#6b6b65;--gl:#0a3020;--gd:#9fe1cb;--pl:#1e1c40;--pd:#afa9ec;--bl:#0a1e35;--bd3:#85b7eb;--al:#2a1a05;--ad:#fac775;--rl:#2a0f0f;--rd:#f09595}}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--tx);font-size:15px}
+.nav{background:var(--bg2);border-bottom:1px solid var(--bd);display:flex;align-items:center;position:sticky;top:0;z-index:200}
+.nav-logo{padding:.8rem 1.1rem;font-weight:700;font-size:15px;border-right:1px solid var(--bd);flex-shrink:0}
+.nav-logo span{color:var(--g)}
+.nav a{padding:.8rem 1rem;font-size:13px;color:var(--tx2);text-decoration:none}
+.kbtn{margin-left:auto;padding:.5rem .9rem;background:none;border:1px solid var(--bd2);border-radius:var(--rs);font-size:12px;color:var(--tx2);cursor:pointer;font-family:inherit;flex-shrink:0}
+.main{max-width:1200px;margin:0 auto;padding:1.25rem}
+.sc{display:none}.sc.on{display:block}
+.btn{padding:7px 16px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--bg3)}.btn.pr{background:var(--g);color:#fff;border-color:var(--g)}.btn.sm{padding:4px 11px;font-size:12px}
+.tabs{display:flex;gap:6px;margin-bottom:1rem;flex-wrap:wrap}
+.tab{padding:5px 14px;border-radius:99px;border:1px solid var(--bd2);background:var(--bg2);font-size:12px;cursor:pointer;font-family:inherit;color:var(--tx2)}
+.tab.on{background:var(--g);color:#fff;border-color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.tc{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1rem;cursor:pointer;transition:all .2s}
+.tc:hover{border-color:var(--g);transform:translateY(-2px)}.tc.hide{display:none}
+.tc h3{font-size:13.5px;font-weight:600;margin-bottom:4px}
+.tc p{font-size:12px;color:var(--tx2);line-height:1.4;margin-top:2px}
+.sc-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.tag{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:700}
+.tg{background:var(--gl);color:var(--gd)}.tp{background:var(--pl);color:var(--pd)}.ta{background:var(--al);color:var(--ad)}.tb{background:var(--bl);color:var(--bd3)}
+.pb{height:3px;background:var(--bd);border-radius:99px;margin-top:7px;overflow:hidden}
+.pf{height:100%;border-radius:99px;background:var(--g)}
+.sc-ok{font-size:11.5px;color:var(--g);font-weight:600;margin-top:6px}
+.ebar{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:.85rem 1.1rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;position:sticky;top:56px;z-index:100}
+.ebar h3{font-size:14px;font-weight:600}.ebar p{font-size:12px;color:var(--tx2)}
+.ep{height:4px;background:var(--bd);border-radius:99px;overflow:hidden;margin-bottom:1rem}
+.ef{height:100%;border-radius:99px;background:var(--g);transition:width .3s}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:1rem;height:calc(100vh - 210px);min-height:480px}
+@media(max-width:700px){.dual{grid-template-columns:1fr;height:auto}}
+.pan{overflow-y:auto;height:100%;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.1rem}
+@media(max-width:700px){.pan{height:420px}}
+.ptit{font-size:11px;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.65rem;position:sticky;top:0;background:var(--bg2);padding-bottom:6px;border-bottom:1px solid var(--bd);z-index:5}
+.pan p{font-size:13.5px;line-height:1.85;margin-bottom:.75rem}
+.gsel{display:inline-block;padding:3px 8px;border:2px solid var(--g);border-radius:var(--rs);background:var(--gl);color:var(--gd);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;margin:0 2px;vertical-align:middle;min-width:80px}
+.gsel.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
+.gsel.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
+.gex{background:var(--p);color:#fff;padding:1px 8px;border-radius:3px;font-weight:700;font-size:13px}
+.sents{display:flex;flex-direction:column;gap:7px}
+.snt{padding:.65rem .85rem;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg3);font-size:13px;line-height:1.5;transition:all .2s}
+.snt.ex{border-color:var(--b);background:var(--bl);color:var(--bd3);font-size:12.5px}
+.snt.used{opacity:.75;border-style:dashed;color:var(--tx2);background:var(--bg);text-decoration:line-through;text-decoration-color:var(--r);text-decoration-thickness:2px;filter:grayscale(0.3)}
+.snt.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important;opacity:1;text-decoration:none;font-weight:500}
+.snt.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important;opacity:1;text-decoration:none}
+.ql{display:flex;flex-direction:column;gap:8px}
+.qi{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.8rem}
+.qn{font-size:10px;font-weight:700;color:var(--tx3);margin-bottom:3px}
+.qt{font-size:13px;font-weight:600;margin-bottom:.5rem;line-height:1.5}
+.qo-list{display:flex;flex-direction:column;gap:4px}
+.qo{padding:6px 10px;border-radius:var(--rs);border:1px solid var(--bd);background:var(--bg2);font-size:13px;text-align:left;cursor:pointer;font-family:inherit;line-height:1.4}
+.qo:hover{border-color:var(--b);background:var(--bl);color:var(--bd3)}
+.qo.sel{border-color:var(--p);background:var(--pl);color:var(--pd);font-weight:500}
+.qo.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
+.qo.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
+.sbq{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.75rem;margin-bottom:8px}
+.sbn{font-size:10px;font-weight:700;color:var(--tx3);margin-bottom:3px}
+.sbc{font-size:12px;color:var(--tx2);font-style:italic;margin-bottom:.4rem;line-height:1.5}
+.sbo-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.sbo{padding:5px 8px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);font-size:12.5px;cursor:pointer;font-family:inherit;text-align:left}
+.sbo:hover{border-color:var(--p);background:var(--pl);color:var(--pd)}
+.sbo.sel{border-color:var(--p);background:var(--pl);color:var(--pd);font-weight:600}
+.sbo.ok{border-color:var(--g)!important;background:var(--gl)!important;color:var(--gd)!important}
+.sbo.err{border-color:var(--r)!important;background:var(--rl)!important;color:var(--rd)!important}
+.rh{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:1.5rem;text-align:center;margin-bottom:1rem}
+.rscore{font-size:56px;font-weight:800;line-height:1}
+.rgrade{font-size:17px;font-weight:600;margin:.4rem 0}
+.ri{border:1px solid var(--bd);border-radius:var(--rs);margin-bottom:.65rem;overflow:hidden}
+.rih{padding:.55rem .9rem;font-size:13px;font-weight:600;line-height:1.4}
+.rih.ok{background:var(--gl);color:var(--gd)}.rih.err{background:var(--rl);color:var(--rd)}
+.rib{padding:.75rem .9rem;font-size:13px;line-height:1.7;border-top:1px solid var(--bd)}
+.rule-box{background:var(--al);border-radius:var(--rs);padding:.5rem .9rem;margin-top:.5rem;font-size:12.5px;color:var(--ad);line-height:1.6}
+.rule-box strong{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.tref{background:var(--bl);border:1px solid var(--b);border-radius:var(--rs);padding:.5rem .9rem;margin-top:.5rem;font-size:12px;color:var(--bd3);font-style:italic;line-height:1.6}
+.tref strong{font-style:normal;display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;margin-bottom:3px}
+.rev-ctx{background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.65rem .9rem;margin-top:.5rem;font-size:13px;line-height:1.7}
+.rev-ctx strong{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--tx2);margin-bottom:.25rem}
+.vocab{background:var(--bl);border:1px solid var(--b);border-radius:var(--rs);padding:.75rem 1rem;margin-bottom:1rem}
+.vocab strong{color:var(--bd3);display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.35rem}
+.vw{display:inline-block;margin:.2rem .25rem;padding:2px 9px;border-radius:99px;background:var(--bg3);border:1px solid var(--bd2);font-size:12px}
+.info{background:var(--al);border:1px solid var(--a);border-radius:var(--rs);padding:.65rem 1rem;margin-bottom:.9rem;font-size:13px;line-height:1.6}
+.info strong{color:var(--ad)}
+.load-card{background:var(--bg2);border:1px solid var(--bd);border-radius:var(--rr);padding:2rem;text-align:center;color:var(--tx2);font-size:14px;margin-top:2rem}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9000;display:none;align-items:center;justify-content:center;padding:1rem}
+.modal-bg.open{display:flex}
+.modal{background:var(--bg2);border-radius:var(--rr);padding:1.5rem;max-width:440px;width:100%}
+.modal h3{font-size:15px;font-weight:700;margin-bottom:.75rem}
+.modal p{font-size:13px;color:var(--tx2);margin-bottom:1rem;line-height:1.6}
+.fi{width:100%;padding:9px 12px;border-radius:var(--rs);border:1px solid var(--bd2);background:var(--bg2);color:var(--tx);font-size:13px;font-family:inherit;margin-bottom:.75rem}
+.toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--rr);padding:10px 16px;font-size:13px;color:var(--tx);box-shadow:0 4px 18px rgba(0,0,0,.11);z-index:9999;transform:translateY(70px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
+.toast.ok{border-color:var(--g);color:var(--gd);background:var(--gl)}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">telc <span>C1</span> <small style="font-weight:400;color:var(--tx3)">Tests</small></div>
+  <a href="index.html">&larr; Dashboard</a>
+  <button class="kbtn" onclick="document.getElementById('km').classList.add('open')">&#9881; API-Key</button>
+</nav>
+<main class="main">
+
+<div class="sc on" id="s-pick">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem">
+    <h2 style="font-size:17px;font-weight:600">&#128196; Tests C1</h2>
+    <span style="font-size:12px;color:var(--tx2)" id="stats"></span>
+  </div>
+  <div class="info"><strong>So funktioniert es:</strong> Klicke einen Test — er wird sofort geladen. Text (links) + Fragen (rechts) scrollen unabhängig. <strong>Teil 1:</strong> Dropdown in den Lücken → gewählte Sätze werden grau.</div>
+  <div class="tabs">
+    <button class="tab on" onclick="fil('all',this)">Alle</button>
+    <button class="tab" onclick="fil('Sprachbausteine',this)">Sprachbausteine</button>
+    <button class="tab" onclick="fil('Teil 1',this)">Teil 1</button>
+    <button class="tab" onclick="fil('Teil 2',this)">Teil 2</button>
+    <button class="tab" onclick="fil('Teil 3',this)">Teil 3</button>
+  </div>
+  <div id="grid" class="grid"></div>
+</div>
+
+<div class="sc" id="s-load">
+  <div class="load-card">
+    <div style="font-size:36px;margin-bottom:.75rem">&#8987;</div>
+    <div id="lmsg">Lade Test...</div>
+    <div style="margin-top:1rem"><button class="btn sm" onclick="goBack()">&#8592; Zurück</button></div>
+  </div>
+</div>
+
+<div class="sc" id="s-test">
+  <div class="ebar">
+    <div><h3 id="etit"></h3><p id="esub"></p></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn sm pr" onclick="check()">&#10003; Auswerten</button>
+      <button class="btn sm" onclick="goBack()">&larr; Zur&uuml;ck</button>
+    </div>
+  </div>
+  <div class="ep"><div class="ef" id="prog" style="width:0%"></div></div>
+  <div id="econtent"></div>
+</div>
+
+<div class="sc" id="s-result">
+  <div class="rh">
+    <div class="rscore" id="rscore">-</div>
+    <div class="rgrade" id="rgrade"></div>
+    <p style="font-size:13px;color:var(--tx2);margin-top:.4rem" id="rsub"></p>
+  </div>
+  <div id="rvocab"></div>
+  <div id="rreview"></div>
+  <div style="display:flex;gap:8px;justify-content:center;margin-top:1.5rem;flex-wrap:wrap">
+    <button class="btn pr" onclick="goBack()">&larr; Alle Tests</button>
+    <button class="btn" onclick="retry()">Nochmal</button>
+  </div>
+</div>
+
+</main>
+
+<div class="modal-bg" id="km">
+  <div class="modal">
+    <h3>&#128273; Anthropic API-Key</h3>
+    <p>F&uuml;r KI-Erkl&auml;rungen: <strong>console.anthropic.com</strong> &rarr; API Keys &rarr; Create Key</p>
+    <input class="fi" type="password" id="ki" placeholder="sk-ant-...">
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn sm" onclick="document.getElementById('km').classList.remove('open')">Abbrechen</button>
+      <button class="btn sm pr" onclick="saveK()">Speichern</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="tests/manifest.js"></script>
+<script>
+// MANIFEST (загружен из tests/manifest.js) — одна строка = один тест
+// file: имя JS-файла (лежит рядом с этой страницей)
+// Чтобы добавить тест: создай test-xxx.js и добавь строку сюда
+// ══════════════════════════════════════════════
+var M=typeof TESTS_MANIFEST!=="undefined"?TESTS_MANIFEST:[];
+// ══════════════════════════════════════════════
+// STATE & UTILS
+// ══════════════════════════════════════════════
+var S={done:{},scores:{},totals:{}};
+function ls(){try{var d=localStorage.getItem("tp3");if(d)S=Object.assign(S,JSON.parse(d));}catch(e){}}
+function ss(){try{localStorage.setItem("tp3",JSON.stringify(S));}catch(e){}}
+function toast(m,t){var e=document.getElementById("toast");e.textContent=m;e.className="toast "+(t||"");e.classList.add("show");clearTimeout(e._t);e._t=setTimeout(function(){e.classList.remove("show");},2500);}
+function go(id){document.querySelectorAll(".sc").forEach(function(e){e.classList.remove("on");});document.getElementById(id).classList.add("on");window.scrollTo(0,0);}
+function goBack(){go("s-pick");render();}
+function gk(){return localStorage.getItem("ak")||"";}
+function saveK(){var k=document.getElementById("ki").value.trim();if(!k)return;localStorage.setItem("ak",k);document.getElementById("km").classList.remove("open");toast("Gespeichert","ok");}
+var TM={"Sprachbausteine":"tp","Leseverstehen Teil 1":"tg","Leseverstehen Teil 2":"ta","Leseverstehen Teil 3":"tb"};
+
+// ══════════════════════════════════════════════
+// RENDER PICKER
+// ══════════════════════════════════════════════
+function render(){
+  var done=0;
+  document.getElementById("grid").innerHTML=M.map(function(m){
+    var sc=S.scores[m.id]||0,tot=S.totals[m.id]||0,pct=S.done[m.id]&&tot?Math.round(sc/tot*100):0;
+    if(S.done[m.id])done++;
+    return '<div class="tc" id="tc-'+m.id+'" onclick="load(\''+m.id+'\',\''+m.file+'\')"><div class="sc-lbl"><span class="tag '+(TM[m.type]||"tg")+'">'+m.type+'</span></div><h3>'+m.title+'</h3><p>'+m.desc+'</p>'+(S.done[m.id]?'<div class="sc-ok">&#10003; '+sc+'/'+tot+' ('+pct+'%)</div>':'')+'<div class="pb"><div class="pf" style="width:'+pct+'%"></div></div></div>';
+  }).join('');
+  document.getElementById("stats").textContent=done+"/"+M.length+" absolviert";
+}
+
+function fil(t,btn){
+  document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("on");});btn.classList.add("on");
+  document.querySelectorAll(".tc").forEach(function(c){c.classList.toggle("hide",t!=="all"&&!c.querySelector(".tag").textContent.includes(t));});
+}
+
+// ══════════════════════════════════════════════
+// LOAD TEST DYNAMICALLY
+// ══════════════════════════════════════════════
+var CT=null,CA={},CM=null;
+
+function load(id,file){
+  CM=M.find(function(m){return m.id===id;});
+  go("s-load");
+  document.getElementById("lmsg").textContent="Lade: "+CM.title+"...";
+  var old=document.getElementById("_ts_");if(old)old.remove();
+  window.TELC_TEST=null;
+  var s=document.createElement("script");
+  s.id="_ts_";
+  s.src=file+"?v="+Date.now();
+  s.onload=function(){
+    if(window.TELC_TEST){
+      CT=window.TELC_TEST;CA={};
+      document.getElementById("etit").textContent=CT.title;
+      document.getElementById("esub").textContent=CT.type+" \u00b7 "+CT.qs.length+" Aufgaben";
+      document.getElementById("prog").style.width="0%";
+      document.getElementById("econtent").innerHTML=buildUI(CT);
+      go("s-test");
+    } else {
+      document.getElementById("lmsg").innerHTML="&#10060; <strong>"+file+"</strong> nicht gefunden oder leer.<br><small>Datei ins GitHub-Repository hochladen.</small>";
+    }
+  };
+  s.onerror=function(){
+    document.getElementById("lmsg").innerHTML="&#10060; Datei <strong>"+file+"</strong> nicht gefunden.<br><small>Bitte die Datei hochladen.</small>";
+  };
+  document.head.appendChild(s);
+}
+
+function retry(){if(CM)load(CM.id,CM.file);}
+
+// ══════════════════════════════════════════════
+// BUILD UI
+// ══════════════════════════════════════════════
+function buildUI(t){
+  if(t.kind==="sb")return bSB(t);
+  if(t.kind==="lv1")return bLV1(t);
+  return bLV23(t);
+}
+
+function bSB(t){
+  var q=t.qs.map(function(q){
+    return '<div class="sbq" id="qw'+q.n+'"><div class="sbn">Aufgabe '+q.n+'</div><div class="sbc">&#8230;'+q.ctx+'&#8230;</div><div class="sbo-grid">'+q.opts.map(function(o){return '<button class="sbo" onclick="sSB('+q.n+',\''+eq(o)+"',this)\">"+o+'</button>';}).join('')+'</div></div>';
+  }).join('');
+  return '<div class="dual"><div class="pan"><div class="ptit">TEXT</div>'+t.text+'</div><div class="pan"><div class="ptit">AUFGABEN 25–46</div>'+q+'</div></div>';
+}
+
+function bLV1(t){
+  var letters=t.satze.filter(function(s){return s.id!=="z";}).map(function(s){return s.id;});
+  var tx='<div class="ptit">'+t.title+'</div><p style="font-size:12px;color:var(--tx3);margin-bottom:.75rem">Beispiel (0) = z. Wähle Buchstaben für jede Lücke.</p>';
+  t.textps.forEach(function(p){
+    tx+='<p>'+p.replace(/\{(\d+)\}/g,function(m,n){
+      if(n==="0")return '<span class="gex">(0) z &#10003;</span>';
+      return '<select class="gsel" id="gs'+n+'" onchange="sLV1('+n+',this)"><option value="">–</option>'+letters.map(function(l){return '<option value="'+l+'">'+l.toUpperCase()+'</option>';}).join('')+'</select>';
+    })+'</p>';
+  });
+  var sn='<div class="ptit">SÄTZE a–h <small style="font-weight:400;text-transform:none">(2 passen nicht)</small></div><div class="sents">';
+  t.satze.forEach(function(s){sn+='<div class="snt'+(s.id==="z"?" ex":"")+'" id="sn'+s.id+'">'+s.t+'</div>';});
+  sn+='</div><p style="margin-top:.75rem;font-size:11.5px;color:var(--tx3)">Gewählte Sätze = grau. Am Ende bleiben 2 normal.</p>';
+  return '<div class="dual"><div class="pan">'+tx+'</div><div class="pan">'+sn+'</div></div>';
+}
+
+function bLV23(t){
+  var tx='<div class="ptit">'+t.title+'</div>';t.textps.forEach(function(p){tx+='<p>'+p+'</p>';});
+  var q=t.qs.map(function(q){
+    return '<div class="qi"><div class="qn">Aufgabe '+q.n+'</div><div class="qt">'+q.t+'</div><div class="qo-list">'+q.opts.map(function(o){
+      return '<button class="qo" onclick="sQ('+q.n+',\''+eq(o)+"',this)\">"+(t.kind==="lv2"?"Abschnitt "+o.toUpperCase():o)+'</button>';
+    }).join('')+'</div></div>';
+  }).join('');
+  return '<div class="dual"><div class="pan">'+tx+'</div><div class="pan"><div class="ptit">AUFGABEN</div><div class="ql">'+q+'</div></div></div>';
+}
+
+function eq(s){return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'");}
+
+// ══════════════════════════════════════════════
+// SELECTION
+// ══════════════════════════════════════════════
+function sSB(n,v,btn){document.getElementById("qw"+n).querySelectorAll(".sbo").forEach(function(b){b.classList.remove("sel");});btn.classList.add("sel");CA[n]=v;upProg();}
+function sQ(n,v,btn){btn.closest(".qi").querySelectorAll(".qo").forEach(function(b){b.classList.remove("sel");});btn.classList.add("sel");CA[n]=v;upProg();}
+function sLV1(g,sel){
+  var nL=sel.value,pv=CA[g];
+  if(pv){var pc=document.getElementById("sn"+pv);if(pc)pc.classList.remove("used");}
+  if(!nL){delete CA[g];upProg();return;}
+  Object.keys(CA).forEach(function(k){
+    if(parseInt(k)!==g&&CA[k]===nL){
+      var os=document.getElementById("gs"+k);if(os)os.value="";
+      var oc=document.getElementById("sn"+nL);if(oc)oc.classList.remove("used");
+      delete CA[k];
+    }
+  });
+  CA[g]=nL;
+  var c=document.getElementById("sn"+nL);if(c)c.classList.add("used");
+  upProg();
+}
+function upProg(){document.getElementById("prog").style.width=Math.round(Object.keys(CA).length/CT.qs.length*100)+"%";}
+
+// ══════════════════════════════════════════════
+// CHECK & RESULTS
+// ══════════════════════════════════════════════
+function check(){
+  var t=CT,ok=0,rH='<h2 style="font-size:15px;font-weight:600;margin-bottom:1rem">Auswertung:</h2>';
+  t.qs.forEach(function(q,qi){
+    var gv=CA[q.n]||"",co=q.ans;
+    var isOk=gv&&(gv===co||gv.replace(/^[a-d]\)\s*/,"")===co.replace(/^[a-d]\)\s*/,""));
+    if(isOk)ok++;
+    if(t.kind==="sb"){
+      var w=document.getElementById("qw"+q.n);
+      if(w)w.querySelectorAll(".sbo").forEach(function(b){if(b.textContent.trim()===co)b.classList.add("ok");else if(gv&&b.textContent.trim()===gv&&!isOk)b.classList.add("err");});
+    } else if(t.kind==="lv1"){
+      var cc=document.getElementById("sn"+co);if(cc){cc.classList.remove("used");cc.classList.add("ok");}
+      if(gv&&gv!==co){var gc=document.getElementById("sn"+gv);if(gc){gc.classList.remove("used");gc.classList.add("err");}}
+      var gs=document.getElementById("gs"+q.n);if(gs)gs.className="gsel "+(isOk?"ok":"err");
+    } else {
+      document.querySelectorAll(".qi").forEach(function(el){
+        if((el.querySelector(".qn")||{}).textContent==="Aufgabe "+q.n){
+          el.querySelectorAll(".qo").forEach(function(b){
+            var m=(b.getAttribute("onclick")||"").match(/,'([^']+)'/);var bv=m?m[1]:b.textContent.trim();
+            b.classList.remove("sel","ok","err");
+            if(bv===co)b.classList.add("ok");
+            if(gv&&bv===gv&&bv!==co)b.classList.add("err");
+          });
+        }
+      });
+    }
+    var cl=isOk?"ok":"err";
+    var ai=isOk?" — Richtig":" — Falsch"+(gv?" (gegeben: <em>"+gv+"</em>, richtig: <em>"+co+"</em>)":" (keine Antwort; richtig: <em>"+co+"</em>)");
+    // Build context block
+    var ctxBlock = getCtxHTML(t, q, isOk);
+    rH+='<div class="ri">'
+      +'<div class="rih '+cl+'">'+(isOk?"&#10003;":"&#10007;")+" Aufgabe "+q.n+ai+'</div>'
+      +'<div class="rib">'
+        // Context first (sentence with correct answer)
+        + ctxBlock
+        // Explanation
+        +'<div style="margin-top:.6rem">'+(q.exp||'')+'</div>'
+        // Text reference if exists  
+        +(q.textref?'<div class="tref"><strong>Schl&uuml;sselstelle im Text</strong>'+q.textref+'</div>':'')
+        // Rule
+        +'<div class="rule-box"><strong>&#128210; Regel / Strategie</strong>'+(q.rule||'')+'</div>'
+        // AI button (only for SB which has ctx field)
+        +(q.ctx?'<button class="btn sm" style="margin-top:.5rem" onclick="aiEx('+qi+',this)">&#129302; KI-Erkl&auml;rung mit Beispielen</button><div id="ai'+qi+'" style="display:none;background:var(--bg3);border:1px solid var(--bd);border-radius:var(--rs);padding:.75rem;margin-top:.5rem;font-size:13px;line-height:1.7"></div>':'')
+      +'</div>'
+    +'</div>';
+  });
+  S.done[CM.id]=(S.done[CM.id]||0)+1;S.scores[CM.id]=ok;S.totals[CM.id]=t.qs.length;ss();
+  var pct=Math.round(ok/t.qs.length*100);
+  document.getElementById("rscore").textContent=ok+"/"+t.qs.length;
+  document.getElementById("rscore").style.color=pct>=80?"var(--g)":pct>=60?"var(--a)":"var(--r)";
+  document.getElementById("rgrade").textContent=(pct>=90?"Ausgezeichnet!":pct>=75?"Sehr gut!":pct>=60?"Gut":pct>=40?"Weiter üben":"Nochmal versuchen")+" ("+pct+"%)";
+  document.getElementById("rsub").textContent=t.title+" · "+t.type;
+  document.getElementById("rvocab").innerHTML=t.vocab&&t.vocab.length?'<div class="vocab"><strong>Vokabeln:</strong>'+t.vocab.map(function(v){return '<span class="vw">'+v+'</span>';}).join('')+'</div>':'';
+  document.getElementById("rreview").innerHTML=rH;
+  go("s-result");toast(ok+"/"+t.qs.length+" richtig!",ok===t.qs.length?"ok":"");
+}
+
+// ══════════════════════════════════════
+// CONTEXT HELPERS FOR REVIEW
+// ══════════════════════════════════════
+
+function getCtxHTML(t, q, isOk) {
+  if (t.kind === 'lv1') {
+    var tag = '{' + q.n + '}';
+    for (var i = 0; i < t.textps.length; i++) {
+      if (t.textps[i].indexOf(tag) >= 0) {
+        var para = t.textps[i];
+
+        // Get actual sentence text from satze array
+        var satzObj = null;
+        for (var s = 0; s < t.satze.length; s++) {
+          if (t.satze[s].id === q.ans) { satzObj = t.satze[s]; break; }
+        }
+        // Strip the bold letter prefix e.g. <strong>a)</strong>
+        var sentText = satzObj ? satzObj.t
+          .replace(/<strong>[^<]+<\/strong>\s*/g, '')
+          .replace(/^[a-h]\)\s*/i, '')
+          .replace(/<em>[^<]*<\/em>/g, function(m){ return m; })
+          .trim() : ('Satz ' + q.ans.toUpperCase());
+
+        // Insert highlighted sentence into paragraph
+        var ansLabel = '<span style="'
+          + 'display:inline;background:var(--gl);color:var(--gd);'
+          + 'font-weight:600;padding:3px 10px;border-radius:5px;'
+          + 'border:2px solid var(--g);margin:0 3px;font-style:italic'
+          + '">' + sentText + '</span>';
+
+        para = para.replace(tag, ansLabel);
+        // Replace remaining gaps with neutral placeholder
+        para = para.replace(/\{(\d+)\}/g, function(m, n) {
+          return '<span style="background:var(--bg3);border:1px dashed var(--bd2);'
+            + 'padding:1px 8px;border-radius:3px;color:var(--tx3)">[L&uuml;cke '+n+']</span>';
+        });
+
+        return '<div class="rev-ctx">'
+          + '<strong>&#128196; Textstelle — eingesetzter Satz (gr&uuml;n hervorgehoben):</strong>'
+          + '<p style="margin-top:.6rem;font-size:13.5px;line-height:2">' + para + '</p>'
+          + '</div>';
+      }
+    }
+  }
+  if (t.kind === 'lv2' || t.kind === 'lv3') {
+    // Find the abschnitt/paragraph that contains the answer
+    var ansKey = q.ans;
+    // For lv2: ansKey = "a","b","c","d","e" → textps[0..4]
+    // For lv3: ans = "+","-","x" — show first sentence of each textps that's relevant
+    if (t.kind === 'lv2') {
+      var idx = ['a','b','c','d','e'].indexOf(ansKey);
+      if (idx >= 0 && t.textps[idx]) {
+        var txt = t.textps[idx];
+        // Shorten if long: first 300 chars
+        var shortened = txt.length > 400 ? txt.substring(0, 400) + '&hellip;' : txt;
+        return '<div class="rev-ctx"><strong>Richtiger Abschnitt ('+ ansKey.toUpperCase() +'):</strong><p style="margin-top:.5rem;font-size:13px;line-height:1.8;color:var(--tx2)">'+ shortened +'</p></div>';
+      }
+    }
+    if (t.kind === 'lv3') {
+      // Find paragraph that corresponds to this question
+      // Heuristic: question n:13 → textps[0], n:14 → textps[1], etc.
+      var paraIdx = q.n - 13;
+      // But some tests have 10 absätze for 11 questions - use modulo
+      if (paraIdx >= 0 && paraIdx < t.textps.length) {
+        var txt2 = t.textps[paraIdx];
+        var short2 = txt2.length > 350 ? txt2.substring(0,350)+'&hellip;' : txt2;
+        return '<div class="rev-ctx"><strong>Relevanter Absatz:</strong><p style="margin-top:.5rem;font-size:13px;line-height:1.8;color:var(--tx2)">'+ short2 +'</p></div>';
+      }
+    }
+  }
+  return '';
+}
+
+async function aiEx(qi,btn){
+  var k=gk();if(!k){document.getElementById("km").classList.add("open");return;}
+  var q=CT.qs[qi],box=document.getElementById("ai"+qi);
+  box.style.display="block";box.textContent="KI denkt nach...";btn.disabled=true;
+  try{
+    var r=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",
+      headers:{"Content-Type":"application/json","x-api-key":k,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
+      body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:600,messages:[{role:"user",content:'Erkläre auf Deutsch+Russisch warum "'+q.ans+'" korrekt. Kontext: "...'+q.ctx+'...". 1)Warum richtig 2)Warum andere falsch 3)2 Beispiele C1 4)Merkformel'}]})});
+    var d=await r.json();if(d.error)throw new Error(d.error.message);
+    box.innerHTML=d.content[0].text.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/\n/g,"<br>");
+  }catch(e){box.textContent="Fehler: "+e.message;btn.disabled=false;}
+}
+
+ls();render();
+</script>
+</body>
+</html>

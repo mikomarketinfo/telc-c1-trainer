@@ -1,0 +1,15 @@
+{
+    "id": "relativpronomen",
+    "language": "de",
+    "title": "Relativpronomen (der, die, das, deren, dessen)",
+    "shortExplanation": "Relativpronomen leiten Relativsätze ein. Genus und Numerus richten sich nach dem Bezugswort, der Fall nach der Funktion im Relativsatz.",
+    "example": "Die Zuwanderung, deren Bedeutung stark zugenommen hat, spielt eine zentrale Rolle.",
+    "more": {
+        "rule": "'deren'/'dessen' zeigen Besitz an (wie ein Possessivpronomen) und richten sich im Genus/Numerus nach dem Bezugswort, nicht nach dem folgenden Nomen.",
+        "commonMistakes": ["die", "der", "denen"],
+        "tips": [
+            "Test: Lässt sich der Relativsatz mit 'ihre/seine' umformulieren? Dann brauchst du 'deren' oder 'dessen'.",
+            "'denen' steht nur im Dativ Plural, z. B. 'die Kollegen, denen ich geholfen habe'."
+        ]
+    }
+}

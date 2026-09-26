@@ -1,0 +1,138 @@
+{
+    "meta": {
+        "id": "lv-t3-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "leseverstehen-teil3",
+        "level": "C1",
+        "title": "Künstliche Intelligenz: Jobkiller oder Jobmotor?",
+        "topic": "Technologie und Arbeit",
+        "version": "1.0.0"
+    },
+
+    "content": {
+        "instruction": "Lesen Sie den folgenden Text und die Aussagen. Welche der Aussagen sind richtig (+), falsch (-) oder gar nicht im Text enthalten (x)? Es gibt jeweils nur eine richtige Lösung. Am Ende wählen Sie außerdem die passende Überschrift.",
+        "text": [
+            "Kaum eine Technologie hat die Debatte über die Zukunft der Arbeit in den vergangenen Jahren so geprägt wie die künstliche Intelligenz. Studien zufolge könnte in Deutschland ein erheblicher Teil der heute geleisteten Arbeitsstunden – nach manchen Schätzungen deutlich mehr als die Hälfte – technisch durch KI-Systeme übernommen werden. Diese Zahl allein löst bei vielen Beschäftigten Sorgen aus, wird von Arbeitsmarktforschern aber differenziert eingeordnet: Technisch machbar bedeutet nicht automatisch, dass Arbeitsplätze tatsächlich verschwinden.",
+            "Aktuelle Prognosen gehen davon aus, dass künstliche Intelligenz in den kommenden anderthalb Jahrzehnten rund 1,6 Millionen Arbeitsplätze in Deutschland unmittelbar verändern wird. Entscheidend dabei: Aufbau und Abbau von Stellen dürften sich langfristig ungefähr die Waage halten. Zwar plant mittlerweile mehr als ein Drittel der Industrieunternehmen einen KI-bedingten Stellenabbau, gleichzeitig entstehen aber neue Tätigkeitsfelder etwa in der Entwicklung, Betreuung und Kontrolle von KI-Systemen.",
+            "Ein Grund, warum viele Ökonomen vor einem Szenario der Massenarbeitslosigkeit warnen, liegt in einem scheinbaren Widerspruch: Ausgerechnet der anhaltende Fachkräftemangel und der bevorstehende Renteneintritt der Babyboomer-Generation dürften verhindern, dass der Einsatz von KI zu einem breiten Verlust an Arbeitsplätzen führt. Wo ohnehin schon heute Personal fehlt, wirkt Automatisierung eher als Entlastung denn als Bedrohung.",
+            "Volkswirtschaftlich betrachtet erhoffen sich viele Fachleute von einem konsequenten KI-Einsatz sogar deutliche Wachstumsimpulse: Berechnungen zufolge könnte künstliche Intelligenz das jährliche Wirtschaftswachstum in Deutschland spürbar erhöhen und bis zum Jahr 2040 eine zusätzliche Wertschöpfung in Billionenhöhe ermöglichen. Auch die praktische Verbreitung von KI in Unternehmen hat sich beschleunigt: Nutzten vor wenigen Jahren nur einzelne Unternehmen KI-Anwendungen im Kerngeschäft, setzt inzwischen ein erheblicher Teil der Unternehmen produktiv auf entsprechende Systeme.",
+            "Für die Beschäftigten selbst verschiebt sich die eigentliche Herausforderung damit von der Technologie hin zum Wandel der eigenen Rolle: Gefragt sind zunehmend Fähigkeiten im Umgang mit KI-Werkzeugen sowie die Bereitschaft, sich fortlaufend weiterzubilden. Die Debatte um künstliche Intelligenz und Arbeit wird deshalb von vielen Expertinnen und Experten inzwischen weniger als technisches Problem verstanden, sondern vor allem als Frage des organisatorischen und persönlichen Wandels."
+        ]
+    },
+
+    "questions": [
+        {
+            "id": 1,
+            "text": "Laut Arbeitsmarktforschern führt technische Automatisierbarkeit automatisch zum Verlust der entsprechenden Arbeitsplätze.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 1,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text stellt ausdrücklich klar: technisch machbar bedeutet nicht automatisch Arbeitsplatzverlust." }
+        },
+        {
+            "id": 2,
+            "text": "Mehr als die Hälfte der in Deutschland geleisteten Arbeitsstunden könnte laut Schätzungen technisch automatisiert werden.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 0,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text nennt ausdrücklich 'deutlich mehr als die Hälfte' der Arbeitsstunden." }
+        },
+        {
+            "id": 3,
+            "text": "Aufbau und Abbau von Arbeitsplätzen durch KI werden sich langfristig ungefähr die Waage halten.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 0,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text nennt dies ausdrücklich als entscheidenden Punkt der Prognose." }
+        },
+        {
+            "id": 4,
+            "text": "Mehr als ein Drittel der Dienstleistungsunternehmen plant einen KI-bedingten Stellenabbau.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 1,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text spricht von Industrieunternehmen, nicht von Dienstleistungsunternehmen." }
+        },
+        {
+            "id": 5,
+            "text": "Neue Tätigkeitsfelder entstehen vor allem in der Entwicklung, Betreuung und Kontrolle von KI-Systemen.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 0,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text nennt diese Bereiche ausdrücklich als neue Tätigkeitsfelder." }
+        },
+        {
+            "id": 6,
+            "text": "Fachkräftemangel und der Renteneintritt der Babyboomer dürften eine Massenarbeitslosigkeit durch KI verhindern.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 0,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text beschreibt genau diesen scheinbaren Widerspruch als Grund gegen Massenarbeitslosigkeit." }
+        },
+        {
+            "id": 7,
+            "text": "Die Bundesregierung hat ein Gesetz beschlossen, das den Einsatz von KI in Unternehmen deutlich einschränkt.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 2,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text erwähnt kein solches Gesetz." }
+        },
+        {
+            "id": 8,
+            "text": "Bis 2040 könnte KI eine zusätzliche Wertschöpfung in Billionenhöhe ermöglichen.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 0,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text nennt genau diese Zahl für das Jahr 2040." }
+        },
+        {
+            "id": 9,
+            "text": "Die Verbreitung von KI in deutschen Unternehmen hat sich in den letzten Jahren verlangsamt.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 1,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text sagt das Gegenteil: Die Verbreitung hat sich beschleunigt." }
+        },
+        {
+            "id": 10,
+            "text": "Die eigentliche Herausforderung für Beschäftigte liegt laut Text im organisatorischen und persönlichen Wandel der eigenen Rolle.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 0,
+            "skills": ["leseverstehen", "hauptaussage"],
+            "explanation": { "correctWhy": "Der letzte Absatz benennt genau diesen Wandel als eigentliche Herausforderung." }
+        },
+        {
+            "id": 11,
+            "text": "Laut Text sind bereits alle Beschäftigten ausreichend im Umgang mit KI-Werkzeugen geschult.",
+            "options": ["richtig (+)", "falsch (–)", "nicht im Text (x)"],
+            "correct": 1,
+            "skills": ["leseverstehen", "detailverstehen"],
+            "explanation": { "correctWhy": "Der Text spricht von einer notwendigen Bereitschaft zur fortlaufenden Weiterbildung, nicht von bereits ausreichender Schulung." }
+        },
+        {
+            "id": 12,
+            "text": "Welche Überschrift passt am besten zum Text?",
+            "options": [
+                "Kein Grund zur Sorge: KI verändert nichts an der Arbeitswelt",
+                "Zwischen Risiko und Chance: Wie KI die deutsche Arbeitswelt verändert",
+                "Endstation Arbeitslosigkeit: Warum KI Millionen Jobs vernichtet"
+            ],
+            "correct": 1,
+            "skills": ["leseverstehen", "hauptaussage"],
+            "explanation": { "correctWhy": "Der Text zeigt sowohl Risiken als auch Chancen von KI für die Arbeitswelt, ohne einseitig zu urteilen." }
+        }
+    ],
+
+    "vocabulary": [
+        { "word": "die Wertschöpfung", "translation": "добавленная стоимость" },
+        { "word": "der Stellenabbau", "translation": "сокращение рабочих мест" },
+        { "word": "sich die Waage halten", "translation": "уравновешивать друг друга" },
+        { "word": "der Renteneintritt", "translation": "выход на пенсию" }
+    ],
+
+    "generator": {
+        "source": "original text written by Claude, grounded in public 2026 data (McKinsey Global Institute, PwC AI Jobs Barometer, Bitkom); no article reproduced verbatim; format modeled on the official telc Deutsch C1 Übungstest (Leseverstehen Teil 3)",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}
