@@ -1,0 +1,56 @@
+// test-lv1h.js — TELC C1
+window.TELC_TEST = {
+  id:"lv1_8", type:"Leseverstehen Teil 1", kind:"lv1",
+  title:"Piraten — damals und heute",
+  desc:"6 Satz-Zuordnungen · Textrekonstruktion · C1",
+  satze:[
+    {id:"z",t:"<strong>z)</strong> Piraten haben in der Populärkultur ein romantisches Image — doch die Realität war und ist eine andere. <em>(Beispiel)</em>"},
+    {id:"a",t:"<strong>a)</strong> Auch heute noch kostet die Bekämpfung der Piraterie die internationale Gemeinschaft Milliarden Euro jährlich."},
+    {id:"b",t:"<strong>b)</strong> Dabei war das goldene Zeitalter der Piraterie, das von etwa 1650 bis 1730 dauerte, keineswegs von romantischen Helden geprägt."},
+    {id:"c",t:"<strong>c)</strong> Dies führte dazu, dass viele ehemalige Seeleute keine andere Möglichkeit sahen, als auf Piraterie umzusteigen."},
+    {id:"d",t:"<strong>d)</strong> Einer der bekanntesten war der englische Pirat Edward Teach, besser bekannt als Blackbeard."},
+    {id:"e",t:"<strong>e)</strong> Gleichzeitig entwickelten Staaten immer effektivere Methoden, um Piratenschiffe aufzuspüren und zu zerstören."},
+    {id:"f",t:"<strong>f)</strong> Heute operieren Piraten vor allem vor den Küsten Somalias, Westafrikas und in der Straße von Malakka."},
+    {id:"g",t:"<strong>g)</strong> Stattdessen herrschten an Bord brutale Disziplin, ständige Gefahr und ein kurzes Leben."},
+    {id:"h",t:"<strong>h)</strong> Zudem hatten viele Seemächte nach den großen Seekriegen des 17. Jahrhunderts ihre Flotten verkleinert."}
+  ],
+  textps:[
+    "Kaum eine Figur hat die menschliche Fantasie so beflügelt wie der Pirat. Filme, Bücher und Legenden haben ein Bild von abenteuerlustigen Freiheitskämpfern gezeichnet. {0} Denn weder in der Vergangenheit noch in der Gegenwart war Piraterie ein Abenteuer — sie war und ist ein gefährliches Verbrechen.",
+    "Die Geschichte der Piraterie reicht Jahrtausende zurück. Schon die alten Griechen und Römer litten unter Seeräubern. {1} In dieser Zeit entwickelten sich die bekanntesten Piratengestalten, die bis heute in der Popkultur fortleben.",
+    "{2} Piratenschiffe waren überfüllte, stinkende Holzkonstruktionen. Die Crew lebte in ständiger Angst vor Sturm, Krankheit und feindlichen Marineschiffen. {3} — denn der Galgen wartete auf jeden, der gefasst wurde.",
+    "Wie wurden Menschen überhaupt zu Piraten? Oft war es pure Not. {4} Ohne Arbeit und ohne Perspektive griffen viele zur einzigen verfügbaren Option: dem Raub auf See.",
+    "Das Ende des goldenen Zeitalters kam schließlich durch mehrere Faktoren. {5} Gleichzeitig boten einige Regierungen Amnestie für Piraten an, die sich ergaben.",
+    "Doch Piraterie ist kein Phänomen der Vergangenheit. {6} Besonders das Horn von Afrika gilt als einer der gefährlichsten Seewege der Welt. {7}"
+  ],
+  qs:[
+    {n:1,ans:"b",
+     exp:"Satz b): «Dabei war das goldene Zeitalter der Piraterie … keineswegs von romantischen Helden geprägt.» — <em>dabei</em> verweist auf die Popkultur-Legenden. Kontrast: Legende vs. Realität.",
+     textref:"«Geschichte der Piraterie reicht Jahrtausende zurück» → Satz b) ergänzt: das goldene Zeitalter war keine Romantik.",
+     rule:"<em>Dabei</em> + <em>keineswegs</em> = Gegenargument. Kontrast zwischen Erwartung und Realität."},
+    {n:2,ans:"g",
+     exp:"Satz g): «Stattdessen herrschten an Bord brutale Disziplin, ständige Gefahr und ein kurzes Leben.» — <em>Stattdessen</em> = вместо романтики. Beschreibt Piratenrealität.",
+     textref:"«von … romantischen Helden geprägt» (Negation) → Satz g): <em>Stattdessen</em> = das Gegenteil.",
+     rule:"<em>Stattdessen</em> = вместо этого (Kontrast-Konnektor). Leitet Gegenaussage ein."},
+    {n:3,ans:"d",
+     exp:"Satz d): «Einer der bekanntesten war der englische Pirat Edward Teach, bekannt als Blackbeard.» — «einer» = einer der bekannten Piraten (zuvor erwähnt).",
+     textref:"«die bekanntesten Piratengestalten» → Satz d): «Einer der bekanntesten» = konkretes Beispiel.",
+     rule:"<em>Einer der bekanntesten</em> = конкретный пример из ранее упомянутой группы."},
+    {n:4,ans:"h",
+     exp:"Satz h): «Zudem hatten viele Seemächte nach den großen Seekriegen … ihre Flotten verkleinert.» — erklärt, warum Seeleute arbeitslos wurden.",
+     textref:"«Wie wurden Menschen zu Piraten? Oft war es pure Not.» → Satz h) erklärt die Not: Flotten verkleinert → keine Arbeit.",
+     rule:"<em>Zudem</em> = кроме того. Fügt weiteren Erklärungsfaktor hinzu."},
+    {n:5,ans:"e",
+     exp:"Satz e): «Gleichzeitig entwickelten Staaten immer effektivere Methoden, um Piratenschiffe aufzuspüren.» — einer der Faktoren für das Ende des goldenen Zeitalters.",
+     textref:"«Das Ende … kam durch mehrere Faktoren.» → Satz e) nennt einen: effektivere Abwehr.",
+     rule:"<em>Gleichzeitig</em> = одновременно. Ergänzt die vorherigen Faktoren durch einen weiteren."},
+    {n:6,ans:"f",
+     exp:"Satz f): «Heute operieren Piraten vor allem vor den Küsten Somalias, Westafrikas und in der Straße von Malakka.» — Übergang zu moderner Piraterie.",
+     textref:"«Doch Piraterie ist kein Phänomen der Vergangenheit.» → Satz f) konkretisiert: wo heute Piraterie stattfindet.",
+     rule:"<em>Doch</em> + Gegenwart → Satz f) liefert konkrete geografische Beispiele für heutige Piraterie."},
+    {n:7,ans:"a",
+     exp:"Satz a): «Auch heute noch kostet die Bekämpfung der Piraterie die internationale Gemeinschaft Milliarden jährlich.» — unterstreicht Aktualität und wirtschaftliche Dimension.",
+     textref:"«Horn von Afrika als gefährlichster Seeweg» → Satz a): wirtschaftliche Konsequenz.",
+     rule:"<em>Auch heute noch</em> = и по сей день. Temporaler Verweis auf Gegenwart."}
+  ],
+  vocab:["beflügeln — окрылять, вдохновлять","die Seeräuberei — пиратство, морской разбой","die Amnestie — амнестия","aufspüren — выслеживать, обнаруживать","die Disziplin — дисциплина","das Goldene Zeitalter — золотой век","operieren — действовать, орудовать"]
+};
