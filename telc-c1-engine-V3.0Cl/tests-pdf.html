@@ -99,6 +99,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .toast{position:fixed;bottom:1.25rem;right:1.25rem;background:var(--bg2);border:1px solid var(--bd2);border-radius:var(--rr);padding:10px 16px;font-size:13px;color:var(--tx);box-shadow:0 4px 18px rgba(0,0,0,.11);z-index:9999;transform:translateY(70px);opacity:0;transition:all .3s}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.ok{border-color:var(--g);color:var(--gd);background:var(--gl)}
+.gr-item{padding:.9rem 0;border-bottom:1px solid var(--bd)}
+.gr-item:last-child{border-bottom:none}
+.gr-num{font-size:.75rem;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.35rem}
+.gr-aufgabe{font-size:.9rem;line-height:1.7;margin-bottom:.65rem}
+.gr-opts{display:flex;flex-direction:column;gap:.4rem}
+.gr-btn{text-align:left;padding:.55rem .9rem;border:1.5px solid var(--bd2);border-radius:var(--rs);background:var(--bg2);cursor:pointer;font-size:.875rem;transition:all .2s;font-family:inherit;color:var(--tx)}
+.gr-btn:hover:not(:disabled){border-color:var(--b);background:var(--bl);color:var(--bd3)}
+.gr-btn.ok{background:var(--gl)!important;border-color:var(--g)!important;color:var(--gd)!important;font-weight:600}
+.gr-btn.err{background:var(--rl)!important;border-color:var(--r)!important;color:var(--rd)!important}
+.gr-btn:disabled{cursor:default}
+.gr-feedback{margin-top:.7rem;padding:.65rem .9rem;background:var(--bg3);border-left:3px solid var(--b);border-radius:0 var(--rs) var(--rs) 0;display:none}
+.gr-exp{margin-bottom:.4rem;line-height:1.65;font-size:.875rem}
+.gr-rule{font-size:.825rem;font-style:italic;padding:.45rem .7rem;background:var(--al);border-radius:var(--rs);margin-top:.4rem;color:var(--ad)}
+.tgr{background:var(--pl);color:var(--pd)}
 </style>
 </head>
 <body>
@@ -121,6 +135,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
     <button class="tab" onclick="fil('Teil 1',this)">Teil 1</button>
     <button class="tab" onclick="fil('Teil 2',this)">Teil 2</button>
     <button class="tab" onclick="fil('Teil 3',this)">Teil 3</button>
+    <button class="tab" onclick="fil('Grammatik',this)">Grammatik</button>
   </div>
   <div id="grid" class="grid"></div>
 </div>
@@ -192,7 +207,7 @@ function go(id){document.querySelectorAll(".sc").forEach(function(e){e.classList
 function goBack(){go("s-pick");render();}
 function gk(){return localStorage.getItem("ak")||"";}
 function saveK(){var k=document.getElementById("ki").value.trim();if(!k)return;localStorage.setItem("ak",k);document.getElementById("km").classList.remove("open");toast("Gespeichert","ok");}
-var TM={"Sprachbausteine":"tp","Leseverstehen Teil 1":"tg","Leseverstehen Teil 2":"ta","Leseverstehen Teil 3":"tb"};
+var TM={"Sprachbausteine":"tp","Leseverstehen Teil 1":"tg","Leseverstehen Teil 2":"ta","Leseverstehen Teil 3":"tb","Grammatik":"tgr"};
 
 // ══════════════════════════════════════════════
 // RENDER PICKER
@@ -252,6 +267,7 @@ function retry(){if(CM)load(CM.id,CM.file);}
 function buildUI(t){
   if(t.kind==="sb")return bSB(t);
   if(t.kind==="lv1")return bLV1(t);
+  if(t.kind==="gr")return bGR(t);
   return bLV23(t);
 }
 
@@ -285,6 +301,41 @@ function bLV23(t){
     }).join('')+'</div></div>';
   }).join('');
   return '<div class="dual"><div class="pan">'+tx+'</div><div class="pan"><div class="ptit">AUFGABEN</div><div class="ql">'+q+'</div></div></div>';
+}
+
+function bGR(t){
+  var lft='<div class="ptit">'+t.title+'</div>'
+    +'<p style="font-size:13px;color:var(--tx2);line-height:1.6;margin-bottom:.75rem">'+t.desc+'</p>'
+    +(t.vocab&&t.vocab.length?'<div class="vocab"><strong>Vokabeln:</strong>'+t.vocab.map(function(v){return '<span class="vw">'+v+'</span>';}).join('')+'</div>':'');
+  var rht=t.qs.map(function(q){
+    return '<div class="gr-item" id="gri'+q.n+'">'
+      +'<div class="gr-num">Aufgabe '+q.n+'</div>'
+      +'<div class="gr-aufgabe">'+q.aufgabe+'</div>'
+      +'<div class="gr-opts">'
+      +q.opts.map(function(o){return '<button class="gr-btn" data-qn="'+q.n+'" data-ans="'+eq(q.ans)+'" onclick="grAnswer(this)">'+o+'</button>';}).join('')
+      +'</div>'
+      +'<div class="gr-feedback" id="grf'+q.n+'">'
+      +'<div class="gr-exp">'+q.exp+'</div>'
+      +'<div class="gr-rule">&#128204; '+q.rule+'</div>'
+      +'</div>'
+      +'</div>';
+  }).join('');
+  return '<div class="dual"><div class="pan">'+lft+'</div><div class="pan"><div class="ptit">AUFGABEN</div>'+rht+'</div></div>';
+}
+
+function grAnswer(btn){
+  var qn=parseInt(btn.dataset.qn);
+  var correct=btn.dataset.ans.trim();
+  var chosen=btn.textContent.trim();
+  var container=document.getElementById("gri"+qn);
+  container.querySelectorAll(".gr-btn").forEach(function(b){
+    b.disabled=true;
+    if(b.textContent.trim()===correct)b.classList.add("ok");
+  });
+  if(chosen!==correct)btn.classList.add("err");
+  document.getElementById("grf"+qn).style.display="block";
+  CA[qn]=chosen;
+  upProg();
 }
 
 function eq(s){return String(s).replace(/\\/g,"\\\\").replace(/'/g,"\\'");}
@@ -327,6 +378,17 @@ function check(){
       var cc=document.getElementById("sn"+co);if(cc){cc.classList.remove("used");cc.classList.add("ok");}
       if(gv&&gv!==co){var gc=document.getElementById("sn"+gv);if(gc){gc.classList.remove("used");gc.classList.add("err");}}
       var gs=document.getElementById("gs"+q.n);if(gs)gs.className="gsel "+(isOk?"ok":"err");
+    } else if(t.kind==="gr"){
+      var gc=document.getElementById("gri"+q.n);
+      if(gc){
+        gc.querySelectorAll(".gr-btn").forEach(function(b){
+          b.disabled=true;
+          if(b.textContent.trim()===co.trim())b.classList.add("ok");
+          else if(gv&&b.textContent.trim()===gv.trim()&&b.textContent.trim()!==co.trim())b.classList.add("err");
+        });
+        var gfb=document.getElementById("grf"+q.n);
+        if(gfb)gfb.style.display="block";
+      }
     } else {
       document.querySelectorAll(".qi").forEach(function(el){
         if((el.querySelector(".qn")||{}).textContent==="Aufgabe "+q.n){
