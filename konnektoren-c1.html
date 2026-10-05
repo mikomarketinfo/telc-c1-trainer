@@ -94,6 +94,25 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline
 .gt th{background:var(--accent-soft)}
 .gt .ru{font-size:12px}
 @media (max-width:520px){.gt{display:block;overflow-x:auto}}
+.sbw{overflow-x:auto}
+.sbt{border-collapse:collapse;width:100%;min-width:560px;font-family:var(--f-de);font-size:16px}
+.sbt th,.sbt td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:middle;min-width:84px;height:44px}
+.sbt th{background:var(--accent-soft);font-family:var(--f-ui);font-size:12.5px;font-weight:600}
+.sbt th.rl{min-width:96px}
+.sbt th small{font-weight:400;color:var(--muted)}
+.sbt td.emp{color:var(--muted);text-align:center;opacity:.5}
+.sbt td.hit{background:var(--mark-soft)}
+.sbt td.hit.emp{background:transparent}
+.sbt td.drop{background:var(--bg);min-width:96px}
+.sbt td.drop.ok{background:var(--ok-bg);border-color:var(--ok)}
+.sbt td.drop.bad{background:var(--bad-bg);border-color:var(--bad)}
+.sbitem{margin-top:14px}
+.sbru{margin-top:6px}
+.bank{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;padding:10px;border:1.5px dashed var(--line);border-radius:10px}
+.wchip{font-family:var(--f-de);font-size:16px;background:var(--surface);color:var(--ink);border:1.5px solid var(--accent);border-radius:8px;padding:5px 9px;cursor:grab;touch-action:none}
+.wchip.sel{background:var(--accent);color:var(--accent-ink)}
+.sbt td .wchip{margin:0;width:100%}
+.tabs.sub{border-bottom:0;gap:6px}
 .fb{border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
 .fb[hidden]{display:none}
 .fb.ok{background:var(--ok-bg)}
@@ -157,13 +176,18 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline
     <p class="lede">Je zehn Aufgaben pro Runde. Fehler kommen in derselben Runde wieder und bleiben in „Meine Fehler“, bis du sie zweimal hintereinander richtig löst. Unter jeder Aufgabe steht der Wortschatz mit Übersetzung, die Erklärung kommt nach der Antwort.</p>
     <div class="meter"><span class="lab" id="tot"></span><div class="bar"><i id="totbar"></i><i id="surebar" class="sure"></i></div></div>
   </header>
-  <nav class="tabs"><button type="button" class="tab on" data-tab="practice">Üben</button><button type="button" class="tab" data-tab="cheat">Spickzettel</button><button type="button" class="tab" data-tab="add">Eigene Aufgaben</button></nav>
+  <nav class="tabs"><button type="button" class="tab on" data-tab="practice">Üben</button><button type="button" class="tab" data-tab="cheat">Spickzettel</button><button type="button" class="tab" data-tab="sb">Satzbau</button><button type="button" class="tab" data-tab="add">Eigene Aufgaben</button></nav>
   <section id="viewPractice" class="app" style="gap:14px">
     <div class="chips" id="chips"></div>
     <article class="card" id="card"></article>
     <div class="foot"><button type="button" class="reset" id="reset">Fortschritt zurücksetzen</button></div>
   </section>
   <section id="viewCheat" hidden><div id="cheat"></div></section>
+  <section id="viewSb" hidden class="app" style="gap:14px">
+    <nav class="tabs sub"><button type="button" class="tab on" data-sub="ex">Übung: Wörter einordnen</button><button type="button" class="tab" data-sub="ref">Tabelle</button></nav>
+    <div id="sbexw" class="app" style="gap:14px"><div class="chips" id="sbfilt"></div><article class="card" id="sbcard"></article></div>
+    <div id="sbref" hidden></div>
+  </section>
   <section id="viewAdd" hidden>
     <div class="guide form">
       <h2>Eigene Aufgabe hinzufügen</h2>
@@ -524,6 +548,159 @@ function moreOf(it,chosen){
   }
   return o;
 }
+/* Satzbau-Tabelle: Referenz + Drag-and-Drop. Zellen: A=[P1,V2,Mitte,Ende], B=[Konnektor,P1,V2,Mitte,Ende] */
+var SBG=[
+ {id:"p0",name:"Position 0: denn, aber, und, oder, sondern",ru:"Союз стоит вне предложения. После него обычный порядок главного предложения: подлежащее, затем глагол на 2-м месте. Колонка «глагол в конце» остаётся пустой.",
+  s:[["denn",["Er","kam","zu spät",""],["denn","er","verpasste","den Bus",""],"Он опоздал, ведь пропустил автобус."],
+     ["aber",["Wir","wollten","wandern",""],["aber","es","regnete","",""],"Мы хотели в поход, но шёл дождь."],
+     ["sondern",["Er","trinkt","keinen Kaffee",""],["sondern","er","nimmt","einen Tee",""],"Он пьёт не кофе, а берёт чай."],
+     ["und",["Sie","öffnete","das Fenster",""],["und","sie","lüftete","den Raum",""],"Она открыла окно и проветрила комнату."],
+     ["oder",["Wir","fahren","mit dem Zug",""],["oder","wir","nehmen","das Auto",""],"Мы поедем на поезде или возьмём машину."]]},
+ {id:"ns",name:"Nebensatz: weil, obwohl, indem, damit, sodass, wodurch, dass …",ru:"Подчинительный союз отправляет спрягаемый глагол в конец. Колонки «1-я позиция» и «глагол на 2-м месте» пустые: подлежащее и остальные слова идут в середину.",
+  s:[["weil",["Er","kam","zu spät",""],["weil","","","er den Bus","verpasste"],"Он опоздал, потому что пропустил автобус."],
+     ["obwohl",["Sie","ging","zur Arbeit",""],["obwohl","","","sie erkältet","war"],"Она пошла на работу, хотя была простужена."],
+     ["indem",["Sie","spart","Strom",""],["indem","","","sie die Geräte nachts","ausschaltet"],"Она экономит электричество, выключая приборы на ночь."],
+     ["damit",["Er","schloss","das Fenster",""],["damit","","","es nicht","zieht"],"Он закрыл окно, чтобы не было сквозняка."],
+     ["sodass",["Der Zug","hatte","Verspätung",""],["sodass","","","viele Pendler zu spät","kamen"],"Поезд опоздал, так что многие пассажиры опоздали."],
+     ["wodurch",["Die Firma","automatisierte","die Produktion",""],["wodurch","","","die Kosten","sanken"],"Фирма автоматизировала производство, благодаря чему расходы снизились."],
+     ["ohne dass",["Er","ging","",""],["ohne dass","","","es jemand","merkte"],"Он ушёл, так что никто не заметил."],
+     ["während",["Er","arbeitet","",""],["während","","","sie","schläft"],"Он работает, пока она спит."],
+     ["dass",["Er","sagt","",""],["dass","","","er morgen","kommt"],"Он говорит, что придёт завтра."],
+     ["weil … dadurch",["Es","erlaubt","einen neuen Aufbau",""],["weil","","","dadurch Platz frei","wird"],"Это позволяет новую конструкцию, потому что благодаря этому освобождается место. Наречие dadurch стоит внутри придаточного, глагол остаётся в конце."]]},
+ {id:"adv",name:"Adverb: deshalb, trotzdem, stattdessen, dadurch, außerdem …",ru:"Наречие стоит на 1-й позиции второго предложения, глагол сразу за ним (инверсия), подлежащее после глагола. Это отдельное главное предложение, поэтому колонка союза пустая.",
+  s:[["deshalb",["Er","verpasste","den Bus",""],["","Deshalb","kam","er zu spät",""],"Он пропустил автобус. Поэтому он опоздал."],
+     ["trotzdem",["Es","regnete","",""],["","Trotzdem","gingen","wir spazieren",""],"Шёл дождь. Тем не менее мы пошли гулять."],
+     ["stattdessen",["Er","lernte","nicht",""],["","Stattdessen","schlief","er",""],"Он не учился. Вместо этого он спал."],
+     ["dadurch",["Er","trainierte","täglich",""],["","Dadurch","verbesserte","er seine Ausdauer",""],"Он тренировался ежедневно. Благодаря этому улучшилась его выносливость."],
+     ["außerdem",["Die Wohnung","ist","günstig",""],["","Außerdem","liegt","sie zentral",""],"Квартира недорогая. Кроме того, она в центре."],
+     ["folglich",["Die Nachfrage","sank","stark",""],["","Folglich","schlossen","mehrere Filialen",""],"Спрос сильно упал. Следовательно, несколько филиалов закрылись."],
+     ["andernfalls",["Sie","zahlt","die Rechnung",""],["","Andernfalls","droht","ihr eine Mahnung",""],"Она оплатит счёт. В противном случае ей грозит напоминание."]]},
+ {id:"inf",name:"Infinitiv mit zu: ohne … zu, statt … zu, um … zu",ru:"Подлежащее одно и то же, поэтому своего подлежащего и спрягаемого глагола нет. Инфинитив с zu стоит в самом конце, в колонке «глагол в конце» (инфинитив, не спрягаемый глагол).",
+  s:[["ohne … zu",["Sie","ging","",""],["ohne","","","ein Wort","zu sagen"],"Она ушла, не сказав ни слова."],
+     ["statt … zu",["Er","schlief","",""],["statt","","","den ganzen Tag","zu lernen"],"Он спал, вместо того чтобы весь день учиться."],
+     ["um … zu",["Sie","lernt","Deutsch",""],["um","","","in Deutschland","zu studieren"],"Она учит немецкий, чтобы учиться в Германии."]]}
+];
+(function(){
+var COLS=["Konnektor","Position 1","Verb (Position 2)","Mittelfeld","Verb am Ende"];
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function rowA(a){return ["",a[0],a[1],a[2],a[3]]}
+function cells(r,cls){return r.map(function(c,i){return '<td class="'+(c?"":"emp ")+(cls||"")+'" data-col="'+i+'">'+(c?esc(c):"–")+'</td>'}).join("")}
+function head(){return '<tr><th class="rl"></th>'+COLS.map(function(c){return '<th>'+c+'</th>'}).join("")+'</tr>'}
+function refTable(it){
+  return '<div class="sbw"><table class="sbt">'+head()+
+   '<tr><th class="rl">1. Satz<br><small>Hauptsatz</small></th>'+cells(rowA(it[1]))+'</tr>'+
+   '<tr><th class="rl">2. Satz<br><small>mit '+esc(it[0])+'</small></th>'+cells(it[2],"hit")+'</tr></table></div>'+
+   '<p class="ru sbru">'+esc(it[3])+'</p>';
+}
+function buildRef(){
+  var h='<div class="guide"><h2>Satzbau-Tabelle</h2><p class="gl">Jeder Satz besteht aus zwei Sätzen. Der <b>1. Satz</b> ist ein normaler Hauptsatz. Der <b>2. Satz</b> ist der Satz mit dem Konnektor (hell markiert). Die Tabelle zeigt, in welche Spalte jedes Wort gehört. Ein Strich bedeutet: Diese Spalte bleibt leer. Achte darauf, <b>welche Spalten leer sind</b>: Das verrät den Satztyp.</p></div>';
+  SBG.forEach(function(g){
+    h+='<section class="grp"><h2>'+esc(g.name)+'</h2><p class="ru">'+esc(g.ru)+'</p>';
+    g.s.forEach(function(it){h+='<div class="sbitem">'+refTable(it)+'</div>'});
+    h+='</section>';
+  });
+  $("sbref").innerHTML=h;
+}
+var cur=null,sel=null,pool=[],done=0,first=0,seenAll=0,filt="all",tried=false;
+function pickSet(){
+  var arr=[];SBG.forEach(function(g){if(filt==="all"||filt===g.id)g.s.forEach(function(it){arr.push({g:g,it:it})})});
+  return arr;
+}
+function nextSentence(){
+  if(!pool.length)pool=shuffle(pickSet());
+  cur=pool.pop();tried=false;sel=null;renderEx();
+}
+function renderFilter(){
+  var h='<button type="button" class="chip'+(filt==="all"?" on":"")+'" data-sbf="all">Alle</button>';
+  SBG.forEach(function(g){h+='<button type="button" class="chip'+(filt===g.id?" on":"")+'" data-sbf="'+g.id+'">'+esc(g.name.split(":")[0])+'</button>'});
+  $("sbfilt").innerHTML=h;
+}
+function renderEx(){
+  renderFilter();
+  var it=cur.it,B=it[2],chips=[];
+  B.forEach(function(c,i){if(c)chips.push({t:c,i:i})});
+  chips=shuffle(chips);
+  var h='<div class="qhead"><span class="lab">'+esc(cur.g.name.split(":")[0])+'</span><span class="lab">'+first+' von '+done+' beim ersten Versuch richtig</span></div>';
+  h+='<p class="task">Aufgabe: Ziehe jedes Wort in die richtige Spalte des 2. Satzes. Auf dem Handy: erst das Wort antippen, dann die Zelle. Leere Spalten bleiben leer. Konnektor: <b>'+esc(it[0])+'</b></p>';
+  h+='<div class="sbw"><table class="sbt" id="sbx">'+head()+
+    '<tr><th class="rl">1. Satz<br><small>Hauptsatz</small></th>'+cells(rowA(it[1]))+'</tr>'+
+    '<tr><th class="rl">2. Satz<br><small>mit Konnektor</small></th>'+[0,1,2,3,4].map(function(i){return '<td class="drop" data-col="'+i+'"></td>'}).join("")+'</tr></table></div>';
+  h+='<div class="bank" id="bank">'+chips.map(function(c,k){return '<button type="button" class="wchip" draggable="true" id="w'+k+'" data-t="'+esc(c.t).replace(/"/g,"&quot;")+'">'+esc(c.t)+'</button>'}).join("")+'</div>';
+  h+='<div class="row"><button type="button" class="btn go" id="sbchk">Prüfen</button><button type="button" class="btn" id="sbreset">Zurücksetzen</button><button type="button" class="btn" id="sbshow">Lösung zeigen</button></div>';
+  h+='<div id="sbfb" class="fb" hidden></div>';
+  $("sbcard").innerHTML=h;
+}
+function place(chip,td){
+  if(!chip||!td||td.classList.contains("locked"))return;
+  var old=td.querySelector(".wchip");
+  if(old)$("bank").appendChild(old);
+  td.appendChild(chip);
+  td.classList.remove("ok","bad");
+  clearSel();
+}
+function clearSel(){sel=null;document.querySelectorAll(".wchip.sel").forEach(function(c){c.classList.remove("sel")})}
+function check(){
+  var B=cur.it[2],good=0,bad=0;
+  document.querySelectorAll("#sbx td.drop").forEach(function(td){
+    var i=+td.getAttribute("data-col"),ch=td.querySelector(".wchip"),got=ch?ch.getAttribute("data-t"):"";
+    var ok=got===B[i];
+    td.classList.remove("ok","bad");td.classList.add(ok?"ok":"bad");
+    if(ok)good++;else bad++;
+  });
+  var fb=$("sbfb");fb.hidden=false;fb.className="fb "+(bad?"bad":"ok");
+  if(!tried){tried=true;if(!bad){first++}done++;}
+  var h='';
+  if(!bad){
+    h='<p class="verdict">Richtig.</p><p class="ru">'+esc(cur.g.ru)+'</p><p class="tr"><span class="lab">Перевод</span> '+esc(cur.it[3])+'</p><button type="button" class="btn go" id="sbnext">Nächster Satz</button>';
+  }else{
+    h='<p class="verdict">Nicht ganz. '+bad+' Spalte(n) rot markiert.</p><p class="ru">Подсказка: сначала решите, какой это тип слова. '+esc(cur.g.ru)+' Исправьте красные ячейки и нажмите «Prüfen» снова.</p>';
+  }
+  fb.innerHTML=h;
+  $("sbcard").querySelector(".qhead .lab:last-child").textContent=first+" von "+done+" beim ersten Versuch richtig";
+}
+function show(){
+  var B=cur.it[2];
+  var chips=[].slice.call(document.querySelectorAll(".wchip"));
+  document.querySelectorAll("#sbx td.drop").forEach(function(td){
+    var i=+td.getAttribute("data-col");
+    var o=td.querySelector(".wchip");if(o)$("bank").appendChild(o);
+    if(B[i]){var c=chips.filter(function(x){return x.getAttribute("data-t")===B[i]})[0];if(c)td.appendChild(c)}
+    td.classList.remove("ok","bad");td.classList.add("ok");
+  });
+  if(!tried){tried=true;done++}
+  var fb=$("sbfb");fb.hidden=false;fb.className="fb bad";
+  fb.innerHTML='<p class="verdict">Lösung angezeigt.</p><p class="ru">'+esc(cur.g.ru)+'</p><p class="tr"><span class="lab">Перевод</span> '+esc(cur.it[3])+'</p><button type="button" class="btn go" id="sbnext">Nächster Satz</button>';
+  $("sbcard").querySelector(".qhead .lab:last-child").textContent=first+" von "+done+" beim ersten Versuch richtig";
+}
+document.addEventListener("click",function(e){
+  var t=e.target.closest?e.target.closest("button,td"):null;if(!t)return;
+  if(t.hasAttribute&&t.hasAttribute("data-sbf")){filt=t.getAttribute("data-sbf");pool=[];nextSentence();return}
+  if(t.id==="sbchk"){check();return}
+  if(t.id==="sbreset"){renderEx();return}
+  if(t.id==="sbshow"){show();return}
+  if(t.id==="sbnext"){nextSentence();return}
+  if(t.classList.contains("wchip")){
+    if(sel===t){clearSel();return}
+    clearSel();sel=t;t.classList.add("sel");return;
+  }
+  if(t.tagName==="TD"&&t.classList.contains("drop")){
+    if(sel){place(sel,t)}
+    else{var o=t.querySelector(".wchip");if(o){$("bank").appendChild(o);t.classList.remove("ok","bad")}}
+  }
+});
+var dragged=null;
+document.addEventListener("dragstart",function(e){var c=e.target.closest?e.target.closest(".wchip"):null;if(!c)return;dragged=c;try{e.dataTransfer.setData("text/plain",c.id);e.dataTransfer.effectAllowed="move"}catch(x){}});
+document.addEventListener("dragover",function(e){var t=e.target.closest?e.target.closest("td.drop,#bank"):null;if(t&&dragged)e.preventDefault()});
+document.addEventListener("drop",function(e){
+  var t=e.target.closest?e.target.closest("td.drop,#bank"):null;if(!t||!dragged)return;
+  e.preventDefault();
+  if(t.id==="bank")$("bank").appendChild(dragged);else place(dragged,t);
+  dragged=null;
+});
+window.SB={init:function(){buildRef();if(!cur)nextSentence()}};
+})();
 (function(){
 var KEY="konn-c1-v1",store={};
 try{store=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){store={}}
@@ -684,7 +861,9 @@ function tab(name){
   $("viewPractice").hidden=name!=="practice";
   $("viewCheat").hidden=name!=="cheat";
   $("viewAdd").hidden=name!=="add";
-  document.querySelectorAll(".tab").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-tab")===name)});
+  $("viewSb").hidden=name!=="sb";
+  if(name==="sb"&&window.SB)SB.init();
+  document.querySelectorAll(".tabs:not(.sub) .tab").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-tab")===name)});
   window.scrollTo(0,0);
 }
 var TAGN={ns:"Nebensatz",adv:"Adverb",p0:"Position 0",prep:"Präposition",inf:"Infinitiv"};
@@ -714,7 +893,7 @@ function buildCheat(){
 }
 document.addEventListener("click",function(e){
   var t=e.target.closest?e.target.closest("button"):null;if(!t)return;
-  if(t.classList.contains("chip")){start(t.getAttribute("data-set"));return}
+  if(t.classList.contains("chip")&&t.hasAttribute("data-set")){start(t.getAttribute("data-set"));return}
   if(t.classList.contains("opt")){answer(t.getAttribute("data-v"));return}
   if(t.id==="chk"){answer($("inp").value);return}
   if(t.id==="next"){next();return}
@@ -722,6 +901,7 @@ document.addEventListener("click",function(e){
   if(t.id==="again"){start(cur.set);return}
   if(t.id==="errs"){start("err");return}
   if(t.id==="tocheat"){tab("cheat");return}
+  if(t.classList.contains("tab")&&t.hasAttribute("data-sub")){var sv=t.getAttribute("data-sub");$("sbexw").hidden=sv!=="ex";$("sbref").hidden=sv!=="ref";document.querySelectorAll("[data-sub]").forEach(function(b){b.classList.toggle("on",b===t)});return}
   if(t.classList.contains("tab")){tab(t.getAttribute("data-tab"));return}
   if(t.id==="addbtn"){addCustom();return}
   if(t.classList.contains("del")){delCustom(t.getAttribute("data-uid"));return}
