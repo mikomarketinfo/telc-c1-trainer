@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Konnektoren C1</title>
+<style>html{background:var(--bg)}body{margin:0}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, like a textbook page. Group chips on top, one exercise card, a second tab for the cheat sheet with verb-position tags. */
+:root{
+  --bg:#F1F3F7; --surface:#FFFFFF; --ink:#141C2B; --muted:#5A6578; --line:#D9DEE7;
+  --accent:#2B4FD8; --accent-ink:#FFFFFF; --accent-soft:#E6ECFF;
+  --ok:#17794F; --ok-bg:#E1F3E9; --bad:#B3321F; --bad-bg:#FBE6E1;
+  --mark:#FFE27A; --mark-soft:#FFF3C4;
+  --f-ui:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-de:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F141E; --surface:#171E2B; --ink:#E7EBF3; --muted:#9AA6BA; --line:#2A3446;
+  --accent:#8CA5FF; --accent-ink:#0F141E; --accent-soft:#1F2A4D;
+  --ok:#5FD39A; --ok-bg:#15332A; --bad:#FF9582; --bad-bg:#3A1D19;
+  --mark:#7A6514; --mark-soft:#3A3213; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F141E; --surface:#171E2B; --ink:#E7EBF3; --muted:#9AA6BA; --line:#2A3446;
+  --accent:#8CA5FF; --accent-ink:#0F141E; --accent-soft:#1F2A4D;
+  --ok:#5FD39A; --ok-bg:#15332A; --bad:#FF9582; --bad-bg:#3A1D19;
+  --mark:#7A6514; --mark-soft:#3A3213; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:20px 56px}
+.app{max-width:760px;margin-inline:auto;display:flex;flex-direction:column;gap:18px}
+.lab{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;flex-direction:column;gap:10px}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.05;margin:0;font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+.lede{margin:0;color:var(--muted);max-width:60ch}
+.meter{display:flex;flex-direction:column;gap:6px}
+.meter .bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.meter .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line)}
+.tab{font:inherit;font-weight:500;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:8px 4px;margin-right:14px;cursor:pointer}
+.tab.on{color:var(--ink);border-bottom-color:var(--accent)}
+button{font-family:inherit}
+button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.chip .cnt{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.chip.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.chip.on .cnt{color:var(--accent-ink);opacity:.8}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 20px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.qhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rail{height:3px;background:var(--line);border-radius:2px;overflow:hidden}
+.rail i{display:block;height:100%;background:var(--accent)}
+.stem{font-family:var(--f-de);font-size:clamp(20px,3.6vw,24px);line-height:1.45;margin:0;max-width:62ch;text-wrap:pretty}
+.gap{display:inline-block;min-width:4.2em;border-bottom:3px solid var(--mark);background:var(--mark-soft);border-radius:3px 3px 0 0;padding:0 .3em;text-align:center;font-weight:600;line-height:1.25;vertical-align:baseline}
+.gap:empty::before{content:"\00a0"}
+.gap.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.gap.bad{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.vocab{margin:0;font-size:13.5px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.src{margin:0;font-size:13px;background:var(--accent-soft);border-radius:8px;padding:8px 10px;display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.src .lab{color:var(--accent)}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.opts.long{grid-template-columns:minmax(0,1fr)}
+@media (max-width:480px){.opts{grid-template-columns:minmax(0,1fr)}}
+.opt{display:flex;gap:10px;align-items:baseline;text-align:left;font-family:var(--f-de);font-size:18px;line-height:1.35;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px;cursor:pointer;min-width:0;overflow-wrap:anywhere}
+.opt kbd{font-family:var(--f-mono);font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:0 5px;flex:none}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:disabled{cursor:default}
+.opt.right{background:var(--ok-bg);border-color:var(--ok)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad)}
+.typed{display:flex;gap:10px;flex-wrap:wrap}
+.typed input{flex:1 1 220px;min-width:0;font-family:var(--f-de);font-size:19px;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px}
+.typed input.ok{border-color:var(--ok);background:var(--ok-bg)}
+.typed input.bad{border-color:var(--bad);background:var(--bad-bg)}
+.btn{font-weight:500;font-size:15px;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:10px 16px;cursor:pointer}
+.btn:hover:not(:disabled){border-color:var(--accent)}
+.btn.go{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:disabled{opacity:.5;cursor:default}
+.fb{border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.fb[hidden]{display:none}
+.fb.ok{background:var(--ok-bg)}
+.fb.bad{background:var(--bad-bg)}
+.fb p{margin:0}
+.verdict{font-weight:700}
+.fb.ok .verdict{color:var(--ok)}
+.fb.bad .verdict{color:var(--bad)}
+.why{max-width:64ch}
+.tr{color:var(--muted);font-size:14.5px;display:flex;gap:10px;flex-wrap:wrap;align-items:baseline}
+.score{font-size:20px;margin:0}
+.score strong{font-size:34px;font-family:var(--f-mono);font-weight:500}
+.sub{margin:0}
+.wl{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.wl .de{font-family:var(--f-de);font-size:17px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.empty{margin:0;color:var(--muted)}
+.foot{display:flex;justify-content:flex-end}
+.reset{font-size:13px;background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;padding:4px}
+.guide,.grp{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;min-width:0}
+.guide h2,.grp h2{margin:0 0 6px;font-size:21px;letter-spacing:-.01em}
+.guide ol{margin:8px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:8px;max-width:66ch}
+#cheat{display:flex;flex-direction:column;gap:14px}
+.grp .lab{margin:0 0 10px;text-transform:none;letter-spacing:.02em}
+.rows{display:flex;flex-direction:column}
+.crow{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:4px 16px;padding:12px 0;border-top:1px solid var(--line)}
+.cn{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.cn strong{font-family:var(--f-de);font-size:17px;overflow-wrap:anywhere}
+.tag{font-family:var(--f-mono);font-size:11px;border-radius:4px;padding:1px 6px;background:var(--line);color:var(--ink)}
+.t-ns{background:var(--accent-soft);color:var(--accent)}
+.t-adv{background:var(--ok-bg);color:var(--ok)}
+.t-p0{background:var(--mark-soft);color:var(--ink)}
+.t-inf{background:var(--bad-bg);color:var(--bad)}
+.ex{font-family:var(--f-de);font-size:17px;margin:0;grid-column:2}
+.ru{margin:0;color:var(--muted);font-size:14px;grid-column:2}
+@media (max-width:520px){.crow{grid-template-columns:minmax(0,1fr)}.ex,.ru{grid-column:1}}
+.back{font-size:14px;color:var(--accent);text-decoration:none;align-self:flex-start}
+.back:hover{text-decoration:underline}
+#viewAdd{display:flex;flex-direction:column;gap:14px}
+#viewAdd[hidden]{display:none}
+.form{display:flex;flex-direction:column;gap:12px}
+.form label{display:flex;flex-direction:column;gap:5px;font-size:14px;font-weight:500}
+.form small{font-weight:400;color:var(--muted)}
+.form input,.form select,.form textarea,#io{font-family:var(--f-de);font-size:16px;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+#io{font-family:var(--f-mono);font-size:12.5px}
+.own{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
+.own>div{min-width:0}
+.own .ex{grid-column:auto;margin-top:4px}
+.own .ru{grid-column:auto}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<div class="app">
+  <header>
+    <a class="back" href="index.html">← Übersicht</a>
+    <span class="lab">telc C1 · Sprachbausteine und Schreiben</span>
+    <h1>Konnektoren C1</h1>
+    <p class="lede">Je zehn Aufgaben pro Runde. Fehler kommen in derselben Runde wieder und bleiben in „Meine Fehler“, bis du sie zweimal hintereinander richtig löst. Unter jeder Aufgabe steht der Wortschatz mit Übersetzung, die Erklärung kommt nach der Antwort.</p>
+    <div class="meter"><span class="lab" id="tot"></span><div class="bar"><i id="totbar"></i></div></div>
+  </header>
+  <nav class="tabs"><button type="button" class="tab on" data-tab="practice">Üben</button><button type="button" class="tab" data-tab="cheat">Spickzettel</button><button type="button" class="tab" data-tab="add">Eigene Aufgaben</button></nav>
+  <section id="viewPractice" class="app" style="gap:14px">
+    <div class="chips" id="chips"></div>
+    <article class="card" id="card"></article>
+    <div class="foot"><button type="button" class="reset" id="reset">Fortschritt zurücksetzen</button></div>
+  </section>
+  <section id="viewCheat" hidden><div id="cheat"></div></section>
+  <section id="viewAdd" hidden>
+    <div class="guide form">
+      <h2>Eigene Aufgabe hinzufügen</h2>
+      <p class="why">Die Aufgabe landet in der gewählten Gruppe und wird wie alle anderen geübt. Alles bleibt in deinem Browser gespeichert. Mit „Sichern und teilen“ unten kannst du die Aufgaben exportieren und auf einem anderen Gerät importieren.</p>
+      <label>Gruppe<select id="f-g"></select></label>
+      <label>Aufgabentyp<select id="f-type"><option value="mc">Auswahl (richtige Antwort + falsche Optionen)</option><option value="type">Eingabe (du tippst die Antwort)</option></select></label>
+      <label>Satz mit Lücke ___ (drei Unterstriche)<textarea id="f-s" rows="2" placeholder="Er sparte Geld, ___ er selbst kochte."></textarea></label>
+      <label>Richtige Antwort<input id="f-a" type="text" autocomplete="off" placeholder="indem"><small>Bei Eingabeaufgaben mehrere richtige Möglichkeiten mit / trennen, z. B. deshalb/daher</small></label>
+      <label>Falsche Optionen, eine pro Zeile (nur bei Auswahl, 1 bis 3)<textarea id="f-w" rows="3" placeholder="wodurch&#10;dadurch"></textarea></label>
+      <label>Erklärung auf Russisch<textarea id="f-e" rows="2"></textarea></label>
+      <label>Перевод предложения<input id="f-t" type="text" autocomplete="off"></label>
+      <label>Wortschatz (Wort – Übersetzung)<input id="f-v" type="text" autocomplete="off"></label>
+      <label>Quelle (optional)<input id="f-src" type="text" autocomplete="off" placeholder="z. B. Übungsheft S. 12"></label>
+      <div class="row"><button type="button" class="btn go" id="addbtn">Aufgabe speichern</button></div>
+      <p id="msg" class="why" role="status"></p>
+    </div>
+    <div class="guide"><h2>Meine Aufgaben</h2><div id="ownlist"></div></div>
+    <div class="guide form">
+      <h2>Sichern und teilen</h2>
+      <p class="why">Export füllt das Feld mit allen eigenen Aufgaben als JSON. Zum Importieren fügst du ein JSON in das Feld ein.</p>
+      <textarea id="io" rows="6" spellcheck="false" aria-label="JSON der eigenen Aufgaben"></textarea>
+      <div class="row"><button type="button" class="btn" id="exp">Exportieren</button><button type="button" class="btn" id="cp">Kopieren</button><button type="button" class="btn" id="imp">Importieren</button></div>
+      <p id="ioMsg" class="why" role="status"></p>
+    </div>
+  </section>
+</div>
+<script>
+var Q=[];
+function q(g,s,o,a,e,t,v,src){Q.push({id:Q.length,g:g,s:s,o:o?o.split("|"):null,a:a,e:e,t:t,v:v||"",src:src||""});}
+var SRC={
+ art:"Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)",
+ tier:"Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)",
+ fam:"Текст дословно из файла C1 Allg · Leseverstehen «Zwischen Familie und Studium» (фрагмент, вопрос составлен для тренировки)",
+ navi:"Текст дословно из файла C1 Allg · Leseverstehen «Navigationssystem» (вопрос составлен для тренировки)",
+ kmu:"Текст дословно из файла C1 Allg · Sprachbausteine «Unterstützung für KMU» (фрагмент, вопрос составлен для тренировки)",
+ kon:"Текст дословно из файла C1 Allg · Sprachbausteine «Konkurrenz und Kooperation» (вопрос составлен для тренировки)",
+ bio:"Задание полностью соответствует файлу C1 Allg · Sprachbausteine (2) «Neues aus der Bionik»",
+ bio2:"Текст дословно из файла C1 Allg · Sprachbausteine (2) «Neues aus der Bionik» (вопрос составлен для тренировки)",
+ fern:"Текст дословно из файла C1 Allg · Leseverstehen «Fernstudenten» (вопрос составлен для тренировки)",
+ hirn:"Текст дословно из файла C1 Allg · Leseverstehen «Hirndoping» (вопрос составлен для тренировки)",
+ bio3:"Задание полностью соответствует файлу C1 Allg · Sprachbausteine «Die chronobiologischen Rhythmen der Kinder»"
+};
+
+/* ---------- mod: indem · dadurch dass · wodurch · dadurch ---------- */
+q("mod","Man verbessert seinen Wortschatz, ___ man täglich liest.","indem|wodurch|dadurch|damit","indem","indem leitet einen Nebensatz ein (Verb am Ende) und nennt das Mittel: «путём чтения». Dadurch ist ein Adverb und würde Inversion verlangen; damit drückt den Zweck aus.","Словарный запас улучшается, если читать каждый день.","der Wortschatz – словарный запас");
+q("mod","Die Firma senkte die Kosten, ___ sie die Produktion automatisierte.","indem|wodurch|wohingegen|obwohl","indem","Dasselbe Subjekt (die Firma) führt die Handlung aus, die das Mittel nennt: indem + Verb am Ende.","Фирма снизила расходы, автоматизировав производство.","die Produktion automatisieren – автоматизировать производство");
+q("mod","Die Firma automatisierte die Produktion, ___ die Kosten deutlich sanken.","wodurch|indem|dadurch|obwohl","wodurch","wodurch bezieht sich auf den ganzen vorigen Satz und fügt eine Folge an (Verb am Ende). indem scheitert, weil das Subjekt wechselt (die Kosten sanken nicht aktiv). dadurch verlangt Inversion.","Фирма автоматизировала производство, благодаря чему расходы заметно снизились.","sinken – снижаться; deutlich – заметно");
+q("mod","Er sparte viel Geld, ___ er selbst kochte. (zwei Möglichkeiten)",null,"indem/dadurch dass","Beide sind modale Nebensatzkonnektoren: «indem er selbst kochte» oder «dadurch, dass er selbst kochte». Das Verb steht am Ende.","Он сэкономил много денег, готовя сам.","Geld sparen – экономить деньги");
+q("mod","___ er täglich trainierte, verbesserte er seine Ausdauer. (zwei Möglichkeiten)",null,"indem/dadurch dass","Am Satzanfang: «Indem er…» oder «Dadurch, dass er…». Danach folgt das Verb des Hauptsatzes direkt: …, verbesserte er.","Тренируясь каждый день, он улучшил выносливость.","die Ausdauer – выносливость");
+q("mod","Er trainierte täglich. ___ verbesserte er seine Ausdauer.","Dadurch|Indem|Wodurch|Dass","Dadurch","dadurch ist ein Adverb auf Position 1 und löst Inversion aus: Dadurch verbesserte er… Indem, Wodurch und Dass schicken das Verb ans Ende.","Он тренировался каждый день. Тем самым он улучшил выносливость.","verbessern – улучшать");
+q("mod","Verbinden Sie mit „indem“: Sie sparte Strom. Sie schaltete die Geräte nachts aus.","Sie sparte Strom, indem sie die Geräte nachts ausschaltete.|Sie sparte Strom, indem sie schaltete die Geräte nachts aus.|Sie sparte Strom, indem sie die Geräte nachts aus schaltete.|Sie sparte Strom, dadurch sie die Geräte nachts ausschaltete.","Sie sparte Strom, indem sie die Geräte nachts ausschaltete.","Im Nebensatz steht das Verb am Ende, und trennbare Verben werden zusammengeschrieben: ausschaltete.","Она экономила электричество, выключая приборы на ночь.","ausschalten – выключать; der Strom – электричество");
+q("mod","Die Regierung will das Klima schützen, ___ sie Subventionen für Solaranlagen erhöht.","indem|sodass|obwohl|wohingegen","indem","Mittel zum Ziel: «путём повышения субсидий». Subjekt bleibt gleich (die Regierung).","Правительство хочет защитить климат, повышая субсидии на солнечные установки.","die Subvention – субсидия; die Solaranlage – солнечная установка");
+q("mod","Idealerweise lassen sich alle vier Räder einzeln gezielt beschleunigen oder abbremsen, ___ die Sicherheit und Fahrdynamik erhöht würde.","wodurch|indem|worüber|obwohl","wodurch","Der Relativsatz mit wodurch kommentiert den ganzen Hauptsatz: «благодаря чему». Das Subjekt wechselt (die Sicherheit), deshalb ist indem nicht möglich.","В идеале каждое из четырёх колёс можно целенаправленно разгонять или тормозить по отдельности, благодаря чему повысились бы безопасность и динамика езды.","abbremsen – тормозить; die Fahrdynamik – динамика движения",SRC.art);
+q("mod","Es erlaubt beispielsweise einen völlig neuen Fahrzeugaufbau, weil ___ Platz in der Fahrzeugmitte frei wird.","dadurch|wodurch|indem|damit","dadurch","Hier ist dadurch ein Adverb im Nebensatz («благодаря этому»); es verweist auf den vorigen Satz. wodurch/indem können nicht zusätzlich nach weil stehen.","Это позволяет, например, совершенно новую конструкцию кузова, потому что благодаря этому освобождается место в середине автомобиля.","der Aufbau – конструкция, кузов",SRC.art);
+q("mod","Aber liegt da nicht die Gefahr nahe, dass wir Tiere zu sehr vermenschlichen, ___ wir ihnen unsere eigenen Gefühle zuschreiben und sie als etwas betrachten, was sie nicht sind?","indem|wodurch|dadurch|sodass","indem","Modales indem: Wir vermenschlichen Tiere dadurch, dass wir ihnen Gefühle zuschreiben. Das Subjekt (wir) bleibt gleich.","Не слишком ли велика опасность очеловечить животных, приписывая им наши собственные чувства?","vermenschlichen – очеловечивать; zuschreiben – приписывать",SRC.tier);
+q("mod","Die betroffenen Unternehmen sollen auch ___ gefördert werden, dass sie eher den Zuschlag für öffentliche Aufträge bekommen.","dadurch|wodurch|indem|damit","dadurch","Korrelat: dadurch im Hauptsatz kündigt den dass-Satz an: dadurch …, dass. Nach dem Komma steht dass, deshalb passt indem nicht.","Предприятия должны поддерживаться и тем, что им чаще достаются государственные заказы.","der Zuschlag – присуждение контракта; fördern – поддерживать",SRC.kmu);
+q("mod","Sie lernte die Sprache, ___ sie jeden Tag Podcasts hörte.",null,"indem","Modal: Mittel, mit dem sie die Sprache lernte. Subjekt gleich → indem.","Она учила язык, слушая каждый день подкасты.","der Podcast – подкаст");
+q("mod","Welcher Satz ist korrekt?","Er gewann das Vertrauen der Kunden, indem er immer ehrlich war.|Er gewann das Vertrauen der Kunden, indem war er immer ehrlich.|Er gewann das Vertrauen der Kunden, dadurch war er immer ehrlich.|Er gewann das Vertrauen der Kunden, dadurch er immer ehrlich war.","Er gewann das Vertrauen der Kunden, indem er immer ehrlich war.","Nach indem steht das konjugierte Verb am Ende. «dadurch» allein braucht entweder Inversion oder das Korrelat mit dass.","Он завоевал доверие клиентов, всегда оставаясь честным.","das Vertrauen gewinnen – завоевать доверие");
+q("mod","Der Chef kritisierte das Team öffentlich, ___ die Stimmung merklich sank.","wodurch|indem|dadurch|obwohl","wodurch","Folge mit wodurch: Die Kritik hatte zur Folge, dass die Stimmung sank. Das Subjekt wechselt, also nicht indem.","Начальник публично раскритиковал команду, из-за чего настроение заметно упало.","die Stimmung – настроение; merklich – заметно");
+/* ---------- mit: mithilfe · mit Hilfe · mittels · durch · anhand · dank ---------- */
+q("mit","___ eines Navigationssystems fand er den Weg.","Mithilfe|Mithilfe von|Mittels von|Dank von","Mithilfe","mithilfe + Genitiv: mithilfe eines Navigationssystems. Mit Dativ braucht man von: mithilfe von Karten. Die Schreibung «mit Hilfe» ist ebenfalls korrekt.","С помощью навигационной системы он нашёл дорогу.","das Navigationssystem – навигационная система");
+q("mit","___ Karten und Kompass fand er den Weg. (mehrere Möglichkeiten)",null,"mithilfe von/mit hilfe von/mittels","Ohne Artikel im Plural: mithilfe von Karten (Dativ) oder mittels Karten. Alle drei Varianten sind korrekt.","С помощью карт и компаса он нашёл дорогу.","der Kompass – компас");
+q("mit","Eine von fünfen gab an, ___ des Mittels die Fokussierung, die Konzentration oder das Gedächtnis stimulieren zu wollen.","mithilfe|durch|anhand von|statt","mithilfe","mithilfe + Genitiv (des Mittels). durch verlangt den Akkusativ, anhand von den Dativ; statt ergibt hier keinen Sinn.","Один из пяти заявил, что хочет с помощью препарата стимулировать фокусировку, концентрацию или память.","stimulieren – стимулировать; das Mittel – средство",SRC.hirn);
+q("mit","Die Daten wurden ___ einer Umfrage erhoben.","mittels|wegen|trotz|statt","mittels","mittels + Genitiv = «посредством», formelle Sprache. wegen, trotz und statt passen inhaltlich nicht.","Данные были собраны посредством опроса.","erheben – собирать (данные)");
+q("mit","___ der Statistiken lässt sich der Trend gut erkennen.","Anhand|Anstelle|Ohne|Trotz","Anhand","anhand + Genitiv oder anhand von + Dativ = «на основании, по». Ohne + Genitiv ist falsch (ohne + Akkusativ).","По статистике хорошо видна тенденция.","der Trend – тенденция; erkennen – распознавать");
+q("mit","___ der neuen Software läuft alles schneller.","Dank|Trotz|Ohne|Statt","Dank","dank + Genitiv (oder Dativ) nennt einen positiven Grund: «благодаря». Trotz und Statt ändern den Sinn.","Благодаря новому программному обеспечению всё работает быстрее.","die Software – ПО");
+q("mit","Er überzeugte das Publikum ___ einen mitreißenden Vortrag.",null,"durch","durch + Akkusativ nennt das Mittel oder die Ursache: «посредством/благодаря».","Он убедил публику увлекательным докладом.","mitreißend – увлекательный; das Publikum – публика");
+q("mit","Welcher Satz ist korrekt?","Mit Hilfe eines Wörterbuchs übersetzte sie den Text.|Mithilfe einem Wörterbuch übersetzte sie den Text.|Mithilfe von eines Wörterbuchs übersetzte sie den Text.|Mithilfe ein Wörterbuch übersetzte sie den Text.","Mit Hilfe eines Wörterbuchs übersetzte sie den Text.","Nach (mit)hilfe steht der Genitiv: eines Wörterbuchs. Mit von folgt der Dativ: mithilfe von einem Wörterbuch.","С помощью словаря она перевела текст.","das Wörterbuch – словарь");
+q("mit","___ von Experten wurde das Problem gelöst. (zwei Möglichkeiten)",null,"mithilfe/mit hilfe","mithilfe/mit Hilfe + von + Dativ: mithilfe von Experten.","С помощью экспертов проблема была решена.","der Experte – эксперт");
+q("mit","Wir bedanken uns für Ihre ___ bei der Organisation.","Mithilfe|Abhilfe|Beihilfe|Aushilfe","Mithilfe","Das Nomen die Mithilfe = «содействие». Abhilfe = устранение проблемы; Beihilfe = пособие; Aushilfe = временный помощник.","Мы благодарим вас за помощь в организации.","die Abhilfe – средство от недостатка; die Aushilfe – подменный работник");
+q("mit","Er öffnete die Tür ___ eines Dietrichs.","mittels|wegen|trotz|ohne","mittels","mittels + Genitiv = «при помощи» (Werkzeug/Mittel).","Он открыл дверь отмычкой.","der Dietrich – отмычка");
+q("mit","Die Lehrerin erklärte die Regel ___ Beispielen.","anhand von|anstelle von|ohne von|trotz von","anhand von","anhand von + Dativ: «на примерах». Ohne und trotz stehen nicht mit von.","Учительница объяснила правило на примерах.","das Beispiel – пример");
+
+/* ---------- oh: ohne … zu · ohne dass · (an)statt · stattdessen · anstelle ---------- */
+q("oh","Sie verließ den Raum, ___ ein Wort zu sagen.","ohne|weil|indem|damit","ohne","ohne … zu + Infinitiv: «не сказав ни слова». Das Subjekt ist in beiden Teilen dasselbe.","Она вышла из комнаты, не сказав ни слова.","verlassen – покидать");
+q("oh","Er verließ den Raum, ___ dass jemand es bemerkte.","ohne|ohne zu|anstatt zu|stattdessen","ohne","Bei verschiedenen Subjekten (er / jemand) gilt ohne dass + Nebensatz, nicht ohne zu + Infinitiv.","Он вышел из комнаты, так что никто этого не заметил.","bemerken – замечать");
+q("oh","___ ins Kino zu gehen, blieb er zu Hause.","Anstatt|Damit|Stattdessen|Indem","Anstatt","(an)statt … zu + Infinitiv: «вместо того чтобы». Stattdessen ist ein Adverb und braucht Inversion.","Вместо того чтобы пойти в кино, он остался дома.","das Kino – кино");
+q("oh","Er ging nicht ins Kino. ___ blieb er zu Hause.","Stattdessen|Anstatt|Ohne dass|Indem","Stattdessen","stattdessen = Adverb auf Position 1, danach direkt das Verb: Stattdessen blieb er…","Он не пошёл в кино. Вместо этого он остался дома.","stattdessen – вместо этого");
+q("oh","___ dass er sich entschuldigte, ging er einfach weg.","Anstatt|Ohne zu|Stattdessen|Indem","Anstatt","anstatt dass + Nebensatz mit eigenem Subjekt und Verb am Ende; mit zu + Infinitiv wäre es «anstatt sich zu entschuldigen».","Вместо того чтобы извиниться, он просто ушёл.","sich entschuldigen – извиняться");
+q("oh","…oder dass ich wieder nur eine Pizza in den Ofen schiebe, ___ frisch zu kochen.","anstatt|weil|indem|damit","anstatt","anstatt … zu + Infinitiv: «вместо того чтобы готовить свежее». Der Satz steht so im Text.","Я терплю неудачу из-за того, что снова просто засовываю пиццу в духовку, вместо того чтобы готовить свежее.","scheitern – терпеть неудачу",SRC.fam);
+q("oh","…zeigt mir sämtliche Fahrzeuge, von denen ich ___ dieses Buch niemals die korrekten Bezeichnungen gewusst hätte.","ohne|durch|statt|trotz","ohne","Hier ist ohne eine Präposition (+ Akkusativ) mit Irrealis: «без этой книги я бы никогда не узнал названий».","…показывает мне все машины, названия которых я бы без этой книги никогда не узнала.","die Bezeichnung – название",SRC.fam);
+q("oh","Denn ___ den Rückzug in die Einsamkeit und Stille lässt sich ein solches Studium kaum bewältigen.","ohne|trotz|statt|anstelle","ohne","ohne + Akkusativ (den Rückzug). anstelle würde den Genitiv verlangen; trotz und statt ändern den Sinn.","Ведь без ухода в одиночество и тишину такую учёбу едва ли можно освоить.","der Rückzug – уединение; bewältigen – справиться",SRC.fern);
+q("oh","Er antwortete, ohne lange (nachdenken) ___ .",null,"nachzudenken","Bei trennbaren Verben steht zu zwischen Präfix und Stamm: nach|zu|denken, zusammengeschrieben.","Он ответил, не раздумывая долго.","nachdenken – раздумывать");
+q("oh","Sie nahm den Bus, statt (laufen) ___ .",null,"zu laufen","statt + zu + Infinitiv: statt zu laufen.","Она поехала на автобусе, вместо того чтобы идти пешком.","laufen – идти пешком");
+q("oh","Welcher Satz ist korrekt?","Er unterschrieb den Vertrag, ohne ihn gelesen zu haben.|Er unterschrieb den Vertrag, ohne ihn zu gelesen haben.|Er unterschrieb den Vertrag, ohne zu ihn gelesen haben.|Er unterschrieb den Vertrag, ohne ihn lesen zu haben.","Er unterschrieb den Vertrag, ohne ihn gelesen zu haben.","Vorzeitigkeit: Partizip II + zu + haben am Ende: gelesen zu haben.","Он подписал договор, не прочитав его.","unterschreiben – подписывать");
+q("oh","___ eines Dienstwagens bekam sie ein Jobticket.","Anstelle|Ohne|Stattdessen|Anstatt zu","Anstelle","anstelle + Genitiv = «вместо» (Präposition). Stattdessen ist ein Adverb.","Вместо служебной машины она получила проездной от работодателя.","der Dienstwagen – служебная машина");
+q("oh","Welcher Satz bedeutet dasselbe wie: „Sie sprach, ohne Luft zu holen.“?","Sie sprach und holte dabei keine Luft.|Sie sprach, bevor sie Luft holte.|Sie holte Luft, damit sie sprechen konnte.|Sie sprach, weil sie Luft holte.","Sie sprach und holte dabei keine Luft.","ohne … zu = «и при этом не…»: Das zweite Verb wird verneint dargestellt.","Она говорила, не переводя дыхания.","Luft holen – вдохнуть");
+/* ---------- fol: sodass · deshalb · daher · folglich · infolgedessen · demnach · somit · weshalb ---------- */
+q("fol","Der Zug fiel aus. ___ kam ich zu spät.","Deshalb|Obwohl|Weil|Damit","Deshalb","deshalb ist ein Adverb auf Position 1: danach direkt das Verb (kam ich). Obwohl, Weil und Damit schicken das Verb ans Ende.","Поезд отменили. Поэтому я опоздал.","ausfallen – отменяться");
+q("fol","Der Zug fiel aus, ___ ich zu spät kam.","sodass|deshalb|daher|folglich","sodass","sodass leitet einen Nebensatz ein (kam am Ende). deshalb, daher und folglich sind Adverbien und würden Inversion verlangen: …, deshalb kam ich.","Поезд отменили, так что я опоздал.","zu spät kommen – опаздывать");
+q("fol","Die Nachfrage steigt stetig. Die Preise werden ___ weiter anziehen.","somit|indem|wobei|sodass","somit","somit = «следовательно, таким образом», Adverb im Mittelfeld. sodass und indem würden das Verb ans Ende schicken.","Спрос неуклонно растёт. Цены, следовательно, будут расти дальше.","die Nachfrage – спрос; anziehen – расти (о ценах)");
+q("fol","Es stellt sich ___ die Frage, wie Elektrofahrzeuge der Zukunft aussehen.","demnach|obwohl|dennoch|damit","demnach","demnach = «следовательно, исходя из этого», Adverb im Mittelfeld. Obwohl und damit sind Nebensatzkonnektoren, dennoch drückt Gegensatz aus.","Отсюда возникает вопрос, как будут выглядеть электромобили будущего.","sich stellen (Frage) – возникать",SRC.art);
+q("fol","Es kann jedoch passieren, dass der Anwender seine Umgebung nicht so genau wahrnimmt - und es ___ nicht merkt, wenn er doch einmal in die Irre geführt wird.","infolgedessen|währenddessen|stattdessen|trotzdem","infolgedessen","infolgedessen = «вследствие этого», Adverb (Mittelfeld oder Position 1). Der Originalsatz im Text lautet: …und es infolgedessen nicht merkt, wenn er doch einmal in die Irre geführt wird.","Пользователь не так точно воспринимает окружение и вследствие этого не замечает, если его вводят в заблуждение.","in die Irre führen – вводить в заблуждение",SRC.navi);
+q("fol","Er hat viel geübt, ___ hat er die Prüfung bestanden. (mehrere Möglichkeiten)",null,"deshalb/daher/deswegen/darum/folglich/somit/infolgedessen","Alle Adverbien stehen auf Position 1 und lösen Inversion aus: …, deshalb hat er die Prüfung bestanden.","Он много занимался, поэтому сдал экзамен.","eine Prüfung bestehen – сдать экзамен");
+q("fol","Welcher Satz ist korrekt?","Sie war krank, deshalb blieb sie zu Hause.|Sie war krank, deshalb sie blieb zu Hause.|Sie war krank, sodass blieb sie zu Hause.|Sie war krank, daher sie zu Hause blieb.","Sie war krank, deshalb blieb sie zu Hause.","Hauptsatz + deshalb: Position 1 ist das Adverb, Position 2 das Verb (blieb). Bei sodass dagegen steht das Verb am Ende.","Она заболела, поэтому осталась дома.","zu Hause bleiben – оставаться дома");
+q("fol","Die Seite war überlastet, ___ ich mich erst später einloggen konnte.","weshalb|deshalb|demnach|trotzdem","weshalb","weshalb/weswegen leitet einen Nebensatz ein: «из-за чего». deshalb würde Inversion verlangen: …, deshalb konnte ich…","Сайт был перегружен, из-за чего я смог войти только позже.","überlastet – перегружен; sich einloggen – войти в систему");
+q("fol","Die Firma hat Verluste gemacht. ___ muss sie Stellen abbauen.","Folglich|Obwohl|Sodass|Indem","Folglich","folglich = «следовательно», Adverb auf Position 1 → Inversion: Folglich muss sie…","Фирма понесла убытки. Следовательно, ей придётся сокращать рабочие места.","Verluste machen – нести убытки; Stellen abbauen – сокращать штат");
+q("fol","Das Wetter war so schlecht, ___ wir das Fest absagen mussten.","dass|sodass|deshalb|damit","dass","Konstruktion so + Adjektiv … dass: «настолько…, что». Man schreibt nicht «so schlecht, sodass».","Погода была настолько плохой, что нам пришлось отменить праздник.","absagen – отменять");
+q("fol","Er war ___ müde, dass er am Schreibtisch einschlief.",null,"so","so + Adjektiv + dass: «настолько…, что».","Он был так утомлён, что уснул за письменным столом.","einschlafen – засыпать");
+q("fol","Die Kurse waren überfüllt, ___ ein Teil der Studierenden abgewiesen wurde.","sodass|indem|obwohl|weil","sodass","sodass + Nebensatz = Konsekutivsatz (Folge). Das Verb steht am Ende.","Курсы были переполнены, так что часть студентов получила отказ.","überfüllt – переполнен; abweisen – отклонять");
+q("fol","Ich habe die Mail nicht erhalten. ___ konnte ich nicht antworten.","Daher|Wobei|Obwohl|Falls","Daher","daher = «поэтому», Adverb auf Position 1: Daher konnte ich…","Я не получил письмо. Поэтому не мог ответить.","erhalten – получать");
+q("fol","___ des Sturms fielen alle Flüge aus.","Infolge|Anstatt|Ohne|Trotz","Infolge","infolge + Genitiv = «вследствие» (Präposition, formell). Ähnlich: aufgrund + Genitiv.","Вследствие шторма все рейсы были отменены.","der Sturm – шторм");
+q("fol","Häufig verfügen kleine und mittlere Unternehmen nicht über die erforderlichen Ressourcen, um die vielen Unterstützungsprogramme zu überblicken und ___ in Anspruch nehmen zu können.","folglich|trotzdem|anstatt|wobei","folglich","folglich = «следовательно»: Wer die Programme nicht überblickt, kann sie auch nicht nutzen. Im Text steht folglich.","Часто малым и средним предприятиям не хватает необходимых ресурсов, чтобы охватить многочисленные программы поддержки и, следовательно, воспользоваться ими.","in Anspruch nehmen – воспользоваться",SRC.kmu);
+
+/* ---------- gru: weil · da · denn · nämlich · zumal · wegen · aufgrund · angesichts ---------- */
+q("gru","___ es stark regnete, fiel das Fest aus.","Weil|Denn|Deshalb|Obwohl","Weil","weil + Nebensatz (Verb am Ende: regnete). Denn kann man am Satzanfang nicht mit Nebensatzstellung nutzen.","Поскольку шёл сильный дождь, праздник отменили.","stark regnen – лить как из ведра");
+q("gru","Das Fest fiel aus, ___ es regnete stark.","denn|weil|da|sodass","denn","Schau auf das Verb: regnete steht an Position 2, also Hauptsatzstellung. Dann passt denn (Position 0). weil, da und sodass verlangen das Verb am Ende.","Праздник отменили, ведь шёл сильный дождь.","das Fest – праздник");
+q("gru","___ des starken Regens fiel das Fest aus.","Aufgrund|Trotz|Statt|Ohne","Aufgrund","aufgrund + Genitiv = «в силу, из-за» (Präposition, formell). Ähnlich: wegen + Genitiv.","Из-за сильного дождя праздник отменили.","der Regen – дождь");
+q("gru","___ der hohen Kosten verzichtete sie auf das Projekt.","Angesichts|Ungeachtet|Anstelle|Mittels","Angesichts","angesichts + Genitiv = «ввиду, учитывая». Ungeachtet bedeutet das Gegenteil (несмотря на).","Ввиду высоких расходов она отказалась от проекта.","verzichten auf – отказываться от");
+q("gru","Die Sitzung wurde verschoben. Der Chef ist ___ erkrankt.","nämlich|deshalb|trotzdem|sodass","nämlich","nämlich nennt den Grund für die vorige Aussage («дело в том, что»). Es steht im Mittelfeld, nicht auf Position 1.","Заседание перенесли. Дело в том, что начальник заболел.","verschieben – переносить; erkranken – заболеть");
+q("gru","___ die Lage bekannt ist, erübrigt sich eine lange Erklärung.","Da|Denn|Deshalb|Obwohl","Da","da + Nebensatz am Satzanfang nennt einen bekannten Grund: «поскольку». Denn kann hier nicht stehen (Verb am Ende).","Поскольку ситуация известна, длинное объяснение излишне.","sich erübrigen – становиться излишним");
+q("gru","Sie konnte nicht kommen, ___ ihr Kind krank war. (zwei Möglichkeiten)",null,"weil/da","Verb am Ende (war) → weil oder da. Denn würde Hauptsatzstellung verlangen.","Она не смогла прийти, потому что её ребёнок заболел.","krank sein – болеть");
+q("gru","Und könnte nicht gerade für Haustiere dadurch die Stressbelastung steigen - ___ sie doch im Grund einfach nur Tier sein wollen?","weil|obwohl|sodass|damit","weil","weil begründet die Frage: «ведь они хотят просто быть животными». Obwohl und sodass ergeben keinen Sinn.","И разве не может из-за этого вырасти стрессовая нагрузка именно у домашних животных — ведь они хотят просто быть животными?","die Stressbelastung – стрессовая нагрузка",SRC.tier);
+q("gru","___ die enge Beziehung zwischen Mensch und Tier ist nicht bloß ein Phänomen unserer Gegenwart.","Denn|Deshalb|Dennoch|Obwohl","Denn","Denn (Position 0) begründet die vorige Aussage und lässt das Verb auf Position 2: Denn die Beziehung ist…","Ведь тесная связь между человеком и животным — не просто феномен нашего времени.","die Beziehung – отношения; bloß – лишь",SRC.tier);
+q("gru","Welcher Satz ist grammatisch FALSCH?","Er kam zu spät, denn er den Bus verpasste.|Er kam zu spät, weil er den Bus verpasste.|Er kam zu spät, denn er verpasste den Bus.|Er kam zu spät, da er den Bus verpasst hatte.","Er kam zu spät, denn er den Bus verpasste.","denn verlangt Hauptsatzstellung (denn er verpasste den Bus). Bei weil und da steht das Verb am Ende.","Он опоздал, потому что пропустил автобус.","den Bus verpassen – пропустить автобус");
+q("gru","Wir sollten das Angebot annehmen, ___ der Preis wirklich günstig ist.","zumal|obwohl|ob|sodass","zumal","zumal + Nebensatz = «тем более что»: Es gibt schon einen Grund, und der neue verstärkt ihn.","Нам стоит принять предложение, тем более что цена действительно выгодная.","das Angebot – предложение; günstig – выгодный");
+q("gru","___ der Lage des Hotels buchten viele Gäste dort. (mehrere Möglichkeiten)",null,"wegen/aufgrund","Präpositionen mit Genitiv für den Grund: wegen und aufgrund (aufgrund ist formeller).","Из-за расположения отеля многие гости бронировали там номера.","buchen – бронировать");
+
+/* ---------- geg: obwohl · trotzdem · dennoch · zwar … aber · während · hingegen · demgegenüber · dagegen ---------- */
+q("geg","___ es regnete, gingen wir spazieren.","Obwohl|Weil|Damit|Sodass","Obwohl","obwohl + Nebensatz = Gegengrund (Konzessiv): «хотя, несмотря на то что».","Хотя шёл дождь, мы пошли гулять.","spazieren gehen – гулять");
+q("geg","Es regnete. ___ gingen wir spazieren.","Trotzdem|Obwohl|Sodass|Indem","Trotzdem","trotzdem = Adverb (Position 1) → Inversion: Trotzdem gingen wir… Obwohl würde das Verb ans Ende schicken.","Шёл дождь. Тем не менее мы пошли гулять.","trotzdem – всё же");
+q("geg","Es regnete, ___ gingen wir spazieren. (mehrere Möglichkeiten)",null,"trotzdem/dennoch/doch","Alle drei stehen vor dem Verb in Hauptsatzstellung. Trotzdem und dennoch sind Adverbien, doch ist eine Konjunktion.","Шёл дождь, но мы всё же пошли гулять.","dennoch – всё-таки");
+q("geg","___ der Kälte trug er nur ein T-Shirt.","Trotz|Wegen|Dank|Infolge","Trotz","trotz + Genitiv = «несмотря на» (Präposition). In der gesprochenen Sprache hört man auch den Dativ.","Несмотря на холод, на нём была только футболка.","die Kälte – холод");
+q("geg","___ die Geckofüße weniger stark sind als dieser künstliche „Superklebstoff“, bleibt ihnen gegenwärtig noch ein Vorteil gegenüber der Konkurrenz aus dem Labor.","Deshalb|Obwohl|Trotzdem|Wobei","Obwohl","obwohl + Nebensatz (Verb am Ende: sind). Das ist Aufgabe 44 in der Vorlage. Trotzdem würde Inversion verlangen: Trotzdem bleibt ihnen…","Хотя лапки гекконов менее прочны, чем этот искусственный «суперклей», у них пока есть преимущество перед лабораторной конкуренцией.","der Klebstoff – клей; gegenwärtig – в настоящее время",SRC.bio);
+q("geg","Obwohl die Geckofüße weniger stark sind als dieser künstliche „Superklebstoff“, bleibt ihnen gegenwärtig noch ein Vorteil ___ der Konkurrenz aus dem Labor: Sie sind nachhaltiger.","entgegen|entlang|gegenüber|jenseits","gegenüber","ein Vorteil gegenüber + Dativ = «преимущество перед…». Das ist Aufgabe 45 in der Vorlage.","Преимущество перед лабораторной конкуренцией: они устойчивее.","nachhaltig – устойчивый",SRC.bio);
+q("geg","Das ist keine langfristige Lösung, ___ ist es richtig, zu sagen: Lasst uns sofort anfangen.","trotzdem|deshalb|weil|sodass","trotzdem","trotzdem als Gegensatz mit Inversion (ist es). Deshalb wäre logisch falsch.","Это не долгосрочное решение, но всё же правильно сказать: давайте начнём немедленно.","langfristig – долгосрочный",SRC.art);
+q("geg","___ wird die Evolution laut dem Biologen Martin Nowak nicht nur von Konkurrenz und Egoismus bestimmt.","Dennoch|Deshalb|Weil|Damit","Dennoch","dennoch = «и всё же», Adverb auf Position 1 → Inversion (wird die Evolution…).","И всё же, по словам биолога Мартина Новака, эволюция определяется не только конкуренцией и эгоизмом.","der Egoismus – эгоизм",SRC.kon);
+q("geg","Fragt man Personen nach dem Weg, beschreiben Frauen diesen jedoch vor allem anhand von Landmarken, ___ Männer ebenso Himmelsrichtungen und Entfernungsangaben heranziehen.","während|obwohl|sodass|damit","während","während + Nebensatz = Gegenüberstellung («тогда как»). Beide Gruppen werden kontrastiert.","Если спросить дорогу, женщины описывают её прежде всего по ориентирам, тогда как мужчины также используют стороны света и расстояния.","die Landmarke – ориентир; heranziehen – привлекать (в оригинале опечатка: «heranzieht»)",SRC.navi);
+q("geg","Der Norden ist industriell geprägt, der Süden ___ lebt vom Tourismus.","hingegen|folglich|nämlich|damit","hingegen","hingegen/dagegen/demgegenüber = Adverbien des Kontrasts: «напротив, в отличие от».","Север отличается промышленным развитием, юг же живёт за счёт туризма.","geprägt – отмеченный; der Tourismus – туризм");
+q("geg","Die Natur hat Konkurrenz als Selbsterhaltungsprinzip vorgesehen. ___ steht die kulturelle Errungenschaft der Kooperation.","Demgegenüber|Deshalb|Indem|Damit","Demgegenüber","demgegenüber = «в противоположность этому», Adverb auf Position 1 → Inversion: Demgegenüber steht…","Природа предусмотрела конкуренцию как принцип самосохранения. В противоположность этому стоит культурное достижение — кооперация.","die Errungenschaft – достижение",SRC.kon);
+q("geg","Er ist ___ talentiert, aber er arbeitet zu wenig.",null,"zwar","zwar … aber/doch: Zugeständnis + Einschränkung. «Хотя он и талантлив, но…»","Он, правда, талантлив, но слишком мало работает.","talentiert – талантливый");
+q("geg","___ möchte sie reisen, ___ fehlt ihr das Geld.","Einerseits … andererseits|Zwar … sondern|Entweder … aber|Nicht nur … sondern","Einerseits … andererseits","einerseits … andererseits stellt zwei Seiten gegenüber (Dilemma, Pro und Kontra). Das steht auch in der Liste «Sprachliche Merkmale» der Vorlage.","С одной стороны, она хочет путешествовать, с другой — ей не хватает денег.","das Dilemma – дилемма");
+q("geg","Katzen schlossen sich ___ den Menschen erst an, als diese in der beginnenden Jungsteinzeit sesshaft wurden.","dagegen|deshalb|dadurch|demnach","dagegen","dagegen = «напротив, же»: Es kontrastiert die Katzen mit den Wölfen im vorigen Satz.","Кошки же присоединились к людям лишь тогда, когда те стали оседлыми в начале неолита.","sesshaft werden – стать оседлым; die Jungsteinzeit – неолит",SRC.tier);
+q("geg","___ er müde war, arbeitete er weiter.","Obgleich|Sofern|Sobald|Falls","Obgleich","obgleich/wenngleich/obschon = formelle Varianten von obwohl, Verb am Ende.","Хотя он устал, он продолжал работать.","obgleich – хотя (формально)");
+/* ---------- zwe: um … zu · damit · dazu · wozu · zwecks ---------- */
+q("zwe","Sie lernt Deutsch, ___ in Deutschland studieren zu können.","um|damit|dass|indem","um","um … zu + Infinitiv bei gleichem Subjekt (sie lernt / sie will studieren): «чтобы».","Она учит немецкий, чтобы иметь возможность учиться в Германии.","studieren – учиться в вузе");
+q("zwe","Sie lernt Deutsch, ___ ihre Kinder später zweisprachig aufwachsen.","damit|um|indem|obwohl","damit","damit + Nebensatz, weil das Subjekt wechselt (sie / ihre Kinder). Mit um … zu geht das nicht.","Она учит немецкий, чтобы её дети потом росли двуязычными.","zweisprachig – двуязычный; aufwachsen – расти");
+q("zwe","___ herauszufinden, wie die Geräte dafür verändert werden müssen, schickten wir 84 Probanden mit drei verschiedenen technischen Helfern über einen Universitätscampus.","Um|Damit|Indem|Weil","Um","Satzanfang mit Infinitiv + zu: Um herauszufinden, … Hinter damit würde ein Nebensatz mit Subjekt folgen.","Чтобы выяснить, как нужно изменить устройства, мы отправили 84 испытуемых с тремя разными техническими помощниками по университетскому кампусу.","der Proband – испытуемый; herausfinden – выяснить",SRC.navi);
+q("zwe","___ gut zu leben, müssen wir einen Ausgleich zwischen beiden schaffen.","Um|Damit|Indem|Dass","Um","um … zu am Satzanfang: «чтобы хорошо жить». Das Subjekt (wir) ist in beiden Teilen gleich.","Чтобы хорошо жить, мы должны создать баланс между обоими.","der Ausgleich – баланс",SRC.kon);
+q("zwe","Er schloss das Fenster, ___ es nicht zieht.","damit|um|indem|obwohl","damit","Subjektwechsel (er / es) → damit + Nebensatz.","Он закрыл окно, чтобы не было сквозняка.","es zieht – сквозит");
+q("zwe","Wir sparen Energie, ___ die Umwelt zu schonen.",null,"um","um … zu + Infinitiv, gleiches Subjekt (wir).","Мы экономим энергию, чтобы беречь окружающую среду.","schonen – беречь");
+q("zwe","Manche Schüler kommen früher, ___ ihre Hausaufgaben zu vervollständigen.","um|für|sodass|damit","um","Фрагмент задания 43: um + zu + Infinitiv. «für» braucht ein Nomen, sodass/damit einen Nebensatz mit eigenem Subjekt.","Некоторые ученики приходят пораньше, чтобы доделать домашние задания.","vervollständigen – дополнять, завершать","Фрагмент задания 43 из файла C1 Allg · Sprachbausteine «Die chronobiologischen Rhythmen der Kinder» (варианты ответов те же)");
+q("zwe","Es soll ___ dienen, den Unternehmergeist in den Ländern der EU zu fördern.","dazu|dabei|dagegen|darüber","dazu","dienen dazu, … zu + Infinitiv: Verb mit fester Präposition (zu) → Pronominaladverb dazu.","Это должно служить тому, чтобы развивать предпринимательский дух в странах ЕС.","der Unternehmergeist – предпринимательский дух","Фрагмент задания 31 из файла C1 Allg · Sprachbausteine «Unterstützung für KMU» (варианты ответов те же)");
+q("zwe","Die Maßnahme dient ___, Kosten zu senken.","dazu|dadurch|damit|darum","dazu","dienen zu + Dativ → dazu + Infinitiv mit zu: «служит тому, чтобы…».","Эта мера служит для снижения расходов.","die Maßnahme – мера");
+q("zwe","___ dient diese Maßnahme? Sie soll Kosten senken.","Wozu|Wodurch|Worüber|Woran","Wozu","Wozu fragt nach dem Zweck: «для чего?». Wodurch fragt nach dem Mittel.","Для чего служит эта мера? Она должна снижать расходы.","der Zweck – цель");
+q("zwe","___ einer besseren Planung wurde das Treffen verschoben.","Zwecks|Trotz|Ohne|Dank","Zwecks","zwecks + Genitiv = «с целью» (formell, Amtssprache).","С целью лучшего планирования встречу перенесли.","die Planung – планирование");
+q("zwe","Er arbeitete nachts, ___ tagsüber bei den Kindern zu sein.","um|damit|indem|sodass","um","Gleiches Subjekt (er arbeitete / er will bei den Kindern sein) → um … zu.","Он работал по ночам, чтобы днём быть с детьми.","tagsüber – днём");
+q("zwe","Sie schickte die Unterlagen früher, ___ er genug Zeit zum Lesen hatte.","damit|um|indem|obwohl","damit","Subjektwechsel (sie / er) → damit. Mit um … zu müsste das Subjekt gleich sein.","Она прислала документы раньше, чтобы у него было достаточно времени на чтение.","die Unterlagen – документы");
+
+/* ---------- bed: falls · sofern · andernfalls · außerdem · darüber hinaus · zeitliche Konnektoren ---------- */
+q("bed","___ du Hilfe brauchst, ruf mich an.","Falls|Obwohl|Indem|Damit","Falls","falls/sofern/wenn = Bedingung; Verb am Ende. Falls betont einen unsicheren Fall.","Если тебе понадобится помощь, позвони мне.","Hilfe brauchen – нуждаться в помощи");
+q("bed","Du bekommst den Kredit, ___ du ein festes Einkommen nachweist.","sofern|obwohl|sodass|damit","sofern","sofern = «при условии, что», formeller als wenn/falls.","Ты получишь кредит при условии, что подтвердишь постоянный доход.","der Kredit – кредит; nachweisen – подтверждать");
+q("bed","Du musst pünktlich sein. ___ verlierst du den Platz.","Andernfalls|Deshalb|Dennoch|Indem","Andernfalls","andernfalls/ansonsten/sonst = «в противном случае»; Position 1 → Inversion: Andernfalls verlierst du…","Ты должен быть вовремя. В противном случае потеряешь место.","pünktlich – вовремя");
+q("bed","Beeil dich, ___ verpasst du den Zug. (mehrere Möglichkeiten)",null,"sonst/ansonsten/andernfalls","Alle drei = «иначе». Danach steht das Verb direkt (verpasst du).","Поторопись, иначе опоздаешь на поезд.","sich beeilen – торопиться");
+q("bed","Die Wohnung ist günstig. ___ liegt sie zentral.","Außerdem|Andernfalls|Dennoch|Obwohl","Außerdem","außerdem = «кроме того», fügt ein weiteres Argument hinzu. Position 1 → Inversion.","Квартира недорогая. Кроме того, она находится в центре.","zentral – в центре");
+q("bed","___ sollte man die Doppelbelastung durch Beruf und Studium nicht unterschätzen.","Darüber hinaus|Stattdessen|Indem|Wodurch","Darüber hinaus","darüber hinaus = «кроме того» (formell). Position 1 → Inversion: Darüber hinaus sollte man…","Кроме того, не следует недооценивать двойную нагрузку от работы и учёбы.","die Doppelbelastung – двойная нагрузка; unterschätzen – недооценивать",SRC.fern);
+q("bed","Das Konzept ist innovativ und ___ kostengünstig.","zudem|obwohl|folglich|sofern","zudem","zudem = «к тому же», Adverb im Mittelfeld.","Концепция инновационная и к тому же недорогая.","kostengünstig – недорогой");
+q("bed","___ die Kosten ___ die Zeit spielen eine Rolle.","Sowohl … als auch|Weder … als auch|Entweder … als auch|Nicht nur … aber","Sowohl … als auch","sowohl … als auch = «как…, так и». Weder gehört zu noch, entweder zu oder.","Играют роль как расходы, так и время.","eine Rolle spielen – играть роль");
+q("bed","Er hat ___ angerufen ___ geschrieben.","weder … noch|sowohl … noch|entweder … noch|nicht nur … noch","weder … noch","weder … noch = «ни…, ни».","Он ни позвонил, ни написал.","anrufen – звонить");
+q("bed","___ er die Prüfung bestanden hatte, feierte er mit Freunden.","Nachdem|Bevor|Solange|Falls","Nachdem","nachdem + Plusquamperfekt: die Handlung im Nebensatz war früher fertig.","После того как он сдал экзамен, он отпраздновал это с друзьями.","feiern – праздновать");
+q("bed","___ du unterschreibst, lies den Vertrag.","Bevor|Nachdem|Seit|Obwohl","Bevor","bevor + Präsens: Die Handlung im Nebensatz folgt später. Nachdem würde Vorzeitigkeit zeigen.","Прежде чем подписывать, прочти договор.","der Vertrag – договор");
+q("bed","Er raucht nicht mehr, ___ er die Diagnose bekam.","seitdem|indem|damit|während","seitdem","seitdem/seit = «с тех пор как»: Ein Zeitpunkt in der Vergangenheit, der bis jetzt wirkt.","Он больше не курит с тех пор, как получил диагноз.","die Diagnose – диагноз");
+q("bed","___ die Ergebnisse vorliegen, informieren wir Sie.","Sobald|Damit|Obwohl|Seit","Sobald","sobald = «как только». Solange bedeutet «пока, в течение того времени как».","Как только появятся результаты, мы вас проинформируем.","vorliegen – иметься в наличии");
+q("bed","Wir wandern morgen, ___ , es regnet. (feste Wendung)",null,"es sei denn","es sei denn, … = «разве что…». Danach folgt ein Hauptsatz (es regnet).","Мы идём в поход завтра, разве что пойдёт дождь.","wandern – ходить в поход");
+q("bed","___ mehr du übst, ___ besser wirst du.","Je … desto|Wenn … dann|Weil … deshalb|Obwohl … trotzdem","Je … desto","je + Komparativ …, desto/umso + Komparativ: «чем больше…, тем лучше». Nach desto folgt das Verb direkt.","Чем больше ты тренируешься, тем лучше становишься.","üben – упражняться");
+var G=[
+{id:"mod",name:"Art und Weise",sub:"indem · dadurch dass · wodurch · dadurch",
+ rows:[
+ ["indem","ns","Nebensatz · Verb am Ende","Sie spart Strom, indem sie Geräte ausschaltet.","Способ: «путём, тем что». Подлежащее то же."],
+ ["dadurch, dass","ns","Nebensatz · Verb am Ende","Er gewann Vertrauen dadurch, dass er ehrlich blieb.","«Тем, что…». Подлежащие могут быть разными."],
+ ["wodurch","ns","Nebensatz · Verb am Ende","Sie automatisierte, wodurch die Kosten sanken.","«Благодаря чему». Относится ко всему главному предложению."],
+ ["dadurch","adv","Position 1 · Inversion","Er trainierte. Dadurch verbesserte er sich.","«Благодаря этому, тем самым»."]]},
+{id:"mit",name:"Mittel und Werkzeug",sub:"mithilfe · mit Hilfe · mittels · durch · anhand · dank",
+ rows:[
+ ["mithilfe + Gen","prep","Präposition","Mithilfe eines Navis fand er den Weg.","«С помощью». Написание «mit Hilfe» тоже верно."],
+ ["mithilfe von + Dat","prep","Präposition","Mithilfe von Karten fand er den Weg.","Без артикля или в мн. числе."],
+ ["mittels + Gen","prep","Präposition · formell","Mittels einer Umfrage wurden Daten erhoben.","«Посредством»."],
+ ["durch + Akk","prep","Präposition","Er überzeugte durch einen Vortrag.","«Посредством, через»."],
+ ["anhand + Gen / von","prep","Präposition","Anhand der Zahlen erkennt man den Trend.","«На основании, по»."],
+ ["dank + Gen","prep","Präposition · positiv","Dank der Software läuft alles schneller.","«Благодаря» (хорошая причина)."]]},
+{id:"oh",name:"Ohne und statt",sub:"ohne zu · ohne dass · (an)statt zu · stattdessen",
+ rows:[
+ ["ohne … zu","inf","Infinitiv · gleiches Subjekt","Sie ging, ohne ein Wort zu sagen.","«Не сделав чего-то»."],
+ ["ohne dass","ns","Nebensatz · Verb am Ende","Er ging, ohne dass es jemand merkte.","То же, но при разных подлежащих."],
+ ["(an)statt … zu","inf","Infinitiv · gleiches Subjekt","Statt zu lernen, schlief er.","«Вместо того чтобы»."],
+ ["(an)statt dass","ns","Nebensatz · Verb am Ende","Statt dass er lernte, schlief er.","Разные подлежащие."],
+ ["stattdessen","adv","Position 1 · Inversion","Er lernte nicht. Stattdessen schlief er.","«Вместо этого»."],
+ ["anstelle + Gen","prep","Präposition","Anstelle eines Autos bekam sie ein Jobticket.","«Вместо чего-то»."]]},
+{id:"fol",name:"Folge",sub:"sodass · deshalb · daher · folglich · infolgedessen · demnach · somit",
+ rows:[
+ ["sodass","ns","Nebensatz · Verb am Ende","Der Zug fiel aus, sodass ich zu spät kam.","«Так что»."],
+ ["so … dass","ns","Nebensatz · Verb am Ende","Es war so kalt, dass wir froren.","«Настолько…, что». Не «so …, sodass»."],
+ ["weshalb / weswegen","ns","Nebensatz · Verb am Ende","…, weshalb ich später kam.","«Из-за чего»."],
+ ["deshalb · daher · deswegen · darum","adv","Position 1 · Inversion","Der Zug fiel aus. Deshalb kam ich zu spät.","«Поэтому»."],
+ ["folglich · somit · demnach · infolgedessen","adv","Position 1 oder Mittelfeld","Es stellt sich demnach die Frage…","«Следовательно, вследствие этого». Формальный стиль."],
+ ["infolge · aufgrund + Gen","prep","Präposition","Infolge des Sturms fielen Flüge aus.","«Вследствие, в силу»."]]},
+{id:"gru",name:"Grund",sub:"weil · da · denn · nämlich · zumal · wegen · aufgrund",
+ rows:[
+ ["weil · da","ns","Nebensatz · Verb am Ende","Das Fest fiel aus, weil es regnete.","Da — известная причина, чаще в начале."],
+ ["denn","p0","Position 0 · Verb an Position 2","Das Fest fiel aus, denn es regnete.","«Ведь». Порядок слов как в главном предложении."],
+ ["nämlich","adv","Mittelfeld","Der Chef ist nämlich erkrankt.","«Дело в том, что»."],
+ ["zumal","ns","Nebensatz · Verb am Ende","…, zumal der Preis günstig ist.","«Тем более что»."],
+ ["wegen · aufgrund · angesichts + Gen","prep","Präposition","Wegen des Regens fiel das Fest aus.","«Из-за, ввиду»."]]},
+{id:"geg",name:"Gegensatz",sub:"obwohl · trotzdem · dennoch · zwar … aber · während · hingegen",
+ rows:[
+ ["obwohl · obgleich · wenngleich","ns","Nebensatz · Verb am Ende","Obwohl es regnete, gingen wir los.","«Хотя»."],
+ ["trotzdem · dennoch","adv","Position 1 · Inversion","Es regnete. Trotzdem gingen wir los.","«Тем не менее»."],
+ ["trotz + Gen","prep","Präposition","Trotz des Regens gingen wir los.","«Несмотря на»."],
+ ["zwar … aber / doch","p0","Zugeständnis + Einschränkung","Er ist zwar talentiert, aber faul.","«Правда…, но»."],
+ ["während · wohingegen","ns","Nebensatz · Verb am Ende","…, während Männer Himmelsrichtungen nutzen.","«Тогда как» (противопоставление)."],
+ ["hingegen · dagegen · demgegenüber","adv","Position 1 oder Mittelfeld","Demgegenüber steht die Kooperation.","«Напротив, в противоположность»."],
+ ["einerseits … andererseits","adv","beide Seiten","Einerseits will sie reisen, andererseits fehlt Geld.","«С одной стороны…, с другой…»."]]},
+{id:"zwe",name:"Zweck",sub:"um … zu · damit · dazu · wozu · zwecks",
+ rows:[
+ ["um … zu","inf","Infinitiv · gleiches Subjekt","Sie lernt, um zu studieren.","«Чтобы»."],
+ ["damit","ns","Nebensatz · Verb am Ende","Er schloss das Fenster, damit es nicht zieht.","«Чтобы» при другом подлежащем."],
+ ["dazu · wozu","adv","Pronominaladverb","Es dient dazu, Kosten zu senken.","dienen dazu, … zu · «для чего?»"],
+ ["zwecks + Gen","prep","Präposition · formell","Zwecks besserer Planung…","«С целью»."]]},
+{id:"bed",name:"Bedingung und Zusatz",sub:"falls · sofern · andernfalls · außerdem · darüber hinaus · nachdem",
+ rows:[
+ ["falls · sofern · wenn","ns","Nebensatz · Verb am Ende","Falls du Hilfe brauchst, ruf an.","«Если», sofern — «при условии, что»."],
+ ["andernfalls · ansonsten · sonst","adv","Position 1 · Inversion","Sei pünktlich. Andernfalls verlierst du den Platz.","«В противном случае»."],
+ ["es sei denn, …","adv","danach Hauptsatz","Wir wandern, es sei denn, es regnet.","«Разве что»."],
+ ["außerdem · zudem · darüber hinaus","adv","Position 1 oder Mittelfeld","Darüber hinaus sollte man vorsichtig sein.","«Кроме того»."],
+ ["sowohl … als auch · weder … noch · je … desto","p0","Doppelkonnektoren","Je mehr du übst, desto besser wirst du.","«Как…, так и», «ни…, ни», «чем…, тем»."],
+ ["nachdem · bevor · sobald · seitdem · solange","ns","Nebensatz · Verb am Ende","Nachdem er bestanden hatte, feierte er.","Временные союзы: после того как, прежде чем, как только, с тех пор как, пока."]]}
+];
+(function(){
+var KEY="konn-c1-v1",store={};
+try{store=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){store={}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+function st(id){return store[id]||(store[id]={s:0,m:0,n:0})}
+function peek(id){return store[id]||{s:0,m:0,n:0}}
+function learned(id){return peek(id).s>=2}
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function norm(s){return String(s).toLowerCase().replace(/ß/g,"ss").replace(/[.,;:!?„“"]/g,"").replace(/\s+/g," ").trim()}
+var BY={},CKEY="konn-c1-custom",custom=[],dirty=false;
+try{custom=JSON.parse(localStorage.getItem(CKEY)||"[]")||[]}catch(e){custom=[]}
+if(!Array.isArray(custom))custom=[];
+function saveCustom(){try{localStorage.setItem(CKEY,JSON.stringify(custom))}catch(e){}}
+function rebuild(){
+  for(var i=Q.length-1;i>=0;i--)if(Q[i].own)Q.splice(i,1);
+  custom.forEach(function(c){Q.push({id:"c"+c.uid,g:c.g,s:c.s,o:c.o||null,a:c.a,e:c.e||"",t:c.t||"",v:c.v||"",src:c.src||"",own:true})});
+  BY={};Q.forEach(function(x){BY[x.id]=x});
+}
+rebuild();
+var gname={all:"Alle Gruppen",err:"Meine Fehler"};
+G.forEach(function(g){gname[g.id]=g.name});
+var cur={set:"all",queue:[],i:0,answered:false,empty:true,first:0,n:0,wrong:[],retried:{},seen:{}};
+
+function inSet(set){
+  var pool=Q.filter(function(x){return set==="all"||set==="err"||x.g===set});
+  if(set==="err")pool=pool.filter(function(x){return peek(x.id).m>0&&!learned(x.id)});
+  return pool;
+}
+function start(set){
+  var pool=inSet(set);
+  cur={set:set,queue:[],i:0,answered:false,empty:false,first:0,n:0,wrong:[],retried:{},seen:{}};
+  if(!pool.length){cur.empty=true;render();return}
+  var un=shuffle(pool.filter(function(x){return !learned(x.id)})).sort(function(a,b){return peek(b.id).m-peek(a.id).m});
+  var ln=shuffle(pool.filter(function(x){return learned(x.id)}));
+  var pick=un.concat(ln).slice(0,10);
+  cur.queue=shuffle(pick).map(function(x){return x.id});
+  cur.n=cur.queue.length;
+  render();
+}
+function renderChips(){
+  var sets=["all"].concat(G.map(function(g){return g.id}),["err"]);
+  $("chips").innerHTML=sets.map(function(k){
+    var pool=inSet(k),l=pool.filter(function(x){return learned(x.id)}).length;
+    var cnt=k==="err"?String(pool.length):l+"/"+pool.length;
+    return '<button type="button" class="chip'+(cur.set===k?" on":"")+'" data-set="'+k+'">'+esc(gname[k])+'<span class="cnt">'+cnt+'</span></button>';
+  }).join("");
+  var tot=Q.length,lt=Q.filter(function(x){return learned(x.id)}).length;
+  $("tot").textContent=lt+" von "+tot+" gelernt";
+  $("totbar").style.width=(tot?Math.round(lt/tot*100):0)+"%";
+}
+function render(){
+  renderChips();
+  var c=$("card");
+  if(cur.empty){
+    c.innerHTML='<p class="empty">Hier ist noch nichts. Löse zuerst einige Aufgaben; Fehler landen automatisch in dieser Liste und verschwinden, wenn du sie zweimal hintereinander richtig löst.</p>';
+    return;
+  }
+  if(cur.i>=cur.queue.length){summary();return}
+  var it=BY[cur.queue[cur.i]];
+  var gi=0;
+  var stem=esc(it.s).replace(/___/g,function(){return '<span class="gap" data-i="'+(gi++)+'"></span>'});
+  var h='<div class="qhead"><span class="lab">'+esc(gname[it.g]||"")+'</span><span class="lab">'+(cur.i+1)+' / '+cur.queue.length+'</span></div>';
+  h+='<div class="rail"><i style="width:'+Math.round(cur.i/cur.queue.length*100)+'%"></i></div>';
+  h+='<p class="stem">'+stem+'</p>';
+  if(it.v)h+='<p class="vocab"><span class="lab">Wortschatz</span> '+esc(it.v)+'</p>';
+  if(it.src)h+='<p class="src"><span class="lab">C1 Allg</span> '+esc(it.src)+'</p>';
+  if(it.o){
+    var opts=shuffle(it.o),long=opts.some(function(o){return o.length>34});
+    h+='<div class="opts'+(long?" long":"")+'" id="opts">'+opts.map(function(o,k){
+      return '<button type="button" class="opt" data-v="'+esc(o).replace(/"/g,"&quot;")+'"><kbd>'+(k+1)+'</kbd><span>'+esc(o)+'</span></button>';
+    }).join("")+'</div>';
+  }else{
+    h+='<div class="typed"><input id="inp" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Antwort eingeben"><button type="button" id="chk" class="btn">Prüfen</button></div>';
+  }
+  h+='<div id="fb" class="fb" hidden></div>';
+  c.innerHTML=h;
+  var inp=$("inp");if(inp)inp.focus();
+}
+function fillGaps(it,ok,val){
+  var gaps=document.querySelectorAll(".gap");
+  var parts=it.a.indexOf(" … ")>-1?it.a.split(" … "):[it.a.split("/").join(" / ")];
+  for(var k=0;k<gaps.length;k++){
+    gaps[k].textContent=parts[k]||parts[0];
+    gaps[k].classList.add(ok?"ok":"bad");
+  }
+}
+function answer(val){
+  if(cur.answered)return;
+  var it=BY[cur.queue[cur.i]],ok;
+  if(it.o)ok=(val===it.a);
+  else{if(!norm(val))return;ok=it.a.split("/").some(function(x){return norm(x)===norm(val)})}
+  cur.answered=true;
+  var first=!cur.seen[it.id];cur.seen[it.id]=1;
+  var s=st(it.id);s.n++;
+  if(ok){s.s++;if(first)cur.first++}
+  else{
+    s.s=0;s.m++;
+    if(cur.wrong.indexOf(it.id)<0)cur.wrong.push(it.id);
+    if(!cur.retried[it.id]){cur.retried[it.id]=1;cur.queue.splice(Math.min(cur.i+4,cur.queue.length),0,it.id)}
+  }
+  save();
+  fillGaps(it,ok,val);
+  if(it.o){
+    document.querySelectorAll(".opt").forEach(function(b){
+      b.disabled=true;
+      if(b.getAttribute("data-v")===it.a)b.classList.add("right");
+      else if(b.getAttribute("data-v")===val)b.classList.add("wrong");
+    });
+  }else{
+    var inp=$("inp");inp.readOnly=true;inp.classList.add(ok?"ok":"bad");$("chk").disabled=true;
+  }
+  var fb=$("fb");fb.hidden=false;fb.className="fb "+(ok?"ok":"bad");
+  var h='<p class="verdict">'+(ok?"Richtig.":"Nicht ganz. Richtig: <strong>"+esc(it.a.split("/").join(" / "))+"</strong>")+'</p>';
+  h+='<p class="why">'+esc(it.e)+'</p>';
+  h+='<p class="tr"><span class="lab">Перевод</span> '+esc(it.t)+'</p>';
+  h+='<button type="button" id="next" class="btn go">Weiter</button>';
+  fb.innerHTML=h;
+  renderChips();
+  $("next").focus();
+}
+function next(){cur.i++;cur.answered=false;render();window.scrollTo(0,0)}
+function summary(){
+  var uniq=cur.wrong.length,c=$("card");
+  var h='<div class="qhead"><span class="lab">Runde beendet</span><span class="lab">'+esc(gname[cur.set])+'</span></div>';
+  h+='<p class="score"><strong>'+cur.first+'</strong> von '+cur.n+' beim ersten Versuch richtig</p>';
+  if(uniq){
+    h+='<p class="lab sub">Das solltest du wiederholen</p><ul class="wl">';
+    cur.wrong.forEach(function(id){var x=BY[id];h+='<li><span class="de">'+esc(x.s.replace(/___/,"["+x.a.split("/").join(" / ")+"]"))+'</span></li>'});
+    h+='</ul>';
+  }else h+='<p class="why">Keine Fehler in dieser Runde.</p>';
+  h+='<div class="row"><button type="button" class="btn go" id="again">Nächste Runde</button>';
+  if(uniq||Q.some(function(x){return peek(x.id).m>0&&!learned(x.id)}))h+='<button type="button" class="btn" id="errs">Meine Fehler üben</button>';
+  h+='<button type="button" class="btn" id="tocheat">Spickzettel</button></div>';
+  c.innerHTML=h;
+  renderChips();
+}
+function tab(name){
+  if(name==="practice"&&dirty){dirty=false;start(cur.set)}
+  $("viewPractice").hidden=name!=="practice";
+  $("viewCheat").hidden=name!=="cheat";
+  $("viewAdd").hidden=name!=="add";
+  document.querySelectorAll(".tab").forEach(function(b){b.classList.toggle("on",b.getAttribute("data-tab")===name)});
+  window.scrollTo(0,0);
+}
+var TAGN={ns:"Nebensatz",adv:"Adverb",p0:"Position 0",prep:"Präposition",inf:"Infinitiv"};
+function buildCheat(){
+  var h='<div class="guide"><h2>Wo steht das Verb?</h2><ol>'+
+   '<li><b>Am Ende des Satzes</b> → Nebensatz-Konnektor: weil, indem, obwohl, damit, sodass, wodurch, weshalb.</li>'+
+   '<li><b>Direkt nach dem Konnektor</b> (Position 1, dann Verb) → Adverb: deshalb, trotzdem, stattdessen, dadurch, folglich, außerdem.</li>'+
+   '<li><b>Konnektor + Subjekt + Verb</b> → Position 0: denn, aber, und, oder, sondern.</li>'+
+   '<li><b>Infinitiv mit zu</b> → ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich; sonst ohne dass, anstatt dass, damit.</li>'+
+   '<li><b>Nomen folgt</b> → Präposition mit Genitiv: wegen, trotz, aufgrund, mithilfe, anstelle, dank.</li></ol></div>';
+  G.forEach(function(g){
+    h+='<section class="grp"><h2>'+esc(g.name)+'</h2><p class="lab">'+esc(g.sub)+'</p><div class="rows">';
+    g.rows.forEach(function(r){
+      h+='<div class="crow"><div class="cn"><strong>'+esc(r[0])+'</strong><span class="tag t-'+r[1]+'">'+esc(r[2])+'</span></div><p class="ex">'+esc(r[3])+'</p><p class="ru">'+esc(r[4])+'</p></div>';
+    });
+    h+='</div></section>';
+  });
+  $("cheat").innerHTML=h;
+}
+document.addEventListener("click",function(e){
+  var t=e.target.closest?e.target.closest("button"):null;if(!t)return;
+  if(t.classList.contains("chip")){start(t.getAttribute("data-set"));return}
+  if(t.classList.contains("opt")){answer(t.getAttribute("data-v"));return}
+  if(t.id==="chk"){answer($("inp").value);return}
+  if(t.id==="next"){next();return}
+  if(t.id==="again"){start(cur.set);return}
+  if(t.id==="errs"){start("err");return}
+  if(t.id==="tocheat"){tab("cheat");return}
+  if(t.classList.contains("tab")){tab(t.getAttribute("data-tab"));return}
+  if(t.id==="addbtn"){addCustom();return}
+  if(t.classList.contains("del")){delCustom(t.getAttribute("data-uid"));return}
+  if(t.id==="exp"){$("io").value=JSON.stringify(custom.map(function(c){var o={};for(var k in c)if(k!=="uid")o[k]=c[k];return o}),null,2);msg("ioMsg","Export steht im Feld. Kopiere ihn oder speichere ihn als .json-Datei.");return}
+  if(t.id==="cp"){copyIo();return}
+  if(t.id==="imp"){importCustom();return}
+  if(t.id==="reset"){
+    if(t.getAttribute("data-arm")){store={};save();t.removeAttribute("data-arm");t.textContent="Fortschritt zurücksetzen";start("all")}
+    else{t.setAttribute("data-arm","1");t.textContent="Wirklich löschen? Noch einmal klicken"}
+  }
+});
+document.addEventListener("keydown",function(e){
+  if($("viewPractice").hidden)return;
+  var inInput=e.target&&e.target.id==="inp";
+  if(e.key==="Enter"){
+    if(cur.answered&&$("next")){e.preventDefault();next()}
+    else if(inInput){e.preventDefault();answer($("inp").value)}
+    return;
+  }
+  if(!inInput&&!cur.answered&&/^[1-4]$/.test(e.key)){
+    var b=document.querySelectorAll(".opt")[parseInt(e.key,10)-1];
+    if(b)answer(b.getAttribute("data-v"));
+  }
+});
+function msg(id,t){var m=$(id);if(m)m.textContent=t}
+function trimv(x){return String(x).trim()}
+function renderOwn(){
+  var box=$("ownlist");
+  if(!custom.length){box.innerHTML='<p class="empty">Noch keine eigenen Aufgaben. Sie erscheinen nach dem Speichern in der gewählten Gruppe unter „Üben“.</p>';return}
+  box.innerHTML=custom.map(function(c){
+    return '<div class="own"><div><span class="lab">'+esc(gname[c.g]||c.g)+(c.o?" · Auswahl":" · Eingabe")+'</span><p class="ex">'+esc(c.s)+'</p><p class="ru">Antwort: '+esc(c.a)+'</p></div><button type="button" class="btn del" data-uid="'+esc(c.uid)+'">Löschen</button></div>';
+  }).join("");
+}
+function fillGroups(){
+  $("f-g").innerHTML=G.map(function(g){return '<option value="'+g.id+'">'+esc(g.name)+'</option>'}).join("");
+}
+function sanitize(c){
+  if(!c||typeof c!=="object")return null;
+  var s=trimv(c.s||""),a=trimv(c.a||"");
+  if(!s||!a)return null;
+  var ids=G.map(function(g){return g.id});
+  var it={uid:String(Date.now())+Math.random().toString(36).slice(2,7),g:ids.indexOf(c.g)>-1?c.g:ids[0],s:s,a:a,e:trimv(c.e||""),t:trimv(c.t||""),v:trimv(c.v||""),src:trimv(c.src||"")};
+  if(Array.isArray(c.o)&&c.o.length){
+    var o=c.o.map(trimv).filter(Boolean),seen={},u=[];
+    o.forEach(function(x){if(!seen[x]){seen[x]=1;u.push(x)}});
+    if(u.indexOf(a)<0||u.length<2||u.length>4)return null;
+    it.o=u;
+  }else if(s.indexOf("___")<0)return null;
+  return it;
+}
+function addCustom(){
+  var type=$("f-type").value;
+  var wrong=$("f-w").value.split("\n").map(trimv).filter(Boolean);
+  var c={g:$("f-g").value,s:$("f-s").value,a:$("f-a").value,e:$("f-e").value,t:$("f-t").value,v:$("f-v").value,src:$("f-src").value};
+  if(!trimv(c.s)){msg("msg","Bitte einen Satz eingeben.");return}
+  if(!trimv(c.a)){msg("msg","Bitte die richtige Antwort eingeben.");return}
+  if(type==="mc"){
+    if(wrong.length<1||wrong.length>3){msg("msg","Auswahlaufgabe: 1 bis 3 falsche Optionen, eine pro Zeile.");return}
+    c.o=[trimv(c.a)].concat(wrong);
+  }else if(trimv(c.s).indexOf("___")<0){msg("msg","Bei Eingabeaufgaben braucht der Satz eine Lücke ___.");return}
+  var it=sanitize(c);
+  if(!it){msg("msg","Die Aufgabe ist unvollständig oder die Optionen sind doppelt.");return}
+  custom.push(it);saveCustom();rebuild();dirty=true;
+  ["f-s","f-a","f-w","f-e","f-t","f-v","f-src"].forEach(function(i){$(i).value=""});
+  msg("msg","Gespeichert. Die Aufgabe erscheint in der Gruppe „"+gname[it.g]+"“.");
+  renderOwn();renderChips();
+}
+function delCustom(uid){
+  custom=custom.filter(function(c){return c.uid!==uid});
+  delete store["c"+uid];save();saveCustom();rebuild();dirty=true;renderOwn();renderChips();
+}
+function importCustom(){
+  var arr;
+  try{arr=JSON.parse($("io").value)}catch(e){msg("ioMsg","Das ist kein gültiges JSON.");return}
+  if(!Array.isArray(arr)){msg("ioMsg","Erwartet wird eine Liste von Aufgaben.");return}
+  var n=0,bad=0;
+  arr.forEach(function(c){var it=sanitize(c);if(it){custom.push(it);n++}else bad++});
+  saveCustom();rebuild();dirty=true;renderOwn();renderChips();
+  msg("ioMsg",n+" Aufgaben importiert"+(bad?", "+bad+" übersprungen (unvollständig oder Optionen fehlerhaft).":"."));
+}
+function copyIo(){
+  var t=$("io").value;
+  try{navigator.clipboard.writeText(t).then(function(){msg("ioMsg","Kopiert.")},function(){$("io").select();msg("ioMsg","Text markiert, bitte mit Strg+C kopieren.")})}
+  catch(e){$("io").select();msg("ioMsg","Text markiert, bitte mit Strg+C kopieren.")}
+}
+fillGroups();renderOwn();
+buildCheat();
+start("all");
+})();
+</script>
+</html>
