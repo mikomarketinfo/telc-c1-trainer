@@ -9,7 +9,7 @@
         "version": "1.0.0"
     },
     "content": {
-        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "instruction": "Wählen Sie für jede Aufgabe das Wort, das in die Lücke passt (Konjunktion, Adverb oder Präposition) oder den richtigen Satz. Die Regel «Verb am Ende» gilt nur im Nebensatz, «Position 1, dann Verb» nur im Hauptsatz. Zwei Konjunktionen stehen nie nebeneinander.",
         "text": "Bedingung (falls, sofern, es sei denn), Alternative (andernfalls, ansonsten, sonst), Zusatz (außerdem, zudem, darüber hinaus) und Zeit (nachdem, bevor, sobald, seitdem, solange)."
     },
     "questions": [
@@ -30,8 +30,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "falls/sofern/wenn = Bedingung; Verb am Ende. Falls betont einen unsicheren Fall.",
-                "correctWhy": "Перевод: Если тебе понадобится помощь, позвони мне."
+                "rule": "falls/sofern/wenn = Bedingung; Verb am Ende. Falls betont einen unsicheren Fall. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Если тебе понадобится помощь, позвони мне. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Falls du Hilfe brauchst, ruf mich an. — Если тебе понадобится помощь, позвони мне. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -51,8 +51,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "sofern = «при условии, что», formeller als wenn/falls.",
-                "correctWhy": "Перевод: Ты получишь кредит при условии, что подтвердишь постоянный доход."
+                "rule": "sofern = «при условии, что», formeller als wenn/falls. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Ты получишь кредит при условии, что подтвердишь постоянный доход. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Falls du Hilfe brauchst, ruf mich an. — Если тебе понадобится помощь, позвони мне. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -72,8 +72,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "andernfalls/ansonsten/sonst = «в противном случае»; Position 1 → Inversion: Andernfalls verlierst du…",
-                "correctWhy": "Перевод: Ты должен быть вовремя. В противном случае потеряешь место."
+                "rule": "andernfalls/ansonsten/sonst = «в противном случае»; Position 1 → Inversion: Andernfalls verlierst du… Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Ты должен быть вовремя. В противном случае потеряешь место. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 · Inversion). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Sei pünktlich. Andernfalls verlierst du den Platz. — Будь вовремя. В противном случае потеряешь место. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -93,8 +93,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "außerdem = «кроме того», fügt ein weiteres Argument hinzu. Position 1 → Inversion.",
-                "correctWhy": "Перевод: Квартира недорогая. Кроме того, она находится в центре."
+                "rule": "außerdem = «кроме того», fügt ein weiteres Argument hinzu. Position 1 → Inversion. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Квартира недорогая. Кроме того, она находится в центре. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Wohnung ist günstig. Außerdem liegt sie zentral. — Квартира недорогая. Кроме того, она в центре. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -114,8 +114,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "darüber hinaus = «кроме того» (formell). Position 1 → Inversion: Darüber hinaus sollte man…",
-                "correctWhy": "Перевод: Кроме того, не следует недооценивать двойную нагрузку от работы и учёбы."
+                "rule": "darüber hinaus = «кроме того» (formell). Position 1 → Inversion: Darüber hinaus sollte man… Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Кроме того, не следует недооценивать двойную нагрузку от работы и учёбы. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Wohnung ist günstig. Außerdem liegt sie zentral. — Квартира недорогая. Кроме того, она в центре. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Fernstudenten» (вопрос составлен для тренировки)"
         },
@@ -136,8 +136,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "zudem = «к тому же», Adverb im Mittelfeld.",
-                "correctWhy": "Перевод: Концепция инновационная и к тому же недорогая."
+                "rule": "zudem = «к тому же», Adverb im Mittelfeld. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Концепция инновационная и к тому же недорогая. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Wohnung ist günstig. Außerdem liegt sie zentral. — Квартира недорогая. Кроме того, она в центре. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -157,8 +157,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "sowohl … als auch = «как…, так и». Weder gehört zu noch, entweder zu oder.",
-                "correctWhy": "Перевод: Играют роль как расходы, так и время."
+                "rule": "sowohl … als auch = «как…, так и». Weder gehört zu noch, entweder zu oder. Tipp: Gesucht ist ein Konnektor auf Position 0 oder ein Satzpaar. Danach folgt die normale Hauptsatz-Wortstellung.",
+                "correctWhy": "Перевод: Играют роль как расходы, так и время. | Wortart: Konjunktion auf Position 0 / Satzpaar (Doppelkonnektoren). Союз вне порядка слов (denn, aber, und) или парный союз. Порядок слов после него обычный: подлежащее, затем глагол. | Beispiel: Sowohl die Kosten als auch die Zeit spielen eine Rolle. — Играют роль как расходы, так и время. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -178,8 +178,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "weder … noch = «ни…, ни».",
-                "correctWhy": "Перевод: Он ни позвонил, ни написал."
+                "rule": "weder … noch = «ни…, ни». Tipp: Gesucht ist ein Konnektor auf Position 0 oder ein Satzpaar. Danach folgt die normale Hauptsatz-Wortstellung.",
+                "correctWhy": "Перевод: Он ни позвонил, ни написал. | Wortart: Konjunktion auf Position 0 / Satzpaar (Doppelkonnektoren). Союз вне порядка слов (denn, aber, und) или парный союз. Порядок слов после него обычный: подлежащее, затем глагол. | Beispiel: Sowohl die Kosten als auch die Zeit spielen eine Rolle. — Играют роль как расходы, так и время. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -199,8 +199,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "nachdem + Plusquamperfekt: die Handlung im Nebensatz war früher fertig.",
-                "correctWhy": "Перевод: После того как он сдал экзамен, он отпраздновал это с друзьями."
+                "rule": "nachdem + Plusquamperfekt: die Handlung im Nebensatz war früher fertig. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: После того как он сдал экзамен, он отпраздновал это с друзьями. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Nachdem er die Prüfung bestanden hatte, feierte er mit Freunden. — После того как он сдал экзамен, он отпраздновал это с друзьями. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -220,8 +220,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "bevor + Präsens: Die Handlung im Nebensatz folgt später. Nachdem würde Vorzeitigkeit zeigen.",
-                "correctWhy": "Перевод: Прежде чем подписывать, прочти договор."
+                "rule": "bevor + Präsens: Die Handlung im Nebensatz folgt später. Nachdem würde Vorzeitigkeit zeigen. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Прежде чем подписывать, прочти договор. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Nachdem er die Prüfung bestanden hatte, feierte er mit Freunden. — После того как он сдал экзамен, он отпраздновал это с друзьями. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -241,8 +241,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "seitdem/seit = «с тех пор как»: Ein Zeitpunkt in der Vergangenheit, der bis jetzt wirkt.",
-                "correctWhy": "Перевод: Он больше не курит с тех пор, как получил диагноз."
+                "rule": "seitdem/seit = «с тех пор как»: Ein Zeitpunkt in der Vergangenheit, der bis jetzt wirkt. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Он больше не курит с тех пор, как получил диагноз. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Nachdem er die Prüfung bestanden hatte, feierte er mit Freunden. — После того как он сдал экзамен, он отпраздновал это с друзьями. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -262,8 +262,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "sobald = «как только». Solange bedeutet «пока, в течение того времени как».",
-                "correctWhy": "Перевод: Как только появятся результаты, мы вас проинформируем."
+                "rule": "sobald = «как только». Solange bedeutet «пока, в течение того времени как». Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Как только появятся результаты, мы вас проинформируем. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Nachdem er die Prüfung bestanden hatte, feierte er mit Freunden. — После того как он сдал экзамен, он отпраздновал это с друзьями. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         },
         {
@@ -283,8 +283,8 @@
                 "bed"
             ],
             "explanation": {
-                "rule": "je + Komparativ …, desto/umso + Komparativ: «чем больше…, тем лучше». Nach desto folgt das Verb direkt.",
-                "correctWhy": "Перевод: Чем больше ты тренируешься, тем лучше становишься."
+                "rule": "je + Komparativ …, desto/umso + Komparativ: «чем больше…, тем лучше». Nach desto folgt das Verb direkt. Tipp: Gesucht ist ein Konnektor auf Position 0 oder ein Satzpaar. Danach folgt die normale Hauptsatz-Wortstellung.",
+                "correctWhy": "Перевод: Чем больше ты тренируешься, тем лучше становишься. | Wortart: Konjunktion auf Position 0 / Satzpaar (Doppelkonnektoren). Союз вне порядка слов (denn, aber, und) или парный союз. Порядок слов после него обычный: подлежащее, затем глагол. | Beispiel: Sowohl die Kosten als auch die Zeit spielen eine Rolle. — Играют роль как расходы, так и время. | Не путайте: Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
             }
         }
     ],

@@ -5,7 +5,7 @@
     "shortExplanation": "Weitere Konnektoren für den Grund: 'denn' (Position 0), 'nämlich' (Mittelfeld), 'zumal' (Nebensatz) und die Präpositionen wegen, aufgrund, angesichts mit Genitiv.",
     "example": "Das Fest fiel aus, weil es stark regnete.",
     "more": {
-        "rule": "denn → Hauptsatz, Verb an Position 2. weil / da / zumal → Nebensatz, Verb am Ende. nämlich → Mittelfeld, begründet die vorige Aussage. wegen / aufgrund / angesichts + Gen.",
+        "rule": "denn → Hauptsatz, Verb an Position 2. weil / da / zumal → Nebensatz, Verb am Ende. nämlich → Mittelfeld, begründet die vorige Aussage. wegen / aufgrund / angesichts + Gen. Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv.",
         "commonMistakes": [
             "deshalb",
             "obwohl",

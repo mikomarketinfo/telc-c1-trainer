@@ -9,7 +9,7 @@
         "version": "1.0.0"
     },
     "content": {
-        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "instruction": "Wählen Sie für jede Aufgabe das Wort, das in die Lücke passt (Konjunktion, Adverb oder Präposition) oder den richtigen Satz. Die Regel «Verb am Ende» gilt nur im Nebensatz, «Position 1, dann Verb» nur im Hauptsatz. Zwei Konjunktionen stehen nie nebeneinander.",
         "text": "Weitere Konnektoren für den Grund: 'denn' (Position 0), 'nämlich' (Mittelfeld), 'zumal' (Nebensatz) und die Präpositionen wegen, aufgrund, angesichts mit Genitiv."
     },
     "questions": [
@@ -30,8 +30,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "weil + Nebensatz (Verb am Ende: regnete). Denn kann man am Satzanfang nicht mit Nebensatzstellung nutzen.",
-                "correctWhy": "Перевод: Поскольку шёл сильный дождь, праздник отменили."
+                "rule": "weil + Nebensatz (Verb am Ende: regnete). Denn kann man am Satzanfang nicht mit Nebensatzstellung nutzen. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Поскольку шёл сильный дождь, праздник отменили. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Das Fest fiel aus, weil es stark regnete. — Праздник отменили, потому что шёл сильный дождь. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             }
         },
         {
@@ -51,8 +51,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "Schau auf das Verb: regnete steht an Position 2, also Hauptsatzstellung. Dann passt denn (Position 0). weil, da und sodass verlangen das Verb am Ende.",
-                "correctWhy": "Перевод: Праздник отменили, ведь шёл сильный дождь."
+                "rule": "Schau auf das Verb: regnete steht an Position 2, also Hauptsatzstellung. Dann passt denn (Position 0). weil, da und sodass verlangen das Verb am Ende. Tipp: Gesucht ist ein Konnektor auf Position 0 oder ein Satzpaar. Danach folgt die normale Hauptsatz-Wortstellung.",
+                "correctWhy": "Перевод: Праздник отменили, ведь шёл сильный дождь. | Wortart: Konjunktion auf Position 0 / Satzpaar (Position 0 · Verb an Position 2). Союз вне порядка слов (denn, aber, und) или парный союз. Порядок слов после него обычный: подлежащее, затем глагол. | Beispiel: Wir bleiben zu Hause, denn das Wetter ist schlecht. — Мы остаёмся дома, ведь погода плохая. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             }
         },
         {
@@ -72,8 +72,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "aufgrund + Genitiv = «в силу, из-за» (Präposition, formell). Ähnlich: wegen + Genitiv.",
-                "correctWhy": "Перевод: Из-за сильного дождя праздник отменили."
+                "rule": "aufgrund + Genitiv = «в силу, из-за» (Präposition, formell). Ähnlich: wegen + Genitiv. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Из-за сильного дождя праздник отменили. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Wegen des Regens fiel das Fest aus. — Из-за дождя праздник отменили. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             }
         },
         {
@@ -93,8 +93,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "angesichts + Genitiv = «ввиду, учитывая». Ungeachtet bedeutet das Gegenteil (несмотря на).",
-                "correctWhy": "Перевод: Ввиду высоких расходов она отказалась от проекта."
+                "rule": "angesichts + Genitiv = «ввиду, учитывая». Ungeachtet bedeutet das Gegenteil (несмотря на). Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Ввиду высоких расходов она отказалась от проекта. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Wegen des Regens fiel das Fest aus. — Из-за дождя праздник отменили. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             }
         },
         {
@@ -114,8 +114,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "nämlich nennt den Grund für die vorige Aussage («дело в том, что»). Es steht im Mittelfeld, nicht auf Position 1.",
-                "correctWhy": "Перевод: Заседание перенесли. Дело в том, что начальник заболел."
+                "rule": "nämlich nennt den Grund für die vorige Aussage («дело в том, что»). Es steht im Mittelfeld, nicht auf Position 1. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Заседание перенесли. Дело в том, что начальник заболел. | Wortart: Adverb (Konnektor im Hauptsatz) (Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Sitzung wurde verschoben. Der Chef ist nämlich erkrankt. — Заседание перенесли. Дело в том, что начальник заболел. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             }
         },
         {
@@ -135,8 +135,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "da + Nebensatz am Satzanfang nennt einen bekannten Grund: «поскольку». Denn kann hier nicht stehen (Verb am Ende).",
-                "correctWhy": "Перевод: Поскольку ситуация известна, длинное объяснение излишне."
+                "rule": "da + Nebensatz am Satzanfang nennt einen bekannten Grund: «поскольку». Denn kann hier nicht stehen (Verb am Ende). Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Поскольку ситуация известна, длинное объяснение излишне. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Das Fest fiel aus, weil es stark regnete. — Праздник отменили, потому что шёл сильный дождь. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             }
         },
         {
@@ -156,8 +156,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "weil begründet die Frage: «ведь они хотят просто быть животными». Obwohl und sodass ergeben keinen Sinn.",
-                "correctWhy": "Перевод: И разве не может из-за этого вырасти стрессовая нагрузка именно у домашних животных — ведь они хотят просто быть животными?"
+                "rule": "weil begründet die Frage: «ведь они хотят просто быть животными». Obwohl und sodass ergeben keinen Sinn. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: И разве не может из-за этого вырасти стрессовая нагрузка именно у домашних животных — ведь они хотят просто быть животными? | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Das Fest fiel aus, weil es stark regnete. — Праздник отменили, потому что шёл сильный дождь. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)"
         },
@@ -178,8 +178,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "Denn (Position 0) begründet die vorige Aussage und lässt das Verb auf Position 2: Denn die Beziehung ist…",
-                "correctWhy": "Перевод: Ведь тесная связь между человеком и животным — не просто феномен нашего времени."
+                "rule": "Denn (Position 0) begründet die vorige Aussage und lässt das Verb auf Position 2: Denn die Beziehung ist… Tipp: Gesucht ist ein Konnektor auf Position 0 oder ein Satzpaar. Danach folgt die normale Hauptsatz-Wortstellung.",
+                "correctWhy": "Перевод: Ведь тесная связь между человеком и животным — не просто феномен нашего времени. | Wortart: Konjunktion auf Position 0 / Satzpaar (Position 0 · Verb an Position 2). Союз вне порядка слов (denn, aber, und) или парный союз. Порядок слов после него обычный: подлежащее, затем глагол. | Beispiel: Wir bleiben zu Hause, denn das Wetter ist schlecht. — Мы остаёмся дома, ведь погода плохая. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)"
         },
@@ -200,8 +200,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "denn verlangt Hauptsatzstellung (denn er verpasste den Bus). Bei weil und da steht das Verb am Ende.",
-                "correctWhy": "Перевод: Он опоздал, потому что пропустил автобус."
+                "rule": "denn verlangt Hauptsatzstellung (denn er verpasste den Bus). Bei weil und da steht das Verb am Ende. Tipp: Hier musst du den richtigen ganzen Satz wählen. Prüfe: Steht das Verb am Ende (Nebensatz) oder auf Position 2 (Hauptsatz)?",
+                "correctWhy": "Перевод: Он опоздал, потому что пропустил автобус. | Wortart: Satzwahl. Нужно выбрать грамматически правильное предложение. Смотрите на положение глагола. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             }
         },
         {
@@ -221,8 +221,8 @@
                 "gru"
             ],
             "explanation": {
-                "rule": "zumal + Nebensatz = «тем более что»: Es gibt schon einen Grund, und der neue verstärkt ihn.",
-                "correctWhy": "Перевод: Нам стоит принять предложение, тем более что цена действительно выгодная."
+                "rule": "zumal + Nebensatz = «тем более что»: Es gibt schon einen Grund, und der neue verstärkt ihn. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Нам стоит принять предложение, тем более что цена действительно выгодная. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Wir sollten zusagen, zumal die Konditionen günstig sind. — Нам стоит согласиться, тем более что условия выгодные. | Не путайте: Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv."
             }
         }
     ],

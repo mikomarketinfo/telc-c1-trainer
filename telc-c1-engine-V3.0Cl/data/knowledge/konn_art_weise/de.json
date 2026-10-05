@@ -5,7 +5,7 @@
     "shortExplanation": "Modale Konnektoren nennen das Mittel oder die Art und Weise einer Handlung. 'indem' und 'dadurch, dass' leiten einen Nebensatz ein, 'wodurch' kommentiert den ganzen Hauptsatz, 'dadurch' ist ein Adverb mit Inversion.",
     "example": "Wir sparen Energie, indem wir Geräte vollständig ausschalten.",
     "more": {
-        "rule": "indem / dadurch, dass → Verb am Ende, nennt das Mittel (Subjekt meist gleich). wodurch → Verb am Ende, bezieht sich auf den ganzen vorigen Satz und nennt eine Folge. dadurch → Position 1, danach direkt das Verb.",
+        "rule": "indem / dadurch, dass → Verb am Ende, nennt das Mittel (Subjekt meist gleich). wodurch → Verb am Ende, bezieht sich auf den ganzen vorigen Satz und nennt eine Folge. dadurch → Position 1, danach direkt das Verb. Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего.",
         "commonMistakes": [
             "damit",
             "sodass",

@@ -9,7 +9,7 @@
         "version": "1.0.0"
     },
     "content": {
-        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "instruction": "Wählen Sie für jede Aufgabe das Wort, das in die Lücke passt (Konjunktion, Adverb oder Präposition) oder den richtigen Satz. Die Regel «Verb am Ende» gilt nur im Nebensatz, «Position 1, dann Verb» nur im Hauptsatz. Zwei Konjunktionen stehen nie nebeneinander.",
         "text": "Modale Konnektoren nennen das Mittel oder die Art und Weise einer Handlung. 'indem' und 'dadurch, dass' leiten einen Nebensatz ein, 'wodurch' kommentiert den ganzen Hauptsatz, 'dadurch' ist ein Adverb mit Inversion."
     },
     "questions": [
@@ -30,8 +30,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "indem leitet einen Nebensatz ein (Verb am Ende) und nennt das Mittel: «путём чтения». Dadurch ist ein Adverb und würde Inversion verlangen; damit drückt den Zweck aus.",
-                "correctWhy": "Перевод: Словарный запас улучшается, если читать каждый день."
+                "rule": "indem leitet einen Nebensatz ein (Verb am Ende) und nennt das Mittel: «путём чтения». Dadurch ist ein Adverb und würde Inversion verlangen; damit drückt den Zweck aus. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Словарный запас улучшается, если читать каждый день. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Wir sparen Energie, indem wir Geräte vollständig ausschalten. — Мы экономим энергию, полностью выключая приборы. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             }
         },
         {
@@ -51,8 +51,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Dasselbe Subjekt (die Firma) führt die Handlung aus, die das Mittel nennt: indem + Verb am Ende.",
-                "correctWhy": "Перевод: Фирма снизила расходы, автоматизировав производство."
+                "rule": "Dasselbe Subjekt (die Firma) führt die Handlung aus, die das Mittel nennt: indem + Verb am Ende. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Фирма снизила расходы, автоматизировав производство. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Wir sparen Energie, indem wir Geräte vollständig ausschalten. — Мы экономим энергию, полностью выключая приборы. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             }
         },
         {
@@ -72,8 +72,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "wodurch bezieht sich auf den ganzen vorigen Satz und fügt eine Folge an (Verb am Ende). indem scheitert, weil das Subjekt wechselt (die Kosten sanken nicht aktiv). dadurch verlangt Inversion.",
-                "correctWhy": "Перевод: Фирма автоматизировала производство, благодаря чему расходы заметно снизились."
+                "rule": "wodurch bezieht sich auf den ganzen vorigen Satz und fügt eine Folge an (Verb am Ende). indem scheitert, weil das Subjekt wechselt (die Kosten sanken nicht aktiv). dadurch verlangt Inversion. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Фирма автоматизировала производство, благодаря чему расходы заметно снизились. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Die Stadt baute neue Radwege, wodurch der Autoverkehr deutlich abnahm. — Город построил новые велодорожки, благодаря чему автомобильный трафик заметно сократился. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             }
         },
         {
@@ -93,8 +93,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "dadurch ist ein Adverb auf Position 1 und löst Inversion aus: Dadurch verbesserte er… Indem, Wodurch und Dass schicken das Verb ans Ende.",
-                "correctWhy": "Перевод: Он тренировался каждый день. Тем самым он улучшил выносливость."
+                "rule": "dadurch ist ein Adverb auf Position 1 und löst Inversion aus: Dadurch verbesserte er… Indem, Wodurch und Dass schicken das Verb ans Ende. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Он тренировался каждый день. Тем самым он улучшил выносливость. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Der Verein gewinnt Mitglieder dadurch, dass er günstige Tarife anbietet. — Клуб привлекает членов тем, что предлагает выгодные тарифы. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             }
         },
         {
@@ -114,8 +114,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Im Nebensatz steht das Verb am Ende, und trennbare Verben werden zusammengeschrieben: ausschaltete.",
-                "correctWhy": "Перевод: Она экономила электричество, выключая приборы на ночь."
+                "rule": "Im Nebensatz steht das Verb am Ende, und trennbare Verben werden zusammengeschrieben: ausschaltete. Tipp: Hier musst du den richtigen ganzen Satz wählen. Prüfe: Steht das Verb am Ende (Nebensatz) oder auf Position 2 (Hauptsatz)?",
+                "correctWhy": "Перевод: Она экономила электричество, выключая приборы на ночь. | Wortart: Satzwahl. Нужно выбрать грамматически правильное предложение. Смотрите на положение глагола. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             }
         },
         {
@@ -135,8 +135,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Mittel zum Ziel: «путём повышения субсидий». Subjekt bleibt gleich (die Regierung).",
-                "correctWhy": "Перевод: Правительство хочет защитить климат, повышая субсидии на солнечные установки."
+                "rule": "Mittel zum Ziel: «путём повышения субсидий». Subjekt bleibt gleich (die Regierung). Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Правительство хочет защитить климат, повышая субсидии на солнечные установки. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Wir sparen Energie, indem wir Geräte vollständig ausschalten. — Мы экономим энергию, полностью выключая приборы. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             }
         },
         {
@@ -156,8 +156,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Der Relativsatz mit wodurch kommentiert den ganzen Hauptsatz: «благодаря чему». Das Subjekt wechselt (die Sicherheit), deshalb ist indem nicht möglich.",
-                "correctWhy": "Перевод: В идеале каждое из четырёх колёс можно целенаправленно разгонять или тормозить по отдельности, благодаря чему повысились бы безопасность и динамика езды."
+                "rule": "Der Relativsatz mit wodurch kommentiert den ganzen Hauptsatz: «благодаря чему». Das Subjekt wechselt (die Sicherheit), deshalb ist indem nicht möglich. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: В идеале каждое из четырёх колёс можно целенаправленно разгонять или тормозить по отдельности, благодаря чему повысились бы безопасность и динамика езды. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Die Stadt baute neue Radwege, wodurch der Autoverkehr deutlich abnahm. — Город построил новые велодорожки, благодаря чему автомобильный трафик заметно сократился. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)"
         },
@@ -178,8 +178,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Hier ist dadurch ein Adverb im Nebensatz («благодаря этому»); es verweist auf den vorigen Satz. wodurch/indem können nicht zusätzlich nach weil stehen.",
-                "correctWhy": "Перевод: Это позволяет, например, совершенно новую конструкцию кузова, потому что благодаря этому освобождается место в середине автомобиля."
+                "rule": "Hier ist dadurch ein Adverb im Nebensatz («благодаря этому»); es verweist auf den vorigen Satz. wodurch/indem können nicht zusätzlich nach weil stehen. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Это позволяет, например, совершенно новую конструкцию кузова, потому что благодаря этому освобождается место в середине автомобиля. | Wortart: Adverb (Konnektor im Hauptsatz) (Nebensatz · Verb am Ende). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Der Verein gewinnt Mitglieder dadurch, dass er günstige Tarife anbietet. — Клуб привлекает членов тем, что предлагает выгодные тарифы. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)"
         },
@@ -200,8 +200,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Modales indem: Wir vermenschlichen Tiere dadurch, dass wir ihnen Gefühle zuschreiben. Das Subjekt (wir) bleibt gleich.",
-                "correctWhy": "Перевод: Не слишком ли велика опасность очеловечить животных, приписывая им наши собственные чувства?"
+                "rule": "Modales indem: Wir vermenschlichen Tiere dadurch, dass wir ihnen Gefühle zuschreiben. Das Subjekt (wir) bleibt gleich. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Не слишком ли велика опасность очеловечить животных, приписывая им наши собственные чувства? | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Wir sparen Energie, indem wir Geräte vollständig ausschalten. — Мы экономим энергию, полностью выключая приборы. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)"
         },
@@ -222,8 +222,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Korrelat: dadurch im Hauptsatz kündigt den dass-Satz an: dadurch …, dass. Nach dem Komma steht dass, deshalb passt indem nicht.",
-                "correctWhy": "Перевод: Предприятия должны поддерживаться и тем, что им чаще достаются государственные заказы."
+                "rule": "Korrelat: dadurch im Hauptsatz kündigt den dass-Satz an: dadurch …, dass. Nach dem Komma steht dass, deshalb passt indem nicht. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Предприятия должны поддерживаться и тем, что им чаще достаются государственные заказы. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Der Verein gewinnt Mitglieder dadurch, dass er günstige Tarife anbietet. — Клуб привлекает членов тем, что предлагает выгодные тарифы. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             },
             "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Unterstützung für KMU» (фрагмент, вопрос составлен для тренировки)"
         },
@@ -244,8 +244,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Nach indem steht das konjugierte Verb am Ende. «dadurch» allein braucht entweder Inversion oder das Korrelat mit dass.",
-                "correctWhy": "Перевод: Он завоевал доверие клиентов, всегда оставаясь честным."
+                "rule": "Nach indem steht das konjugierte Verb am Ende. «dadurch» allein braucht entweder Inversion oder das Korrelat mit dass. Tipp: Hier musst du den richtigen ganzen Satz wählen. Prüfe: Steht das Verb am Ende (Nebensatz) oder auf Position 2 (Hauptsatz)?",
+                "correctWhy": "Перевод: Он завоевал доверие клиентов, всегда оставаясь честным. | Wortart: Satzwahl. Нужно выбрать грамматически правильное предложение. Смотрите на положение глагола. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             }
         },
         {
@@ -265,8 +265,8 @@
                 "mod"
             ],
             "explanation": {
-                "rule": "Folge mit wodurch: Die Kritik hatte zur Folge, dass die Stimmung sank. Das Subjekt wechselt, also nicht indem.",
-                "correctWhy": "Перевод: Начальник публично раскритиковал команду, из-за чего настроение заметно упало."
+                "rule": "Folge mit wodurch: Die Kritik hatte zur Folge, dass die Stimmung sank. Das Subjekt wechselt, also nicht indem. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Начальник публично раскритиковал команду, из-за чего настроение заметно упало. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Die Stadt baute neue Radwege, wodurch der Autoverkehr deutlich abnahm. — Город построил новые велодорожки, благодаря чему автомобильный трафик заметно сократился. | Не путайте: Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего."
             }
         }
     ],

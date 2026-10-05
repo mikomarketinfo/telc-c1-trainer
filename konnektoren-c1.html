@@ -36,7 +36,9 @@ h1{font-size:clamp(28px,6vw,40px);line-height:1.05;margin:0;font-weight:700;lett
 .lede{margin:0;color:var(--muted);max-width:60ch}
 .meter{display:flex;flex-direction:column;gap:6px}
 .meter .bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
-.meter .bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.meter .bar{position:relative}
+.meter .bar i{display:block;height:100%;width:0;background:var(--accent);opacity:.45;transition:width .3s;position:absolute;left:0;top:0}
+.meter .bar i.sure{opacity:1}
 .tabs{display:flex;gap:6px;border-bottom:1px solid var(--line)}
 .tab{font:inherit;font-weight:500;background:none;border:0;border-bottom:3px solid transparent;color:var(--muted);padding:8px 4px;margin-right:14px;cursor:pointer}
 .tab.on{color:var(--ink);border-bottom-color:var(--accent)}
@@ -76,6 +78,22 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline
 .btn:hover:not(:disabled){border-color:var(--accent)}
 .btn.go{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .btn:disabled{opacity:.5;cursor:default}
+.task{margin:0;font-size:14px;color:var(--muted)}
+.tiprow{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.btn.ghost{background:transparent;border:1px dashed var(--line);color:var(--accent);font-size:13px;padding:6px 10px}
+.tip{margin:0;background:var(--accent-soft);border-radius:8px;padding:8px 10px;font-size:14px}
+.tip[hidden]{display:none}
+.more{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:10px;width:100%}
+.more p{margin:0;font-size:14px}
+.more .exs{grid-column:auto;margin:0}
+.more .note{background:var(--surface);border-radius:8px;padding:8px 10px}
+.gl{margin:0 0 10px;max-width:66ch}
+.guide h3{margin:16px 0 4px;font-size:16px}
+.gt{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0}
+.gt th,.gt td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.gt th{background:var(--accent-soft)}
+.gt .ru{font-size:12px}
+@media (max-width:520px){.gt{display:block;overflow-x:auto}}
 .fb{border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
 .fb[hidden]{display:none}
 .fb.ok{background:var(--ok-bg)}
@@ -137,7 +155,7 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline
     <span class="lab">telc C1 · Sprachbausteine und Schreiben</span>
     <h1>Konnektoren C1</h1>
     <p class="lede">Je zehn Aufgaben pro Runde. Fehler kommen in derselben Runde wieder und bleiben in „Meine Fehler“, bis du sie zweimal hintereinander richtig löst. Unter jeder Aufgabe steht der Wortschatz mit Übersetzung, die Erklärung kommt nach der Antwort.</p>
-    <div class="meter"><span class="lab" id="tot"></span><div class="bar"><i id="totbar"></i></div></div>
+    <div class="meter"><span class="lab" id="tot"></span><div class="bar"><i id="totbar"></i><i id="surebar" class="sure"></i></div></div>
   </header>
   <nav class="tabs"><button type="button" class="tab on" data-tab="practice">Üben</button><button type="button" class="tab" data-tab="cheat">Spickzettel</button><button type="button" class="tab" data-tab="add">Eigene Aufgaben</button></nav>
   <section id="viewPractice" class="app" style="gap:14px">
@@ -426,6 +444,86 @@ EX["es sei denn, …"]=[["Wir wandern morgen, es sei denn, es regnet.","Мы и�
 EX["außerdem · zudem · darüber hinaus"]=[["Die Wohnung ist günstig. Außerdem liegt sie zentral.","Квартира недорогая. Кроме того, она в центре."],["Das Konzept ist innovativ und zudem kostengünstig.","Концепция инновационная и к тому же недорогая."],["Darüber hinaus sollte man die Doppelbelastung nicht unterschätzen.","Кроме того, не следует недооценивать двойную нагрузку."]];
 EX["sowohl … als auch · weder … noch · je … desto"]=[["Sowohl die Kosten als auch die Zeit spielen eine Rolle.","Играют роль как расходы, так и время."],["Er hat weder angerufen noch geschrieben.","Он ни позвонил, ни написал."],["Je mehr du übst, desto besser wirst du.","Чем больше ты тренируешься, тем лучше становишься."],["Je früher man anfängt, umso leichter fällt das Lernen.","Чем раньше начинаешь, тем легче даётся учёба."]];
 EX["nachdem · bevor · sobald · seitdem · solange"]=[["Nachdem er die Prüfung bestanden hatte, feierte er mit Freunden.","После того как он сдал экзамен, он отпраздновал это с друзьями."],["Bevor du unterschreibst, lies den Vertrag.","Прежде чем подписывать, прочти договор."],["Sobald die Ergebnisse vorliegen, informieren wir Sie.","Как только появятся результаты, мы вас проинформируем."],["Seitdem er umgezogen ist, fährt er mit dem Rad zur Arbeit.","С тех пор как он переехал, он ездит на работу на велосипеде."],["Solange die Preise steigen, kaufen viele weniger.","Пока цены растут, многие покупают меньше."]];
+/* Zusatzwissen: Wortart-Tipp, erweiterte Erklärung, Gruppen-Hinweise (gemeinsam für Standalone und Engine) */
+var KIND={
+ ns:{de:"Konjunktion (leitet einen Nebensatz ein)",ru:"Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец.",tip:"Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes."},
+ adv:{de:"Adverb (Konnektor im Hauptsatz)",ru:"Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце.",tip:"Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes."},
+ p0:{de:"Konjunktion auf Position 0 / Satzpaar",ru:"Союз вне порядка слов (denn, aber, und) или парный союз. Порядок слов после него обычный: подлежащее, затем глагол.",tip:"Gesucht ist ein Konnektor auf Position 0 oder ein Satzpaar. Danach folgt die normale Hauptsatz-Wortstellung."},
+ prep:{de:"Präposition (+ Nomen)",ru:"Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет.",tip:"Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach."},
+ inf:{de:"Infinitivkonstruktion mit zu",ru:"Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu.",tip:"Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich."},
+ satz:{de:"Satzwahl",ru:"Нужно выбрать грамматически правильное предложение. Смотрите на положение глагола.",tip:"Hier musst du den richtigen ganzen Satz wählen. Prüfe: Steht das Verb am Ende (Nebensatz) oder auf Position 2 (Hauptsatz)?"}
+};
+var GNOTE={
+ mod:"Не путайте: indem = «путём того, что» (одно подлежащее, способ). wodurch = «благодаря чему» (комментирует весь предыдущий факт, подлежащее другое). dadurch = наречие, глагол сразу за ним. dadurch, dass = то же, что indem, но разрешает смену подлежащего.",
+ mit:"Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина.",
+ oh:"Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия.",
+ fol:"Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass».",
+ gru:"Глагол на 2-м месте → denn. Глагол в конце → weil, da, zumal. denn и weil не взаимозаменяемы в порядке слов. Предлоги (wegen, aufgrund, angesichts) берут Genitiv.",
+ geg:"obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст.",
+ zwe:"Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка.",
+ bed:"Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange."
+};
+function normTok(s){return s.toLowerCase().replace(/ß/g,"ss").replace(/\s*\+.*$/,"").replace(/[…,]/g,"").replace(/\s+/g," ").trim()}
+function rowTokens(r){
+  var t=[];
+  r[0].split(" · ").forEach(function(p){
+    p.split(" / ").forEach(function(x){
+      x=x.replace("(an)statt","statt|anstatt").split("|");
+      x.forEach(function(y){y=normTok(y);if(y)t.push(y);y.split(" … ").forEach(function(z){z=z.trim();if(z)t.push(z)});y.split(" ").forEach(function(z){if(z&&z.length>1&&z!=="zu")t.push(z)})});
+    });
+  });
+  return t;
+}
+function findRow(it){
+  var a=String(it.a).split("/")[0];
+  var w=normTok(a).replace(/ ….*$/,"").replace(/ \.\.\..*$/,"");
+  var best=null;
+  for(var i=0;i<G.length;i++){
+    if(it.g&&G[i].id!==it.g)continue;
+    for(var j=0;j<G[i].rows.length;j++){
+      var r=G[i].rows[j];
+      var toks=rowTokens(r);
+      if(toks.indexOf(w)>-1||toks.indexOf(w.split(" ")[0])>-1){best=r;break}
+    }
+    if(best)break;
+  }
+  return best;
+}
+function kindOf(it){
+  var a=String(it.a);
+  if(a.length>28&&a.indexOf(" ")>-1&&/[.!?]$/.test(a.trim()))return "satz";
+  if(/(weil|dass|da|obwohl|wenn|falls)\s+___/i.test(it.s)&&/^(dadurch|deshalb|daher|trotzdem|dennoch|stattdessen|damit)$/i.test(a.split("/")[0]))return "adv";
+  if(/^gegenüber$/i.test(a.trim()))return "prep";
+  var r=findRow(it);
+  if(r)return r[1];
+  if(/^zu |zu\w+$/i.test(a.trim()))return "inf";
+  return null;
+}
+function task(it){
+  if(it.o){
+    var k=kindOf(it);
+    if(k==="satz")return "Aufgabe: Wähle den grammatisch richtigen Satz. Achte auf die Verbposition.";
+    return "Aufgabe: Wähle das Wort, das in die Lücke passt. Es kann eine Konjunktion, ein Adverb oder eine Präposition sein.";
+  }
+  return "Aufgabe: Schreibe ein Wort (oder ein Wortpaar) in die Lücke. Es kann eine Konjunktion, ein Adverb, eine Präposition oder Teil eines Infinitivs sein. Mehrere Lösungen sind möglich.";
+}
+function tipOf(it){var k=kindOf(it);return k?KIND[k].tip:"Prüfe die Wortstellung: Verb am Ende, auf Position 2 oder Infinitiv mit zu?"}
+function moreOf(it,chosen){
+  var k=kindOf(it),r=findRow(it),o={kind:k?KIND[k].de:"",rule:"",examples:[],note:GNOTE[it.g]||"",chosen:""};
+  if(k)o.rule=KIND[k].ru;
+  if(r){
+    o.row=r[0];o.pos=r[2];o.mean=r[4];
+    var ex=(typeof EX!=="undefined"&&EX[r[0]])||[];
+    o.examples=ex.slice(0,2);
+  }
+  if(chosen&&chosen!==it.a){
+    var ci={a:chosen,g:null,s:"",o:null},cr=null;
+    var w=normTok(chosen);
+    for(var i=0;i<G.length&&!cr;i++)G[i].rows.forEach(function(x){if(!cr&&rowTokens(x).indexOf(w)>-1)cr=x});
+    if(cr)o.chosen="«"+chosen+"»: "+KIND[cr[1]].de+(cr[2]!=="Präposition"?". "+cr[2]:"")+". "+cr[4];
+  }
+  return o;
+}
 (function(){
 var KEY="konn-c1-v1",store={};
 try{store=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){store={}}
@@ -433,6 +531,8 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
 function st(id){return store[id]||(store[id]={s:0,m:0,n:0})}
 function peek(id){return store[id]||{s:0,m:0,n:0}}
 function learned(id){return peek(id).s>=2}
+function good(id){return peek(id).s>=1}
+function seenq(id){return peek(id).n>0}
 function $(i){return document.getElementById(i)}
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
@@ -449,7 +549,8 @@ function rebuild(){
 rebuild();
 var gname={all:"Alle Gruppen",err:"Meine Fehler"};
 G.forEach(function(g){gname[g.id]=g.name});
-var cur={set:"all",queue:[],i:0,answered:false,empty:true,first:0,n:0,wrong:[],retried:{},seen:{}};
+var cur={set:"all",queue:[],i:0,answered:false,empty:true,first:0,n:0,wrong:[],retried:{},seen:{},before:0,tipUsed:false};
+function countGood(){return Q.filter(function(x){return good(x.id)}).length}
 
 function inSet(set){
   var pool=Q.filter(function(x){return set==="all"||set==="err"||x.g===set});
@@ -458,7 +559,7 @@ function inSet(set){
 }
 function start(set){
   var pool=inSet(set);
-  cur={set:set,queue:[],i:0,answered:false,empty:false,first:0,n:0,wrong:[],retried:{},seen:{}};
+  cur={set:set,queue:[],i:0,answered:false,empty:false,first:0,n:0,wrong:[],retried:{},seen:{},before:countGood(),tipUsed:false};
   if(!pool.length){cur.empty=true;render();return}
   var un=shuffle(pool.filter(function(x){return !learned(x.id)})).sort(function(a,b){return peek(b.id).m-peek(a.id).m});
   var ln=shuffle(pool.filter(function(x){return learned(x.id)}));
@@ -470,13 +571,14 @@ function start(set){
 function renderChips(){
   var sets=["all"].concat(G.map(function(g){return g.id}),["err"]);
   $("chips").innerHTML=sets.map(function(k){
-    var pool=inSet(k),l=pool.filter(function(x){return learned(x.id)}).length;
+    var pool=inSet(k),l=pool.filter(function(x){return good(x.id)}).length;
     var cnt=k==="err"?String(pool.length):l+"/"+pool.length;
-    return '<button type="button" class="chip'+(cur.set===k?" on":"")+'" data-set="'+k+'">'+esc(gname[k])+'<span class="cnt">'+cnt+'</span></button>';
+    return '<button type="button" class="chip'+(cur.set===k?" on":"")+'" data-set="'+k+'" title="richtig beantwortet / Aufgaben">'+esc(gname[k])+'<span class="cnt">'+cnt+'</span></button>';
   }).join("");
-  var tot=Q.length,lt=Q.filter(function(x){return learned(x.id)}).length;
-  $("tot").textContent=lt+" von "+tot+" gelernt";
-  $("totbar").style.width=(tot?Math.round(lt/tot*100):0)+"%";
+  var tot=Q.length,gd=Q.filter(function(x){return good(x.id)}).length,sr=Q.filter(function(x){return learned(x.id)}).length,sn=Q.filter(function(x){return seenq(x.id)}).length;
+  $("tot").textContent=gd+" von "+tot+" aktuell richtig · "+sr+" sicher (2× hintereinander) · "+sn+" geübt";
+  $("totbar").style.width=(tot?Math.round(gd/tot*100):0)+"%";
+  var sb=$("surebar");if(sb)sb.style.width=(tot?Math.round(sr/tot*100):0)+"%";
 }
 function render(){
   renderChips();
@@ -489,8 +591,9 @@ function render(){
   var it=BY[cur.queue[cur.i]];
   var gi=0;
   var stem=esc(it.s).replace(/___/g,function(){return '<span class="gap" data-i="'+(gi++)+'"></span>'});
-  var h='<div class="qhead"><span class="lab">'+esc(gname[it.g]||"")+'</span><span class="lab">'+(cur.i+1)+' / '+cur.queue.length+'</span></div>';
+  var h='<div class="qhead"><span class="lab">'+esc(gname[it.g]||"")+'</span><span class="lab">'+(cur.i+1)+' / '+cur.queue.length+' · '+cur.first+' richtig</span></div>';
   h+='<div class="rail"><i style="width:'+Math.round(cur.i/cur.queue.length*100)+'%"></i></div>';
+  h+='<p class="task">'+esc(task(it))+'</p>';
   h+='<p class="stem">'+stem+'</p>';
   if(it.v)h+='<p class="vocab"><span class="lab">Wortschatz</span> '+esc(it.v)+'</p>';
   if(it.src)h+='<p class="src"><span class="lab">C1 Allg</span> '+esc(it.src)+'</p>';
@@ -502,6 +605,7 @@ function render(){
   }else{
     h+='<div class="typed"><input id="inp" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Antwort eingeben"><button type="button" id="chk" class="btn">Prüfen</button></div>';
   }
+  h+='<div class="tiprow"><button type="button" class="btn ghost" id="tipbtn">Tipp: Welche Wortart?</button><p class="tip" id="tipbox" hidden>'+esc(tipOf(it))+'</p></div>';
   h+='<div id="fb" class="fb" hidden></div>';
   c.innerHTML=h;
   var inp=$("inp");if(inp)inp.focus();
@@ -543,6 +647,15 @@ function answer(val){
   var h='<p class="verdict">'+(ok?"Richtig.":"Nicht ganz. Richtig: <strong>"+esc(it.a.split("/").join(" / "))+"</strong>")+'</p>';
   h+='<p class="why">'+esc(it.e)+'</p>';
   h+='<p class="tr"><span class="lab">Перевод</span> '+esc(it.t)+'</p>';
+  var mo=moreOf(it,ok?null:val);
+  h+='<div class="more">';
+  if(mo.chosen)h+='<p><span class="lab">Dein Wort</span> '+esc(mo.chosen)+'</p>';
+  if(mo.kind)h+='<p><span class="lab">Wortart</span> <strong>'+esc(mo.kind)+'</strong>'+(mo.pos&&mo.pos!=="Präposition"?' · '+esc(mo.pos):'')+'</p>';
+  if(mo.rule)h+='<p class="ru">'+esc(mo.rule)+'</p>';
+  if(mo.mean)h+='<p class="ru"><span class="lab">Значение</span> '+esc(mo.row)+' — '+esc(mo.mean)+'</p>';
+  if(mo.examples.length){h+='<ul class="exs">'+mo.examples.map(function(e){return '<li><span class="ex">'+esc(e[0])+'</span><span class="ru">'+esc(e[1])+'</span></li>'}).join("")+'</ul>'}
+  if(mo.note)h+='<p class="ru note"><span class="lab">Не путайте</span> '+esc(mo.note)+'</p>';
+  h+='</div>';
   h+='<button type="button" id="next" class="btn go">Weiter</button>';
   fb.innerHTML=h;
   renderChips();
@@ -552,7 +665,9 @@ function next(){cur.i++;cur.answered=false;render();window.scrollTo(0,0)}
 function summary(){
   var uniq=cur.wrong.length,c=$("card");
   var h='<div class="qhead"><span class="lab">Runde beendet</span><span class="lab">'+esc(gname[cur.set])+'</span></div>';
+  var now=countGood(),d=now-cur.before;
   h+='<p class="score"><strong>'+cur.first+'</strong> von '+cur.n+' beim ersten Versuch richtig</p>';
+  h+='<p class="why">Gesamtstand: <strong>'+now+'</strong> von '+Q.length+' Aufgaben aktuell richtig ('+(d>=0?"+":"")+d+' in dieser Runde). Als «sicher» zählt eine Aufgabe, wenn du sie zweimal hintereinander richtig löst: '+Q.filter(function(x){return learned(x.id)}).length+' bisher.</p>';
   if(uniq){
     h+='<p class="lab sub">Das solltest du wiederholen</p><ul class="wl">';
     cur.wrong.forEach(function(id){var x=BY[id];h+='<li><span class="de">'+esc(x.s.replace(/___/,"["+x.a.split("/").join(" / ")+"]"))+'</span></li>'});
@@ -574,12 +689,19 @@ function tab(name){
 }
 var TAGN={ns:"Nebensatz",adv:"Adverb",p0:"Position 0",prep:"Präposition",inf:"Infinitiv"};
 function buildCheat(){
-  var h='<div class="guide"><h2>Wo steht das Verb?</h2><ol>'+
-   '<li><b>Am Ende des Satzes</b> → Nebensatz-Konnektor: weil, indem, obwohl, damit, sodass, wodurch, weshalb.</li>'+
-   '<li><b>Direkt nach dem Konnektor</b> (Position 1, dann Verb) → Adverb: deshalb, trotzdem, stattdessen, dadurch, folglich, außerdem.</li>'+
-   '<li><b>Konnektor + Subjekt + Verb</b> → Position 0: denn, aber, und, oder, sondern.</li>'+
-   '<li><b>Infinitiv mit zu</b> → ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich; sonst ohne dass, anstatt dass, damit.</li>'+
-   '<li><b>Nomen folgt</b> → Präposition mit Genitiv: wegen, trotz, aufgrund, mithilfe, anstelle, dank.</li></ol></div>';
+  var h='<div class="guide"><h2>Zuerst: Welcher Satztyp?</h2>'+
+   '<p class="gl">Ein Konnektor ist ein Wort, das zwei Sätze oder Satzteile logisch verbindet. Es gibt mehrere Wortarten, und jede hat ihre eigene Wortstellung. Die Regel «Verb am Ende» gilt nur im Nebensatz. «Position 1, dann Verb» gilt nur im Hauptsatz.</p>'+
+   '<table class="gt"><thead><tr><th>Wortart</th><th>Wo steht das Verb?</th><th>Beispiele</th></tr></thead><tbody>'+
+   '<tr><td><b>Konjunktion → Nebensatz</b><br><span class="ru">Подчинительный союз</span></td><td>Am <b>Ende</b> des Nebensatzes</td><td>weil, indem, obwohl, damit, sodass, wodurch, weshalb, dadurch, dass</td></tr>'+
+   '<tr><td><b>Adverb → Hauptsatz</b><br><span class="ru">Наречие-коннектор</span></td><td>Adverb auf <b>Position 1</b>, direkt danach das Verb (Inversion)</td><td>deshalb, trotzdem, stattdessen, dadurch, folglich, außerdem</td></tr>'+
+   '<tr><td><b>Position 0</b><br><span class="ru">Союз вне порядка слов</span></td><td>Normale Wortstellung: Subjekt, dann Verb an Position 2</td><td>denn, aber, und, oder, sondern</td></tr>'+
+   '<tr><td><b>Infinitiv mit zu</b><br><span class="ru">Инфинитивный оборот</span></td><td>Infinitiv mit zu am Ende der Konstruktion, <b>gleiches Subjekt</b></td><td>ohne … zu, (an)statt … zu, um … zu</td></tr>'+
+   '<tr><td><b>Präposition + Nomen</b><br><span class="ru">Предлог</span></td><td>Kein Verb direkt danach: Nomen im Genitiv, Akkusativ oder Dativ</td><td>wegen, trotz, aufgrund, mithilfe, anstelle, dank, durch, anhand</td></tr>'+
+   '</tbody></table>'+
+   '<h3>Drei Fallen</h3><ol>'+
+   '<li><b>Dasselbe Wort, zwei Positionen.</b> Hauptsatz: <i>Er trainierte. Dadurch verbesserte er sich.</i> (Position 1, Verb direkt danach). Nebensatz: <i>…, weil dadurch Platz frei wird.</i> (Adverb im Mittelfeld, Verb am Ende).</li>'+
+   '<li><b>Zwei Konjunktionen können nicht nebeneinander stehen.</b> Nach weil, dass, obwohl kann nicht noch wodurch, indem oder damit folgen. Dort passt ein Adverb: <i>weil dadurch …</i></li>'+
+   '<li><b>Der Artikel verrät die Präposition.</b> einen → durch. eines / einer → mithilfe, mittels, anhand, dank. einem → mit, mithilfe von, anhand von.</li></ol></div>';
   G.forEach(function(g){
     h+='<section class="grp"><h2>'+esc(g.name)+'</h2><p class="lab">'+esc(g.sub)+'</p><div class="rows">';
     g.rows.forEach(function(r){
@@ -596,6 +718,7 @@ document.addEventListener("click",function(e){
   if(t.classList.contains("opt")){answer(t.getAttribute("data-v"));return}
   if(t.id==="chk"){answer($("inp").value);return}
   if(t.id==="next"){next();return}
+  if(t.id==="tipbtn"){$("tipbox").hidden=false;t.hidden=true;return}
   if(t.id==="again"){start(cur.set);return}
   if(t.id==="errs"){start("err");return}
   if(t.id==="tocheat"){tab("cheat");return}

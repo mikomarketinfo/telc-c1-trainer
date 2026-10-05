@@ -9,7 +9,7 @@
         "version": "1.0.0"
     },
     "content": {
-        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "instruction": "Wählen Sie für jede Aufgabe das Wort, das in die Lücke passt (Konjunktion, Adverb oder Präposition) oder den richtigen Satz. Die Regel «Verb am Ende» gilt nur im Nebensatz, «Position 1, dann Verb» nur im Hauptsatz. Zwei Konjunktionen stehen nie nebeneinander.",
         "text": "'während' und 'wohingegen' stellen gegenüber, 'hingegen, dagegen, demgegenüber, trotzdem, dennoch' sind Adverbien, 'zwar … aber' und 'einerseits … andererseits' bilden Paare."
     },
     "questions": [
@@ -30,8 +30,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "obwohl + Nebensatz = Gegengrund (Konzessiv): «хотя, несмотря на то что».",
-                "correctWhy": "Перевод: Хотя шёл дождь, мы пошли гулять."
+                "rule": "obwohl + Nebensatz = Gegengrund (Konzessiv): «хотя, несмотря на то что». Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Хотя шёл дождь, мы пошли гулять. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Obwohl es regnete, gingen wir spazieren. — Хотя шёл дождь, мы пошли гулять. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             }
         },
         {
@@ -51,8 +51,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "trotzdem = Adverb (Position 1) → Inversion: Trotzdem gingen wir… Obwohl würde das Verb ans Ende schicken.",
-                "correctWhy": "Перевод: Шёл дождь. Тем не менее мы пошли гулять."
+                "rule": "trotzdem = Adverb (Position 1) → Inversion: Trotzdem gingen wir… Obwohl würde das Verb ans Ende schicken. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Шёл дождь. Тем не менее мы пошли гулять. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 · Inversion). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Es regnete. Trotzdem gingen wir los. — Шёл дождь. Тем не менее мы пошли. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             }
         },
         {
@@ -72,8 +72,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "trotz + Genitiv = «несмотря на» (Präposition). In der gesprochenen Sprache hört man auch den Dativ.",
-                "correctWhy": "Перевод: Несмотря на холод, на нём была только футболка."
+                "rule": "trotz + Genitiv = «несмотря на» (Präposition). In der gesprochenen Sprache hört man auch den Dativ. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Несмотря на холод, на нём была только футболка. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Trotz des Regens gingen wir los. — Несмотря на дождь, мы пошли. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             }
         },
         {
@@ -93,8 +93,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "obwohl + Nebensatz (Verb am Ende: sind). Das ist Aufgabe 44 in der Vorlage. Trotzdem würde Inversion verlangen: Trotzdem bleibt ihnen…",
-                "correctWhy": "Перевод: Хотя лапки гекконов менее прочны, чем этот искусственный «суперклей», у них пока есть преимущество перед лабораторной конкуренцией."
+                "rule": "obwohl + Nebensatz (Verb am Ende: sind). Das ist Aufgabe 44 in der Vorlage. Trotzdem würde Inversion verlangen: Trotzdem bleibt ihnen… Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Хотя лапки гекконов менее прочны, чем этот искусственный «суперклей», у них пока есть преимущество перед лабораторной конкуренцией. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Obwohl es regnete, gingen wir spazieren. — Хотя шёл дождь, мы пошли гулять. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             },
             "source": "Задание полностью соответствует файлу C1 Allg · Sprachbausteine (2) «Neues aus der Bionik»"
         },
@@ -115,8 +115,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "ein Vorteil gegenüber + Dativ = «преимущество перед…». Das ist Aufgabe 45 in der Vorlage.",
-                "correctWhy": "Перевод: Преимущество перед лабораторной конкуренцией: они устойчивее."
+                "rule": "ein Vorteil gegenüber + Dativ = «преимущество перед…». Das ist Aufgabe 45 in der Vorlage. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Преимущество перед лабораторной конкуренцией: они устойчивее. | Wortart: Präposition (+ Nomen). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             },
             "source": "Задание полностью соответствует файлу C1 Allg · Sprachbausteine (2) «Neues aus der Bionik»"
         },
@@ -137,8 +137,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "trotzdem als Gegensatz mit Inversion (ist es). Deshalb wäre logisch falsch.",
-                "correctWhy": "Перевод: Это не долгосрочное решение, но всё же правильно сказать: давайте начнём немедленно."
+                "rule": "trotzdem als Gegensatz mit Inversion (ist es). Deshalb wäre logisch falsch. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Это не долгосрочное решение, но всё же правильно сказать: давайте начнём немедленно. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 · Inversion). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Es regnete. Trotzdem gingen wir los. — Шёл дождь. Тем не менее мы пошли. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)"
         },
@@ -159,8 +159,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "dennoch = «и всё же», Adverb auf Position 1 → Inversion (wird die Evolution…).",
-                "correctWhy": "Перевод: И всё же, по словам биолога Мартина Новака, эволюция определяется не только конкуренцией и эгоизмом."
+                "rule": "dennoch = «и всё же», Adverb auf Position 1 → Inversion (wird die Evolution…). Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: И всё же, по словам биолога Мартина Новака, эволюция определяется не только конкуренцией и эгоизмом. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 · Inversion). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Es regnete. Trotzdem gingen wir los. — Шёл дождь. Тем не менее мы пошли. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             },
             "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Konkurrenz und Kooperation» (вопрос составлен для тренировки)"
         },
@@ -181,8 +181,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "während + Nebensatz = Gegenüberstellung («тогда как»). Beide Gruppen werden kontrastiert.",
-                "correctWhy": "Перевод: Если спросить дорогу, женщины описывают её прежде всего по ориентирам, тогда как мужчины также используют стороны света и расстояния."
+                "rule": "während + Nebensatz = Gegenüberstellung («тогда как»). Beide Gruppen werden kontrastiert. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Если спросить дорогу, женщины описывают её прежде всего по ориентирам, тогда как мужчины также используют стороны света и расстояния. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Während der eine Partner arbeitet, kümmert sich der andere um die Kinder. — Пока один партнёр работает, другой занимается детьми. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Navigationssystem» (вопрос составлен для тренировки)"
         },
@@ -203,8 +203,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "hingegen/dagegen/demgegenüber = Adverbien des Kontrasts: «напротив, в отличие от».",
-                "correctWhy": "Перевод: Север отличается промышленным развитием, юг же живёт за счёт туризма."
+                "rule": "hingegen/dagegen/demgegenüber = Adverbien des Kontrasts: «напротив, в отличие от». Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Север отличается промышленным развитием, юг же живёт за счёт туризма. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Der Norden ist industriell geprägt, der Süden hingegen lebt vom Tourismus. — Север отличается промышленным развитием, юг же живёт за счёт туризма. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             }
         },
         {
@@ -224,8 +224,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "demgegenüber = «в противоположность этому», Adverb auf Position 1 → Inversion: Demgegenüber steht…",
-                "correctWhy": "Перевод: Природа предусмотрела конкуренцию как принцип самосохранения. В противоположность этому стоит культурное достижение — кооперация."
+                "rule": "demgegenüber = «в противоположность этому», Adverb auf Position 1 → Inversion: Demgegenüber steht… Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Природа предусмотрела конкуренцию как принцип самосохранения. В противоположность этому стоит культурное достижение — кооперация. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Der Norden ist industriell geprägt, der Süden hingegen lebt vom Tourismus. — Север отличается промышленным развитием, юг же живёт за счёт туризма. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             },
             "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Konkurrenz und Kooperation» (вопрос составлен для тренировки)"
         },
@@ -246,8 +246,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "einerseits … andererseits stellt zwei Seiten gegenüber (Dilemma, Pro und Kontra). Das steht auch in der Liste «Sprachliche Merkmale» der Vorlage.",
-                "correctWhy": "Перевод: С одной стороны, она хочет путешествовать, с другой — ей не хватает денег."
+                "rule": "einerseits … andererseits stellt zwei Seiten gegenüber (Dilemma, Pro und Kontra). Das steht auch in der Liste «Sprachliche Merkmale» der Vorlage. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: С одной стороны, она хочет путешествовать, с другой — ей не хватает денег. | Wortart: Adverb (Konnektor im Hauptsatz) (beide Seiten). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Einerseits möchte sie reisen, andererseits fehlt ihr das Geld. — С одной стороны, она хочет путешествовать, с другой — ей не хватает денег. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             }
         },
         {
@@ -267,8 +267,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "dagegen = «напротив, же»: Es kontrastiert die Katzen mit den Wölfen im vorigen Satz.",
-                "correctWhy": "Перевод: Кошки же присоединились к людям лишь тогда, когда те стали оседлыми в начале неолита."
+                "rule": "dagegen = «напротив, же»: Es kontrastiert die Katzen mit den Wölfen im vorigen Satz. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Кошки же присоединились к людям лишь тогда, когда те стали оседлыми в начале неолита. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Der Norden ist industriell geprägt, der Süden hingegen lebt vom Tourismus. — Север отличается промышленным развитием, юг же живёт за счёт туризма. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)"
         },
@@ -289,8 +289,8 @@
                 "geg"
             ],
             "explanation": {
-                "rule": "obgleich/wenngleich/obschon = formelle Varianten von obwohl, Verb am Ende.",
-                "correctWhy": "Перевод: Хотя он устал, он продолжал работать."
+                "rule": "obgleich/wenngleich/obschon = formelle Varianten von obwohl, Verb am Ende. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Хотя он устал, он продолжал работать. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Obwohl es regnete, gingen wir spazieren. — Хотя шёл дождь, мы пошли гулять. | Не путайте: obwohl = придаточное (глагол в конце), trotzdem = главное (инверсия). trotz + Genitiv = предлог. während: временной или противопоставительный смысл, смотрите на контекст."
             }
         }
     ],

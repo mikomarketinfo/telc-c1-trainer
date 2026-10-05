@@ -9,7 +9,7 @@
         "version": "1.0.0"
     },
     "content": {
-        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "instruction": "Wählen Sie für jede Aufgabe das Wort, das in die Lücke passt (Konjunktion, Adverb oder Präposition) oder den richtigen Satz. Die Regel «Verb am Ende» gilt nur im Nebensatz, «Position 1, dann Verb» nur im Hauptsatz. Zwei Konjunktionen stehen nie nebeneinander.",
         "text": "Konsekutive Konnektoren nennen die Folge. 'sodass' und 'weshalb' leiten einen Nebensatz ein, 'deshalb, daher, folglich, somit, demnach' sind Adverbien auf Position 1."
     },
     "questions": [
@@ -30,8 +30,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "deshalb ist ein Adverb auf Position 1: danach direkt das Verb (kam ich). Obwohl, Weil und Damit schicken das Verb ans Ende.",
-                "correctWhy": "Перевод: Поезд отменили. Поэтому я опоздал."
+                "rule": "deshalb ist ein Adverb auf Position 1: danach direkt das Verb (kam ich). Obwohl, Weil und Damit schicken das Verb ans Ende. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Поезд отменили. Поэтому я опоздал. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 · Inversion). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Es regnete stark. Deshalb fiel das Konzert aus. — Шёл сильный дождь. Поэтому концерт отменили. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -51,8 +51,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "sodass leitet einen Nebensatz ein (kam am Ende). deshalb, daher und folglich sind Adverbien und würden Inversion verlangen: …, deshalb kam ich.",
-                "correctWhy": "Перевод: Поезд отменили, так что я опоздал."
+                "rule": "sodass leitet einen Nebensatz ein (kam am Ende). deshalb, daher und folglich sind Adverbien und würden Inversion verlangen: …, deshalb kam ich. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Поезд отменили, так что я опоздал. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Der Zug fiel aus, sodass viele Pendler zu spät kamen. — Поезд отменили, так что многие пассажиры опоздали. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -72,8 +72,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "somit = «следовательно, таким образом», Adverb im Mittelfeld. sodass und indem würden das Verb ans Ende schicken.",
-                "correctWhy": "Перевод: Спрос неуклонно растёт. Цены, следовательно, будут расти дальше."
+                "rule": "somit = «следовательно, таким образом», Adverb im Mittelfeld. sodass und indem würden das Verb ans Ende schicken. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Спрос неуклонно растёт. Цены, следовательно, будут расти дальше. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Zahl der Kunden sank. Folglich mussten Filialen schließen. — Число клиентов упало. Следовательно, пришлось закрыть филиалы. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -93,8 +93,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "demnach = «следовательно, исходя из этого», Adverb im Mittelfeld. Obwohl und damit sind Nebensatzkonnektoren, dennoch drückt Gegensatz aus.",
-                "correctWhy": "Перевод: Отсюда возникает вопрос, как будут выглядеть электромобили будущего."
+                "rule": "demnach = «следовательно, исходя из этого», Adverb im Mittelfeld. Obwohl und damit sind Nebensatzkonnektoren, dennoch drückt Gegensatz aus. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Отсюда возникает вопрос, как будут выглядеть электромобили будущего. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Zahl der Kunden sank. Folglich mussten Filialen schließen. — Число клиентов упало. Следовательно, пришлось закрыть филиалы. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)"
         },
@@ -115,8 +115,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "infolgedessen = «вследствие этого», Adverb (Mittelfeld oder Position 1). Der Originalsatz im Text lautet: …und es infolgedessen nicht merkt, wenn er doch einmal in die Irre geführt wird.",
-                "correctWhy": "Перевод: Пользователь не так точно воспринимает окружение и вследствие этого не замечает, если его вводят в заблуждение."
+                "rule": "infolgedessen = «вследствие этого», Adverb (Mittelfeld oder Position 1). Der Originalsatz im Text lautet: …und es infolgedessen nicht merkt, wenn er doch einmal in die Irre geführt wird. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Пользователь не так точно воспринимает окружение и вследствие этого не замечает, если его вводят в заблуждение. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Zahl der Kunden sank. Folglich mussten Filialen schließen. — Число клиентов упало. Следовательно, пришлось закрыть филиалы. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Navigationssystem» (вопрос составлен для тренировки)"
         },
@@ -137,8 +137,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "Hauptsatz + deshalb: Position 1 ist das Adverb, Position 2 das Verb (blieb). Bei sodass dagegen steht das Verb am Ende.",
-                "correctWhy": "Перевод: Она заболела, поэтому осталась дома."
+                "rule": "Hauptsatz + deshalb: Position 1 ist das Adverb, Position 2 das Verb (blieb). Bei sodass dagegen steht das Verb am Ende. Tipp: Hier musst du den richtigen ganzen Satz wählen. Prüfe: Steht das Verb am Ende (Nebensatz) oder auf Position 2 (Hauptsatz)?",
+                "correctWhy": "Перевод: Она заболела, поэтому осталась дома. | Wortart: Satzwahl. Нужно выбрать грамматически правильное предложение. Смотрите на положение глагола. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -158,8 +158,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "weshalb/weswegen leitet einen Nebensatz ein: «из-за чего». deshalb würde Inversion verlangen: …, deshalb konnte ich…",
-                "correctWhy": "Перевод: Сайт был перегружен, из-за чего я смог войти только позже."
+                "rule": "weshalb/weswegen leitet einen Nebensatz ein: «из-за чего». deshalb würde Inversion verlangen: …, deshalb konnte ich… Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Сайт был перегружен, из-за чего я смог войти только позже. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Die Seite war überlastet, weshalb ich mich erst später einloggen konnte. — Сайт был перегружен, из-за чего я смог войти только позже. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -179,8 +179,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "folglich = «следовательно», Adverb auf Position 1 → Inversion: Folglich muss sie…",
-                "correctWhy": "Перевод: Фирма понесла убытки. Следовательно, ей придётся сокращать рабочие места."
+                "rule": "folglich = «следовательно», Adverb auf Position 1 → Inversion: Folglich muss sie… Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Фирма понесла убытки. Следовательно, ей придётся сокращать рабочие места. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Zahl der Kunden sank. Folglich mussten Filialen schließen. — Число клиентов упало. Следовательно, пришлось закрыть филиалы. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -200,8 +200,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "Konstruktion so + Adjektiv … dass: «настолько…, что». Man schreibt nicht «so schlecht, sodass».",
-                "correctWhy": "Перевод: Погода была настолько плохой, что нам пришлось отменить праздник."
+                "rule": "Konstruktion so + Adjektiv … dass: «настолько…, что». Man schreibt nicht «so schlecht, sodass». Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Погода была настолько плохой, что нам пришлось отменить праздник. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Der Vortrag war so spannend, dass niemand auf die Uhr schaute. — Доклад был настолько увлекательным, что никто не смотрел на часы. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -221,8 +221,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "sodass + Nebensatz = Konsekutivsatz (Folge). Das Verb steht am Ende.",
-                "correctWhy": "Перевод: Курсы были переполнены, так что часть студентов получила отказ."
+                "rule": "sodass + Nebensatz = Konsekutivsatz (Folge). Das Verb steht am Ende. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Курсы были переполнены, так что часть студентов получила отказ. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Der Zug fiel aus, sodass viele Pendler zu spät kamen. — Поезд отменили, так что многие пассажиры опоздали. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -242,8 +242,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "daher = «поэтому», Adverb auf Position 1: Daher konnte ich…",
-                "correctWhy": "Перевод: Я не получил письмо. Поэтому не мог ответить."
+                "rule": "daher = «поэтому», Adverb auf Position 1: Daher konnte ich… Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Я не получил письмо. Поэтому не мог ответить. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 · Inversion). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Es regnete stark. Deshalb fiel das Konzert aus. — Шёл сильный дождь. Поэтому концерт отменили. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -263,8 +263,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "infolge + Genitiv = «вследствие» (Präposition, formell). Ähnlich: aufgrund + Genitiv.",
-                "correctWhy": "Перевод: Вследствие шторма все рейсы были отменены."
+                "rule": "infolge + Genitiv = «вследствие» (Präposition, formell). Ähnlich: aufgrund + Genitiv. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Вследствие шторма все рейсы были отменены. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Infolge des Streiks fielen zahlreiche Züge aus. — Вследствие забастовки многие поезда были отменены. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             }
         },
         {
@@ -284,8 +284,8 @@
                 "fol"
             ],
             "explanation": {
-                "rule": "folglich = «следовательно»: Wer die Programme nicht überblickt, kann sie auch nicht nutzen. Im Text steht folglich.",
-                "correctWhy": "Перевод: Часто малым и средним предприятиям не хватает необходимых ресурсов, чтобы охватить многочисленные программы поддержки и, следовательно, воспользоваться ими."
+                "rule": "folglich = «следовательно»: Wer die Programme nicht überblickt, kann sie auch nicht nutzen. Im Text steht folglich. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Часто малым и средним предприятиям не хватает необходимых ресурсов, чтобы охватить многочисленные программы поддержки и, следовательно, воспользоваться ими. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 oder Mittelfeld). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Zahl der Kunden sank. Folglich mussten Filialen schließen. — Число клиентов упало. Следовательно, пришлось закрыть филиалы. | Не путайте: Глагол сразу после слова (Deshalb kam er) → наречие. Глагол в конце → sodass / weshalb. so … dass: so стоит перед прилагательным, dass открывает придаточное. Не «so …, sodass»."
             },
             "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Unterstützung für KMU» (фрагмент, вопрос составлен для тренировки)"
         }

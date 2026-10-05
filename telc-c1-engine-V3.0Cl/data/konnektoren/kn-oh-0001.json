@@ -9,7 +9,7 @@
         "version": "1.0.0"
     },
     "content": {
-        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "instruction": "Wählen Sie für jede Aufgabe das Wort, das in die Lücke passt (Konjunktion, Adverb oder Präposition) oder den richtigen Satz. Die Regel «Verb am Ende» gilt nur im Nebensatz, «Position 1, dann Verb» nur im Hauptsatz. Zwei Konjunktionen stehen nie nebeneinander.",
         "text": "'ohne … zu' und '(an)statt … zu' stehen mit Infinitiv bei gleichem Subjekt. Bei verschiedenen Subjekten folgt ein Nebensatz mit 'ohne dass' oder '(an)statt dass'. 'stattdessen' ist ein Adverb mit Inversion."
     },
     "questions": [
@@ -30,8 +30,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "ohne … zu + Infinitiv: «не сказав ни слова». Das Subjekt ist in beiden Teilen dasselbe.",
-                "correctWhy": "Перевод: Она вышла из комнаты, не сказав ни слова."
+                "rule": "ohne … zu + Infinitiv: «не сказав ни слова». Das Subjekt ist in beiden Teilen dasselbe. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Она вышла из комнаты, не сказав ни слова. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Er verließ den Raum, ohne ein Wort zu sagen. — Он вышел из комнаты, не сказав ни слова. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             }
         },
         {
@@ -51,8 +51,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "Bei verschiedenen Subjekten (er / jemand) gilt ohne dass + Nebensatz, nicht ohne zu + Infinitiv.",
-                "correctWhy": "Перевод: Он вышел из комнаты, так что никто этого не заметил."
+                "rule": "Bei verschiedenen Subjekten (er / jemand) gilt ohne dass + Nebensatz, nicht ohne zu + Infinitiv. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Он вышел из комнаты, так что никто этого не заметил. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Er verließ den Raum, ohne ein Wort zu sagen. — Он вышел из комнаты, не сказав ни слова. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             }
         },
         {
@@ -72,8 +72,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "(an)statt … zu + Infinitiv: «вместо того чтобы». Stattdessen ist ein Adverb und braucht Inversion.",
-                "correctWhy": "Перевод: Вместо того чтобы пойти в кино, он остался дома."
+                "rule": "(an)statt … zu + Infinitiv: «вместо того чтобы». Stattdessen ist ein Adverb und braucht Inversion. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Вместо того чтобы пойти в кино, он остался дома. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Statt zu lernen, schaute er Serien. — Вместо того чтобы учиться, он смотрел сериалы. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             }
         },
         {
@@ -93,8 +93,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "stattdessen = Adverb auf Position 1, danach direkt das Verb: Stattdessen blieb er…",
-                "correctWhy": "Перевод: Он не пошёл в кино. Вместо этого он остался дома."
+                "rule": "stattdessen = Adverb auf Position 1, danach direkt das Verb: Stattdessen blieb er… Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Он не пошёл в кино. Вместо этого он остался дома. | Wortart: Adverb (Konnektor im Hauptsatz) (Position 1 · Inversion). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Er sagte die Reise nicht ab. Stattdessen verschob er sie auf den Herbst. — Он не отменил поездку. Вместо этого он перенёс её на осень. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             }
         },
         {
@@ -114,8 +114,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "anstatt dass + Nebensatz mit eigenem Subjekt und Verb am Ende; mit zu + Infinitiv wäre es «anstatt sich zu entschuldigen».",
-                "correctWhy": "Перевод: Вместо того чтобы извиниться, он просто ушёл."
+                "rule": "anstatt dass + Nebensatz mit eigenem Subjekt und Verb am Ende; mit zu + Infinitiv wäre es «anstatt sich zu entschuldigen». Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Вместо того чтобы извиниться, он просто ушёл. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Statt zu lernen, schaute er Serien. — Вместо того чтобы учиться, он смотрел сериалы. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             }
         },
         {
@@ -135,8 +135,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "anstatt … zu + Infinitiv: «вместо того чтобы готовить свежее». Der Satz steht so im Text.",
-                "correctWhy": "Перевод: Я терплю неудачу из-за того, что снова просто засовываю пиццу в духовку, вместо того чтобы готовить свежее."
+                "rule": "anstatt … zu + Infinitiv: «вместо того чтобы готовить свежее». Der Satz steht so im Text. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Я терплю неудачу из-за того, что снова просто засовываю пиццу в духовку, вместо того чтобы готовить свежее. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Statt zu lernen, schaute er Serien. — Вместо того чтобы учиться, он смотрел сериалы. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Zwischen Familie und Studium» (фрагмент, вопрос составлен для тренировки)"
         },
@@ -157,8 +157,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "Hier ist ohne eine Präposition (+ Akkusativ) mit Irrealis: «без этой книги я бы никогда не узнал названий».",
-                "correctWhy": "Перевод: …показывает мне все машины, названия которых я бы без этой книги никогда не узнала."
+                "rule": "Hier ist ohne eine Präposition (+ Akkusativ) mit Irrealis: «без этой книги я бы никогда не узнал названий». Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: …показывает мне все машины, названия которых я бы без этой книги никогда не узнала. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Er verließ den Raum, ohne ein Wort zu sagen. — Он вышел из комнаты, не сказав ни слова. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Zwischen Familie und Studium» (фрагмент, вопрос составлен для тренировки)"
         },
@@ -179,8 +179,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "ohne + Akkusativ (den Rückzug). anstelle würde den Genitiv verlangen; trotz und statt ändern den Sinn.",
-                "correctWhy": "Перевод: Ведь без ухода в одиночество и тишину такую учёбу едва ли можно освоить."
+                "rule": "ohne + Akkusativ (den Rückzug). anstelle würde den Genitiv verlangen; trotz und statt ändern den Sinn. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Ведь без ухода в одиночество и тишину такую учёбу едва ли можно освоить. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Er verließ den Raum, ohne ein Wort zu sagen. — Он вышел из комнаты, не сказав ни слова. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Fernstudenten» (вопрос составлен для тренировки)"
         },
@@ -201,8 +201,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "Vorzeitigkeit: Partizip II + zu + haben am Ende: gelesen zu haben.",
-                "correctWhy": "Перевод: Он подписал договор, не прочитав его."
+                "rule": "Vorzeitigkeit: Partizip II + zu + haben am Ende: gelesen zu haben. Tipp: Hier musst du den richtigen ganzen Satz wählen. Prüfe: Steht das Verb am Ende (Nebensatz) oder auf Position 2 (Hauptsatz)?",
+                "correctWhy": "Перевод: Он подписал договор, не прочитав его. | Wortart: Satzwahl. Нужно выбрать грамматически правильное предложение. Смотрите на положение глагола. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             }
         },
         {
@@ -222,8 +222,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "anstelle + Genitiv = «вместо» (Präposition). Stattdessen ist ein Adverb.",
-                "correctWhy": "Перевод: Вместо служебной машины она получила проездной от работодателя."
+                "rule": "anstelle + Genitiv = «вместо» (Präposition). Stattdessen ist ein Adverb. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Вместо служебной машины она получила проездной от работодателя. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Anstelle eines Dienstwagens erhält sie ein Jobticket. — Вместо служебной машины она получает проездной от работодателя. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             }
         },
         {
@@ -243,8 +243,8 @@
                 "oh"
             ],
             "explanation": {
-                "rule": "ohne … zu = «и при этом не…»: Das zweite Verb wird verneint dargestellt.",
-                "correctWhy": "Перевод: Она говорила, не переводя дыхания."
+                "rule": "ohne … zu = «и при этом не…»: Das zweite Verb wird verneint dargestellt. Tipp: Hier musst du den richtigen ganzen Satz wählen. Prüfe: Steht das Verb am Ende (Nebensatz) oder auf Position 2 (Hauptsatz)?",
+                "correctWhy": "Перевод: Она говорила, не переводя дыхания. | Wortart: Satzwahl. Нужно выбрать грамматически правильное предложение. Смотрите на положение глагола. | Не путайте: Одно подлежащее → ohne … zu / (an)statt … zu. Разные подлежащие → ohne dass / (an)statt dass. stattdessen — самостоятельное наречие, после него инверсия."
             }
         }
     ],

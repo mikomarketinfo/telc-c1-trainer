@@ -9,7 +9,7 @@
         "version": "1.0.0"
     },
     "content": {
-        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "instruction": "Wählen Sie für jede Aufgabe das Wort, das in die Lücke passt (Konjunktion, Adverb oder Präposition) oder den richtigen Satz. Die Regel «Verb am Ende» gilt nur im Nebensatz, «Position 1, dann Verb» nur im Hauptsatz. Zwei Konjunktionen stehen nie nebeneinander.",
         "text": "Präpositionen wie mithilfe, mittels, durch, anhand und dank nennen Mittel, Werkzeug oder Grundlage. mithilfe, mittels, anhand und dank stehen mit Genitiv, 'mithilfe von' und 'anhand von' mit Dativ, 'durch' mit Akkusativ."
     },
     "questions": [
@@ -30,8 +30,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "mithilfe + Genitiv: mithilfe eines Navigationssystems. Mit Dativ braucht man von: mithilfe von Karten. Die Schreibung «mit Hilfe» ist ebenfalls korrekt.",
-                "correctWhy": "Перевод: С помощью навигационной системы он нашёл дорогу."
+                "rule": "mithilfe + Genitiv: mithilfe eines Navigationssystems. Mit Dativ braucht man von: mithilfe von Karten. Die Schreibung «mit Hilfe» ist ebenfalls korrekt. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: С помощью навигационной системы он нашёл дорогу. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Mithilfe eines Online-Wörterbuchs prüfte er die Schreibweise. — С помощью онлайн-словаря он проверил написание. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             }
         },
         {
@@ -51,8 +51,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "mithilfe + Genitiv (des Mittels). durch verlangt den Akkusativ, anhand von den Dativ; statt ergibt hier keinen Sinn.",
-                "correctWhy": "Перевод: Один из пяти заявил, что хочет с помощью препарата стимулировать фокусировку, концентрацию или память."
+                "rule": "mithilfe + Genitiv (des Mittels). durch verlangt den Akkusativ, anhand von den Dativ; statt ergibt hier keinen Sinn. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Один из пяти заявил, что хочет с помощью препарата стимулировать фокусировку, концентрацию или память. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Mithilfe eines Online-Wörterbuchs prüfte er die Schreibweise. — С помощью онлайн-словаря он проверил написание. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Hirndoping» (вопрос составлен для тренировки)"
         },
@@ -73,8 +73,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "mittels + Genitiv = «посредством», formelle Sprache. wegen, trotz und statt passen inhaltlich nicht.",
-                "correctWhy": "Перевод: Данные были собраны посредством опроса."
+                "rule": "mittels + Genitiv = «посредством», formelle Sprache. wegen, trotz und statt passen inhaltlich nicht. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Данные были собраны посредством опроса. | Wortart: Präposition (+ Nomen) (Präposition · formell). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Der Zugang erfolgt mittels eines persönlichen Codes. — Доступ осуществляется посредством личного кода. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             }
         },
         {
@@ -94,8 +94,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "anhand + Genitiv oder anhand von + Dativ = «на основании, по». Ohne + Genitiv ist falsch (ohne + Akkusativ).",
-                "correctWhy": "Перевод: По статистике хорошо видна тенденция."
+                "rule": "anhand + Genitiv oder anhand von + Dativ = «на основании, по». Ohne + Genitiv ist falsch (ohne + Akkusativ). Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: По статистике хорошо видна тенденция. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Anhand der Zahlen lässt sich ein klarer Trend erkennen. — По цифрам можно увидеть чёткую тенденцию. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             }
         },
         {
@@ -115,8 +115,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "dank + Genitiv (oder Dativ) nennt einen positiven Grund: «благодаря». Trotz und Statt ändern den Sinn.",
-                "correctWhy": "Перевод: Благодаря новому программному обеспечению всё работает быстрее."
+                "rule": "dank + Genitiv (oder Dativ) nennt einen positiven Grund: «благодаря». Trotz und Statt ändern den Sinn. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Благодаря новому программному обеспечению всё работает быстрее. | Wortart: Präposition (+ Nomen) (Präposition · positiv). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Dank der neuen Software läuft alles schneller. — Благодаря новому ПО всё работает быстрее. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             }
         },
         {
@@ -136,8 +136,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "Nach (mit)hilfe steht der Genitiv: eines Wörterbuchs. Mit von folgt der Dativ: mithilfe von einem Wörterbuch.",
-                "correctWhy": "Перевод: С помощью словаря она перевела текст."
+                "rule": "Nach (mit)hilfe steht der Genitiv: eines Wörterbuchs. Mit von folgt der Dativ: mithilfe von einem Wörterbuch. Tipp: Hier musst du den richtigen ganzen Satz wählen. Prüfe: Steht das Verb am Ende (Nebensatz) oder auf Position 2 (Hauptsatz)?",
+                "correctWhy": "Перевод: С помощью словаря она перевела текст. | Wortart: Satzwahl. Нужно выбрать грамматически правильное предложение. Смотрите на положение глагола. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             }
         },
         {
@@ -157,8 +157,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "Das Nomen die Mithilfe = «содействие». Abhilfe = устранение проблемы; Beihilfe = пособие; Aushilfe = временный помощник.",
-                "correctWhy": "Перевод: Мы благодарим вас за помощь в организации."
+                "rule": "Das Nomen die Mithilfe = «содействие». Abhilfe = устранение проблемы; Beihilfe = пособие; Aushilfe = временный помощник. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Мы благодарим вас за помощь в организации. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Mithilfe eines Online-Wörterbuchs prüfte er die Schreibweise. — С помощью онлайн-словаря он проверил написание. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             }
         },
         {
@@ -178,8 +178,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "mittels + Genitiv = «при помощи» (Werkzeug/Mittel).",
-                "correctWhy": "Перевод: Он открыл дверь отмычкой."
+                "rule": "mittels + Genitiv = «при помощи» (Werkzeug/Mittel). Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Он открыл дверь отмычкой. | Wortart: Präposition (+ Nomen) (Präposition · formell). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Der Zugang erfolgt mittels eines persönlichen Codes. — Доступ осуществляется посредством личного кода. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             }
         },
         {
@@ -199,8 +199,8 @@
                 "mit"
             ],
             "explanation": {
-                "rule": "anhand von + Dativ: «на примерах». Ohne und trotz stehen nicht mit von.",
-                "correctWhy": "Перевод: Учительница объяснила правило на примерах."
+                "rule": "anhand von + Dativ: «на примерах». Ohne und trotz stehen nicht mit von. Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: Учительница объяснила правило на примерах. | Wortart: Präposition (+ Nomen) (Präposition). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Anhand der Zahlen lässt sich ein klarer Trend erkennen. — По цифрам можно увидеть чёткую тенденцию. | Не путайте: Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина."
             }
         }
     ],

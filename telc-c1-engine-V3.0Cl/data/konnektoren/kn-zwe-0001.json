@@ -9,7 +9,7 @@
         "version": "1.0.0"
     },
     "content": {
-        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "instruction": "Wählen Sie für jede Aufgabe das Wort, das in die Lücke passt (Konjunktion, Adverb oder Präposition) oder den richtigen Satz. Die Regel «Verb am Ende» gilt nur im Nebensatz, «Position 1, dann Verb» nur im Hauptsatz. Zwei Konjunktionen stehen nie nebeneinander.",
         "text": "Zweck: 'um … zu' bei gleichem Subjekt, 'damit' bei anderem Subjekt. 'dazu' und 'wozu' sind Pronominaladverbien, 'zwecks' + Genitiv ist formell."
     },
     "questions": [
@@ -30,8 +30,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "um … zu + Infinitiv bei gleichem Subjekt (sie lernt / sie will studieren): «чтобы».",
-                "correctWhy": "Перевод: Она учит немецкий, чтобы иметь возможность учиться в Германии."
+                "rule": "um … zu + Infinitiv bei gleichem Subjekt (sie lernt / sie will studieren): «чтобы». Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Она учит немецкий, чтобы иметь возможность учиться в Германии. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Sie lernt Deutsch, um in Deutschland zu studieren. — Она учит немецкий, чтобы учиться в Германии. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             }
         },
         {
@@ -51,8 +51,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "damit + Nebensatz, weil das Subjekt wechselt (sie / ihre Kinder). Mit um … zu geht das nicht.",
-                "correctWhy": "Перевод: Она учит немецкий, чтобы её дети потом росли двуязычными."
+                "rule": "damit + Nebensatz, weil das Subjekt wechselt (sie / ihre Kinder). Mit um … zu geht das nicht. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Она учит немецкий, чтобы её дети потом росли двуязычными. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Er schloss das Fenster, damit es nicht zieht. — Он закрыл окно, чтобы не было сквозняка. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             }
         },
         {
@@ -72,8 +72,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "Satzanfang mit Infinitiv + zu: Um herauszufinden, … Hinter damit würde ein Nebensatz mit Subjekt folgen.",
-                "correctWhy": "Перевод: Чтобы выяснить, как нужно изменить устройства, мы отправили 84 испытуемых с тремя разными техническими помощниками по университетскому кампусу."
+                "rule": "Satzanfang mit Infinitiv + zu: Um herauszufinden, … Hinter damit würde ein Nebensatz mit Subjekt folgen. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Чтобы выяснить, как нужно изменить устройства, мы отправили 84 испытуемых с тремя разными техническими помощниками по университетскому кампусу. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Sie lernt Deutsch, um in Deutschland zu studieren. — Она учит немецкий, чтобы учиться в Германии. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             },
             "source": "Текст дословно из файла C1 Allg · Leseverstehen «Navigationssystem» (вопрос составлен для тренировки)"
         },
@@ -94,8 +94,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "um … zu am Satzanfang: «чтобы хорошо жить». Das Subjekt (wir) ist in beiden Teilen gleich.",
-                "correctWhy": "Перевод: Чтобы хорошо жить, мы должны создать баланс между обоими."
+                "rule": "um … zu am Satzanfang: «чтобы хорошо жить». Das Subjekt (wir) ist in beiden Teilen gleich. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Чтобы хорошо жить, мы должны создать баланс между обоими. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Sie lernt Deutsch, um in Deutschland zu studieren. — Она учит немецкий, чтобы учиться в Германии. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             },
             "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Konkurrenz und Kooperation» (вопрос составлен для тренировки)"
         },
@@ -116,8 +116,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "Subjektwechsel (er / es) → damit + Nebensatz.",
-                "correctWhy": "Перевод: Он закрыл окно, чтобы не было сквозняка."
+                "rule": "Subjektwechsel (er / es) → damit + Nebensatz. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Он закрыл окно, чтобы не было сквозняка. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Er schloss das Fenster, damit es nicht zieht. — Он закрыл окно, чтобы не было сквозняка. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             }
         },
         {
@@ -137,8 +137,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "Фрагмент задания 43: um + zu + Infinitiv. «für» braucht ein Nomen, sodass/damit einen Nebensatz mit eigenem Subjekt.",
-                "correctWhy": "Перевод: Некоторые ученики приходят пораньше, чтобы доделать домашние задания."
+                "rule": "Фрагмент задания 43: um + zu + Infinitiv. «für» braucht ein Nomen, sodass/damit einen Nebensatz mit eigenem Subjekt. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Некоторые ученики приходят пораньше, чтобы доделать домашние задания. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Sie lernt Deutsch, um in Deutschland zu studieren. — Она учит немецкий, чтобы учиться в Германии. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             },
             "source": "Фрагмент задания 43 из файла C1 Allg · Sprachbausteine «Die chronobiologischen Rhythmen der Kinder» (варианты ответов те же)"
         },
@@ -159,8 +159,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "dienen dazu, … zu + Infinitiv: Verb mit fester Präposition (zu) → Pronominaladverb dazu.",
-                "correctWhy": "Перевод: Это должно служить тому, чтобы развивать предпринимательский дух в странах ЕС."
+                "rule": "dienen dazu, … zu + Infinitiv: Verb mit fester Präposition (zu) → Pronominaladverb dazu. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Это должно служить тому, чтобы развивать предпринимательский дух в странах ЕС. | Wortart: Adverb (Konnektor im Hauptsatz) (Pronominaladverb). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Maßnahme dient dazu, Kosten zu senken. — Эта мера служит снижению расходов. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             },
             "source": "Фрагмент задания 31 из файла C1 Allg · Sprachbausteine «Unterstützung für KMU» (варианты ответов те же)"
         },
@@ -181,8 +181,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "dienen zu + Dativ → dazu + Infinitiv mit zu: «служит тому, чтобы…».",
-                "correctWhy": "Перевод: Эта мера служит для снижения расходов."
+                "rule": "dienen zu + Dativ → dazu + Infinitiv mit zu: «служит тому, чтобы…». Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Эта мера служит для снижения расходов. | Wortart: Adverb (Konnektor im Hauptsatz) (Pronominaladverb). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Maßnahme dient dazu, Kosten zu senken. — Эта мера служит снижению расходов. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             }
         },
         {
@@ -202,8 +202,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "Wozu fragt nach dem Zweck: «для чего?». Wodurch fragt nach dem Mittel.",
-                "correctWhy": "Перевод: Для чего служит эта мера? Она должна снижать расходы."
+                "rule": "Wozu fragt nach dem Zweck: «для чего?». Wodurch fragt nach dem Mittel. Tipp: Gesucht ist ein Adverb. Im Hauptsatz steht es auf Position 1, direkt danach das Verb. Steht davor schon eine Konjunktion (weil, dass), steht das Adverb im Mittelfeld des Nebensatzes.",
+                "correctWhy": "Перевод: Для чего служит эта мера? Она должна снижать расходы. | Wortart: Adverb (Konnektor im Hauptsatz) (Pronominaladverb). Наречие-коннектор. Стоит на 1-й позиции главного предложения, глагол сразу за ним (инверсия). Внутри придаточного такое слово стоит в середине предложения, глагол остаётся в конце. | Beispiel: Die Maßnahme dient dazu, Kosten zu senken. — Эта мера служит снижению расходов. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             }
         },
         {
@@ -223,8 +223,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "zwecks + Genitiv = «с целью» (formell, Amtssprache).",
-                "correctWhy": "Перевод: С целью лучшего планирования встречу перенесли."
+                "rule": "zwecks + Genitiv = «с целью» (formell, Amtssprache). Tipp: Gesucht ist eine Präposition. Danach folgt ein Nomen (Genitiv, Akkusativ oder Dativ). Kein Verb direkt danach.",
+                "correctWhy": "Перевод: С целью лучшего планирования встречу перенесли. | Wortart: Präposition (+ Nomen) (Präposition · formell). Предлог. После него стоит существительное в определённом падеже, глагола после предлога нет. | Beispiel: Zwecks besserer Planung wurde das Treffen verschoben. — С целью лучшего планирования встречу перенесли. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             }
         },
         {
@@ -244,8 +244,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "Gleiches Subjekt (er arbeitete / er will bei den Kindern sein) → um … zu.",
-                "correctWhy": "Перевод: Он работал по ночам, чтобы днём быть с детьми."
+                "rule": "Gleiches Subjekt (er arbeitete / er will bei den Kindern sein) → um … zu. Tipp: Gesucht ist ein Teil einer Infinitivkonstruktion: ohne … zu, (an)statt … zu, um … zu. Das Subjekt bleibt gleich.",
+                "correctWhy": "Перевод: Он работал по ночам, чтобы днём быть с детьми. | Wortart: Infinitivkonstruktion mit zu (Infinitiv · gleiches Subjekt). Инфинитивный оборот. Подлежащее одно и то же; после запятой или в начале стоит инфинитив с zu. | Beispiel: Sie lernt Deutsch, um in Deutschland zu studieren. — Она учит немецкий, чтобы учиться в Германии. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             }
         },
         {
@@ -265,8 +265,8 @@
                 "zwe"
             ],
             "explanation": {
-                "rule": "Subjektwechsel (sie / er) → damit. Mit um … zu müsste das Subjekt gleich sein.",
-                "correctWhy": "Перевод: Она прислала документы раньше, чтобы у него было достаточно времени на чтение."
+                "rule": "Subjektwechsel (sie / er) → damit. Mit um … zu müsste das Subjekt gleich sein. Tipp: Gesucht ist eine Konjunktion, die einen Nebensatz einleitet. Das konjugierte Verb steht am Ende des Nebensatzes.",
+                "correctWhy": "Перевод: Она прислала документы раньше, чтобы у него было достаточно времени на чтение. | Wortart: Konjunktion (leitet einen Nebensatz ein) (Nebensatz · Verb am Ende). Подчинительный союз. Он открывает придаточное предложение, спрягаемый глагол уходит в конец. | Beispiel: Er schloss das Fenster, damit es nicht zieht. — Он закрыл окно, чтобы не было сквозняка. | Не путайте: Одно подлежащее → um … zu. Разные подлежащие → damit. wozu спрашивает про цель, wodurch про способ. dienen dazu, … zu — устойчивая связка."
             }
         }
     ],

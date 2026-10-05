@@ -5,7 +5,7 @@
     "shortExplanation": "Bedingung (falls, sofern, es sei denn), Alternative (andernfalls, ansonsten, sonst), Zusatz (außerdem, zudem, darüber hinaus) und Zeit (nachdem, bevor, sobald, seitdem, solange).",
     "example": "Falls du Hilfe brauchst, ruf mich an.",
     "more": {
-        "rule": "falls / sofern / wenn → Nebensatz. andernfalls / ansonsten / sonst / außerdem / zudem / darüber hinaus → Adverb mit Inversion. es sei denn, … + Hauptsatz. nachdem + Plusquamperfekt für Vorzeitigkeit.",
+        "rule": "falls / sofern / wenn → Nebensatz. andernfalls / ansonsten / sonst / außerdem / zudem / darüber hinaus → Adverb mit Inversion. es sei denn, … + Hauptsatz. nachdem + Plusquamperfekt für Vorzeitigkeit. Условие: falls, sofern, wenn (глагол в конце). Альтернатива: sonst, andernfalls (инверсия). Добавление: außerdem, zudem, darüber hinaus. Время: nachdem + Plusquamperfekt, bevor, sobald, seitdem, solange.",
         "commonMistakes": [
             "obwohl",
             "damit",

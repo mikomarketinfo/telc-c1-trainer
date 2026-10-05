@@ -5,7 +5,7 @@
     "shortExplanation": "Präpositionen wie mithilfe, mittels, durch, anhand und dank nennen Mittel, Werkzeug oder Grundlage. mithilfe, mittels, anhand und dank stehen mit Genitiv, 'mithilfe von' und 'anhand von' mit Dativ, 'durch' mit Akkusativ.",
     "example": "Mithilfe eines Online-Wörterbuchs prüfte er die Schreibweise.",
     "more": {
-        "rule": "mithilfe + Gen / mithilfe von + Dat; mittels + Gen; durch + Akk; anhand + Gen oder anhand von + Dat; dank + Gen (positiver Grund).",
+        "rule": "mithilfe + Gen / mithilfe von + Dat; mittels + Gen; durch + Akk; anhand + Gen oder anhand von + Dat; dank + Gen (positiver Grund). Падеж выдаёт предлог: einen → durch; eines/einer → mithilfe, mittels, anhand, dank; einem → mit, mithilfe von, anhand von. dank = только хорошая причина.",
         "commonMistakes": [
             "wegen",
             "trotz",
