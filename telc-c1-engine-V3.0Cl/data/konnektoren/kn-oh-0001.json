@@ -1,0 +1,306 @@
+{
+    "meta": {
+        "id": "kn-oh-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "konnektoren",
+        "level": "C1",
+        "title": "Konnektoren: Ohne und statt (ohne zu, ohne dass, (an)statt zu)",
+        "topic": "Konnektoren",
+        "version": "1.0.0"
+    },
+    "content": {
+        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "text": "'ohne … zu' und '(an)statt … zu' stehen mit Infinitiv bei gleichem Subjekt. Bei verschiedenen Subjekten folgt ein Nebensatz mit 'ohne dass' oder '(an)statt dass'. 'stattdessen' ist ein Adverb mit Inversion."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "Sie verließ den Raum, ________ ein Wort zu sagen.",
+            "options": [
+                "indem",
+                "damit",
+                "weil",
+                "ohne"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "ohne … zu + Infinitiv: «не сказав ни слова». Das Subjekt ist in beiden Teilen dasselbe.",
+                "correctWhy": "Перевод: Она вышла из комнаты, не сказав ни слова."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Er verließ den Raum, ________ dass jemand es bemerkte.",
+            "options": [
+                "ohne zu",
+                "anstatt zu",
+                "stattdessen",
+                "ohne"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "Bei verschiedenen Subjekten (er / jemand) gilt ohne dass + Nebensatz, nicht ohne zu + Infinitiv.",
+                "correctWhy": "Перевод: Он вышел из комнаты, так что никто этого не заметил."
+            }
+        },
+        {
+            "id": 3,
+            "text": "________ ins Kino zu gehen, blieb er zu Hause.",
+            "options": [
+                "Stattdessen",
+                "Indem",
+                "Damit",
+                "Anstatt"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "(an)statt … zu + Infinitiv: «вместо того чтобы». Stattdessen ist ein Adverb und braucht Inversion.",
+                "correctWhy": "Перевод: Вместо того чтобы пойти в кино, он остался дома."
+            }
+        },
+        {
+            "id": 4,
+            "text": "Er ging nicht ins Kino. ________ blieb er zu Hause.",
+            "options": [
+                "Ohne dass",
+                "Indem",
+                "Anstatt",
+                "Stattdessen"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "stattdessen = Adverb auf Position 1, danach direkt das Verb: Stattdessen blieb er…",
+                "correctWhy": "Перевод: Он не пошёл в кино. Вместо этого он остался дома."
+            }
+        },
+        {
+            "id": 5,
+            "text": "________ dass er sich entschuldigte, ging er einfach weg.",
+            "options": [
+                "Stattdessen",
+                "Indem",
+                "Ohne zu",
+                "Anstatt"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "anstatt dass + Nebensatz mit eigenem Subjekt und Verb am Ende; mit zu + Infinitiv wäre es «anstatt sich zu entschuldigen».",
+                "correctWhy": "Перевод: Вместо того чтобы извиниться, он просто ушёл."
+            }
+        },
+        {
+            "id": 6,
+            "text": "…oder dass ich wieder nur eine Pizza in den Ofen schiebe, ________ frisch zu kochen.",
+            "options": [
+                "indem",
+                "damit",
+                "weil",
+                "anstatt"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "anstatt … zu + Infinitiv: «вместо того чтобы готовить свежее». Der Satz steht so im Text.",
+                "correctWhy": "Перевод: Я терплю неудачу из-за того, что снова просто засовываю пиццу в духовку, вместо того чтобы готовить свежее."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Zwischen Familie und Studium» (фрагмент, вопрос составлен для тренировки)"
+        },
+        {
+            "id": 7,
+            "text": "…zeigt mir sämtliche Fahrzeuge, von denen ich ________ dieses Buch niemals die korrekten Bezeichnungen gewusst hätte.",
+            "options": [
+                "statt",
+                "trotz",
+                "durch",
+                "ohne"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "Hier ist ohne eine Präposition (+ Akkusativ) mit Irrealis: «без этой книги я бы никогда не узнал названий».",
+                "correctWhy": "Перевод: …показывает мне все машины, названия которых я бы без этой книги никогда не узнала."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Zwischen Familie und Studium» (фрагмент, вопрос составлен для тренировки)"
+        },
+        {
+            "id": 8,
+            "text": "Denn ________ den Rückzug in die Einsamkeit und Stille lässt sich ein solches Studium kaum bewältigen.",
+            "options": [
+                "trotz",
+                "anstelle",
+                "statt",
+                "ohne"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "ohne + Akkusativ (den Rückzug). anstelle würde den Genitiv verlangen; trotz und statt ändern den Sinn.",
+                "correctWhy": "Перевод: Ведь без ухода в одиночество и тишину такую учёбу едва ли можно освоить."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Fernstudenten» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 9,
+            "text": "Welcher Satz ist korrekt?",
+            "options": [
+                "Er unterschrieb den Vertrag, ohne ihn zu gelesen haben.",
+                "Er unterschrieb den Vertrag, ohne ihn lesen zu haben.",
+                "Er unterschrieb den Vertrag, ohne zu ihn gelesen haben.",
+                "Er unterschrieb den Vertrag, ohne ihn gelesen zu haben."
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "Vorzeitigkeit: Partizip II + zu + haben am Ende: gelesen zu haben.",
+                "correctWhy": "Перевод: Он подписал договор, не прочитав его."
+            }
+        },
+        {
+            "id": 10,
+            "text": "________ eines Dienstwagens bekam sie ein Jobticket.",
+            "options": [
+                "Ohne",
+                "Stattdessen",
+                "Anstatt zu",
+                "Anstelle"
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "anstelle + Genitiv = «вместо» (Präposition). Stattdessen ist ein Adverb.",
+                "correctWhy": "Перевод: Вместо служебной машины она получила проездной от работодателя."
+            }
+        },
+        {
+            "id": 11,
+            "text": "Welcher Satz bedeutet dasselbe wie: „Sie sprach, ohne Luft zu holen.“?",
+            "options": [
+                "Sie sprach, bevor sie Luft holte.",
+                "Sie holte Luft, damit sie sprechen konnte.",
+                "Sie sprach, weil sie Luft holte.",
+                "Sie sprach und holte dabei keine Luft."
+            ],
+            "correct": 3,
+            "grammarId": "konn_ohne_statt",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "oh"
+            ],
+            "explanation": {
+                "rule": "ohne … zu = «и при этом не…»: Das zweite Verb wird verneint dargestellt.",
+                "correctWhy": "Перевод: Она говорила, не переводя дыхания."
+            }
+        }
+    ],
+    "vocabulary": [
+        {
+            "word": "verlassen",
+            "translation": "покидать"
+        },
+        {
+            "word": "bemerken",
+            "translation": "замечать"
+        },
+        {
+            "word": "das Kino",
+            "translation": "кино"
+        },
+        {
+            "word": "stattdessen",
+            "translation": "вместо этого"
+        },
+        {
+            "word": "sich entschuldigen",
+            "translation": "извиняться"
+        },
+        {
+            "word": "scheitern",
+            "translation": "терпеть неудачу"
+        },
+        {
+            "word": "die Bezeichnung",
+            "translation": "название"
+        },
+        {
+            "word": "der Rückzug",
+            "translation": "уединение"
+        },
+        {
+            "word": "bewältigen",
+            "translation": "справиться"
+        },
+        {
+            "word": "unterschreiben",
+            "translation": "подписывать"
+        },
+        {
+            "word": "der Dienstwagen",
+            "translation": "служебная машина"
+        },
+        {
+            "word": "Luft holen",
+            "translation": "вдохнуть"
+        }
+    ],
+    "generator": {
+        "source": "Eigene Aufgaben zu C1-Konnektoren. Einzelne Sätze stammen aus dem privaten Übungsmaterial C1 Allg (siehe Feld source).",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

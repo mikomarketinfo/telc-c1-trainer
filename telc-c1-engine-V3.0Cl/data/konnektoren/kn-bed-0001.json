@@ -1,0 +1,358 @@
+{
+    "meta": {
+        "id": "kn-bed-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "konnektoren",
+        "level": "C1",
+        "title": "Konnektoren: Bedingung, Zusatz, Zeit (falls, sofern, andernfalls)",
+        "topic": "Konnektoren",
+        "version": "1.0.0"
+    },
+    "content": {
+        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "text": "Bedingung (falls, sofern, es sei denn), Alternative (andernfalls, ansonsten, sonst), Zusatz (außerdem, zudem, darüber hinaus) und Zeit (nachdem, bevor, sobald, seitdem, solange)."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "________ du Hilfe brauchst, ruf mich an.",
+            "options": [
+                "Obwohl",
+                "Indem",
+                "Damit",
+                "Falls"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "falls/sofern/wenn = Bedingung; Verb am Ende. Falls betont einen unsicheren Fall.",
+                "correctWhy": "Перевод: Если тебе понадобится помощь, позвони мне."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Du bekommst den Kredit, ________ du ein festes Einkommen nachweist.",
+            "options": [
+                "obwohl",
+                "damit",
+                "sodass",
+                "sofern"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "sofern = «при условии, что», formeller als wenn/falls.",
+                "correctWhy": "Перевод: Ты получишь кредит при условии, что подтвердишь постоянный доход."
+            }
+        },
+        {
+            "id": 3,
+            "text": "Du musst pünktlich sein. ________ verlierst du den Platz.",
+            "options": [
+                "Dennoch",
+                "Indem",
+                "Deshalb",
+                "Andernfalls"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "andernfalls/ansonsten/sonst = «в противном случае»; Position 1 → Inversion: Andernfalls verlierst du…",
+                "correctWhy": "Перевод: Ты должен быть вовремя. В противном случае потеряешь место."
+            }
+        },
+        {
+            "id": 4,
+            "text": "Die Wohnung ist günstig. ________ liegt sie zentral.",
+            "options": [
+                "Andernfalls",
+                "Obwohl",
+                "Dennoch",
+                "Außerdem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "außerdem = «кроме того», fügt ein weiteres Argument hinzu. Position 1 → Inversion.",
+                "correctWhy": "Перевод: Квартира недорогая. Кроме того, она находится в центре."
+            }
+        },
+        {
+            "id": 5,
+            "text": "________ sollte man die Doppelbelastung durch Beruf und Studium nicht unterschätzen.",
+            "options": [
+                "Stattdessen",
+                "Indem",
+                "Wodurch",
+                "Darüber hinaus"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "darüber hinaus = «кроме того» (formell). Position 1 → Inversion: Darüber hinaus sollte man…",
+                "correctWhy": "Перевод: Кроме того, не следует недооценивать двойную нагрузку от работы и учёбы."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Fernstudenten» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 6,
+            "text": "Das Konzept ist innovativ und ________ kostengünstig.",
+            "options": [
+                "obwohl",
+                "folglich",
+                "sofern",
+                "zudem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "zudem = «к тому же», Adverb im Mittelfeld.",
+                "correctWhy": "Перевод: Концепция инновационная и к тому же недорогая."
+            }
+        },
+        {
+            "id": 7,
+            "text": "________ die Kosten ________ die Zeit spielen eine Rolle.",
+            "options": [
+                "Weder … als auch",
+                "Entweder … als auch",
+                "Nicht nur … aber",
+                "Sowohl … als auch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "sowohl … als auch = «как…, так и». Weder gehört zu noch, entweder zu oder.",
+                "correctWhy": "Перевод: Играют роль как расходы, так и время."
+            }
+        },
+        {
+            "id": 8,
+            "text": "Er hat ________ angerufen ________ geschrieben.",
+            "options": [
+                "sowohl … noch",
+                "entweder … noch",
+                "nicht nur … noch",
+                "weder … noch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "weder … noch = «ни…, ни».",
+                "correctWhy": "Перевод: Он ни позвонил, ни написал."
+            }
+        },
+        {
+            "id": 9,
+            "text": "________ er die Prüfung bestanden hatte, feierte er mit Freunden.",
+            "options": [
+                "Bevor",
+                "Solange",
+                "Falls",
+                "Nachdem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "nachdem + Plusquamperfekt: die Handlung im Nebensatz war früher fertig.",
+                "correctWhy": "Перевод: После того как он сдал экзамен, он отпраздновал это с друзьями."
+            }
+        },
+        {
+            "id": 10,
+            "text": "________ du unterschreibst, lies den Vertrag.",
+            "options": [
+                "Seit",
+                "Obwohl",
+                "Nachdem",
+                "Bevor"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "bevor + Präsens: Die Handlung im Nebensatz folgt später. Nachdem würde Vorzeitigkeit zeigen.",
+                "correctWhy": "Перевод: Прежде чем подписывать, прочти договор."
+            }
+        },
+        {
+            "id": 11,
+            "text": "Er raucht nicht mehr, ________ er die Diagnose bekam.",
+            "options": [
+                "indem",
+                "während",
+                "damit",
+                "seitdem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "seitdem/seit = «с тех пор как»: Ein Zeitpunkt in der Vergangenheit, der bis jetzt wirkt.",
+                "correctWhy": "Перевод: Он больше не курит с тех пор, как получил диагноз."
+            }
+        },
+        {
+            "id": 12,
+            "text": "________ die Ergebnisse vorliegen, informieren wir Sie.",
+            "options": [
+                "Damit",
+                "Obwohl",
+                "Seit",
+                "Sobald"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "sobald = «как только». Solange bedeutet «пока, в течение того времени как».",
+                "correctWhy": "Перевод: Как только появятся результаты, мы вас проинформируем."
+            }
+        },
+        {
+            "id": 13,
+            "text": "________ mehr du übst, ________ besser wirst du.",
+            "options": [
+                "Wenn … dann",
+                "Weil … deshalb",
+                "Obwohl … trotzdem",
+                "Je … desto"
+            ],
+            "correct": 3,
+            "grammarId": "konn_bedingung",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "bed"
+            ],
+            "explanation": {
+                "rule": "je + Komparativ …, desto/umso + Komparativ: «чем больше…, тем лучше». Nach desto folgt das Verb direkt.",
+                "correctWhy": "Перевод: Чем больше ты тренируешься, тем лучше становишься."
+            }
+        }
+    ],
+    "vocabulary": [
+        {
+            "word": "Hilfe brauchen",
+            "translation": "нуждаться в помощи"
+        },
+        {
+            "word": "der Kredit",
+            "translation": "кредит"
+        },
+        {
+            "word": "nachweisen",
+            "translation": "подтверждать"
+        },
+        {
+            "word": "pünktlich",
+            "translation": "вовремя"
+        },
+        {
+            "word": "zentral",
+            "translation": "в центре"
+        },
+        {
+            "word": "die Doppelbelastung",
+            "translation": "двойная нагрузка"
+        },
+        {
+            "word": "unterschätzen",
+            "translation": "недооценивать"
+        },
+        {
+            "word": "kostengünstig",
+            "translation": "недорогой"
+        },
+        {
+            "word": "eine Rolle spielen",
+            "translation": "играть роль"
+        },
+        {
+            "word": "anrufen",
+            "translation": "звонить"
+        },
+        {
+            "word": "feiern",
+            "translation": "праздновать"
+        },
+        {
+            "word": "der Vertrag",
+            "translation": "договор"
+        },
+        {
+            "word": "die Diagnose",
+            "translation": "диагноз"
+        },
+        {
+            "word": "vorliegen",
+            "translation": "иметься в наличии"
+        },
+        {
+            "word": "üben",
+            "translation": "упражняться"
+        }
+    ],
+    "generator": {
+        "source": "Eigene Aufgaben zu C1-Konnektoren. Einzelne Sätze stammen aus dem privaten Übungsmaterial C1 Allg (siehe Feld source).",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

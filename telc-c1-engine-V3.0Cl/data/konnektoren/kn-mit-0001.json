@@ -1,0 +1,262 @@
+{
+    "meta": {
+        "id": "kn-mit-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "konnektoren",
+        "level": "C1",
+        "title": "Konnektoren: Mittel und Werkzeug (mithilfe, mit Hilfe, mittels)",
+        "topic": "Konnektoren",
+        "version": "1.0.0"
+    },
+    "content": {
+        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "text": "Präpositionen wie mithilfe, mittels, durch, anhand und dank nennen Mittel, Werkzeug oder Grundlage. mithilfe, mittels, anhand und dank stehen mit Genitiv, 'mithilfe von' und 'anhand von' mit Dativ, 'durch' mit Akkusativ."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "________ eines Navigationssystems fand er den Weg.",
+            "options": [
+                "Mithilfe von",
+                "Mittels von",
+                "Dank von",
+                "Mithilfe"
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "mithilfe + Genitiv: mithilfe eines Navigationssystems. Mit Dativ braucht man von: mithilfe von Karten. Die Schreibung «mit Hilfe» ist ebenfalls korrekt.",
+                "correctWhy": "Перевод: С помощью навигационной системы он нашёл дорогу."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Eine von fünfen gab an, ________ des Mittels die Fokussierung, die Konzentration oder das Gedächtnis stimulieren zu wollen.",
+            "options": [
+                "anhand von",
+                "statt",
+                "durch",
+                "mithilfe"
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "mithilfe + Genitiv (des Mittels). durch verlangt den Akkusativ, anhand von den Dativ; statt ergibt hier keinen Sinn.",
+                "correctWhy": "Перевод: Один из пяти заявил, что хочет с помощью препарата стимулировать фокусировку, концентрацию или память."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Hirndoping» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 3,
+            "text": "Die Daten wurden ________ einer Umfrage erhoben.",
+            "options": [
+                "wegen",
+                "statt",
+                "trotz",
+                "mittels"
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "mittels + Genitiv = «посредством», formelle Sprache. wegen, trotz und statt passen inhaltlich nicht.",
+                "correctWhy": "Перевод: Данные были собраны посредством опроса."
+            }
+        },
+        {
+            "id": 4,
+            "text": "________ der Statistiken lässt sich der Trend gut erkennen.",
+            "options": [
+                "Ohne",
+                "Trotz",
+                "Anstelle",
+                "Anhand"
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "anhand + Genitiv oder anhand von + Dativ = «на основании, по». Ohne + Genitiv ist falsch (ohne + Akkusativ).",
+                "correctWhy": "Перевод: По статистике хорошо видна тенденция."
+            }
+        },
+        {
+            "id": 5,
+            "text": "________ der neuen Software läuft alles schneller.",
+            "options": [
+                "Trotz",
+                "Statt",
+                "Ohne",
+                "Dank"
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "dank + Genitiv (oder Dativ) nennt einen positiven Grund: «благодаря». Trotz und Statt ändern den Sinn.",
+                "correctWhy": "Перевод: Благодаря новому программному обеспечению всё работает быстрее."
+            }
+        },
+        {
+            "id": 6,
+            "text": "Welcher Satz ist korrekt?",
+            "options": [
+                "Mithilfe einem Wörterbuch übersetzte sie den Text.",
+                "Mithilfe ein Wörterbuch übersetzte sie den Text.",
+                "Mithilfe von eines Wörterbuchs übersetzte sie den Text.",
+                "Mit Hilfe eines Wörterbuchs übersetzte sie den Text."
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "Nach (mit)hilfe steht der Genitiv: eines Wörterbuchs. Mit von folgt der Dativ: mithilfe von einem Wörterbuch.",
+                "correctWhy": "Перевод: С помощью словаря она перевела текст."
+            }
+        },
+        {
+            "id": 7,
+            "text": "Wir bedanken uns für Ihre ________ bei der Organisation.",
+            "options": [
+                "Abhilfe",
+                "Beihilfe",
+                "Aushilfe",
+                "Mithilfe"
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "Das Nomen die Mithilfe = «содействие». Abhilfe = устранение проблемы; Beihilfe = пособие; Aushilfe = временный помощник.",
+                "correctWhy": "Перевод: Мы благодарим вас за помощь в организации."
+            }
+        },
+        {
+            "id": 8,
+            "text": "Er öffnete die Tür ________ eines Dietrichs.",
+            "options": [
+                "wegen",
+                "trotz",
+                "ohne",
+                "mittels"
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "mittels + Genitiv = «при помощи» (Werkzeug/Mittel).",
+                "correctWhy": "Перевод: Он открыл дверь отмычкой."
+            }
+        },
+        {
+            "id": 9,
+            "text": "Die Lehrerin erklärte die Regel ________ Beispielen.",
+            "options": [
+                "anstelle von",
+                "ohne von",
+                "trotz von",
+                "anhand von"
+            ],
+            "correct": 3,
+            "grammarId": "konn_mittel",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mit"
+            ],
+            "explanation": {
+                "rule": "anhand von + Dativ: «на примерах». Ohne und trotz stehen nicht mit von.",
+                "correctWhy": "Перевод: Учительница объяснила правило на примерах."
+            }
+        }
+    ],
+    "vocabulary": [
+        {
+            "word": "das Navigationssystem",
+            "translation": "навигационная система"
+        },
+        {
+            "word": "stimulieren",
+            "translation": "стимулировать"
+        },
+        {
+            "word": "das Mittel",
+            "translation": "средство"
+        },
+        {
+            "word": "erheben",
+            "translation": "собирать (данные)"
+        },
+        {
+            "word": "der Trend",
+            "translation": "тенденция"
+        },
+        {
+            "word": "erkennen",
+            "translation": "распознавать"
+        },
+        {
+            "word": "die Software",
+            "translation": "ПО"
+        },
+        {
+            "word": "das Wörterbuch",
+            "translation": "словарь"
+        },
+        {
+            "word": "die Abhilfe",
+            "translation": "средство от недостатка"
+        },
+        {
+            "word": "die Aushilfe",
+            "translation": "подменный работник"
+        },
+        {
+            "word": "der Dietrich",
+            "translation": "отмычка"
+        },
+        {
+            "word": "das Beispiel",
+            "translation": "пример"
+        }
+    ],
+    "generator": {
+        "source": "Eigene Aufgaben zu C1-Konnektoren. Einzelne Sätze stammen aus dem privaten Übungsmaterial C1 Allg (siehe Feld source).",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

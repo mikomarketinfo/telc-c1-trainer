@@ -1,0 +1,368 @@
+{
+    "meta": {
+        "id": "kn-fol-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "konnektoren",
+        "level": "C1",
+        "title": "Konnektoren: Folge (sodass, deshalb, daher)",
+        "topic": "Konnektoren",
+        "version": "1.0.0"
+    },
+    "content": {
+        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "text": "Konsekutive Konnektoren nennen die Folge. 'sodass' und 'weshalb' leiten einen Nebensatz ein, 'deshalb, daher, folglich, somit, demnach' sind Adverbien auf Position 1."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "Der Zug fiel aus. ________ kam ich zu spät.",
+            "options": [
+                "Obwohl",
+                "Damit",
+                "Weil",
+                "Deshalb"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "deshalb ist ein Adverb auf Position 1: danach direkt das Verb (kam ich). Obwohl, Weil und Damit schicken das Verb ans Ende.",
+                "correctWhy": "Перевод: Поезд отменили. Поэтому я опоздал."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Der Zug fiel aus, ________ ich zu spät kam.",
+            "options": [
+                "daher",
+                "folglich",
+                "deshalb",
+                "sodass"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "sodass leitet einen Nebensatz ein (kam am Ende). deshalb, daher und folglich sind Adverbien und würden Inversion verlangen: …, deshalb kam ich.",
+                "correctWhy": "Перевод: Поезд отменили, так что я опоздал."
+            }
+        },
+        {
+            "id": 3,
+            "text": "Die Nachfrage steigt stetig. Die Preise werden ________ weiter anziehen.",
+            "options": [
+                "indem",
+                "wobei",
+                "sodass",
+                "somit"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "somit = «следовательно, таким образом», Adverb im Mittelfeld. sodass und indem würden das Verb ans Ende schicken.",
+                "correctWhy": "Перевод: Спрос неуклонно растёт. Цены, следовательно, будут расти дальше."
+            }
+        },
+        {
+            "id": 4,
+            "text": "Es stellt sich ________ die Frage, wie Elektrofahrzeuge der Zukunft aussehen.",
+            "options": [
+                "obwohl",
+                "damit",
+                "dennoch",
+                "demnach"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "demnach = «следовательно, исходя из этого», Adverb im Mittelfeld. Obwohl und damit sind Nebensatzkonnektoren, dennoch drückt Gegensatz aus.",
+                "correctWhy": "Перевод: Отсюда возникает вопрос, как будут выглядеть электромобили будущего."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)"
+        },
+        {
+            "id": 5,
+            "text": "Es kann jedoch passieren, dass der Anwender seine Umgebung nicht so genau wahrnimmt - und es ________ nicht merkt, wenn er doch einmal in die Irre geführt wird.",
+            "options": [
+                "währenddessen",
+                "trotzdem",
+                "stattdessen",
+                "infolgedessen"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "infolgedessen = «вследствие этого», Adverb (Mittelfeld oder Position 1). Der Originalsatz im Text lautet: …und es infolgedessen nicht merkt, wenn er doch einmal in die Irre geführt wird.",
+                "correctWhy": "Перевод: Пользователь не так точно воспринимает окружение и вследствие этого не замечает, если его вводят в заблуждение."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Navigationssystem» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 6,
+            "text": "Welcher Satz ist korrekt?",
+            "options": [
+                "Sie war krank, sodass blieb sie zu Hause.",
+                "Sie war krank, daher sie zu Hause blieb.",
+                "Sie war krank, deshalb sie blieb zu Hause.",
+                "Sie war krank, deshalb blieb sie zu Hause."
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "Hauptsatz + deshalb: Position 1 ist das Adverb, Position 2 das Verb (blieb). Bei sodass dagegen steht das Verb am Ende.",
+                "correctWhy": "Перевод: Она заболела, поэтому осталась дома."
+            }
+        },
+        {
+            "id": 7,
+            "text": "Die Seite war überlastet, ________ ich mich erst später einloggen konnte.",
+            "options": [
+                "demnach",
+                "trotzdem",
+                "deshalb",
+                "weshalb"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "weshalb/weswegen leitet einen Nebensatz ein: «из-за чего». deshalb würde Inversion verlangen: …, deshalb konnte ich…",
+                "correctWhy": "Перевод: Сайт был перегружен, из-за чего я смог войти только позже."
+            }
+        },
+        {
+            "id": 8,
+            "text": "Die Firma hat Verluste gemacht. ________ muss sie Stellen abbauen.",
+            "options": [
+                "Obwohl",
+                "Sodass",
+                "Indem",
+                "Folglich"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "folglich = «следовательно», Adverb auf Position 1 → Inversion: Folglich muss sie…",
+                "correctWhy": "Перевод: Фирма понесла убытки. Следовательно, ей придётся сокращать рабочие места."
+            }
+        },
+        {
+            "id": 9,
+            "text": "Das Wetter war so schlecht, ________ wir das Fest absagen mussten.",
+            "options": [
+                "deshalb",
+                "damit",
+                "sodass",
+                "dass"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "Konstruktion so + Adjektiv … dass: «настолько…, что». Man schreibt nicht «so schlecht, sodass».",
+                "correctWhy": "Перевод: Погода была настолько плохой, что нам пришлось отменить праздник."
+            }
+        },
+        {
+            "id": 10,
+            "text": "Die Kurse waren überfüllt, ________ ein Teil der Studierenden abgewiesen wurde.",
+            "options": [
+                "indem",
+                "obwohl",
+                "weil",
+                "sodass"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "sodass + Nebensatz = Konsekutivsatz (Folge). Das Verb steht am Ende.",
+                "correctWhy": "Перевод: Курсы были переполнены, так что часть студентов получила отказ."
+            }
+        },
+        {
+            "id": 11,
+            "text": "Ich habe die Mail nicht erhalten. ________ konnte ich nicht antworten.",
+            "options": [
+                "Wobei",
+                "Falls",
+                "Obwohl",
+                "Daher"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "daher = «поэтому», Adverb auf Position 1: Daher konnte ich…",
+                "correctWhy": "Перевод: Я не получил письмо. Поэтому не мог ответить."
+            }
+        },
+        {
+            "id": 12,
+            "text": "________ des Sturms fielen alle Flüge aus.",
+            "options": [
+                "Ohne",
+                "Trotz",
+                "Anstatt",
+                "Infolge"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "infolge + Genitiv = «вследствие» (Präposition, formell). Ähnlich: aufgrund + Genitiv.",
+                "correctWhy": "Перевод: Вследствие шторма все рейсы были отменены."
+            }
+        },
+        {
+            "id": 13,
+            "text": "Häufig verfügen kleine und mittlere Unternehmen nicht über die erforderlichen Ressourcen, um die vielen Unterstützungsprogramme zu überblicken und ________ in Anspruch nehmen zu können.",
+            "options": [
+                "anstatt",
+                "wobei",
+                "trotzdem",
+                "folglich"
+            ],
+            "correct": 3,
+            "grammarId": "konn_folge",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "fol"
+            ],
+            "explanation": {
+                "rule": "folglich = «следовательно»: Wer die Programme nicht überblickt, kann sie auch nicht nutzen. Im Text steht folglich.",
+                "correctWhy": "Перевод: Часто малым и средним предприятиям не хватает необходимых ресурсов, чтобы охватить многочисленные программы поддержки и, следовательно, воспользоваться ими."
+            },
+            "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Unterstützung für KMU» (фрагмент, вопрос составлен для тренировки)"
+        }
+    ],
+    "vocabulary": [
+        {
+            "word": "ausfallen",
+            "translation": "отменяться"
+        },
+        {
+            "word": "zu spät kommen",
+            "translation": "опаздывать"
+        },
+        {
+            "word": "die Nachfrage",
+            "translation": "спрос"
+        },
+        {
+            "word": "anziehen",
+            "translation": "расти (о ценах)"
+        },
+        {
+            "word": "sich stellen (Frage)",
+            "translation": "возникать"
+        },
+        {
+            "word": "in die Irre führen",
+            "translation": "вводить в заблуждение"
+        },
+        {
+            "word": "zu Hause bleiben",
+            "translation": "оставаться дома"
+        },
+        {
+            "word": "überlastet",
+            "translation": "перегружен"
+        },
+        {
+            "word": "sich einloggen",
+            "translation": "войти в систему"
+        },
+        {
+            "word": "Verluste machen",
+            "translation": "нести убытки"
+        },
+        {
+            "word": "Stellen abbauen",
+            "translation": "сокращать штат"
+        },
+        {
+            "word": "absagen",
+            "translation": "отменять"
+        },
+        {
+            "word": "überfüllt",
+            "translation": "переполнен"
+        },
+        {
+            "word": "abweisen",
+            "translation": "отклонять"
+        },
+        {
+            "word": "erhalten",
+            "translation": "получать"
+        },
+        {
+            "word": "der Sturm",
+            "translation": "шторм"
+        },
+        {
+            "word": "in Anspruch nehmen",
+            "translation": "воспользоваться"
+        }
+    ],
+    "generator": {
+        "source": "Eigene Aufgaben zu C1-Konnektoren. Einzelne Sätze stammen aus dem privaten Übungsmaterial C1 Allg (siehe Feld source).",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

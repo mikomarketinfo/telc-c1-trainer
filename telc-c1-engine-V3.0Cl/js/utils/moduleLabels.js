@@ -6,6 +6,7 @@
  */
 export const MODULE_LABELS = {
     sprachbausteine: "📘 Sprachbausteine",
+    konnektoren: "🔗 Konnektoren C1",
     "leseverstehen-teil1": "📖 Leseverstehen — Teil 1 (Textrekonstruktion)",
     "leseverstehen-teil2": "📖 Leseverstehen — Teil 2 (Selektives Verstehen)",
     "leseverstehen-teil3": "📖 Leseverstehen — Teil 3 (Globalverstehen)",
@@ -14,6 +15,7 @@ export const MODULE_LABELS = {
 
 export const MODULE_ORDER = [
     "sprachbausteine",
+    "konnektoren",
     "leseverstehen-teil1",
     "leseverstehen-teil2",
     "leseverstehen-teil3",

@@ -35,6 +35,62 @@
             "title": "Künstliche Intelligenz: Jobkiller oder Jobmotor?",
             "topic": "Technologie und Arbeit",
             "path": "../data/leseverstehen/lv-t3-0001.json"
+        },
+        {
+            "id": "kn-mod-0001",
+            "module": "konnektoren",
+            "title": "Konnektoren: Art und Weise (indem, dadurch dass, wodurch)",
+            "topic": "Konnektoren",
+            "path": "../data/konnektoren/kn-mod-0001.json"
+        },
+        {
+            "id": "kn-mit-0001",
+            "module": "konnektoren",
+            "title": "Konnektoren: Mittel und Werkzeug (mithilfe, mit Hilfe, mittels)",
+            "topic": "Konnektoren",
+            "path": "../data/konnektoren/kn-mit-0001.json"
+        },
+        {
+            "id": "kn-oh-0001",
+            "module": "konnektoren",
+            "title": "Konnektoren: Ohne und statt (ohne zu, ohne dass, (an)statt zu)",
+            "topic": "Konnektoren",
+            "path": "../data/konnektoren/kn-oh-0001.json"
+        },
+        {
+            "id": "kn-fol-0001",
+            "module": "konnektoren",
+            "title": "Konnektoren: Folge (sodass, deshalb, daher)",
+            "topic": "Konnektoren",
+            "path": "../data/konnektoren/kn-fol-0001.json"
+        },
+        {
+            "id": "kn-gru-0001",
+            "module": "konnektoren",
+            "title": "Konnektoren: Grund (weil, da, denn)",
+            "topic": "Konnektoren",
+            "path": "../data/konnektoren/kn-gru-0001.json"
+        },
+        {
+            "id": "kn-geg-0001",
+            "module": "konnektoren",
+            "title": "Konnektoren: Gegensatz (obwohl, trotzdem, dennoch)",
+            "topic": "Konnektoren",
+            "path": "../data/konnektoren/kn-geg-0001.json"
+        },
+        {
+            "id": "kn-zwe-0001",
+            "module": "konnektoren",
+            "title": "Konnektoren: Zweck (um … zu, damit, dazu)",
+            "topic": "Konnektoren",
+            "path": "../data/konnektoren/kn-zwe-0001.json"
+        },
+        {
+            "id": "kn-bed-0001",
+            "module": "konnektoren",
+            "title": "Konnektoren: Bedingung, Zusatz, Zeit (falls, sofern, andernfalls)",
+            "topic": "Konnektoren",
+            "path": "../data/konnektoren/kn-bed-0001.json"
         }
     ]
 }

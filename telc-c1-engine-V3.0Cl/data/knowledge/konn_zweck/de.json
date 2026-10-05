@@ -1,0 +1,102 @@
+{
+    "id": "konn_zweck",
+    "language": "de",
+    "title": "Zweck erweitert (um … zu, damit, dazu, wozu, zwecks)",
+    "shortExplanation": "Zweck: 'um … zu' bei gleichem Subjekt, 'damit' bei anderem Subjekt. 'dazu' und 'wozu' sind Pronominaladverbien, 'zwecks' + Genitiv ist formell.",
+    "example": "Sie lernt Deutsch, um in Deutschland zu studieren.",
+    "more": {
+        "rule": "um + Infinitiv mit zu (gleiches Subjekt). damit + Nebensatz. dienen dazu, … zu; Frage: wozu? zwecks + Gen.",
+        "commonMistakes": [
+            "indem",
+            "weil",
+            "sodass"
+        ],
+        "tips": [
+            "Wechselt das Subjekt? Dann damit.",
+            "'dienen dazu, … zu' ist eine feste Verbindung.",
+            "wozu fragt nach dem Zweck, wodurch nach dem Mittel."
+        ],
+        "rows": [
+            {
+                "connector": "um … zu",
+                "position": "Infinitiv · gleiches Subjekt",
+                "type": "inf",
+                "meaning": "«Чтобы».",
+                "examples": [
+                    {
+                        "de": "Sie lernt Deutsch, um in Deutschland zu studieren.",
+                        "ru": "Она учит немецкий, чтобы учиться в Германии."
+                    },
+                    {
+                        "de": "Um Kosten zu senken, wurde die Produktion verlagert.",
+                        "ru": "Чтобы снизить расходы, производство перенесли."
+                    },
+                    {
+                        "de": "Er ging früher, um den Zug nicht zu verpassen.",
+                        "ru": "Он ушёл раньше, чтобы не опоздать на поезд."
+                    }
+                ]
+            },
+            {
+                "connector": "damit",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Чтобы» при другом подлежащем.",
+                "examples": [
+                    {
+                        "de": "Er schloss das Fenster, damit es nicht zieht.",
+                        "ru": "Он закрыл окно, чтобы не было сквозняка."
+                    },
+                    {
+                        "de": "Wir schicken die Unterlagen früher, damit Sie genug Zeit zum Lesen haben.",
+                        "ru": "Мы пришлём документы заранее, чтобы у вас было достаточно времени на чтение."
+                    },
+                    {
+                        "de": "Die Stadt baut Radwege, damit mehr Menschen aufs Auto verzichten.",
+                        "ru": "Город строит велодорожки, чтобы больше людей отказывалось от машины."
+                    }
+                ]
+            },
+            {
+                "connector": "dazu · wozu",
+                "position": "Pronominaladverb",
+                "type": "adv",
+                "meaning": "dienen dazu, … zu · «для чего?»",
+                "examples": [
+                    {
+                        "de": "Die Maßnahme dient dazu, Kosten zu senken.",
+                        "ru": "Эта мера служит снижению расходов."
+                    },
+                    {
+                        "de": "Wozu braucht man Konnektoren? Um Sätze logisch zu verbinden.",
+                        "ru": "Для чего нужны коннекторы? Чтобы логично связывать предложения."
+                    },
+                    {
+                        "de": "Das Projekt soll dazu beitragen, die Region zu stärken.",
+                        "ru": "Проект должен способствовать укреплению региона."
+                    }
+                ]
+            },
+            {
+                "connector": "zwecks + Gen",
+                "position": "Präposition · formell",
+                "type": "prep",
+                "meaning": "«С целью».",
+                "examples": [
+                    {
+                        "de": "Zwecks besserer Planung wurde das Treffen verschoben.",
+                        "ru": "С целью лучшего планирования встречу перенесли."
+                    },
+                    {
+                        "de": "Zwecks Klärung des Sachverhalts wurde ein Gutachten angefordert.",
+                        "ru": "С целью выяснения обстоятельств запросили экспертное заключение."
+                    },
+                    {
+                        "de": "Zwecks Kostenersparnis wird das Büro verkleinert.",
+                        "ru": "С целью экономии расходов офис сокращают."
+                    }
+                ]
+            }
+        ]
+    }
+}

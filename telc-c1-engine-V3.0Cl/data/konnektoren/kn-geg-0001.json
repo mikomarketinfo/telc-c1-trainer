@@ -1,0 +1,372 @@
+{
+    "meta": {
+        "id": "kn-geg-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "konnektoren",
+        "level": "C1",
+        "title": "Konnektoren: Gegensatz (obwohl, trotzdem, dennoch)",
+        "topic": "Konnektoren",
+        "version": "1.0.0"
+    },
+    "content": {
+        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "text": "'während' und 'wohingegen' stellen gegenüber, 'hingegen, dagegen, demgegenüber, trotzdem, dennoch' sind Adverbien, 'zwar … aber' und 'einerseits … andererseits' bilden Paare."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "________ es regnete, gingen wir spazieren.",
+            "options": [
+                "Weil",
+                "Sodass",
+                "Damit",
+                "Obwohl"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "obwohl + Nebensatz = Gegengrund (Konzessiv): «хотя, несмотря на то что».",
+                "correctWhy": "Перевод: Хотя шёл дождь, мы пошли гулять."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Es regnete. ________ gingen wir spazieren.",
+            "options": [
+                "Obwohl",
+                "Indem",
+                "Sodass",
+                "Trotzdem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "trotzdem = Adverb (Position 1) → Inversion: Trotzdem gingen wir… Obwohl würde das Verb ans Ende schicken.",
+                "correctWhy": "Перевод: Шёл дождь. Тем не менее мы пошли гулять."
+            }
+        },
+        {
+            "id": 3,
+            "text": "________ der Kälte trug er nur ein T-Shirt.",
+            "options": [
+                "Wegen",
+                "Dank",
+                "Infolge",
+                "Trotz"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "trotz + Genitiv = «несмотря на» (Präposition). In der gesprochenen Sprache hört man auch den Dativ.",
+                "correctWhy": "Перевод: Несмотря на холод, на нём была только футболка."
+            }
+        },
+        {
+            "id": 4,
+            "text": "________ die Geckofüße weniger stark sind als dieser künstliche „Superklebstoff“, bleibt ihnen gegenwärtig noch ein Vorteil gegenüber der Konkurrenz aus dem Labor.",
+            "options": [
+                "Trotzdem",
+                "Wobei",
+                "Obwohl",
+                "Deshalb"
+            ],
+            "correct": 2,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "obwohl + Nebensatz (Verb am Ende: sind). Das ist Aufgabe 44 in der Vorlage. Trotzdem würde Inversion verlangen: Trotzdem bleibt ihnen…",
+                "correctWhy": "Перевод: Хотя лапки гекконов менее прочны, чем этот искусственный «суперклей», у них пока есть преимущество перед лабораторной конкуренцией."
+            },
+            "source": "Задание полностью соответствует файлу C1 Allg · Sprachbausteine (2) «Neues aus der Bionik»"
+        },
+        {
+            "id": 5,
+            "text": "Obwohl die Geckofüße weniger stark sind als dieser künstliche „Superklebstoff“, bleibt ihnen gegenwärtig noch ein Vorteil ________ der Konkurrenz aus dem Labor: Sie sind nachhaltiger.",
+            "options": [
+                "gegenüber",
+                "jenseits",
+                "entlang",
+                "entgegen"
+            ],
+            "correct": 0,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "ein Vorteil gegenüber + Dativ = «преимущество перед…». Das ist Aufgabe 45 in der Vorlage.",
+                "correctWhy": "Перевод: Преимущество перед лабораторной конкуренцией: они устойчивее."
+            },
+            "source": "Задание полностью соответствует файлу C1 Allg · Sprachbausteine (2) «Neues aus der Bionik»"
+        },
+        {
+            "id": 6,
+            "text": "Das ist keine langfristige Lösung, ________ ist es richtig, zu sagen: Lasst uns sofort anfangen.",
+            "options": [
+                "weil",
+                "sodass",
+                "deshalb",
+                "trotzdem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "trotzdem als Gegensatz mit Inversion (ist es). Deshalb wäre logisch falsch.",
+                "correctWhy": "Перевод: Это не долгосрочное решение, но всё же правильно сказать: давайте начнём немедленно."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)"
+        },
+        {
+            "id": 7,
+            "text": "________ wird die Evolution laut dem Biologen Martin Nowak nicht nur von Konkurrenz und Egoismus bestimmt.",
+            "options": [
+                "Weil",
+                "Damit",
+                "Deshalb",
+                "Dennoch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "dennoch = «и всё же», Adverb auf Position 1 → Inversion (wird die Evolution…).",
+                "correctWhy": "Перевод: И всё же, по словам биолога Мартина Новака, эволюция определяется не только конкуренцией и эгоизмом."
+            },
+            "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Konkurrenz und Kooperation» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 8,
+            "text": "Fragt man Personen nach dem Weg, beschreiben Frauen diesen jedoch vor allem anhand von Landmarken, ________ Männer ebenso Himmelsrichtungen und Entfernungsangaben heranziehen.",
+            "options": [
+                "obwohl",
+                "sodass",
+                "damit",
+                "während"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "während + Nebensatz = Gegenüberstellung («тогда как»). Beide Gruppen werden kontrastiert.",
+                "correctWhy": "Перевод: Если спросить дорогу, женщины описывают её прежде всего по ориентирам, тогда как мужчины также используют стороны света и расстояния."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Navigationssystem» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 9,
+            "text": "Der Norden ist industriell geprägt, der Süden ________ lebt vom Tourismus.",
+            "options": [
+                "folglich",
+                "damit",
+                "nämlich",
+                "hingegen"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "hingegen/dagegen/demgegenüber = Adverbien des Kontrasts: «напротив, в отличие от».",
+                "correctWhy": "Перевод: Север отличается промышленным развитием, юг же живёт за счёт туризма."
+            }
+        },
+        {
+            "id": 10,
+            "text": "Die Natur hat Konkurrenz als Selbsterhaltungsprinzip vorgesehen. ________ steht die kulturelle Errungenschaft der Kooperation.",
+            "options": [
+                "Deshalb",
+                "Damit",
+                "Indem",
+                "Demgegenüber"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "demgegenüber = «в противоположность этому», Adverb auf Position 1 → Inversion: Demgegenüber steht…",
+                "correctWhy": "Перевод: Природа предусмотрела конкуренцию как принцип самосохранения. В противоположность этому стоит культурное достижение — кооперация."
+            },
+            "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Konkurrenz und Kooperation» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 11,
+            "text": "________ möchte sie reisen, ________ fehlt ihr das Geld.",
+            "options": [
+                "Zwar … sondern",
+                "Entweder … aber",
+                "Nicht nur … sondern",
+                "Einerseits … andererseits"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "einerseits … andererseits stellt zwei Seiten gegenüber (Dilemma, Pro und Kontra). Das steht auch in der Liste «Sprachliche Merkmale» der Vorlage.",
+                "correctWhy": "Перевод: С одной стороны, она хочет путешествовать, с другой — ей не хватает денег."
+            }
+        },
+        {
+            "id": 12,
+            "text": "Katzen schlossen sich ________ den Menschen erst an, als diese in der beginnenden Jungsteinzeit sesshaft wurden.",
+            "options": [
+                "deshalb",
+                "dadurch",
+                "demnach",
+                "dagegen"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "dagegen = «напротив, же»: Es kontrastiert die Katzen mit den Wölfen im vorigen Satz.",
+                "correctWhy": "Перевод: Кошки же присоединились к людям лишь тогда, когда те стали оседлыми в начале неолита."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)"
+        },
+        {
+            "id": 13,
+            "text": "________ er müde war, arbeitete er weiter.",
+            "options": [
+                "Sofern",
+                "Sobald",
+                "Falls",
+                "Obgleich"
+            ],
+            "correct": 3,
+            "grammarId": "konn_gegensatz",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "geg"
+            ],
+            "explanation": {
+                "rule": "obgleich/wenngleich/obschon = formelle Varianten von obwohl, Verb am Ende.",
+                "correctWhy": "Перевод: Хотя он устал, он продолжал работать."
+            }
+        }
+    ],
+    "vocabulary": [
+        {
+            "word": "spazieren gehen",
+            "translation": "гулять"
+        },
+        {
+            "word": "trotzdem",
+            "translation": "всё же"
+        },
+        {
+            "word": "die Kälte",
+            "translation": "холод"
+        },
+        {
+            "word": "der Klebstoff",
+            "translation": "клей"
+        },
+        {
+            "word": "gegenwärtig",
+            "translation": "в настоящее время"
+        },
+        {
+            "word": "nachhaltig",
+            "translation": "устойчивый"
+        },
+        {
+            "word": "langfristig",
+            "translation": "долгосрочный"
+        },
+        {
+            "word": "der Egoismus",
+            "translation": "эгоизм"
+        },
+        {
+            "word": "die Landmarke",
+            "translation": "ориентир"
+        },
+        {
+            "word": "heranziehen",
+            "translation": "привлекать (в оригинале опечатка: «heranzieht»)"
+        },
+        {
+            "word": "geprägt",
+            "translation": "отмеченный"
+        },
+        {
+            "word": "der Tourismus",
+            "translation": "туризм"
+        },
+        {
+            "word": "die Errungenschaft",
+            "translation": "достижение"
+        },
+        {
+            "word": "das Dilemma",
+            "translation": "дилемма"
+        },
+        {
+            "word": "sesshaft werden",
+            "translation": "стать оседлым"
+        },
+        {
+            "word": "die Jungsteinzeit",
+            "translation": "неолит"
+        },
+        {
+            "word": "obgleich",
+            "translation": "хотя (формально)"
+        }
+    ],
+    "generator": {
+        "source": "Eigene Aufgaben zu C1-Konnektoren. Einzelne Sätze stammen aus dem privaten Übungsmaterial C1 Allg (siehe Feld source).",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

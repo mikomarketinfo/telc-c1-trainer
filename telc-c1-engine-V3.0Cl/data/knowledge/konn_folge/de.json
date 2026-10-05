@@ -1,0 +1,150 @@
+{
+    "id": "konn_folge",
+    "language": "de",
+    "title": "Konsekutive Konnektoren (sodass, deshalb, folglich, weshalb)",
+    "shortExplanation": "Konsekutive Konnektoren nennen die Folge. 'sodass' und 'weshalb' leiten einen Nebensatz ein, 'deshalb, daher, folglich, somit, demnach' sind Adverbien auf Position 1.",
+    "example": "Der Zug fiel aus, sodass viele Pendler zu spät kamen.",
+    "more": {
+        "rule": "sodass / so … dass / weshalb → Verb am Ende. deshalb / daher / deswegen / folglich / somit / demnach / infolgedessen → Hauptsatz mit Inversion. infolge / aufgrund + Gen.",
+        "commonMistakes": [
+            "obwohl",
+            "weil",
+            "damit"
+        ],
+        "tips": [
+            "'so … dass' steht bei Adjektiven: so müde, dass …",
+            "folglich, somit und demnach sind formell und passen in Erörterungen.",
+            "Verb direkt nach dem Konnektor? Dann ist es ein Adverb, kein Nebensatz."
+        ],
+        "rows": [
+            {
+                "connector": "sodass",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Так что».",
+                "examples": [
+                    {
+                        "de": "Der Zug fiel aus, sodass viele Pendler zu spät kamen.",
+                        "ru": "Поезд отменили, так что многие пассажиры опоздали."
+                    },
+                    {
+                        "de": "Die Nachfrage stieg stark, sodass die Preise anzogen.",
+                        "ru": "Спрос сильно вырос, так что цены поднялись."
+                    },
+                    {
+                        "de": "Es schneite die ganze Nacht, sodass die Straßen am Morgen gesperrt waren.",
+                        "ru": "Всю ночь шёл снег, так что утром дороги были перекрыты."
+                    }
+                ]
+            },
+            {
+                "connector": "so … dass",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Настолько…, что». Не «so …, sodass».",
+                "examples": [
+                    {
+                        "de": "Der Vortrag war so spannend, dass niemand auf die Uhr schaute.",
+                        "ru": "Доклад был настолько увлекательным, что никто не смотрел на часы."
+                    },
+                    {
+                        "de": "Sie sprach so leise, dass man sie kaum verstand.",
+                        "ru": "Она говорила так тихо, что её едва понимали."
+                    },
+                    {
+                        "de": "Die Aufgabe ist so komplex, dass sie viel Zeit braucht.",
+                        "ru": "Задача настолько сложная, что требует много времени."
+                    }
+                ]
+            },
+            {
+                "connector": "weshalb / weswegen",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Из-за чего».",
+                "examples": [
+                    {
+                        "de": "Die Seite war überlastet, weshalb ich mich erst später einloggen konnte.",
+                        "ru": "Сайт был перегружен, из-за чего я смог войти только позже."
+                    },
+                    {
+                        "de": "Er hatte keine Zeit, weswegen er das Treffen absagte.",
+                        "ru": "У него не было времени, из-за чего он отменил встречу."
+                    },
+                    {
+                        "de": "Das Budget wurde gekürzt, weshalb mehrere Projekte endeten.",
+                        "ru": "Бюджет урезали, из-за чего несколько проектов закончились."
+                    }
+                ]
+            },
+            {
+                "connector": "deshalb · daher · deswegen · darum",
+                "position": "Position 1 · Inversion",
+                "type": "adv",
+                "meaning": "«Поэтому».",
+                "examples": [
+                    {
+                        "de": "Es regnete stark. Deshalb fiel das Konzert aus.",
+                        "ru": "Шёл сильный дождь. Поэтому концерт отменили."
+                    },
+                    {
+                        "de": "Die Mieten steigen. Daher ziehen viele aufs Land.",
+                        "ru": "Аренда растёт. Поэтому многие переезжают в сельскую местность."
+                    },
+                    {
+                        "de": "Sie ist erkältet. Deswegen bleibt sie heute zu Hause.",
+                        "ru": "Она простужена. Поэтому сегодня она остаётся дома."
+                    },
+                    {
+                        "de": "Er hat nicht geantwortet. Darum rief ich ihn an.",
+                        "ru": "Он не ответил. Поэтому я ему позвонил."
+                    }
+                ]
+            },
+            {
+                "connector": "folglich · somit · demnach · infolgedessen",
+                "position": "Position 1 oder Mittelfeld",
+                "type": "adv",
+                "meaning": "«Следовательно, вследствие этого». Формальный стиль.",
+                "examples": [
+                    {
+                        "de": "Die Zahl der Kunden sank. Folglich mussten Filialen schließen.",
+                        "ru": "Число клиентов упало. Следовательно, пришлось закрыть филиалы."
+                    },
+                    {
+                        "de": "Der Vertrag ist unterschrieben. Somit ist die Sache erledigt.",
+                        "ru": "Договор подписан. Таким образом, дело улажено."
+                    },
+                    {
+                        "de": "Laut Bericht sinken die Emissionen. Demnach wirken die Maßnahmen.",
+                        "ru": "Согласно отчёту, выбросы снижаются. Выходит, меры работают."
+                    },
+                    {
+                        "de": "Er achtete nicht auf das Signal und verpasste infolgedessen die Abzweigung.",
+                        "ru": "Он не обратил внимания на сигнал и вследствие этого пропустил поворот."
+                    }
+                ]
+            },
+            {
+                "connector": "infolge · aufgrund + Gen",
+                "position": "Präposition",
+                "type": "prep",
+                "meaning": "«Вследствие, в силу».",
+                "examples": [
+                    {
+                        "de": "Infolge des Streiks fielen zahlreiche Züge aus.",
+                        "ru": "Вследствие забастовки многие поезда были отменены."
+                    },
+                    {
+                        "de": "Aufgrund der hohen Nachfrage wurde die Produktion erweitert.",
+                        "ru": "В силу высокого спроса производство расширили."
+                    },
+                    {
+                        "de": "Aufgrund eines technischen Defekts blieb die Anlage stehen.",
+                        "ru": "Из-за технической неисправности установка остановилась."
+                    }
+                ]
+            }
+        ]
+    }
+}

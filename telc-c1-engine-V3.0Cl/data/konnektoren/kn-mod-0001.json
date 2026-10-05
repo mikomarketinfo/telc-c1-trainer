@@ -1,0 +1,356 @@
+{
+    "meta": {
+        "id": "kn-mod-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "konnektoren",
+        "level": "C1",
+        "title": "Konnektoren: Art und Weise (indem, dadurch dass, wodurch)",
+        "topic": "Konnektoren",
+        "version": "1.0.0"
+    },
+    "content": {
+        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "text": "Modale Konnektoren nennen das Mittel oder die Art und Weise einer Handlung. 'indem' und 'dadurch, dass' leiten einen Nebensatz ein, 'wodurch' kommentiert den ganzen Hauptsatz, 'dadurch' ist ein Adverb mit Inversion."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "Man verbessert seinen Wortschatz, ________ man täglich liest.",
+            "options": [
+                "dadurch",
+                "damit",
+                "wodurch",
+                "indem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "indem leitet einen Nebensatz ein (Verb am Ende) und nennt das Mittel: «путём чтения». Dadurch ist ein Adverb und würde Inversion verlangen; damit drückt den Zweck aus.",
+                "correctWhy": "Перевод: Словарный запас улучшается, если читать каждый день."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Die Firma senkte die Kosten, ________ sie die Produktion automatisierte.",
+            "options": [
+                "wohingegen",
+                "obwohl",
+                "wodurch",
+                "indem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Dasselbe Subjekt (die Firma) führt die Handlung aus, die das Mittel nennt: indem + Verb am Ende.",
+                "correctWhy": "Перевод: Фирма снизила расходы, автоматизировав производство."
+            }
+        },
+        {
+            "id": 3,
+            "text": "Die Firma automatisierte die Produktion, ________ die Kosten deutlich sanken.",
+            "options": [
+                "indem",
+                "obwohl",
+                "dadurch",
+                "wodurch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "wodurch bezieht sich auf den ganzen vorigen Satz und fügt eine Folge an (Verb am Ende). indem scheitert, weil das Subjekt wechselt (die Kosten sanken nicht aktiv). dadurch verlangt Inversion.",
+                "correctWhy": "Перевод: Фирма автоматизировала производство, благодаря чему расходы заметно снизились."
+            }
+        },
+        {
+            "id": 4,
+            "text": "Er trainierte täglich. ________ verbesserte er seine Ausdauer.",
+            "options": [
+                "Indem",
+                "Dass",
+                "Wodurch",
+                "Dadurch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "dadurch ist ein Adverb auf Position 1 und löst Inversion aus: Dadurch verbesserte er… Indem, Wodurch und Dass schicken das Verb ans Ende.",
+                "correctWhy": "Перевод: Он тренировался каждый день. Тем самым он улучшил выносливость."
+            }
+        },
+        {
+            "id": 5,
+            "text": "Verbinden Sie mit „indem“: Sie sparte Strom. Sie schaltete die Geräte nachts aus.",
+            "options": [
+                "Sie sparte Strom, indem sie schaltete die Geräte nachts aus.",
+                "Sie sparte Strom, dadurch sie die Geräte nachts ausschaltete.",
+                "Sie sparte Strom, indem sie die Geräte nachts aus schaltete.",
+                "Sie sparte Strom, indem sie die Geräte nachts ausschaltete."
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Im Nebensatz steht das Verb am Ende, und trennbare Verben werden zusammengeschrieben: ausschaltete.",
+                "correctWhy": "Перевод: Она экономила электричество, выключая приборы на ночь."
+            }
+        },
+        {
+            "id": 6,
+            "text": "Die Regierung will das Klima schützen, ________ sie Subventionen für Solaranlagen erhöht.",
+            "options": [
+                "sodass",
+                "obwohl",
+                "wohingegen",
+                "indem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Mittel zum Ziel: «путём повышения субсидий». Subjekt bleibt gleich (die Regierung).",
+                "correctWhy": "Перевод: Правительство хочет защитить климат, повышая субсидии на солнечные установки."
+            }
+        },
+        {
+            "id": 7,
+            "text": "Idealerweise lassen sich alle vier Räder einzeln gezielt beschleunigen oder abbremsen, ________ die Sicherheit und Fahrdynamik erhöht würde.",
+            "options": [
+                "indem",
+                "worüber",
+                "obwohl",
+                "wodurch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Der Relativsatz mit wodurch kommentiert den ganzen Hauptsatz: «благодаря чему». Das Subjekt wechselt (die Sicherheit), deshalb ist indem nicht möglich.",
+                "correctWhy": "Перевод: В идеале каждое из четырёх колёс можно целенаправленно разгонять или тормозить по отдельности, благодаря чему повысились бы безопасность и динамика езды."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)"
+        },
+        {
+            "id": 8,
+            "text": "Es erlaubt beispielsweise einen völlig neuen Fahrzeugaufbau, weil ________ Platz in der Fahrzeugmitte frei wird.",
+            "options": [
+                "indem",
+                "damit",
+                "wodurch",
+                "dadurch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Hier ist dadurch ein Adverb im Nebensatz («благодаря этому»); es verweist auf den vorigen Satz. wodurch/indem können nicht zusätzlich nach weil stehen.",
+                "correctWhy": "Перевод: Это позволяет, например, совершенно новую конструкцию кузова, потому что благодаря этому освобождается место в середине автомобиля."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Was ist ein Artega?» (вопрос на коннектор составлен для тренировки)"
+        },
+        {
+            "id": 9,
+            "text": "Aber liegt da nicht die Gefahr nahe, dass wir Tiere zu sehr vermenschlichen, ________ wir ihnen unsere eigenen Gefühle zuschreiben und sie als etwas betrachten, was sie nicht sind?",
+            "options": [
+                "dadurch",
+                "sodass",
+                "wodurch",
+                "indem"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Modales indem: Wir vermenschlichen Tiere dadurch, dass wir ihnen Gefühle zuschreiben. Das Subjekt (wir) bleibt gleich.",
+                "correctWhy": "Перевод: Не слишком ли велика опасность очеловечить животных, приписывая им наши собственные чувства?"
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)"
+        },
+        {
+            "id": 10,
+            "text": "Die betroffenen Unternehmen sollen auch ________ gefördert werden, dass sie eher den Zuschlag für öffentliche Aufträge bekommen.",
+            "options": [
+                "indem",
+                "damit",
+                "wodurch",
+                "dadurch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Korrelat: dadurch im Hauptsatz kündigt den dass-Satz an: dadurch …, dass. Nach dem Komma steht dass, deshalb passt indem nicht.",
+                "correctWhy": "Перевод: Предприятия должны поддерживаться и тем, что им чаще достаются государственные заказы."
+            },
+            "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Unterstützung für KMU» (фрагмент, вопрос составлен для тренировки)"
+        },
+        {
+            "id": 11,
+            "text": "Welcher Satz ist korrekt?",
+            "options": [
+                "Er gewann das Vertrauen der Kunden, indem war er immer ehrlich.",
+                "Er gewann das Vertrauen der Kunden, dadurch er immer ehrlich war.",
+                "Er gewann das Vertrauen der Kunden, dadurch war er immer ehrlich.",
+                "Er gewann das Vertrauen der Kunden, indem er immer ehrlich war."
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Nach indem steht das konjugierte Verb am Ende. «dadurch» allein braucht entweder Inversion oder das Korrelat mit dass.",
+                "correctWhy": "Перевод: Он завоевал доверие клиентов, всегда оставаясь честным."
+            }
+        },
+        {
+            "id": 12,
+            "text": "Der Chef kritisierte das Team öffentlich, ________ die Stimmung merklich sank.",
+            "options": [
+                "indem",
+                "dadurch",
+                "obwohl",
+                "wodurch"
+            ],
+            "correct": 3,
+            "grammarId": "konn_art_weise",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "mod"
+            ],
+            "explanation": {
+                "rule": "Folge mit wodurch: Die Kritik hatte zur Folge, dass die Stimmung sank. Das Subjekt wechselt, also nicht indem.",
+                "correctWhy": "Перевод: Начальник публично раскритиковал команду, из-за чего настроение заметно упало."
+            }
+        }
+    ],
+    "vocabulary": [
+        {
+            "word": "der Wortschatz",
+            "translation": "словарный запас"
+        },
+        {
+            "word": "die Produktion automatisieren",
+            "translation": "автоматизировать производство"
+        },
+        {
+            "word": "sinken",
+            "translation": "снижаться"
+        },
+        {
+            "word": "deutlich",
+            "translation": "заметно"
+        },
+        {
+            "word": "verbessern",
+            "translation": "улучшать"
+        },
+        {
+            "word": "ausschalten",
+            "translation": "выключать"
+        },
+        {
+            "word": "der Strom",
+            "translation": "электричество"
+        },
+        {
+            "word": "die Subvention",
+            "translation": "субсидия"
+        },
+        {
+            "word": "die Solaranlage",
+            "translation": "солнечная установка"
+        },
+        {
+            "word": "abbremsen",
+            "translation": "тормозить"
+        },
+        {
+            "word": "die Fahrdynamik",
+            "translation": "динамика движения"
+        },
+        {
+            "word": "der Aufbau",
+            "translation": "конструкция, кузов"
+        },
+        {
+            "word": "vermenschlichen",
+            "translation": "очеловечивать"
+        },
+        {
+            "word": "zuschreiben",
+            "translation": "приписывать"
+        },
+        {
+            "word": "der Zuschlag",
+            "translation": "присуждение контракта"
+        },
+        {
+            "word": "fördern",
+            "translation": "поддерживать"
+        },
+        {
+            "word": "das Vertrauen gewinnen",
+            "translation": "завоевать доверие"
+        },
+        {
+            "word": "die Stimmung",
+            "translation": "настроение"
+        },
+        {
+            "word": "merklich",
+            "translation": "заметно"
+        }
+    ],
+    "generator": {
+        "source": "Eigene Aufgaben zu C1-Konnektoren. Einzelne Sätze stammen aus dem privaten Übungsmaterial C1 Allg (siehe Feld source).",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

@@ -1,0 +1,142 @@
+{
+    "id": "konn_mittel",
+    "language": "de",
+    "title": "Mittel und Werkzeug (mithilfe, mittels, durch, anhand, dank)",
+    "shortExplanation": "Präpositionen wie mithilfe, mittels, durch, anhand und dank nennen Mittel, Werkzeug oder Grundlage. mithilfe, mittels, anhand und dank stehen mit Genitiv, 'mithilfe von' und 'anhand von' mit Dativ, 'durch' mit Akkusativ.",
+    "example": "Mithilfe eines Online-Wörterbuchs prüfte er die Schreibweise.",
+    "more": {
+        "rule": "mithilfe + Gen / mithilfe von + Dat; mittels + Gen; durch + Akk; anhand + Gen oder anhand von + Dat; dank + Gen (positiver Grund).",
+        "commonMistakes": [
+            "wegen",
+            "trotz",
+            "statt"
+        ],
+        "tips": [
+            "'mit Hilfe' und 'mithilfe' sind beide korrekt.",
+            "Im Plural ohne Artikel: mithilfe von Karten.",
+            "dank nennt einen positiven Grund, bei einem negativen Grund nimm wegen oder aufgrund."
+        ],
+        "rows": [
+            {
+                "connector": "mithilfe + Gen",
+                "position": "Präposition",
+                "type": "prep",
+                "meaning": "«С помощью». Написание «mit Hilfe» тоже верно.",
+                "examples": [
+                    {
+                        "de": "Mithilfe eines Online-Wörterbuchs prüfte er die Schreibweise.",
+                        "ru": "С помощью онлайн-словаря он проверил написание."
+                    },
+                    {
+                        "de": "Die Ärztin stellte die Diagnose mithilfe moderner Bildgebung.",
+                        "ru": "Врач поставила диагноз с помощью современной визуализации."
+                    },
+                    {
+                        "de": "Mit Hilfe einer Checkliste lassen sich Fehler vermeiden.",
+                        "ru": "С помощью чек-листа можно избежать ошибок."
+                    }
+                ]
+            },
+            {
+                "connector": "mithilfe von + Dat",
+                "position": "Präposition",
+                "type": "prep",
+                "meaning": "Без артикля или в мн. числе.",
+                "examples": [
+                    {
+                        "de": "Mithilfe von Beispielen wird die Regel verständlich.",
+                        "ru": "С помощью примеров правило становится понятным."
+                    },
+                    {
+                        "de": "Sie lernte Vokabeln mithilfe von Karteikarten.",
+                        "ru": "Она учила слова с помощью карточек."
+                    },
+                    {
+                        "de": "Mit Hilfe von Freunden zog er in zwei Stunden um.",
+                        "ru": "С помощью друзей он переехал за два часа."
+                    }
+                ]
+            },
+            {
+                "connector": "mittels + Gen",
+                "position": "Präposition · formell",
+                "type": "prep",
+                "meaning": "«Посредством».",
+                "examples": [
+                    {
+                        "de": "Der Zugang erfolgt mittels eines persönlichen Codes.",
+                        "ru": "Доступ осуществляется посредством личного кода."
+                    },
+                    {
+                        "de": "Die Daten wurden mittels Fragebögen erhoben.",
+                        "ru": "Данные собирали посредством анкет."
+                    },
+                    {
+                        "de": "Mittels einer Stichprobe wurde die Qualität geprüft.",
+                        "ru": "Качество проверили посредством выборки."
+                    }
+                ]
+            },
+            {
+                "connector": "durch + Akk",
+                "position": "Präposition",
+                "type": "prep",
+                "meaning": "«Посредством, через».",
+                "examples": [
+                    {
+                        "de": "Sie überzeugte durch klare Argumente.",
+                        "ru": "Она убедила чёткими аргументами."
+                    },
+                    {
+                        "de": "Das Dorf wurde durch einen Sturm zerstört.",
+                        "ru": "Деревня была разрушена бурей."
+                    },
+                    {
+                        "de": "Durch regelmäßiges Üben verbessert sich die Aussprache.",
+                        "ru": "Благодаря регулярным упражнениям улучшается произношение."
+                    }
+                ]
+            },
+            {
+                "connector": "anhand + Gen / von",
+                "position": "Präposition",
+                "type": "prep",
+                "meaning": "«На основании, по».",
+                "examples": [
+                    {
+                        "de": "Anhand der Zahlen lässt sich ein klarer Trend erkennen.",
+                        "ru": "По цифрам можно увидеть чёткую тенденцию."
+                    },
+                    {
+                        "de": "Anhand von Beispielen erklärte sie die Regel.",
+                        "ru": "На примерах она объяснила правило."
+                    },
+                    {
+                        "de": "Das Alter lässt sich anhand der Jahresringe bestimmen.",
+                        "ru": "Возраст можно определить по годичным кольцам."
+                    }
+                ]
+            },
+            {
+                "connector": "dank + Gen",
+                "position": "Präposition · positiv",
+                "type": "prep",
+                "meaning": "«Благодаря» (хорошая причина).",
+                "examples": [
+                    {
+                        "de": "Dank der neuen Software läuft alles schneller.",
+                        "ru": "Благодаря новому ПО всё работает быстрее."
+                    },
+                    {
+                        "de": "Dank seiner Erfahrung fand er den Fehler sofort.",
+                        "ru": "Благодаря своему опыту он сразу нашёл ошибку."
+                    },
+                    {
+                        "de": "Dank der Unterstützung der Eltern konnte sie studieren.",
+                        "ru": "Благодаря поддержке родителей она смогла учиться."
+                    }
+                ]
+            }
+        ]
+    }
+}

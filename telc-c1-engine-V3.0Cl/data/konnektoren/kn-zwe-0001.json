@@ -1,0 +1,336 @@
+{
+    "meta": {
+        "id": "kn-zwe-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "konnektoren",
+        "level": "C1",
+        "title": "Konnektoren: Zweck (um … zu, damit, dazu)",
+        "topic": "Konnektoren",
+        "version": "1.0.0"
+    },
+    "content": {
+        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "text": "Zweck: 'um … zu' bei gleichem Subjekt, 'damit' bei anderem Subjekt. 'dazu' und 'wozu' sind Pronominaladverbien, 'zwecks' + Genitiv ist formell."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "Sie lernt Deutsch, ________ in Deutschland studieren zu können.",
+            "options": [
+                "dass",
+                "indem",
+                "damit",
+                "um"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "um … zu + Infinitiv bei gleichem Subjekt (sie lernt / sie will studieren): «чтобы».",
+                "correctWhy": "Перевод: Она учит немецкий, чтобы иметь возможность учиться в Германии."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Sie lernt Deutsch, ________ ihre Kinder später zweisprachig aufwachsen.",
+            "options": [
+                "indem",
+                "obwohl",
+                "um",
+                "damit"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "damit + Nebensatz, weil das Subjekt wechselt (sie / ihre Kinder). Mit um … zu geht das nicht.",
+                "correctWhy": "Перевод: Она учит немецкий, чтобы её дети потом росли двуязычными."
+            }
+        },
+        {
+            "id": 3,
+            "text": "________ herauszufinden, wie die Geräte dafür verändert werden müssen, schickten wir 84 Probanden mit drei verschiedenen technischen Helfern über einen Universitätscampus.",
+            "options": [
+                "Indem",
+                "Weil",
+                "Damit",
+                "Um"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "Satzanfang mit Infinitiv + zu: Um herauszufinden, … Hinter damit würde ein Nebensatz mit Subjekt folgen.",
+                "correctWhy": "Перевод: Чтобы выяснить, как нужно изменить устройства, мы отправили 84 испытуемых с тремя разными техническими помощниками по университетскому кампусу."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Navigationssystem» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 4,
+            "text": "________ gut zu leben, müssen wir einen Ausgleich zwischen beiden schaffen.",
+            "options": [
+                "Damit",
+                "Dass",
+                "Indem",
+                "Um"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "um … zu am Satzanfang: «чтобы хорошо жить». Das Subjekt (wir) ist in beiden Teilen gleich.",
+                "correctWhy": "Перевод: Чтобы хорошо жить, мы должны создать баланс между обоими."
+            },
+            "source": "Текст дословно из файла C1 Allg · Sprachbausteine «Konkurrenz und Kooperation» (вопрос составлен для тренировки)"
+        },
+        {
+            "id": 5,
+            "text": "Er schloss das Fenster, ________ es nicht zieht.",
+            "options": [
+                "um",
+                "obwohl",
+                "indem",
+                "damit"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "Subjektwechsel (er / es) → damit + Nebensatz.",
+                "correctWhy": "Перевод: Он закрыл окно, чтобы не было сквозняка."
+            }
+        },
+        {
+            "id": 6,
+            "text": "Manche Schüler kommen früher, ________ ihre Hausaufgaben zu vervollständigen.",
+            "options": [
+                "für",
+                "sodass",
+                "damit",
+                "um"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "Фрагмент задания 43: um + zu + Infinitiv. «für» braucht ein Nomen, sodass/damit einen Nebensatz mit eigenem Subjekt.",
+                "correctWhy": "Перевод: Некоторые ученики приходят пораньше, чтобы доделать домашние задания."
+            },
+            "source": "Фрагмент задания 43 из файла C1 Allg · Sprachbausteine «Die chronobiologischen Rhythmen der Kinder» (варианты ответов те же)"
+        },
+        {
+            "id": 7,
+            "text": "Es soll ________ dienen, den Unternehmergeist in den Ländern der EU zu fördern.",
+            "options": [
+                "dabei",
+                "dagegen",
+                "darüber",
+                "dazu"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "dienen dazu, … zu + Infinitiv: Verb mit fester Präposition (zu) → Pronominaladverb dazu.",
+                "correctWhy": "Перевод: Это должно служить тому, чтобы развивать предпринимательский дух в странах ЕС."
+            },
+            "source": "Фрагмент задания 31 из файла C1 Allg · Sprachbausteine «Unterstützung für KMU» (варианты ответов те же)"
+        },
+        {
+            "id": 8,
+            "text": "Die Maßnahme dient ________, Kosten zu senken.",
+            "options": [
+                "dadurch",
+                "damit",
+                "darum",
+                "dazu"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "dienen zu + Dativ → dazu + Infinitiv mit zu: «служит тому, чтобы…».",
+                "correctWhy": "Перевод: Эта мера служит для снижения расходов."
+            }
+        },
+        {
+            "id": 9,
+            "text": "________ dient diese Maßnahme? Sie soll Kosten senken.",
+            "options": [
+                "Wodurch",
+                "Worüber",
+                "Woran",
+                "Wozu"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "Wozu fragt nach dem Zweck: «для чего?». Wodurch fragt nach dem Mittel.",
+                "correctWhy": "Перевод: Для чего служит эта мера? Она должна снижать расходы."
+            }
+        },
+        {
+            "id": 10,
+            "text": "________ einer besseren Planung wurde das Treffen verschoben.",
+            "options": [
+                "Ohne",
+                "Dank",
+                "Trotz",
+                "Zwecks"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "zwecks + Genitiv = «с целью» (formell, Amtssprache).",
+                "correctWhy": "Перевод: С целью лучшего планирования встречу перенесли."
+            }
+        },
+        {
+            "id": 11,
+            "text": "Er arbeitete nachts, ________ tagsüber bei den Kindern zu sein.",
+            "options": [
+                "damit",
+                "sodass",
+                "indem",
+                "um"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "Gleiches Subjekt (er arbeitete / er will bei den Kindern sein) → um … zu.",
+                "correctWhy": "Перевод: Он работал по ночам, чтобы днём быть с детьми."
+            }
+        },
+        {
+            "id": 12,
+            "text": "Sie schickte die Unterlagen früher, ________ er genug Zeit zum Lesen hatte.",
+            "options": [
+                "um",
+                "obwohl",
+                "indem",
+                "damit"
+            ],
+            "correct": 3,
+            "grammarId": "konn_zweck",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "zwe"
+            ],
+            "explanation": {
+                "rule": "Subjektwechsel (sie / er) → damit. Mit um … zu müsste das Subjekt gleich sein.",
+                "correctWhy": "Перевод: Она прислала документы раньше, чтобы у него было достаточно времени на чтение."
+            }
+        }
+    ],
+    "vocabulary": [
+        {
+            "word": "studieren",
+            "translation": "учиться в вузе"
+        },
+        {
+            "word": "zweisprachig",
+            "translation": "двуязычный"
+        },
+        {
+            "word": "aufwachsen",
+            "translation": "расти"
+        },
+        {
+            "word": "der Proband",
+            "translation": "испытуемый"
+        },
+        {
+            "word": "herausfinden",
+            "translation": "выяснить"
+        },
+        {
+            "word": "der Ausgleich",
+            "translation": "баланс"
+        },
+        {
+            "word": "es zieht",
+            "translation": "сквозит"
+        },
+        {
+            "word": "vervollständigen",
+            "translation": "дополнять, завершать"
+        },
+        {
+            "word": "der Unternehmergeist",
+            "translation": "предпринимательский дух"
+        },
+        {
+            "word": "die Maßnahme",
+            "translation": "мера"
+        },
+        {
+            "word": "der Zweck",
+            "translation": "цель"
+        },
+        {
+            "word": "die Planung",
+            "translation": "планирование"
+        },
+        {
+            "word": "tagsüber",
+            "translation": "днём"
+        },
+        {
+            "word": "die Unterlagen",
+            "translation": "документы"
+        }
+    ],
+    "generator": {
+        "source": "Eigene Aufgaben zu C1-Konnektoren. Einzelne Sätze stammen aus dem privaten Übungsmaterial C1 Allg (siehe Feld source).",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

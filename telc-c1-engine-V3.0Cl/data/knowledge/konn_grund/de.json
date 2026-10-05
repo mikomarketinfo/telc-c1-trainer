@@ -1,0 +1,122 @@
+{
+    "id": "konn_grund",
+    "language": "de",
+    "title": "Grund erweitert (denn, nämlich, zumal, aufgrund, angesichts)",
+    "shortExplanation": "Weitere Konnektoren für den Grund: 'denn' (Position 0), 'nämlich' (Mittelfeld), 'zumal' (Nebensatz) und die Präpositionen wegen, aufgrund, angesichts mit Genitiv.",
+    "example": "Das Fest fiel aus, weil es stark regnete.",
+    "more": {
+        "rule": "denn → Hauptsatz, Verb an Position 2. weil / da / zumal → Nebensatz, Verb am Ende. nämlich → Mittelfeld, begründet die vorige Aussage. wegen / aufgrund / angesichts + Gen.",
+        "commonMistakes": [
+            "deshalb",
+            "obwohl",
+            "sodass"
+        ],
+        "tips": [
+            "Schau auf das Verb: Position 2 → denn, Satzende → weil, da, zumal.",
+            "'zumal' heißt «тем более что» und verstärkt einen Grund.",
+            "'angesichts' passt zu Umständen: angesichts der Lage."
+        ],
+        "rows": [
+            {
+                "connector": "weil · da",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "Da — известная причина, чаще в начале.",
+                "examples": [
+                    {
+                        "de": "Das Fest fiel aus, weil es stark regnete.",
+                        "ru": "Праздник отменили, потому что шёл сильный дождь."
+                    },
+                    {
+                        "de": "Da die Lage unübersichtlich war, verschob man die Entscheidung.",
+                        "ru": "Поскольку ситуация была неясной, решение отложили."
+                    },
+                    {
+                        "de": "Sie sagte ab, weil ihr Kind krank war.",
+                        "ru": "Она отказалась, потому что её ребёнок заболел."
+                    }
+                ]
+            },
+            {
+                "connector": "denn",
+                "position": "Position 0 · Verb an Position 2",
+                "type": "p0",
+                "meaning": "«Ведь». Порядок слов как в главном предложении.",
+                "examples": [
+                    {
+                        "de": "Wir bleiben zu Hause, denn das Wetter ist schlecht.",
+                        "ru": "Мы остаёмся дома, ведь погода плохая."
+                    },
+                    {
+                        "de": "Er war müde, denn er hatte die ganze Nacht gearbeitet.",
+                        "ru": "Он был уставшим, ведь работал всю ночь."
+                    },
+                    {
+                        "de": "Man sollte frühzeitig buchen, denn die Preise steigen schnell.",
+                        "ru": "Бронировать стоит заранее, ведь цены быстро растут."
+                    }
+                ]
+            },
+            {
+                "connector": "nämlich",
+                "position": "Mittelfeld",
+                "type": "adv",
+                "meaning": "«Дело в том, что».",
+                "examples": [
+                    {
+                        "de": "Die Sitzung wurde verschoben. Der Chef ist nämlich erkrankt.",
+                        "ru": "Заседание перенесли. Дело в том, что начальник заболел."
+                    },
+                    {
+                        "de": "Ich nehme den Zug. Das Auto ist nämlich in der Werkstatt.",
+                        "ru": "Я поеду на поезде. Дело в том, что машина в мастерской."
+                    },
+                    {
+                        "de": "Sie ist heute nicht da; sie hat nämlich Urlaub.",
+                        "ru": "Её сегодня нет; дело в том, что она в отпуске."
+                    }
+                ]
+            },
+            {
+                "connector": "zumal",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Тем более что».",
+                "examples": [
+                    {
+                        "de": "Wir sollten zusagen, zumal die Konditionen günstig sind.",
+                        "ru": "Нам стоит согласиться, тем более что условия выгодные."
+                    },
+                    {
+                        "de": "Er kommt bestimmt, zumal er es versprochen hat.",
+                        "ru": "Он наверняка придёт, тем более что он это обещал."
+                    },
+                    {
+                        "de": "Die Idee ist riskant, zumal das Budget knapp ist.",
+                        "ru": "Идея рискованная, тем более что бюджет ограничен."
+                    }
+                ]
+            },
+            {
+                "connector": "wegen · aufgrund · angesichts + Gen",
+                "position": "Präposition",
+                "type": "prep",
+                "meaning": "«Из-за, ввиду».",
+                "examples": [
+                    {
+                        "de": "Wegen des Regens fiel das Fest aus.",
+                        "ru": "Из-за дождя праздник отменили."
+                    },
+                    {
+                        "de": "Angesichts der hohen Kosten verzichtete sie auf das Projekt.",
+                        "ru": "Ввиду высоких расходов она отказалась от проекта."
+                    },
+                    {
+                        "de": "Aufgrund seiner Erfahrung wurde er befördert.",
+                        "ru": "В силу своего опыта он получил повышение."
+                    }
+                ]
+            }
+        ]
+    }
+}

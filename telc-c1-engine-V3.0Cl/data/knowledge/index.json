@@ -54,6 +54,54 @@
             "title": "Modalverben für logische Notwendigkeit",
             "category": "Grammatik",
             "level": "C1"
+        },
+        {
+            "id": "konn_art_weise",
+            "title": "Modale Konnektoren (indem, dadurch dass, wodurch)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "konn_mittel",
+            "title": "Mittel und Werkzeug (mithilfe, mittels, durch, anhand, dank)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "konn_ohne_statt",
+            "title": "Ohne und statt (ohne zu, ohne dass, anstatt, stattdessen)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "konn_folge",
+            "title": "Konsekutive Konnektoren (sodass, deshalb, folglich, weshalb)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "konn_grund",
+            "title": "Grund erweitert (denn, nämlich, zumal, aufgrund, angesichts)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "konn_gegensatz",
+            "title": "Gegensatz und Zugeständnis (während, hingegen, zwar … aber)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "konn_zweck",
+            "title": "Zweck erweitert (um … zu, damit, dazu, wozu, zwecks)",
+            "category": "Grammatik",
+            "level": "C1"
+        },
+        {
+            "id": "konn_bedingung",
+            "title": "Bedingung, Zusatz und Zeit (falls, sofern, außerdem, nachdem)",
+            "category": "Grammatik",
+            "level": "C1"
         }
     ]
 }

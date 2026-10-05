@@ -1,0 +1,154 @@
+{
+    "id": "konn_bedingung",
+    "language": "de",
+    "title": "Bedingung, Zusatz und Zeit (falls, sofern, außerdem, nachdem)",
+    "shortExplanation": "Bedingung (falls, sofern, es sei denn), Alternative (andernfalls, ansonsten, sonst), Zusatz (außerdem, zudem, darüber hinaus) und Zeit (nachdem, bevor, sobald, seitdem, solange).",
+    "example": "Falls du Hilfe brauchst, ruf mich an.",
+    "more": {
+        "rule": "falls / sofern / wenn → Nebensatz. andernfalls / ansonsten / sonst / außerdem / zudem / darüber hinaus → Adverb mit Inversion. es sei denn, … + Hauptsatz. nachdem + Plusquamperfekt für Vorzeitigkeit.",
+        "commonMistakes": [
+            "obwohl",
+            "damit",
+            "sodass"
+        ],
+        "tips": [
+            "'sofern' ist formeller als 'wenn'.",
+            "'sonst' heißt «иначе», 'es sei denn' heißt «разве что».",
+            "je … desto + Komparativ, danach steht das Verb direkt."
+        ],
+        "rows": [
+            {
+                "connector": "falls · sofern · wenn",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Если», sofern — «при условии, что».",
+                "examples": [
+                    {
+                        "de": "Falls du Hilfe brauchst, ruf mich an.",
+                        "ru": "Если тебе понадобится помощь, позвони мне."
+                    },
+                    {
+                        "de": "Sofern keine Einwände bestehen, gilt der Plan als beschlossen.",
+                        "ru": "Если возражений нет, план считается принятым."
+                    },
+                    {
+                        "de": "Wenn man regelmäßig übt, wird man sicherer.",
+                        "ru": "Если регулярно тренироваться, становишься увереннее."
+                    }
+                ]
+            },
+            {
+                "connector": "andernfalls · ansonsten · sonst",
+                "position": "Position 1 · Inversion",
+                "type": "adv",
+                "meaning": "«В противном случае».",
+                "examples": [
+                    {
+                        "de": "Sei pünktlich. Andernfalls verlierst du den Platz.",
+                        "ru": "Будь вовремя. В противном случае потеряешь место."
+                    },
+                    {
+                        "de": "Wir müssen sparen, ansonsten reicht das Budget nicht.",
+                        "ru": "Нам нужно экономить, иначе бюджета не хватит."
+                    },
+                    {
+                        "de": "Beeil dich, sonst verpasst du den Zug.",
+                        "ru": "Поторопись, иначе опоздаешь на поезд."
+                    }
+                ]
+            },
+            {
+                "connector": "es sei denn, …",
+                "position": "danach Hauptsatz",
+                "type": "adv",
+                "meaning": "«Разве что».",
+                "examples": [
+                    {
+                        "de": "Wir wandern morgen, es sei denn, es regnet.",
+                        "ru": "Мы идём в поход завтра, разве что пойдёт дождь."
+                    },
+                    {
+                        "de": "Der Termin bleibt bestehen, es sei denn, er sagt ab.",
+                        "ru": "Встреча остаётся в силе, разве что он откажется."
+                    },
+                    {
+                        "de": "Ich unterschreibe nicht, es sei denn, die Bedingungen ändern sich.",
+                        "ru": "Я не подпишу, разве что условия изменятся."
+                    }
+                ]
+            },
+            {
+                "connector": "außerdem · zudem · darüber hinaus",
+                "position": "Position 1 oder Mittelfeld",
+                "type": "adv",
+                "meaning": "«Кроме того».",
+                "examples": [
+                    {
+                        "de": "Die Wohnung ist günstig. Außerdem liegt sie zentral.",
+                        "ru": "Квартира недорогая. Кроме того, она в центре."
+                    },
+                    {
+                        "de": "Das Konzept ist innovativ und zudem kostengünstig.",
+                        "ru": "Концепция инновационная и к тому же недорогая."
+                    },
+                    {
+                        "de": "Darüber hinaus sollte man die Doppelbelastung nicht unterschätzen.",
+                        "ru": "Кроме того, не следует недооценивать двойную нагрузку."
+                    }
+                ]
+            },
+            {
+                "connector": "sowohl … als auch · weder … noch · je … desto",
+                "position": "Doppelkonnektoren",
+                "type": "p0",
+                "meaning": "«Как…, так и», «ни…, ни», «чем…, тем».",
+                "examples": [
+                    {
+                        "de": "Sowohl die Kosten als auch die Zeit spielen eine Rolle.",
+                        "ru": "Играют роль как расходы, так и время."
+                    },
+                    {
+                        "de": "Er hat weder angerufen noch geschrieben.",
+                        "ru": "Он ни позвонил, ни написал."
+                    },
+                    {
+                        "de": "Je mehr du übst, desto besser wirst du.",
+                        "ru": "Чем больше ты тренируешься, тем лучше становишься."
+                    },
+                    {
+                        "de": "Je früher man anfängt, umso leichter fällt das Lernen.",
+                        "ru": "Чем раньше начинаешь, тем легче даётся учёба."
+                    }
+                ]
+            },
+            {
+                "connector": "nachdem · bevor · sobald · seitdem · solange",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "Временные союзы: после того как, прежде чем, как только, с тех пор как, пока.",
+                "examples": [
+                    {
+                        "de": "Nachdem er die Prüfung bestanden hatte, feierte er mit Freunden.",
+                        "ru": "После того как он сдал экзамен, он отпраздновал это с друзьями."
+                    },
+                    {
+                        "de": "Bevor du unterschreibst, lies den Vertrag.",
+                        "ru": "Прежде чем подписывать, прочти договор."
+                    },
+                    {
+                        "de": "Sobald die Ergebnisse vorliegen, informieren wir Sie.",
+                        "ru": "Как только появятся результаты, мы вас проинформируем."
+                    },
+                    {
+                        "de": "Seitdem er umgezogen ist, fährt er mit dem Rad zur Arbeit.",
+                        "ru": "С тех пор как он переехал, он ездит на работу на велосипеде."
+                    },
+                    {
+                        "de": "Solange die Preise steigen, kaufen viele weniger.",
+                        "ru": "Пока цены растут, многие покупают меньше."
+                    }
+                ]
+            }
+        ]
+    }
+}

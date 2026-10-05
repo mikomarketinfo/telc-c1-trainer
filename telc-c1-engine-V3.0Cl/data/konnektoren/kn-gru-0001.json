@@ -1,0 +1,288 @@
+{
+    "meta": {
+        "id": "kn-gru-0001",
+        "exam": "telc-c1-allgemein",
+        "module": "konnektoren",
+        "level": "C1",
+        "title": "Konnektoren: Grund (weil, da, denn)",
+        "topic": "Konnektoren",
+        "version": "1.0.0"
+    },
+    "content": {
+        "instruction": "Wählen Sie für jede Aufgabe die richtige Lösung. Achten Sie auf die Wortstellung: Steht das Verb am Ende, in Position 2 oder folgt ein Infinitiv mit zu?",
+        "text": "Weitere Konnektoren für den Grund: 'denn' (Position 0), 'nämlich' (Mittelfeld), 'zumal' (Nebensatz) und die Präpositionen wegen, aufgrund, angesichts mit Genitiv."
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "________ es stark regnete, fiel das Fest aus.",
+            "options": [
+                "Denn",
+                "Obwohl",
+                "Deshalb",
+                "Weil"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "weil + Nebensatz (Verb am Ende: regnete). Denn kann man am Satzanfang nicht mit Nebensatzstellung nutzen.",
+                "correctWhy": "Перевод: Поскольку шёл сильный дождь, праздник отменили."
+            }
+        },
+        {
+            "id": 2,
+            "text": "Das Fest fiel aus, ________ es regnete stark.",
+            "options": [
+                "da",
+                "sodass",
+                "weil",
+                "denn"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "Schau auf das Verb: regnete steht an Position 2, also Hauptsatzstellung. Dann passt denn (Position 0). weil, da und sodass verlangen das Verb am Ende.",
+                "correctWhy": "Перевод: Праздник отменили, ведь шёл сильный дождь."
+            }
+        },
+        {
+            "id": 3,
+            "text": "________ des starken Regens fiel das Fest aus.",
+            "options": [
+                "Trotz",
+                "Statt",
+                "Ohne",
+                "Aufgrund"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "aufgrund + Genitiv = «в силу, из-за» (Präposition, formell). Ähnlich: wegen + Genitiv.",
+                "correctWhy": "Перевод: Из-за сильного дождя праздник отменили."
+            }
+        },
+        {
+            "id": 4,
+            "text": "________ der hohen Kosten verzichtete sie auf das Projekt.",
+            "options": [
+                "Anstelle",
+                "Mittels",
+                "Ungeachtet",
+                "Angesichts"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "angesichts + Genitiv = «ввиду, учитывая». Ungeachtet bedeutet das Gegenteil (несмотря на).",
+                "correctWhy": "Перевод: Ввиду высоких расходов она отказалась от проекта."
+            }
+        },
+        {
+            "id": 5,
+            "text": "Die Sitzung wurde verschoben. Der Chef ist ________ erkrankt.",
+            "options": [
+                "deshalb",
+                "sodass",
+                "trotzdem",
+                "nämlich"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "nämlich nennt den Grund für die vorige Aussage («дело в том, что»). Es steht im Mittelfeld, nicht auf Position 1.",
+                "correctWhy": "Перевод: Заседание перенесли. Дело в том, что начальник заболел."
+            }
+        },
+        {
+            "id": 6,
+            "text": "________ die Lage bekannt ist, erübrigt sich eine lange Erklärung.",
+            "options": [
+                "Deshalb",
+                "Obwohl",
+                "Denn",
+                "Da"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "da + Nebensatz am Satzanfang nennt einen bekannten Grund: «поскольку». Denn kann hier nicht stehen (Verb am Ende).",
+                "correctWhy": "Перевод: Поскольку ситуация известна, длинное объяснение излишне."
+            }
+        },
+        {
+            "id": 7,
+            "text": "Und könnte nicht gerade für Haustiere dadurch die Stressbelastung steigen - ________ sie doch im Grund einfach nur Tier sein wollen?",
+            "options": [
+                "obwohl",
+                "sodass",
+                "damit",
+                "weil"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "weil begründet die Frage: «ведь они хотят просто быть животными». Obwohl und sodass ergeben keinen Sinn.",
+                "correctWhy": "Перевод: И разве не может из-за этого вырасти стрессовая нагрузка именно у домашних животных — ведь они хотят просто быть животными?"
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)"
+        },
+        {
+            "id": 8,
+            "text": "________ die enge Beziehung zwischen Mensch und Tier ist nicht bloß ein Phänomen unserer Gegenwart.",
+            "options": [
+                "Dennoch",
+                "Obwohl",
+                "Deshalb",
+                "Denn"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "Denn (Position 0) begründet die vorige Aussage und lässt das Verb auf Position 2: Denn die Beziehung ist…",
+                "correctWhy": "Перевод: Ведь тесная связь между человеком и животным — не просто феномен нашего времени."
+            },
+            "source": "Текст дословно из файла C1 Allg · Leseverstehen «Haustiere» (вопрос на коннектор составлен для тренировки)"
+        },
+        {
+            "id": 9,
+            "text": "Welcher Satz ist grammatisch FALSCH?",
+            "options": [
+                "Er kam zu spät, weil er den Bus verpasste.",
+                "Er kam zu spät, da er den Bus verpasst hatte.",
+                "Er kam zu spät, denn er verpasste den Bus.",
+                "Er kam zu spät, denn er den Bus verpasste."
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "denn verlangt Hauptsatzstellung (denn er verpasste den Bus). Bei weil und da steht das Verb am Ende.",
+                "correctWhy": "Перевод: Он опоздал, потому что пропустил автобус."
+            }
+        },
+        {
+            "id": 10,
+            "text": "Wir sollten das Angebot annehmen, ________ der Preis wirklich günstig ist.",
+            "options": [
+                "obwohl",
+                "sodass",
+                "ob",
+                "zumal"
+            ],
+            "correct": 3,
+            "grammarId": "konn_grund",
+            "skills": [
+                "grammatik",
+                "konnektoren",
+                "gru"
+            ],
+            "explanation": {
+                "rule": "zumal + Nebensatz = «тем более что»: Es gibt schon einen Grund, und der neue verstärkt ihn.",
+                "correctWhy": "Перевод: Нам стоит принять предложение, тем более что цена действительно выгодная."
+            }
+        }
+    ],
+    "vocabulary": [
+        {
+            "word": "stark regnen",
+            "translation": "лить как из ведра"
+        },
+        {
+            "word": "das Fest",
+            "translation": "праздник"
+        },
+        {
+            "word": "der Regen",
+            "translation": "дождь"
+        },
+        {
+            "word": "verzichten auf",
+            "translation": "отказываться от"
+        },
+        {
+            "word": "verschieben",
+            "translation": "переносить"
+        },
+        {
+            "word": "erkranken",
+            "translation": "заболеть"
+        },
+        {
+            "word": "sich erübrigen",
+            "translation": "становиться излишним"
+        },
+        {
+            "word": "die Stressbelastung",
+            "translation": "стрессовая нагрузка"
+        },
+        {
+            "word": "die Beziehung",
+            "translation": "отношения"
+        },
+        {
+            "word": "bloß",
+            "translation": "лишь"
+        },
+        {
+            "word": "den Bus verpassen",
+            "translation": "пропустить автобус"
+        },
+        {
+            "word": "das Angebot",
+            "translation": "предложение"
+        },
+        {
+            "word": "günstig",
+            "translation": "выгодный"
+        }
+    ],
+    "generator": {
+        "source": "Eigene Aufgaben zu C1-Konnektoren. Einzelne Sätze stammen aus dem privaten Übungsmaterial C1 Allg (siehe Feld source).",
+        "validated": false,
+        "validatorVersion": "1.0"
+    }
+}

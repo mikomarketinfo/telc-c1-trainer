@@ -1,0 +1,106 @@
+{
+    "id": "konn_art_weise",
+    "language": "de",
+    "title": "Modale Konnektoren (indem, dadurch dass, wodurch)",
+    "shortExplanation": "Modale Konnektoren nennen das Mittel oder die Art und Weise einer Handlung. 'indem' und 'dadurch, dass' leiten einen Nebensatz ein, 'wodurch' kommentiert den ganzen Hauptsatz, 'dadurch' ist ein Adverb mit Inversion.",
+    "example": "Wir sparen Energie, indem wir Geräte vollständig ausschalten.",
+    "more": {
+        "rule": "indem / dadurch, dass → Verb am Ende, nennt das Mittel (Subjekt meist gleich). wodurch → Verb am Ende, bezieht sich auf den ganzen vorigen Satz und nennt eine Folge. dadurch → Position 1, danach direkt das Verb.",
+        "commonMistakes": [
+            "damit",
+            "sodass",
+            "weshalb"
+        ],
+        "tips": [
+            "Schneller Test: Passt 'auf diese Weise'? Dann indem oder dadurch, dass.",
+            "Wechselt das Subjekt und es geht um eine Folge, nimm wodurch.",
+            "Nach 'dadurch' folgt sofort das Verb: Dadurch verbesserte er seine Ausdauer."
+        ],
+        "rows": [
+            {
+                "connector": "indem",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "Способ: «путём, тем что». Подлежащее то же.",
+                "examples": [
+                    {
+                        "de": "Wir sparen Energie, indem wir Geräte vollständig ausschalten.",
+                        "ru": "Мы экономим энергию, полностью выключая приборы."
+                    },
+                    {
+                        "de": "Er verbesserte sein Hörverstehen, indem er täglich Nachrichten hörte.",
+                        "ru": "Он улучшил аудирование, ежедневно слушая новости."
+                    },
+                    {
+                        "de": "Indem sie früh anfing, vermied sie den Zeitdruck.",
+                        "ru": "Начав рано, она избежала цейтнота."
+                    },
+                    {
+                        "de": "Man überzeugt Leser, indem man Argumente mit Beispielen belegt.",
+                        "ru": "Читателей убеждают, подкрепляя аргументы примерами."
+                    }
+                ]
+            },
+            {
+                "connector": "dadurch, dass",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Тем, что…». Подлежащие могут быть разными.",
+                "examples": [
+                    {
+                        "de": "Der Verein gewinnt Mitglieder dadurch, dass er günstige Tarife anbietet.",
+                        "ru": "Клуб привлекает членов тем, что предлагает выгодные тарифы."
+                    },
+                    {
+                        "de": "Das Risiko sinkt dadurch, dass mehrere Personen die Daten prüfen.",
+                        "ru": "Риск снижается благодаря тому, что данные проверяют несколько человек."
+                    },
+                    {
+                        "de": "Dadurch, dass die Preise stiegen, kauften weniger Menschen ein.",
+                        "ru": "Из-за того, что цены выросли, покупателей стало меньше."
+                    }
+                ]
+            },
+            {
+                "connector": "wodurch",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Благодаря чему». Относится ко всему главному предложению.",
+                "examples": [
+                    {
+                        "de": "Die Stadt baute neue Radwege, wodurch der Autoverkehr deutlich abnahm.",
+                        "ru": "Город построил новые велодорожки, благодаря чему автомобильный трафик заметно сократился."
+                    },
+                    {
+                        "de": "Der Server wurde erneuert, wodurch sich die Ladezeiten halbierten.",
+                        "ru": "Сервер обновили, в результате чего время загрузки сократилось вдвое."
+                    },
+                    {
+                        "de": "Viele Firmen sparen Büroflächen, wodurch Homeoffice noch attraktiver wird.",
+                        "ru": "Многие фирмы экономят офисные площади, из-за чего удалённая работа становится ещё привлекательнее."
+                    }
+                ]
+            },
+            {
+                "connector": "dadurch",
+                "position": "Position 1 · Inversion",
+                "type": "adv",
+                "meaning": "«Благодаря этому, тем самым».",
+                "examples": [
+                    {
+                        "de": "Das Gesetz senkt die Steuern. Dadurch steigt die Kaufkraft.",
+                        "ru": "Закон снижает налоги. Благодаря этому растёт покупательная способность."
+                    },
+                    {
+                        "de": "Sie las täglich auf Deutsch. Dadurch erweiterte sie ihren Wortschatz.",
+                        "ru": "Она ежедневно читала по-немецки. Тем самым она расширила словарный запас."
+                    },
+                    {
+                        "de": "Die Kosten wurden geteilt. Dadurch konnte das Projekt starten.",
+                        "ru": "Расходы разделили. Благодаря этому проект смог стартовать."
+                    }
+                ]
+            }
+        ]
+    }
+}

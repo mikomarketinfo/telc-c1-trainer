@@ -1,0 +1,162 @@
+{
+    "id": "konn_gegensatz",
+    "language": "de",
+    "title": "Gegensatz und Zugeständnis (während, hingegen, zwar … aber)",
+    "shortExplanation": "'während' und 'wohingegen' stellen gegenüber, 'hingegen, dagegen, demgegenüber, trotzdem, dennoch' sind Adverbien, 'zwar … aber' und 'einerseits … andererseits' bilden Paare.",
+    "example": "Obwohl es regnete, gingen wir spazieren.",
+    "more": {
+        "rule": "während / wohingegen / obwohl → Verb am Ende. hingegen / dagegen / demgegenüber / trotzdem / dennoch → Inversion. trotz + Gen. zwar … aber / doch → Zugeständnis und Einschränkung.",
+        "commonMistakes": [
+            "weil",
+            "deshalb",
+            "damit"
+        ],
+        "tips": [
+            "'während' kann zeitlich oder gegenüberstellend sein.",
+            "obwohl = Nebensatz, trotzdem = Hauptsatz.",
+            "'einerseits … andererseits' zeigt ein Dilemma."
+        ],
+        "rows": [
+            {
+                "connector": "obwohl · obgleich · wenngleich",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Хотя».",
+                "examples": [
+                    {
+                        "de": "Obwohl es regnete, gingen wir spazieren.",
+                        "ru": "Хотя шёл дождь, мы пошли гулять."
+                    },
+                    {
+                        "de": "Sie arbeitete weiter, obgleich sie erschöpft war.",
+                        "ru": "Она продолжала работать, хотя была измотана."
+                    },
+                    {
+                        "de": "Wenngleich die Lösung teuer ist, überzeugt sie langfristig.",
+                        "ru": "Хотя решение дорогое, оно убеждает в долгосрочной перспективе."
+                    }
+                ]
+            },
+            {
+                "connector": "trotzdem · dennoch",
+                "position": "Position 1 · Inversion",
+                "type": "adv",
+                "meaning": "«Тем не менее».",
+                "examples": [
+                    {
+                        "de": "Es regnete. Trotzdem gingen wir los.",
+                        "ru": "Шёл дождь. Тем не менее мы пошли."
+                    },
+                    {
+                        "de": "Der Plan ist riskant. Dennoch lohnt er sich.",
+                        "ru": "План рискованный. И всё же он оправдан."
+                    },
+                    {
+                        "de": "Er war krank, kam aber trotzdem zur Arbeit.",
+                        "ru": "Он был болен, но всё равно пришёл на работу."
+                    }
+                ]
+            },
+            {
+                "connector": "trotz + Gen",
+                "position": "Präposition",
+                "type": "prep",
+                "meaning": "«Несмотря на».",
+                "examples": [
+                    {
+                        "de": "Trotz des Regens gingen wir los.",
+                        "ru": "Несмотря на дождь, мы пошли."
+                    },
+                    {
+                        "de": "Trotz mehrfacher Warnungen fuhr er weiter.",
+                        "ru": "Несмотря на неоднократные предупреждения, он ехал дальше."
+                    },
+                    {
+                        "de": "Trotz seiner Jugend leitete sie das Team souverän.",
+                        "ru": "Несмотря на молодость, она уверенно руководила командой."
+                    }
+                ]
+            },
+            {
+                "connector": "zwar … aber / doch",
+                "position": "Zugeständnis + Einschränkung",
+                "type": "p0",
+                "meaning": "«Правда…, но».",
+                "examples": [
+                    {
+                        "de": "Er ist zwar talentiert, aber er arbeitet zu wenig.",
+                        "ru": "Он, правда, талантлив, но слишком мало работает."
+                    },
+                    {
+                        "de": "Das Angebot klingt zwar verlockend, doch die Bedingungen sind unklar.",
+                        "ru": "Предложение звучит заманчиво, но условия неясны."
+                    },
+                    {
+                        "de": "Sie hat zwar viel Erfahrung, aber kaum Zeit.",
+                        "ru": "У неё много опыта, но почти нет времени."
+                    }
+                ]
+            },
+            {
+                "connector": "während · wohingegen",
+                "position": "Nebensatz · Verb am Ende",
+                "type": "ns",
+                "meaning": "«Тогда как» (противопоставление).",
+                "examples": [
+                    {
+                        "de": "Während der eine Partner arbeitet, kümmert sich der andere um die Kinder.",
+                        "ru": "Пока один партнёр работает, другой занимается детьми."
+                    },
+                    {
+                        "de": "Im Norden dominiert die Industrie, wohingegen der Süden vom Tourismus lebt.",
+                        "ru": "На севере преобладает промышленность, тогда как юг живёт за счёт туризма."
+                    },
+                    {
+                        "de": "Die einen sparen, während die anderen investieren.",
+                        "ru": "Одни экономят, тогда как другие инвестируют."
+                    }
+                ]
+            },
+            {
+                "connector": "hingegen · dagegen · demgegenüber",
+                "position": "Position 1 oder Mittelfeld",
+                "type": "adv",
+                "meaning": "«Напротив, в противоположность».",
+                "examples": [
+                    {
+                        "de": "Der Norden ist industriell geprägt, der Süden hingegen lebt vom Tourismus.",
+                        "ru": "Север отличается промышленным развитием, юг же живёт за счёт туризма."
+                    },
+                    {
+                        "de": "Wölfe halfen den Menschen früh. Katzen schlossen sich dagegen erst später an.",
+                        "ru": "Волки рано помогали людям. Кошки же присоединились лишь позже."
+                    },
+                    {
+                        "de": "Konkurrenz sichert das Überleben. Demgegenüber steht der Nutzen der Kooperation.",
+                        "ru": "Конкуренция обеспечивает выживание. В противоположность этому стоит польза кооперации."
+                    }
+                ]
+            },
+            {
+                "connector": "einerseits … andererseits",
+                "position": "beide Seiten",
+                "type": "adv",
+                "meaning": "«С одной стороны…, с другой…».",
+                "examples": [
+                    {
+                        "de": "Einerseits möchte sie reisen, andererseits fehlt ihr das Geld.",
+                        "ru": "С одной стороны, она хочет путешествовать, с другой — ей не хватает денег."
+                    },
+                    {
+                        "de": "Homeoffice spart einerseits Zeit, andererseits fördert es die Isolation.",
+                        "ru": "Удалённая работа, с одной стороны, экономит время, с другой — усиливает изоляцию."
+                    },
+                    {
+                        "de": "Einerseits ist die Idee innovativ, andererseits ist sie schwer umsetzbar.",
+                        "ru": "С одной стороны, идея инновационная, с другой — её трудно реализовать."
+                    }
+                ]
+            }
+        ]
+    }
+}
